@@ -1,0 +1,117 @@
+#warp {
+  background-color: #e9e9e9;
+  .chooseCircle{
+    background-color: #fff;
+    &:after{
+      content: '';
+      display: block;
+      clear: both;
+    }
+    p{
+      height:3.3333rem;
+      line-height: 3.3333rem;
+      float: left;
+    }
+    .haveChoose{
+      padding-left:0.6666rem;
+      color:#4a4a4a;
+      font-size: 0.8333rem;
+    }
+    .btn-p{
+      float: right;
+      padding-right: 0.6666rem;
+      .ok-btn{
+        background-color: #1BBD3D;
+        width:5.5555rem;
+        height:2.5rem;
+        font-size: 1rem;
+      }
+    }
+  }
+  .circle-ul{
+    .circle-list{
+      background-color: #fff;
+      padding:0.6666rem;
+      border-bottom: 0.0555rem solid #D8D8D8;
+      position: relative;
+      .redDot{
+        position: absolute;
+        display: block;
+        width: 0.5555rem;
+        height: 0.5555rem;
+        background: #fa4848;
+        border-radius: 50%;
+        top: 50%;
+        right: 1.5rem;
+      }
+      .info-img{
+        position: absolute;
+        top:45%;
+        right:0.6666rem;
+        img{
+          width:0.7777rem;
+          height:0.7777rem;
+        }
+      }
+      .circle-info-box{
+        //padding-left: 0.7222rem;
+        &:after{
+          content: '';
+          display: block;
+          clear: both;
+        }
+
+        >img{
+          //float: left;
+          position: absolute;
+          width:3.3333rem;
+          height:3.3333rem;
+          border-radius: 50%;
+          top:15%;
+          left: 0.6666rem;
+        }
+        .info-ul{
+          padding-left: 22%;
+          //float: left;
+          li{
+            font-size:0.7777rem;
+            color:#999;
+          }
+          .circle-name{
+            width:100%;
+            font-size:0.8888rem;
+            color:#333;
+            span{
+              display: inline-block;
+              //width:6rem;
+            }
+            img{
+              width:2.3888rem;
+              height:0.8888rem;
+              display: inline-block;
+              &.sm{
+                width:1.6666rem;
+              }
+            }
+          }
+          .activeness{
+            img{
+              width:0.6111rem;
+              height:0.6944rem;
+            }
+          }
+        }
+      }
+
+    }
+  }
+  .unified-price{
+    width:4.8333rem;
+    height:1.6666rem;
+    background-color: #1bbd3d;
+    text-align: center;
+    line-height: 1.6666rem;
+    margin-left:4rem;
+    color:#fff;
+  }
+}

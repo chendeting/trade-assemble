@@ -1,0 +1,193 @@
+@navDatebg:#d8d8d8;
+@navDatefontColor:#fff;
+@navDatefontColor_active:#154fa1;
+@countdownfontColor:#6b6b6b;
+@farmNamecolor:#343434;
+@farmAddrcolor:#474747;
+@farmPrice:#727681;
+@farmWeigh:#abafb8;
+@saledColor:#afb0b2;
+@saledCount:#f1252e;
+
+//已经卖出bg
+@saledBgcolor:#f8f9fb;
+@borderTop:#d8dad9;
+@splitLine:#ebebeb;
+
+
+//字体
+//@mainFont:微软雅黑;
+
+//字体大小
+
+@firstbaseSize:0.777778rem;
+@secondbaseSize:0.666667rem;
+@thirdbaseSize:0.4rem;
+
+//剩余数量+已售
+@saledFont:0.833333rem;
+
+
+//日期导航
+#swiper-navdate{
+
+  background-color: @navDatebg;
+  height:2.2rem;
+
+  //日期文字
+  .dateTextcenter{
+    text-align: center;
+    span{
+      color:@navDatefontColor;
+      font-size:@firstbaseSize;
+      display: inline-block;
+      line-height: 2rem;
+    }
+  }
+  .swiper-wrapper{
+    > div{
+      background-color: @navDatebg;
+    }
+  }
+  .swiper-wrapper > div.active-nav{
+    span{
+      color:@navDatefontColor_active;
+      border-bottom: 1rem solid @navDatefontColor_active;
+    }
+  }
+}
+
+//主内容
+//倒计时
+#swiper-maincontent{
+  //倒计时
+  #timeCountdown{
+    p{
+      text-align: center;
+      font-size: @firstbaseSize;
+      color:@countdownfontColor;
+      line-height: 2rem;
+    }
+    background-color: #ebebeb;
+    .countdown{
+      text-align: center;
+      > li{
+        font-size: 1.2rem;
+        color:red;
+        list-style: none;
+        display: inline-block;
+      }
+    }
+  }
+  //动态ul列表
+  #onsaleingList{
+
+    >li{
+      border-bottom:0.4rem solid @splitLine;
+      >div.listop{
+        padding-top:0.5rem;
+        padding-left:1rem;
+        height: 5.5rem;
+        > img{
+          //margin-top:0.3rem;
+          display: inline-block;
+          float:left;
+          width: 5rem;
+          height: 5rem;
+          border-radius: 0.5rem;
+        }
+        > div.liRight{
+          display: inline-block;
+          //height: 5rem;
+          float:left;
+          margin-left:1rem;
+          >h4{
+            font-size: @firstbaseSize;
+            color:@farmNamecolor;
+          }
+          >p{
+            margin-top:0.1rem;
+            font-size: @secondbaseSize;
+            color:@farmAddrcolor;
+          }
+          >span{
+            margin-top:0.1rem;
+            //margin-top:0.2rem;
+            display: inline-block;
+            color:@farmPrice;
+            float:left;
+            font-size: @secondbaseSize;
+          }
+          >ul{
+            float:left;
+            margin-top:0.1rem;
+            display: inline-block;
+            > li{
+              color:@farmPrice;
+              font-size: @secondbaseSize;
+              >span{
+                display: inline-block;
+                margin-left:0.5rem;
+                color:@farmWeigh;
+                font-size: @secondbaseSize;
+              }
+            }
+          }
+
+          &::after{
+            content: " ";
+            display: block;
+            clear:both;
+          }
+        }
+
+        &::after{
+          display: block;
+          content: " ";
+          clear:both;
+        }
+      }
+      >div.buyNow{
+        height: 2.3rem;
+        background-color: @saledBgcolor;
+        border-top:0.1rem solid @borderTop;
+        >p{
+          display: inline-block;
+          padding-left:1rem;
+          font-size: @saledFont;
+          color:@saledColor;
+          line-height: 2.3rem;
+          float:left;
+          >span{
+            font-size: @saledFont;
+            color:@saledCount;
+          }
+        }
+
+        >div.btn_buyNow{
+          float: right;
+          width: 8rem;
+          height: 1.8rem;
+          margin-top: 0.25rem;
+          margin-right:0.4rem;
+          background-color: #f35556;
+          border-radius: 1rem;
+          >span{
+            width: 8rem;
+            height: 1.8rem;
+            display: inline-block;
+            font-size:@firstbaseSize;
+            color:#fff;
+            text-align: center;
+          }
+        }
+
+      }
+    }
+  }
+
+}
+
+
+
+

@@ -1,0 +1,183 @@
+@color9:#999;
+@colord8:#d8d8d8;
+@color1b:#1bbd3d;
+@colorfa:#fa4848;
+#warp{
+  background-color: #fff;
+}
+.member-info{
+  padding:1.066rem 0.266rem 1.066rem 1.6rem;
+  &:after{
+    content: '';
+    display: block;
+    overflow: hidden;
+    clear:both;
+  }
+  .headImg{
+    float: left;
+    width:3.75rem;
+    height:3.75rem;
+    img{
+      width:3.75rem;
+      height:3.75rem;
+      border-radius:50%;
+    }
+  }
+  .member-message{
+    margin:0 0 0 1.066rem;
+    float: left;
+    p{
+      color:@color9;
+      font-size: 0.7222rem;
+    }
+    .memberName{
+      margin-top: 0.533rem;
+      color:#333;
+      font-size: 0.8333rem;
+    }
+  }
+}
+.volume{
+  margin-bottom: 1rem;
+  &:after{
+    content: '';
+    display: block;
+    overflow: hidden;
+    clear:both;
+  }
+  p{
+    color:@color9;
+    font-size:0.6666rem;
+    float: left;
+    width:50%;
+    text-align: center;
+    span{
+      font-size: 1rem;
+      color:#333;
+    }
+  }
+  .all-volume{
+    border-right: 0.0555rem solid @colord8 ;
+  }
+}
+.line{
+  border-bottom: 0.0625rem solid @colord8;
+  background-color: #eee;
+  height:0.75rem;
+}
+.TA-label{
+  .hisLabel{
+    color:@color9;
+    margin:0.8rem 0 1rem 0.8rem;
+    font-size:0.6666rem;
+  }
+  .all-label{
+    padding-bottom: 1rem;
+    border-bottom: 0.0555rem solid @colord8;
+    li{
+      position: relative;
+    }
+    .checked{
+      position:absolute;
+      top:0.25rem;
+      display:none;
+    }
+    &:after{
+      content: '';
+      display: block;
+      overflow: hidden;
+      clear:both;
+    }
+    li{
+      float: left;
+      line-height: 2.666rem;
+      margin:0 4%;
+      img{
+        width:2.2222rem;
+        height:2.2222rem;
+        border-radius: 50%;
+      }
+      p{
+        color:#333;
+        font-size: 0.6875rem;
+        text-align: center;
+
+      }
+    }
+  }
+}
+
+.member-role{
+  margin:1.1666rem 0.6666rem 0 0.6666rem;
+  //margin-top: 0.5555rem;
+  height:2.7777rem;
+  //text-align: center;
+  &:after{
+    content:'';
+    display:block;
+    clear:both;
+  }
+  span{
+    font-size: 0.6666rem;
+    color:#999;
+    line-height: 1.6rem;
+    //padding-right: 10%;
+    float:left;
+  }
+  input{
+    width:5rem;
+    height:1.666rem;
+    border:0.0555rem solid @color9;
+    border-radius: 2.7777rem;
+    color:#999;
+    background-color: transparent;
+    //margin-right:0.4444rem ;
+    font-size: 1rem;
+    float:right;
+  }
+  .buyer{
+    margin-left: 0.5rem;
+  }
+  .active{
+    border-color: @color1b;
+    color:@color1b;
+  }
+}
+.save-exit{
+  padding-top: 1.1666rem;
+  background-color: #e9e9e9;
+  color:#fff;
+  text-align: center;
+  .exit{
+    font-size:1rem;
+    height:2.5rem;
+    background-color: @colorfa;
+    width:6.3888rem;
+  }
+  .save{
+    font-size:1rem;
+    width:11.6111rem;
+    height:2.5rem;
+    background-color: @color1b;
+  }
+}
+//模态框样式
+.weui_toast,.weui_toast_text,.weui_toast_visible{
+  width:auto;
+  height: auto;
+  font-size: 1.25rem;
+  line-height: 2.2222rem;
+  color:#fff;
+  opacity:0.75;
+  border-radius: 0.2222rem;
+}
+.weui_dialog_bd{
+  margin: 0 auto;
+  font-size: 1rem;
+  color:#333;
+  width:13.3055rem;
+  padding: 1rem 0;
+}
+.weui_dialog_ft a{
+  font-size: 1rem;
+}

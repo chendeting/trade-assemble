@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--蒙层-->
+    <div style="display: none" class="mengceng">
+        <div class="Divimg">
+            <img class="bigImg" src="images/pig_icon.png" alt="">
+        </div>
+    </div>
+    <!--图片点击放大-->
+    <script>
+
+
+        //图片点击事件
+        $("ul.yichangImgList>li>img").each(function(index,item){
+
+            $(this).click(function(){
+                $(".mengceng").show();
+            })
+        });
+        //蒙层点击事件
+        $(".mengceng").on("click",function(){
+            $(".mengceng").hide();
+        })
+    </script>
+</body>
+</html>

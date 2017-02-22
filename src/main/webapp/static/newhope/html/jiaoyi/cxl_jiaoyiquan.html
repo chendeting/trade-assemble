@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="x5-orientation" content="portrait">
+    <title>猪小e交易圈</title>
+    <link type="text/css" rel="stylesheet" href="../css/weui.min.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/huadongjiazai.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/common.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/myTradeRecord.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/Published.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/index.css">
+    <link type="text/css" rel="stylesheet" href="../css/jiaoyiquan.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/font-awesome/css/font-awesome.min.css"/>
+    <script type="text/javascript" charset="utf-8" src="../js/htmlsize.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/jquery.downCount.js"></script>
+    <!--动态加载模块-->
+    <script src="../js/template.js"></script>
+    <!--导入插件-->
+    <script type="text/javascript" src="../js/jqthumb.min.js"></script>
+    <script>
+        $(function() {
+            $(".circleTrade-img img").jqthumb({
+                width:'100%',
+                height:'100%',
+                after: function(imgObj){
+                    imgObj.css('opacity', 0).animate({opacity: 1}, 2000);
+                }
+            })
+        });
+
+    </script>
+</head>
+<body>
+<script type="text/html" id="temp1">
+    <li class="circleTrade-list">
+        <div class="circleTrade-img"><img src="{{img}}"/></div>
+        <ul class="pigFarm-info">
+            <li class="pigFarm-title">张三的猪场</li>
+            <li>地址：四川省德阳市三台县文武乡</li>
+            <li>价格：<span class="pig-price">￥18.86/kg</span>(预估110kg)</li>
+            <li class="fromCircle">来自北川交易圈 <img src="../images/ic_list_detail.png"/></li>
+        </ul>
+        <span class="detailInfo"><img src="../images/ic_list_detail.png"/></span>
+        <span class="fromEnd">距结束：<i>12:25:41</i></span>
+            <span class="rush-pig">
+                <span class="remain-p">剩余<span class="remain-num">300</span>头</span>
+                <span class="rush-p"><input class="rush-btn" type="button" value="立即抢猪"/></span>
+            </span>
+    </li>
+    <li class="circleTrade-list">
+        <img class="circleTrade-img" src="{{img}}"/>
+        <ul class="pigFarm-info">
+            <li class="pigFarm-title">张三的猪场</li>
+            <li>地址：四川省德阳市三台县文武乡</li>
+            <li>价格：<span class="pig-price">￥18.86/kg</span>(预估110kg)</li>
+            <li class="fromCircle"><a href="#">来自北川交易圈 <img src="../images/ic_list_detail.png"/></a></li>
+        </ul>
+        <span class="detailInfo"><img src="../images/ic_list_detail.png"/></span>
+        <span class="fromEnd fromStart">距开始：<i>12:25:41</i></span>
+            <span class="rush-pig">
+                <span class="remain-p">剩余<span class="remain-num">300</span>头</span>
+                <span class="rush-p">
+                    <input class="alert-btn" type="button" value="提醒我"/>
+                    <input class="quxiao-alert-btn" type="button" value="取消提醒" style="display: none"/>
+                </span>
+            </span>
+    </li>
+
+</script>
+
+<!--下订单-->
+<div class="zhezhaoceng" id="xiadingdan" style="display: none;">
+    <div class="transaction_tckbg1">
+        <div class="tck_xdd">
+            下订单
+        </div>
+        <div class="tck_line"></div>
+        <div class="tck_message_bg">
+            <div class="tck_name_head">张老板张老板张老板张</div>
+            <div class="tck_name_message">
+                剩余400头
+            </div>
+            <div class="tck_message_head">交割地址：</div>
+            <div class="tck_message_text">
+                四川省德阳市罗莎县文庙村发财乡6组
+            </div>
+            <div class="tck_message_head">交通情况：</div>
+            <div class="tck_message_text">
+                限1.5米内的车辆通过
+            </div>
+            <div class="tck_message_head">出栏价格：</div>
+            <div class="tck_message_text1">
+                <div>
+                    <span>¥18.20</span><span>元/KG</span><span class="issued_junzhong">(均重0-100KG)</span>
+                </div>
+                <div>
+                    <span>¥18.90</span><span>元/KG</span><span class="issued_junzhong">(均重100KG-200KG)</span>
+                </div>
+                <div>
+                    <span>¥19.60</span><span>元/KG</span><span class="issued_junzhong">(均重200KG以上)</span>
+                </div>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div>
+            <div class="tck_number_head">数量：</div>
+            <input class="tck_number_input" placeholder="请输入订购数量"/>
+            <div class="tck_number_unit">头</div>
+        </div>
+        <input type="button" class="btn_tck_back" id="quxiaodingdan" value="取消"/>
+        <input type="button" class="btn_tck_confirm" id="quedingdingdan" value="确定"/>
+
+    </div>
+</div>
+<!--订单成功-->
+<div class="zhezhaoceng" id="dingdan_success" style="display: none;">
+    <div class="transaction_tckbg">
+        <div class="transaction_tck_succespic">
+        </div>
+        <div class="transaction_tck_headtext">订单提交成功</div>
+        <div class="transaction_tck_bodytext">
+            <div>您的订单已提交成功，我们将尽快与您</div>
+            <div>联系！如需了解订单状态，</div>
+            <div>可以到“我买到的”进行查询</div>
+        </div>
+        <input type="button" class="btn_tck_know" id="zhidaole_success" value="知道了"/>
+    </div>
+</div>
+<!--订单失败-->
+<div class="zhezhaoceng" id="dingdan_fail" style="display: none;">
+    <div class="transaction_tckbg">
+        <div class="transaction_tck_failpic">
+        </div>
+        <div class="transaction_tck_headtext">订单提交失败</div>
+        <div class="transaction_tck_bodytext1">
+            <div>下手太慢！</div>
+            <div>该订单剩余数量仅剩<span>200</span>头!</div>
+        </div>
+        <input type="button" class="btn_tck_back" id="zhidaole_fail" value="知道了"/>
+        <input type="button" class="btn_tck_newly" id="chongxinqianggou" value="重新抢购"/>
+    </div>
+</div>
+<!--取消提醒-->
+<div class="zhezhaoceng" id="tixing_remove" style="display: none;">
+    <div class="join_part3_tankuang">
+        <div class="transaction_cry_pic">
+        </div>
+        <div class="transaction_tck_revoketext">
+            <div>取消了提醒，可能会错过拍猪哦！</div>
+            <div>确定取消提醒吗？</div>
+        </div>
+        <input type="button" class="btn_tck_back" id="zaikankan" value="再看看"/>
+        <input type="button" class="btn_tck_confirm" id="qxtx_queding" value="确定"/>
+    </div>
+</div>
+<!--成功设定提醒-->
+<div class="light_remind_success" id="tixing_success" style="display: none;">
+    <div>提醒设置成功，将在开抢前3</div>
+    <div>分钟提醒您</div>
+</div>
+
+<div id="warp">
+    <div class="GPS">
+        <a class="GPS-txt" href="cxl_openTradeCity.html">&emsp;当前城市：<span>成都市双流县</span><img class="detail-img" src="../images/ic_list_detail.png"></a>
+    </div>
+    <div class="filter-condition">
+        <span class="time-lately">时间最近</span>
+        <span class="distance-lately active">距离最近</span>
+        <span class="all-circle"><i>所有交易圈</i></span>
+        <i class="fa fa-caret-down" aria-hidden="true"></i>
+    </div>
+    <div class="chooseCircle">
+        <div class="mengban"></div>
+        <ul class="chooseCircle-ul">
+            <li class="current">所有交易圈<img src="../images/ic_myzc_pop_selected.png"/></li>
+            <li>张三李四的交易圈哎呀哎呀啦啦</li>
+        </ul>
+    </div>
+    <div style="margin-bottom: 5rem">
+        <ul class="circleTrade-ul">
+            <li class="circleTrade-list">
+                <div class="clickDiv">
+                    <div class="circleTrade-img"><img src="../images/a.jpg"/></div>
+                <ul class="pigFarm-info">
+                    <li class="pigFarm-title">张三的猪场</li>
+                    <li class="pigFarmAddress">地址：四川省德阳市三台县文武乡四川省德阳市三台县文武乡四川省德阳市三台县文武乡</li>
+                    <li>价格：<span class="pig-price">￥18.86/kg</span>(预估110kg)</li>
+                </ul>
+                <span class="detailInfo"><img src="../images/ic_list_detail.png"/></span>
+                <div class="fromEnd"><span>距结束：</span>
+                    <ul class="countdown" style="color:#333333;">
+                        <li>
+                            <span class="hours" style="float: left;margin-left: 0.4rem;">00</span>
+                        </li>
+                        <li class="seperator" style="float: left;margin-left: 0.2rem">:</li>
+                        <li>
+                            <span class="minutes" style="float: left;margin-left: 0.2rem">00</span>
+                        </li>
+                        <li class="seperator" style="float: left;margin-left: 0.2rem">:</li>
+                        <li>
+                            <span class="seconds" style="float: left;margin-left: 0.2rem">00</span>
+                        </li>
+                    </ul>
+                </div>
+                </div>
+                <span class="rush-pig">
+                    <span class="remain-p">剩余<span class="remain-num">300</span>头</span>
+                    <span class="rush-p"><input class="rush-btn" type="button" value="立即抢猪"/></span>
+                </span>
+            <div class="fromCircle"><a href="#">来自北川交易圈 <img src="../images/ic_list_detail.png"/></a></div>
+
+            </li>
+            <li class="circleTrade-list">
+                <div class="clickDiv">
+                    <div class="circleTrade-img"><img src="../images/a.jpg"/></div>
+                    <ul class="pigFarm-info">
+                        <li class="pigFarm-title">张三的猪场</li>
+                        <li>地址：四川省德阳市三台县文武乡</li>
+                        <li>价格：<span class="pig-price">￥18.86/kg</span>(预估110kg)</li>
+                    </ul>
+                    <span class="detailInfo"><img src="../images/ic_list_detail.png"/></span>
+                    <div class="fromEnd fromStart"><span>距开始：</span>
+                        <ul class="countdown" style="color:#333333;">
+                            <li>
+                                <span class="hours" style="float: left;margin-left: 0.4rem;">00</span>
+                            </li>
+                            <li class="seperator" style="float: left;margin-left: 0.2rem">:</li>
+                            <li>
+                                <span class="minutes" style="float: left;margin-left: 0.2rem">00</span>
+                            </li>
+                            <li class="seperator" style="float: left;margin-left: 0.2rem">:</li>
+                            <li>
+                                <span class="seconds" style="float: left;margin-left: 0.2rem">00</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="fromCircle"><a href="#">来自北川交易圈 <img src="../images/ic_list_detail.png"/></a></div>
+                <span class="rush-pig">
+                    <span class="remain-p">剩余<span class="remain-num">300</span>头</span>
+                    <span class="rush-p">
+                        <input class="alert-btn" type="button" value="提醒我"/>
+                        <input class="quxiao-alert-btn" type="button" value="取消提醒" style="display: none"/>
+                    </span>
+                </span>
+            </li>
+            <li class="circleTrade-list">
+                <div class="clickDiv">
+                    <div class="circleTrade-img"><img src="../images/a.jpg"/></div>
+                    <ul class="pigFarm-info">
+                        <li class="pigFarm-title">张三的猪场</li>
+                        <li>地址：四川省德阳市三台县文武乡</li>
+                        <li>价格：<span class="pig-price">￥18.86/kg</span>(预估110kg)</li>
+                    </ul>
+                    <span class="detailInfo"><img src="../images/ic_list_detail.png"/></span>
+                    <div class="fromEnd fromStart"><span>距开始：</span>
+                        <ul class="countdown" style="color:#333333;">
+                            <li>
+                                <span class="hours" style="float: left;margin-left: 0.4rem;">00</span>
+                            </li>
+                            <li class="seperator" style="float: left;margin-left: 0.2rem">:</li>
+                            <li>
+                                <span class="minutes" style="float: left;margin-left: 0.2rem">00</span>
+                            </li>
+                            <li class="seperator" style="float: left;margin-left: 0.2rem">:</li>
+                            <li>
+                                <span class="seconds" style="float: left;margin-left: 0.2rem">00</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="fromCircle"><a href="#">来自北川交易圈 <img src="../images/ic_list_detail.png"/></a></div>
+
+                <span class="rush-pig">
+                    <span class="remain-p">剩余<span class="remain-num">300</span>头</span>
+                    <span class="rush-p">
+                        <input class="sellOut" type="button" value="已抢光" disabled/>
+                    </span>
+                </span>
+            </li>
+        </ul>
+        <div class="weui-infinite-scroll">
+            <div class="infinite-preloader"></div>
+            正在加载...
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="weui_tabbar">
+    <a href="#" class="weui_tabbar_item weui_bar_item_on">
+        <div class="weui_tabbar_icon">
+            <img class="normal" src="../images/btn_tabbar_jy_normal.png" alt="">
+            <img class="selected" src="../images/btn_tabbar_jy_selected.png"/>
+        </div>
+        <p class="weui_tabbar_label">交易</p>
+    </a>
+    <a href="../fabu/cxl_Published.html" class="weui_tabbar_item">
+        <div class="weui_tabbar_icon">
+            <img class="normal" src="../images/btn_tabbar_hq_normal.png" alt="">
+            <img class="selected" src="../images/btn_tabbar_hq_selected.png"/>
+        </div>
+        <p class="weui_tabbar_label">发布</p>
+    </a>
+    <a href="" class="weui_tabbar_item">
+        <div class="weui_tabbar_icon">
+            <img class="normal" src="../images/btn_tabbar_xx_normal.png" alt="">
+            <img class="selected" src="../images/btn_tabbar_xx_selected.png"/>
+        </div>
+        <p class="weui_tabbar_label">消息</p>
+    </a>
+    <a href="../cxl_changePersonInfo.html" class="weui_tabbar_item">
+        <div class="weui_tabbar_icon">
+            <img class="normal" src="../images/btn_tabbar_me_normal.png" alt="">
+            <img class="selected" src="../images/btn_tabbar_me_selected.png"/>
+        </div>
+        <p class="weui_tabbar_label">我</p>
+    </a>
+</div>
+
+<script type="text/javascript" src="../js/jquery-weui.min.js"></script>
+
+<!--交易圈页面事件-->
+<script type="text/javascript">
+    $(".filter-condition>span").click(function () {
+        $(this).addClass("active").siblings("span").removeClass("active");
+        $(".chooseCircle").hide();
+    });
+    $(".all-circle").click(function () {
+        $(".chooseCircle").show();
+    });
+    $(".chooseCircle-ul>li").click(function () {
+        $(this).addClass("current").siblings("li").removeClass("current");
+        var circleName=$(this).text();
+        $(".all-circle").find("i").html(circleName);
+        $(".chooseCircle").hide();
+    })
+</script>
+<!--倒计时插件-->
+<script type="text/javascript">
+    //2) 倒计时插件
+    $('.countdown').downCount({
+        date: '12/22/2016 20:00:00',
+        offset: 8
+    }, function () {
+        //显示拍卖结束相关的界面
+        alert('拍卖已经结束了');
+    });
+</script>
+<!--表单控制-->
+<script type="text/javascript">
+    <!-- 订单成功弹窗控制-->
+
+    $(function(){
+        var flag=true;
+        $(".rush-btn").click(function(){
+            if(flag==false){
+                $.modal({
+                    title: "",
+                    text: "非该交易圈成员不能参与抢猪，是否加入该交易圈？",
+                    buttons: [
+                        { text: "再看看", className: "default", onClick: function(){ console.log(3)} },
+                        { text: "加入", onClick: function(){ console.log(2)} }
+                    ]
+                });
+            }else {
+                $("html,body").css("overflow","hidden");
+                $("#xiadingdan").show();
+            }
+
+        });
+        $(".transaction_tckbg1 .tck_number_input").focus(function(){
+            $(".transaction_tckbg1").css("top","0");
+        });
+        $("#quxiaodingdan").click(function(){
+            $("html,body").css("overflow","auto");
+            $("#xiadingdan").hide();
+            $(".transaction_tckbg1").css("top","5.5rem");
+        });
+        $("#quedingdingdan").click(function(){
+            $("html,body").css("overflow","auto");
+            $("#xiadingdan").hide();
+            $(".transaction_tckbg1").css("top","5.5rem");
+            $("#dingdan_success").show();
+        });
+        $("#zhidaole_success").click(function(){
+            $("#dingdan_success").hide();
+        });
+    });
+    <!--订单失败弹窗控制-->
+    $(function(){
+        $("#zhidaole_fail").click(function(){
+            $("#dingdan_fail").hide();
+        });
+        $("#chongxinqianggou").click(function(){
+            $("#dingdan_fail").hide();
+            $("#xiadingdan").show();
+        });
+    });
+    <!--提醒弹窗控制-->
+    $(function(){
+        $(".alert-btn").click(function(){
+            $(this).hide();
+            $ ("#tixing_success").show ().delay (3000).fadeOut ();
+            $(this).next().show();
+        });
+        $(".quxiao-alert-btn").click(function(){
+            $("#tixing_remove").show();
+        });
+        $("#zaikankan").click(function(){
+            $("#tixing_remove").hide();
+        });
+        $("#qxtx_queding").click(function(){
+            $("#tixing_remove").hide();
+            $(".quxiao-alert-btn").hide();
+            $(".alert-btn").show();
+
+        });
+    });
+</script>
+<!--tabbar切换-->
+<script type="text/javascript">
+    $(".all-label li").click(function () {
+        var checked=$(this).find(".checked");
+        if(checked.css("display")=="none"){
+            checked.show();
+        }else{
+            checked.hide();
+        }
+    });
+    $(".weui_navbar a").click(function () {
+        $(this).children().addClass("active");
+        $(this).siblings().children().removeClass("active");
+    });
+</script>
+<!--分页-->
+<script type="text/javascript">
+
+    $(".mengceng").click(function(){
+        $(".chooseCircle").hide();
+    });
+    //分页功能
+    var loading = false;  //状态标记
+    var page = 1;    //当前显示页数
+
+    //每一页的显示数量
+    var size = 6;
+
+    //页面初始化时，加载8条数据
+    $.ajax({
+        type: 'GET',
+        url: '/trade/circle/list.json?pageIndex='+page+"&m=1&b=1&s=1",
+        dataType: 'json',
+        success: function(data){
+            //console.log(data.data.objects.length);
+            if(data.success==true){
+
+
+                var result ="";
+                //总的数据长度
+                //console.log(data.data.totalCount);
+                var dataLen = data.data.totalCount;
+                if(dataLen <= 6){
+                    //就只加载当前的数据
+                    $(".weui-infinite-scroll").css("display","none");
+                    $(document.body).destroyInfinite();
+                    for(var i = 0;i < dataLen;i++){
+                        result += template("temp1",data.data.objects[i]);
+                    }
+                }else{
+
+                    for(var i = 0;i < size;i++){
+                        result += template("temp1",data.data.objects[i]);
+                    }
+                }
+
+                $(".circleTrade-ul").append(result);
+
+            }else{
+                $(".infinite-preloader").hide();
+                $("#inLoading").text(data.msg);
+            }
+
+
+        },error:function(XMLHttpRequest,textStatus, errorThrown){
+
+            if(textStatus == 'timeout'){
+                $.toast("连接超时", "text");
+                $(".infinite-preloader").hide();
+                $("#inLoading").hide();
+            }else{
+                $.toast("系统内部错误,请联系客服", "text");
+            }
+        }
+    });
+    $(document).on("click",".clickDiv",function(){
+    var pid = $(this).data("id");
+    location.href="www.baidu.com";
+    });
+    //初始化以后，再去按照分页加载条数
+    $(document.body).infinite().on("infinite", function() {
+        $(".infinite-preloader").show();
+        $("#inLoading").text("正在加载...");
+        $("#inLoading").show();
+        if(loading) return;
+        loading = true;
+
+
+            page++;
+            //发送请求，拿到json数据
+            $.ajax({
+                type: 'GET',
+                url: '/trade/circle/list.json?pageIndex='+page+"&m=1&b=1&s=1",
+                dataType: 'json',
+                success: function(data){
+                    if(data.success==true){
+
+                        var result ="";
+                        //总的数据长度
+                        var dataLen = data.data.objects.length;
+                        //计算总的页数
+                        var totalPage = data.data.totalPages;
+                        for(var i = 0;i < dataLen;i++){
+                            result += template("temp1",data.data.objects[i]);
+                        }
+                        $(".circleTrade-ul").append(result);
+                        if(page == totalPage){
+
+                            $(document.body).destroyInfinite();
+                            $(".weui-infinite-scroll").hide();
+                        }else{
+                            $(".weui-infinite-scroll").show();
+                        }
+
+                    }else{
+                        $(".infinite-preloader").hide();
+                        $("#inLoading").text(data.msg);
+                    }
+                },error:function(XMLHttpRequest,textStatus, errorThrown){
+                    if(textStatus == 'timeout'){
+                        $.toast("连接超时", "text");
+                        $(".infinite-preloader").hide();
+                        $("#inLoading").hide();
+                    }else{
+                        $.toast("系统内部错误,请联系客服", "text");
+                    }
+                }
+            });
+            loading = false;
+          //模拟延迟
+    });
+
+
+
+    function toSetPricePage(o){
+        location.href = "/circle/circlePrice//toCirclePriceSettingPage?circleId="+$(o).val();
+    }
+    function goDetialPage(o){
+        location.href = "/user/userCircle/joinedCircleDetail?circleUserId="+$(o).data("id");
+    }
+</script>
+
+</body>
+</html>

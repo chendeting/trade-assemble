@@ -1,0 +1,341 @@
+@navDatebg:#d8d8d8;
+@navDatefontColor:#fff;
+@navDatefontColor_active:#154fa1;
+@countdownfontColor:#6b6b6b;
+@farmNamecolor:#343434;
+@farmAddrcolor:#474747;
+@farmPrice:#727681;
+@farmWeigh:#abafb8;
+@saledColor:#afb0b2;
+@saledCount:#f1252e;
+
+//已经卖出bg
+@saledBgcolor:#f8f9fb;
+@borderTop:#d8dad9;
+@splitLine:#ebebeb;
+
+
+
+//新建交易圈
+//1）下拉箭头
+@setnewcircle-upIcon:#bababc;
+//2）border
+@setnewcircle-border:#d8d8d8;
+//3)bgcolor;
+@setnewcircle-textBgcolor:#fff;
+//4)fontcolor
+@setnewcircle-fontcolor:#999999;
+//borderWidth
+@setnewcircle-borderWidth:0.0556rem;
+//fontsize 26px;
+@setnewcircle-fontsize:0.7222rem;
+//整体背景色
+@setnewcircle-bgcolor:#ebebeb;
+//placeholder
+@placeholder-color:#cccccc;
+//输入的文字
+@enterfontColor:#282828;
+//新建按钮
+@btn_create:#1BBD3C;
+//30的字体大小
+@font30:0.8333rem;
+//color999
+@color999:#999;
+//color333
+@color333:#333;
+
+@font60:1.6667rem;
+@font24:0.6667rem;
+@font28:0.7778rem;
+@font26:0.7222rem;
+@border4:0.1111rem;
+@width624:17.666rem;
+@height180:5rem;
+@width280:7.7778rem;
+@height80:2.2222rem;
+@width324:9rem;
+@height90:2.5rem;
+@colorGreen:#1BBD3D;
+@height70:1.2622rem;
+@width500:13.8889rem;
+@width672:18.6667rem;
+@width561:15.5833rem;
+@height140:3.8889rem;
+
+//放养猪场模态框样式
+//.weui_toast,.weui_toast_text,.weui_toast_visible{
+//  width:auto;
+//  height: auto;
+//  font-size: 1.25rem;
+//  line-height: 2.2222rem;
+//  color:#fff;
+//  opacity:0.75;
+//  border-radius: 0.2222rem;
+//}
+ul{
+  >li{
+    border-bottom:0.0278rem solid #d8d8d8;
+  }
+}
+div.notReadcircle{
+  position: relative;
+  >img{
+    width:2.4444rem;
+    height:2.4444rem;
+    padding-left:0.4rem;
+  }
+  >div{
+    position: absolute;
+    top:0;
+    right:0;
+    width:0.5556rem;
+    height:0.5556rem;
+    border-radius: 0.2778rem;
+    background: #FA4848;
+  }
+}
+div.content{
+  position: relative;
+  margin-left:0.6389rem;
+  margin-right:0.4rem;
+  >p{
+    font-size: @font30;
+    color: #333333;
+    width:15.5833rem;
+    text-align: left;
+  }
+  >a{
+    background-color: @colorGreen;
+    opacity: 0.87;
+    font-size: @font30;
+    color: #FFFFFF;
+    position: absolute;
+    right:0;
+    width:4rem;
+    height:@font60;
+    line-height:@font60;
+    border-radius: @border4;
+  }
+}
+
+div.fangyangCircleNotread{
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  >img{
+    width:2.4444rem;
+    height:2.4444rem;
+    padding-top:@font24;
+  }
+  >div.redCircle{
+    position: absolute;
+    top: 0.6rem;
+    left: 1.8rem;
+    width:0.5556rem;
+    height:0.5556rem;
+    border-radius: 0.2778rem;
+    background: #FA4848;
+  }
+  >div.p_detail{
+    display: flex;
+    align-items: center;
+    >p{
+      margin-left:0.6389rem;
+      line-height: 1.25rem;
+      font-size: @font30;
+      color: #333333;
+      width:14rem;
+      text-align: left;
+    }
+  }
+
+}
+div.rightIcon{
+  color: #B9BABB;
+  font-size: @font28;
+  line-height: @height140;
+}
+div.btn_right{
+  display: flex;
+  align-items: center;
+
+  >input{
+    background-color: @colorGreen;
+    opacity: 0.87;
+    font-size: @font30;
+    color: #FFFFFF;
+    position: absolute;
+    right:@font24;
+    width:4rem;
+    height:@font60;
+    line-height:@font60;
+    border-radius: 0.1111rem;
+  }
+}
+
+div.title{
+    height: @font60;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left:@font24;
+    background-color: #ebebeb;
+    width:100%;
+  >p{
+    line-height: @font60;
+    font-size: @font26;
+    color: #999999;
+  }
+  >span{
+    margin-left:0.4rem;
+    font-size:@font24;
+    color: #FFFFFF;
+    height:0.8889rem;
+    line-height: 0.8889rem;
+    padding:0 0.1944rem;
+    display: inline-block;
+  }
+  >span.selfCreatecircle{
+    background: #1BBD3C;
+  }
+  >span.enterCircle{
+    background-color: #ccc;
+  }
+  >span.buyer{
+    background: #1CA4F7;
+  }
+  >span.saler{
+    background: #FE877A;
+  }
+}
+section{
+  position: relative;
+  z-index: 2;
+  padding-bottom:4rem;
+  >ul.refuseJoin{
+    background-color: #fff;
+    >li:nth-child(1){
+      padding-top: @font24;
+      height:6rem;
+      width:100%;
+      margin:0 auto;
+      display: flex;
+      justify-content: space-around;
+    }
+    >li:nth-child(2){
+      padding-top: @font24;
+      height:3.8889rem;
+      width:100%;
+      margin:0 auto;
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+  >ul.fangyangCircle{
+    background-color: #fff;
+    >li{
+      width:100%;
+      margin: 0 auto;
+      background-color: #fff;
+    }
+    >li:nth-child(1){
+      position: relative;
+      height:@height140;
+      display: flex;
+      justify-content: space-around;
+    }
+    >li:nth-child(2){
+      position: relative;
+      height:@height140;
+      display: flex;
+      justify-content: space-around;
+    }
+    >li:nth-child(3){
+      position: relative;
+      height:@height140;
+      display: flex;
+      justify-content: space-around;
+    }
+    >li:nth-child(4){
+      position: relative;
+      height:@height140;
+      display: flex;
+      justify-content: space-around;
+    }
+    >li:nth-child(5){
+      position: relative;
+      height:@height140;
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+  >ul.others{
+    >li:nth-child(1){
+      position: relative;
+      height:@height140;
+      display: flex;
+      justify-content: space-around;
+    }
+    >li:nth-child(2){
+      position: relative;
+      height:@height140;
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}
+
+div.mengceng{
+  position: fixed;
+  height: 100%;
+  width:100%;
+  background-color: black;
+  z-index:99999;
+  opacity: 0.3;
+  top:0;
+}
+div.div_outside{
+  width:100%;
+  display: flex;
+  justify-content: center;
+  >div.div_del{
+
+    position: fixed;
+    margin: 0 auto;
+    margin-top:12.7778rem;
+    z-index: 999999;
+    width:15.7778rem;
+    height:10rem;
+    background-color: #fff;
+    top:0;
+
+    >p{
+      margin-top:2.8611rem;
+      font-size: 1rem;
+      color: #333333;
+      text-align: center;
+      margin-bottom:2.5833rem;
+    }
+    >div{
+      display: flex;
+      justify-content: space-around;
+      >input{
+        color: #fff;
+        width:6.6667rem;
+        height:1.9444rem;
+        text-align: center;
+        line-height: 1.9444rem;
+        border-radius: @border4;
+      }
+      >input:nth-child(1){
+        background: #999999;
+      }
+      >input:nth-child(2){
+        background: #FA4848;
+      }
+    }
+  }
+}
+
+
+

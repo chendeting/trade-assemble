@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>新建交易圈</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="format-detection" content="telephone=no">
+    <!--script 适配-->
+    <script src="js/htmlsize.js"></script>
+    <!--jquery-->
+    <script src="js/jquery-3.1.1.min.js"></script>
+
+    <!--引入外部自定义js-->
+    <script src="js/commonFunction.js"></script>
+
+    <!-- 城市选择 -->
+    <link rel="stylesheet" href="css/LArea.css">
+    <!--动态加载模块-->
+    <script src="js/template.js"></script>
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+
+    <!--weui-->
+    <link rel="stylesheet" href="css/weui.min.css">
+    <link rel="stylesheet" href="css/jquery-weui.min.css">
+
+    <!--引入onsaleing 自定义样式表-->
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/hj_setnewCircle.css"/>
+
+    <style type="text/css">
+       /*圈子名称相同*/
+        .weui_toast,.weui_toast_text,.weui_toast_visible{
+            width:auto;
+            height: auto;
+            font-size: 1.25rem;
+            line-height: 2.2222rem;
+            color:#fff;
+            opacity:0.75;
+            border-radius: 0.2222rem;
+        }
+       .toolbar{
+           text-align:left;
+       }
+        /*城市选择插件*/
+       .weui-picker-modal .picker-item{
+           font-size: 0.8333rem;
+           color: #333333;
+           letter-spacing: 0;
+           text-align: center;
+       }
+    </style>
+</head>
+
+<body>
+    <div class="createcircleContent">
+        <div id="imgParent">
+            <img class="myheadPic" src="images/btn_uploadimg_normal.png" alt="">
+        </div>
+        <ul>
+            <li>
+                <p>
+                    <span>圈子名称</span>
+                    <span id="circleName_fontlimit">15字内</span>
+                </p>
+                <input maxlength="15" id="circleName" type="text" placeholder="15字以内"/>
+            </li>
+            <li>
+                <p>
+                    <span>所在区域</span>
+                    <span id="citySelect"></span>
+                </p>
+                <div class="weui-row">
+                    <div class="weui-col-70">
+                        <div class="content-block">
+                            <input  id="start" type="text" >
+                            <i class="fa fa-caret-down @upIcon" id="icon_citypicker" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="weui-col-30">
+                        <input type="button" id="location" value="定位">
+                    </div>
+                </div>
+            </li>
+            <li>
+                <p>
+                    <span>圈子描述</span>
+                    <span class="notNull"></span>
+                </p>
+                <textarea  maxlength="30" name="simpleText" id="simpleText"  placeholder="请简要说明圈子的基本情况"></textarea>
+                <span id="simpleText_fontlimti">30字内</span>
+            </li>
+            <li>
+                <p>
+                    <span>加入要求</span>
+                    <span class="notNull"></span>
+                </p>
+                <textarea maxlength="30" name="simpleText" id="joinCondition" cols="18" rows="5" placeholder="请简要说明加入圈子的基本要求"></textarea>
+                <span id="joinCondition_fontlimti">30字内</span>
+            </li>
+            <li>
+                <p>
+                    <span>私密</span>
+                    <span class="notNull"></span>
+                </p>
+                <div class="weui-row">
+                    <div class="weui-col-40">
+                        <img id="changeState" src="images/hj/btn_sm_off.png" alt="私密">
+                    </div>
+                    <div class="weui-col-60">
+                        <span>向右滑动，开启私密交易圈，交易用户由您指定，交易信息不公开</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div id="div_footer">
+            <input type="button" value="提交" id="btn_submit">
+        </div>
+    </div>
+    <!--下拉选择蒙层-->
+    <div style="display: none" class="selectType">
+
+    </div>
+<!-- 圈子名字重复 -->
+    <script type="text/javascript">
+        $(function(){
+
+            var circleName = document.querySelector("#circleName");
+            var simpleText = document.querySelector("#simpleText");
+            var joinCondition = document.querySelector("#joinCondition");
+            var circleName_fontlimit = 'circleName_fontlimit';
+            var simpleText_fontlimti = 'simpleText_fontlimti';
+            var joinCondition_fontlimti = 'joinCondition_fontlimti';
+            var bordercolor = '#D8D8D8';
+            var fontcolor = '#999999';
+
+            //圈子名称
+            fontLimit(circleName,circleName_fontlimit,bordercolor,fontcolor,15);
+
+            //圈子描述
+            fontLimit(simpleText,simpleText_fontlimti,bordercolor,fontcolor,30);
+
+            //加入要求
+            fontLimit(joinCondition,joinCondition_fontlimti,bordercolor,fontcolor,30);
+
+            //字数限制的判定函数
+            function fontLimit(eleName,spanId,bordercolor,fontcolor,limitcount){
+                eleName.addEventListener("keydown",function(){
+                    var totallength = eleName.value.length;
+                    if(totallength >= limitcount){
+                        //border变成红色
+                        $(this).css({"border":"0.0278rem solid #FA4848"});
+                        //span字数限制变红
+                        $('#'+spanId).css({"color":"#FA4848"});
+                    }else{
+                        //border变成以前的颜色
+                        $(this).css({"border-color": bordercolor});
+                        //span变成以前的颜色
+                        $('#'+spanId).css({"color":fontcolor});
+                    }
+                })
+            }
+
+            //圈子名称重复：失去焦点
+            function differentcirclename(eleName){
+                eleName.addEventListener('blur',function(){
+                    //失去焦点的时候，判断圈子名是否重复
+                    //假设重复的名字为   张三的猪圈
+                    if($(this).val() === '张三的猪圈'){
+                        //提示名字不能相同
+                        $.toast("名称与其他圈子重复，请输入新名字", "text");
+                    }
+                })
+            };
+
+            differentcirclename(circleName);
+
+            //input失去焦点的时候判断 ，是否为空
+            $("li input").blur(function(){
+                var totallength = $(this).val().length;
+                var idName = $(this).attr("id");
+                //圈子名称
+                if(idName == 'circleName' && totallength == 0){
+                    $(this).css({"border":"0.0556rem solid #FA4848"});
+                    $(this).parent().siblings("p").children("span[id=citySelect]").css({"color":"#FA4848"});
+                }else{
+                    $(this).css({"border-color": '#D8D8D8'});
+                    //span变成以前的颜色
+                    $(this).parent().siblings("p").children("span[id=citySelect]").css({"color":"#999"});
+                }
+
+                //textarea
+                $("li textarea").blur(function(){
+                    var totallength = $(this).val().length;
+                    var idName = $(this).attr("id");
+                    //圈子名称
+                    if(totallength == 0){
+                        $(this).css({"border":"0.0556rem solid #FA4848"});
+                        $(this).siblings("p").children("span[class=notNull]").html("此条不能为空");
+                        $(this).siblings("p").children("span[class=notNull]").css({"color":"#FA4848"});
+                    }else{
+                        $(this).siblings("p").children("span[class=notNull]").html(" ");
+                        $(this).css({"border-color": '#D8D8D8'});
+                        $(this).siblings("span").css({"color":"#999"});
+                    }
+                });
+            });
+
+            //点击提交，验证是否为空
+            $("#btn_submit").click(function(){
+                $("li input").each(function(index,item){
+                    var totallength = $(this).val().length;
+                    //如果为空就阻止提交
+
+                    //1）圈子名称
+                    if(index == 0 && totallength == 0){
+                        $(this).css({"border":"0.0556rem solid #FA4848"});
+                        $(this).siblings("p").children("span[id=circleName_fontlimit]").html(" ");
+                        $(this).siblings("p").children("span[id=circleName_fontlimit]").html("此条不能为空");
+                        $(this).siblings("p").children("span[id=circleName_fontlimit]").css({"color":"#FA4848"});
+                        //阻止提交操作：
+                        //do something
+                    }else{
+                        $(this).css({"border-color": '#D8D8D8'});
+                        //span变成以前的颜色
+                        $(this).siblings("p").children("span[id=circleName_fontlimit]").html(" ");
+                        $(this).siblings("p").children("span[id=circleName_fontlimit]").html("15字内");
+                        $(this).siblings("p").children("span[id=circleName_fontlimit]").css({"color":"#999"});
+                    }
+                })
+
+                //textarea
+                $("li textarea").each(function(index,item){
+                    var totallength = $(this).val().length;
+                    //圈子名称
+                    if(totallength == 0){
+                        $(this).css({"border":"0.0556rem solid #FA4848"});
+                        $(this).siblings("p").children("span[class=notNull]").html("此条不能为空");
+                        $(this).siblings("p").children("span[class=notNull]").css({"color":"#FA4848"});
+                    }else{
+                        $(this).siblings("p").children("span[class=notNull]").html(" ");
+                        $(this).css({"border-color": '#D8D8D8'});
+                        $(this).siblings("span").css({"color":"#999"});
+                    }
+                });
+            })
+        });
+
+    </script>
+
+<!--  weui城市选择js -->
+    <script src="js/jquery-weui.min.js"></script>
+    <script src="js/city-picker.min.js"></script>
+    <!-- 城市选择 -->
+    <script>
+        var city1 = "湖北省";
+        var city2 = "武汉市";
+        var city3 = "武昌区";
+        $("#start").val(city1+" "+city2+" "+city3);
+        $("#start").cityPicker({
+            title: "选择所在区域",
+            onChange: function (picker, values, displayValues) {
+                //do something
+            }
+        });
+    </script>
+
+    <!--头像图片选择-->
+    <script type="text/javascript">
+
+        $(function(){
+//          选择头像图片  点击事件
+            $(".myheadPic").click(function(){
+                $.actions({
+                    actions: [{
+                        text: "从手机相册里面选择",
+                        onClick: function() {
+                            //do something
+                        }
+                    },{
+                        text: "拍照上传",
+                        onClick: function() {
+                            //do something
+                        }
+                    }]
+                });
+            })
+
+            //私密 按钮状态切换
+            //默认为私密状态 flag = false
+            var flag = false;
+            var changeState = document.querySelector("#changeState");
+
+            changeState.addEventListener("touchstart",function(e){
+                xStart = e.changedTouches[0].clientX;
+                left = parseInt(changeState.style.left) || 0;
+            });
+
+            changeState.addEventListener("touchmove",function(e){
+                xEnd = e.changedTouches[0].clientX;
+                move = xEnd-xStart;
+                if(move > 5 && flag == false){
+                    //开启状态
+                    $(this).attr("src","images/hj/btn_sm_on.png");
+                    flag = true;
+                    //do something
+
+
+                }else if(move < -5 && flag == true){
+                    //私密状态
+                    $(this).attr("src","images/hj/btn_sm_off.png");
+                    flag = false;
+                    //do something
+                }
+            });
+
+        })
+
+
+    </script>
+</body>
+</html>

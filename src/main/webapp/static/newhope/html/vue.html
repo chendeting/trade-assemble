@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<style type="text/css">
+    .active{
+        color:#1CA4F7;
+    }
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .5s
+    }
+    .fade-enter, .fade-leave-active {
+        opacity: 0
+    }
+    .bounce-enter-active {
+        animation: bounce-in .5s;
+    }
+    .bounce-leave-active {
+        animation: bounce-out .5s;
+    }
+    @keyframes bounce-in {
+        0% {
+            transform: scale(0);
+        }
+        50% {
+            transform: scale(1.5);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+    @keyframes bounce-out {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.5);
+        }
+        100% {
+            transform: scale(0);
+        }
+    }
+    .component-fade-enter-active, .component-fade-leave-active {
+        transition: opacity .3s ease;
+    }
+    .component-fade-enter, .component-fade-leave-active {
+        opacity: 0;
+    }
+    .list-complete-item {
+        transition: all 1s;
+        display: inline-block;
+        margin-right: 10px;
+    }
+    .list-complete-enter, .list-complete-leave-active {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    .list-complete-leave-active {
+        position: absolute;
+    }
+    .color-preview {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+    }
+</style>
+<body>
+    <div id="demo">{{ fullName = 'John Doe' }}
+        <template v-if="tem==='ok'">
+            <h1>Title</h1>
+            <p>Paragraph 1</p>
+            <p>Paragraph 2</p>
+        </template>
+        <template v-else>
+            <h1>没有内容</h1>
+        </template>
+        <div v-if="type === 'A'">
+            A
+        </div>
+        <div v-else-if="type === 'B'">
+            B
+        </div>
+        <div v-else-if="type === 'C'">
+            C
+        </div>
+        <div v-else>
+            Not A/B/C
+        </div>
+    </div>
+    <div id="watch-example">
+        <p>
+            Ask a yes/no question:
+            <input v-model="question">
+        </p>
+        <p>{{ answer }}</p>
+    </div>
+    <div class="static" v-bind:class="classObj">哈人一倒烟啊</div>
+    <div id="todo-list-example">
+        <input v-model="newTodoText" v-on:keyup.enter="addNewTodo" placeholder="Add a todo"/>
+        <ul>
+            <li is="todo-item" v-for="(todo, index) in todos" v-bind:title="todo" v-on:remove="todos.splice(index, 1)">
+
+            </li>
+        </ul>
+    </div>
+    <div id="example-1">
+        <button v-on:click="counter+=1">增加1</button>
+        <p>这个按钮被点击了{{ counter }}次。</p>
+    </div>
+    <div id="example-2">
+        <button v-on:click="warn('Form cannot be submitted yet.', $event)">Greet</button>
+    </div>
+    <div id="example-3">
+        <input type="checkbox" id="checkbox" v-model="checked">
+        <label for="checkbox">{{ checked }}</label>
+    </div>
+    <div id="example-4">
+        <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+        <label for="jack">Jack</label>
+        <input type="checkbox" id="john" value="John" v-model="checkedNames">
+        <label for="john">John</label>
+        <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+        <label for="mike">Mike</label>
+        <br>
+        <span>Checked names: {{ checkedNames }}</span>
+    </div>
+    <div id="example-5">
+        <input id="one" type="radio" value="one" v-model="picked"/>
+        <label for="one">one</label>
+        <input id="two" type="radio" value="two" v-model="picked"/>
+        <label for="two">two</label><br>
+        <span>Picked:{{picked}}</span>
+    </div>
+    <div id="example-6">
+        <select v-model="selected">
+            <option v-for="option in options" v-bind:value="option.value">{{option.text}}</option>
+        </select><br>
+        <span>selected:{{selected}}</span>
+    </div>
+    <div id="example-7">
+        <input type="checkbox"
+        v-model="toggle"
+        v-bind:true-value="a"
+        v-bind:false-value="b"
+        >
+        <span>{{toggle}}</span>
+    </div>
+    <div id="example-8">
+        <select v-model="selected">
+            <option v-bind:value="{number:123}">123</option>
+        </select>
+        <span>{{selected.number}}</span>
+    </div>
+    <div id="example-9">
+        <my-component></my-component>
+    </div>
+    <div id="example-10">
+        <component1></component1>
+        <component1></component1>
+        <component1></component1>
+    </div>
+    <div id="example-11">
+        <child message="hello"></child>
+    </div>
+    <div id="example-12">
+        <input v-model="parentMsg">
+        <br>
+        <child :message="parentMsg"></child>
+        <br>
+    </div>
+    <div id="example-13">
+        <p>{{total}}</p>
+        <button-counter v-on:increment="incrementTotal"></button-counter>
+        <button-counter v-on:increment="incrementTotal"></button-counter>
+    </div>
+    <div id="example-14">
+        <app-layout>
+            <h1 slot="header">这里是标题</h1>
+            <p>主要内容的一个段落。</p>
+            <p>另一个主要段落。</p>
+            <p slot="footer">这里是尾部</p>
+        </app-layout>
+    </div>
+    <div id="example-15">
+        <props-child>
+            <template scope="props">
+                <span>hello from parents</span>
+                <span>{{props.text}}</span>
+            </template>
+        </props-child>
+    </div>
+    <div id="example-16">
+        <my-awesome-list :items="items">
+            <template solt="item" scope="props">
+                <li class="my-fancy-item">{{props.text}}</li>
+            </template>
+        </my-awesome-list>
+    </div>
+    <div id="example-17">
+        <example></example>
+    </div>
+    <div id="example-18">
+        <button v-on:click="show=!show">
+            Toggle
+        </button>
+        <transition name="fade">
+            <p v-if="show">hello</p>
+        </transition>
+    </div>
+    <div id="example-19">
+        <button @click="show=!show">Toggle show</button>
+        <transition name="bounce">
+            <p v-if="show">Look at me</p>
+        </transition>
+    </div>
+    <div id="example-20">
+        <button @click="show=!show">
+            Toggle
+        </button>
+        <transition v-on:before-enter="beforeEnter" v-on:enter="enter"
+        v-on:leave="leave"
+        v-bind:css="false"
+        >
+            <p v-if="show">
+                Demo
+            </p>
+        </transition>
+    </div>
+    <!--<div id="example-21">
+        <transition name="fade" mode="out-in">
+            <button @click="diState" v-bind:key="docState">
+                {{buttonMessage}}
+            </button>
+        </transition>
+    </div>-->
+    <div id="example-22">
+        <transition name="component-fade" mode="out-in">
+            <component v-bind:is="view"></component>
+        </transition>
+    </div>
+    <div id="example-23">
+        <button v-on:click="shuffle">Shuffle</button>
+        <button v-on:click="add">Add</button>
+        <button v-on:click="remove">Remove</button>
+        <transition-group name="list-complete" tag="p">
+            <span v-for="item in items" v-bind:key="item" class="list-complete-item">
+                {{item}}
+            </span>
+        </transition-group>
+    </div>
+    <div id="example-24">
+        <input v-model="query">
+        <transition-group name="staggered-fade" tag="ul"
+           v-bind:css="false"
+           v-on:before-enter="beforeEnter"
+           v-on:enter="enter"
+           v-on:leave="leave">
+            <li v-for="(item,index) in computedList"
+                v-bind:key="item.msg"
+                v-bind:data-index="index">{{item.msg}}</li>
+        </transition-group>
+    </div>
+    <div id="example-25">
+        Fade In:<input type="range" v-model="fadeInDuration" min="0" v-bind:max="maxFadeDuration">
+        Fade Out:<input type="range" v-model="fadeOutDuration" min="0" v-bind:max="maxFadeDuration">
+        <transition v-bind:css="false"
+                   v-on:before-enter="beforeEnter"
+                   v-on:enter="enter"
+                   v-on:leave="leave">
+            <p v-if="show">hello</p>
+        </transition>
+        <button v-on:click="stop=true">Stop it!</button>
+    </div>
+    <div id="example-26">
+        <input v-model.number="number" type="number" step="20">
+        <p>{{animatedNumber}}</p>
+    </div>
+    <div id="example-27">
+        <input v-model="colorQuery" v-on:keyup.enter="updateColor" placeholder="Enter a color">
+        <button v-on:click="updateColor">Update</button>
+        <p>Preview:</p>
+        <span v-bind:style="{backgroundColor:tweenedCSSColor}" class="color-preview"></span>
+        <p>{{tweenedCSSColor}}</p>
+    </div>
+    <div id="example-28">
+        <input v-model.number="firstNumber" type="number" step="20">+
+        <input v-model.number="secondNumber" type="number" step="20">={{result}}
+        <p>
+            <animated-integer v-bind:value="firstNumber"></animated-integer>+
+            <animated-integer v-bind:value="secondNumber"></animated-integer>=
+            <animated-integer v-bind:value="result"></animated-integer>
+        </p>
+    </div>
+    <div id="example-29">
+
+    </div>
+    <script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/lodash@4.13.1/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
+    <script src="https://unpkg.com/tween.js@16.3.4"></script>
+    <script src="https://unpkg.com/color-js@1.0.3/color.js"></script>
+    <script>
+        Vue.component('animated-integer',{
+            template:'<span>{{tweeningValue}}</span>',
+            props:{
+                value:{
+                    type:Number,
+                    required:true
+                }
+            },
+            data:function(){
+                return{
+                    tweeningValue:0
+                }
+            },
+            watch:{
+                value:function(newValue,oldValue){
+                    this.tween(oldValue,newValue)
+                }
+            },
+            mounted:function(){
+                this.tween(0,this.value)
+            },
+            methods: {
+                tween: function (startValue, endValue) {
+                    var vm = this
+                    function animate (time) {
+                        requestAnimationFrame(animate)
+                        TWEEN.update(time)
+                    }
+                    new TWEEN.Tween({ tweeningValue: startValue })
+                            .to({ tweeningValue: endValue }, 500)
+                            .onUpdate(function () {
+                                vm.tweeningValue = this.tweeningValue.toFixed(0)
+                            })
+                            .start()
+                    animate()
+                }
+            }
+        })
+        new Vue({
+            el:"#example-28",
+            data:{
+                firstNumber:20,
+                secondNumber:40
+            },
+            computed:{
+                result:function(){
+                    return this.firstNumber+this.secondNumber
+                }
+            }
+        })
+        var Color=net.brehaut.Color
+        new Vue({
+            el:"#example-27",
+            data:{
+                colorQuery:'',
+                color:{
+                    red:0,
+                    green:0,
+                    blue:0,
+                    alpha:1
+                },
+                tweenedColor:{}
+            },
+            created:function(){
+                this.tweenedColor=Object.assign({},this.color)
+            },
+            watch:{
+                color:function(){
+                    function animate(time){
+                        requestAnimationFrame(animate)
+                        TWEEN.update(time)
+                    }
+                    new TWEEN.Tween(this.tweenedColor)
+                            .to(this.color,750)
+                            .start()
+                    animate()
+                }
+            },
+            computed:{
+                tweenedCSSColor:function(){
+                    return new Color({
+                        red:this.tweenedColor.red,
+                        green:this.tweenedColor.green,
+                        blue:this.tweenedColor.blue,
+                        alpha:this.tweenedColor.alpha
+                    }).toCSS()
+                }
+            },
+            methods:{
+                updateColor: function () {
+                    this.color=new Color(this.colorQuery).toRGB()
+                    this.colorQuery=''
+                }
+            }
+        })
+        new Vue({
+            el:"#example-26",
+            data:{
+                number:0,
+                animatedNumber:0
+            },
+            watch:{
+                number:function(newValue,oldValue){
+                    var vm=this
+                    function animate(time){
+                        requestAnimationFrame(animate)
+                        TWEEN.update(time)
+                    }
+                    new TWEEN.Tween({tweeningNumber:oldValue})
+                            .easing(TWEEN.Easing.Quadratic.Out)
+                            .to({tweeningNumber:newValue},500)
+                            .onUpdate(function(){
+                                vm.animatedNumber=this.tweeningNumber.toFixed(0)
+                            })
+                            .start()
+                    animate()
+                }
+            }
+        })
+        new Vue({
+            el:"#example-25",
+            data:{
+                show:true,
+                fadeInDuration:1000,
+                fadeOutDuration:1000,
+                maxFadeDuration:1500,
+                stop:false
+            },
+            mounted:function(){
+                this.show=false
+            },
+            methods:{
+                beforeEnter:function(el){
+                    el.style.opacity=0
+                },
+                enter:function(el,done){
+                    var vm=this
+                    Velocity(el,
+                            {opacity:1},
+                            {
+                                duration:this.fadeInDuartion,
+                                complete:function(){
+                                    done()
+                                    if(!vm.stop) vm.show=false
+                                }
+                            }
+                    )
+                },
+                leave:function(el,done){
+                    var vm=this
+                    Velocity(el,
+                            {opacity:0},
+                            {
+                                duration:this.fadeOutDuration,
+                                complete: function () {
+                                    done()
+                                    vm.show=true
+                                }
+                            }
+                    )
+                }
+            }
+        })
+        new Vue({
+            el:"#example-24",
+            data:{
+                query:'',
+                list:[
+                    {msg:'Bruce Lee'},
+                    {msg:'Jackie Chan'},
+                    {msg:'Chuck Norris'},
+                    {msg:'Jet Li'},
+                    {msg:'Kung Fury'}
+                ]
+            },
+            computed:{
+                computedList:function(){
+                    var vm=this
+                    return this.list.filter(function(item){
+                        return item.msg.toLowerCase().indexOf(vm.query.toLowerCase())!==-1
+                    })
+                }
+            },
+            methods:{
+                beforeEnter:function(el){
+                    el.style.opacity=0
+                    el.style.height=0
+                },
+                enter:function(el,done){
+                    var delay=el.dataset.index*150
+                    setTimeout(function(){
+                        Velocity(
+                                el,
+                                {opacity:1,height:'1.6em'},
+                                {complete:done}
+                        )
+                    },
+                    delay)
+                },
+                leave:function(el,done){
+                    var delay=el.dataset.index*150
+                    setTimeout(function(){
+                        Velocity(
+                                el,
+                                {opacity:1,height:0},
+                                {complete:done}
+                        )
+                    },delay)
+                }
+            }
+        })
+        new Vue({
+            el:"#example-23",
+            data:{
+                items:[1,2,3,4,5,6,7,8,9],
+                nextNum:10
+            },
+            methods:{
+                randomIndex:function(){
+                    return Math.floor(Math.random() * this.items.length)
+                },
+                add:function(){
+                    this.items.splice(this.randomIndex(),0,this.nextNum++)
+                },
+                remove:function(){
+                    this.items.splice(this.randomIndex(),1)
+                },
+                shuffle:function(){
+                    this.items= _.shuffle(this.items)
+                },
+            }
+        })
+        new Vue({
+            el:"#example-22",
+            data:{
+                view:'v-a'
+            },
+            components:{
+                'v-a':{
+                    template:'<div>Component A</div>'
+                },
+                'v-b':{
+                    template:'<div>Component B</div>'
+                }
+            }
+        })
+        /*new Vue({
+            el:"#example-21",
+            data:{
+                docState:'on'
+            },
+            methods:{
+                diState:function(){
+                    if(this.docState=='on'){
+                        this.docState='off'
+                    }else{
+                        this.show='on'
+                    }
+                }
+            },
+            computed:{
+                buttonMessage:function(docState){
+                    docState='on'
+                    switch(docState){
+                        case 'on':return'on'
+                        case 'off':return'off'
+                    }
+                    console.log(docState)
+                }
+            }
+        })*/
+        new Vue({
+            el:"#example-20",
+            data:{
+                show:false
+            },
+            methods:{
+                beforeEnter:function(el){
+                    el.style.opacity=1
+                    el.style.transformOrigin='left'
+                },
+                enter:function(el,done){
+                    Velocity(el,{opcity:1,fontSize:'1.4rem'},{duartion:300})
+                    Velocity(el,{fontSize:'1em'},{complete:done})
+                },
+                leave:function(el,done){
+                    Velocity(el,{translateX:'15px',rotateZ:'50deg'},{duartion:500})
+                    Velocity(el,{rotateZ:'100deg'},{loop:2})
+                    Velocity(el,{
+                        rotateZ:'45deg',
+                        translateY:'30px',
+                        translateX:'30px',
+                        opacity:0
+                    },{complete:done})
+                }
+            }
+        })
+        new Vue({
+            el:"#example-19",
+            data:{
+                show:true
+            }
+        })
+        new Vue({
+            el:"#example-18",
+            data:{
+                show:true
+            }
+        })
+        Vue.component('example', {
+            template: '<span>{{ message }}</span>',
+            data: function () {
+                return {
+                    message: 'not updated'
+                }
+            },
+            methods: {
+                updateMessage: function () {
+                    this.message = 'updated'
+                    console.log(this.$el.textContent) // => '没有更新'
+                    this.$nextTick(function () {
+                        console.log(this.$el.textContent) // => '更新完成'
+                    })
+                }
+            }
+        })
+        new Vue({
+            el:"#example-17"
+        })
+        var child={
+                props:["items"],
+                template:'\
+            <ul>\
+               <slot neme="item"\
+                     v-for="item in items"\
+                     :text="item.text">\
+               </slot>\
+            </ul>\
+        '
+        }
+        new Vue({
+            el:"#example-16",
+            data:{
+                items:[{text:'这是作用域槽具有代表性的例子1'},{text:'这是作用域槽具有代表性的例子'}]
+            },
+            components:{
+                'my-awesome-list':child
+            }
+        })
+        Vue.component('propsChild',{
+            template:'<div class="child"><slot text="hello from child"></slot></div>'
+        })
+        new Vue({
+            el:"#example-15"
+        })
+        Vue.component('app-layout',{
+            template:'<div class="container"> <header> <slot name="header"></slot> </header> <main> <slot></slot> </main> <footer> <slot name="footer"></slot> </footer> </div>'
+        })
+        new Vue({
+            el:'#example-14'
+        })
+        Vue.component('button-counter',{
+            template:'<button v-on:click="increment">{{counter}}</button>',
+            data:function(){
+                return{
+                    counter:0
+                }
+            },
+            methods:{
+                increment:function(){
+                    this.counter+=1
+                    this.$emit('increment')
+                }
+            }
+        })
+        new Vue({
+            el:"#example-13",
+            data:{
+                total:0
+            },
+            methods:{
+                incrementTotal:function(){
+                    this.total+=1
+                }
+            }
+        })
+        Vue.component('child',{
+            props:['message'],
+            template:'<span>{{message}}</span>'
+        })
+        new Vue({
+            el:"#example-12",
+            data:{
+                parentMsg:''
+            }
+        })
+        Vue.component('child', {
+            // 声明 props
+            props: ['message'],
+            // 就像 data 一样，prop 可以用在模板内
+            // 同样也可以在 vm 实例中像 “this.message” 这样使用
+            template: '<span>{{ message }}</span>'
+        })
+        new Vue({
+            el:'#example-11'
+        })
+        var data={counter:0};
+        Vue.component('component1',{
+            template:'<button v-on:click="counter+=1">{{counter}}</button>',
+            data:function(){
+                return {counter:0}
+            }
+        })
+        new Vue({
+            el:'#example-10',
+        })
+        Vue.component('my-component',{
+            template:'<div>abcdefg</div>'
+        })
+        new Vue({
+            el:"#example-9",
+            component: {
+                'my-component': '<div>abcdefg</div>'
+            }
+        })
+        var vm11=new Vue({
+            el:"#example-8",
+            data:{
+                selected:'',
+                value:{
+                    number:123
+                }
+            }
+        })
+        var vm10=new Vue({
+            el:"#example-7",
+            data:{
+                a:true,
+                b:false,
+                toggle:''
+            }
+        })
+        var vm9=new Vue({
+            el:"#example-6",
+            data:{
+                selected:'A',
+                options:[
+                    {text:'one',value:'A'},
+                    {text:'two',value:'B'},
+                    {text:'three',value:'C'}
+                ]
+            }
+        })
+        var vm8=new Vue({
+            el:"#example-5",
+            data:{
+                picked:''
+            }
+        })
+        var vm7=new Vue({
+            el:"#example-4",
+            data:{
+                checkedNames:[]
+            }
+        })
+        var vm6=new Vue({
+            el:"#example-3",
+            data:{
+                checked:''
+            }
+        })
+        var vm5=new Vue({
+            el:"#example-1",
+            data:{
+                counter:0
+            }
+        });
+        var vm6=new Vue({
+            el:"#example-2",
+            data:{
+                name:'Vue.js'
+            },
+            methods:{
+                greet:function(event){
+                    alert('hello'+this.name+'!');
+                    alert(event.target.tagName);
+                },
+                warn:function(message,event){
+                    if(event) event.preventDefault()
+                    alert(message)
+                }
+            }
+        })
+        //vm6.greet(event);
+        var vm=new Vue({
+            el:"#demo",
+            data:{
+                firstName:"Foo",
+                lastName:"Bar",
+                tem:'not',
+                type:'B'
+
+            },
+            /*watch:{
+                firstName:function(val){
+                    this.fullName=val+ ' ' +this.lastName
+                },
+                lastName:function(val){
+                    this.fullName=this.firstName+' '+val
+                }
+            }*/
+            /*computed:{
+                fullName:function(){
+                    return this.firstName+' '+this.lastName
+                }
+            }*/
+            computed:{
+                fullName:{
+                    get:function(){
+                        return this.firstName+' '+this.lastName
+                    },
+                    set:function(newValue){
+                        var names=newValue.split(' ');
+                        this.firstName=names[0];
+                        this.lastName=names[names.length-1];
+                    }
+                }
+            }
+        })
+        var watchExampleVm=new Vue({
+            el:"#watch-example",
+            data:{
+                question:'',
+                answer:'I cannot give you an answer until you ask a question!'
+            },
+            watch:{
+                question:function(newQuestion){
+                    this.answer = 'Waiting for you to stop typing...';
+                    this.getAnswer();
+                }
+            },
+            methods:{
+                // _.debounce 是一个通过 lodash 限制操作频率的函数。
+                // 在这个例子中，我们希望限制访问yesno.wtf/api的频率
+                // ajax请求直到用户输入完毕才会发出
+                // 学习更多关于 _.debounce function (and its cousin
+                // _.throttle), 参考: https://lodash.com/docs#debounce
+                getAnswer: _.debounce(
+                        function () {
+                            var vm = this
+                            if (this.question.indexOf('?') === -1) {
+                                vm.answer = 'Questions usually contain a question mark. ;-)'
+                                return
+                            }
+                            vm.answer = 'Thinking...'
+                            axios.get('https://yesno.wtf/api')
+                                    .then(function (response) {
+                                        vm.answer = _.capitalize(response.data.answer)
+                                    })
+                                    .catch(function (error) {
+                                        vm.answer = 'Error! Could not reach the API. ' + error
+                                    })
+                        },
+                        // 这是我们为用户停止输入等待的毫秒数
+                        500
+                )
+            }
+        })
+        var vm3=new Vue({
+            el:".static",
+            data:{
+                /*classObj:{
+                 active:true,
+                 'text-danger':false
+                 }*/
+                isActive:true,
+                error:null
+            },
+            computed:{
+                classObj:function(){
+                    return{
+                        active:this.isActive&&!this.error,
+                        'text-danger':this.error&&this.error.type==='fatal'
+                    }
+                }
+            }
+        })
+        Vue.component('todo-item',{
+            template:'\
+            <li>\
+            {{title}}\
+            <button v-on:click="$emit(\'remove\')">X</button>\
+            </li>\
+            ',
+            props:['title']
+        });
+        var vm4=new Vue({
+            el:"#todo-list-example",
+            data:{
+                newTodoText:'',
+                todos:[
+                    'Do the dishes',
+                    'Take out the trash',
+                    'Mow the lawn'
+                ]
+            },
+            methods:{
+                addNewTodo:function(){
+                    this.todos.push(this.newTodoText),
+                    this.newTodoText=''
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>

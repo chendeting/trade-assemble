@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>录入发布消息</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="format-detection" content="telephone=no">
+    <!--script 适配-->
+    <script src="../js/htmlsize.js"></script>
+    <!--jquery-->
+    <script src="../js/jquery-3.1.1.min.js"></script>
+
+    <!--引入外部自定义js-->
+    <script src="../js/commonFunction.js"></script>
+
+    <!-- 城市选择 -->
+    <link rel="stylesheet" href="../css/LArea.css">
+
+    <!--动态加载模块-->
+    <script src="../js/template.js"></script>
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.min.css">
+
+    <!--weui-->
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/huadongjiazai.min.css">
+    <!--<link rel="stylesheet" href="../css/jquery-weui.min.css">-->
+
+    <!--引入onsaleing 自定义样式表-->
+    <link rel="stylesheet" href="../css/common.css"/>
+    <link rel="stylesheet" href="../css/hj_fabu_(feifangyang)_4step.css"/>
+    <!--<link type="text/css" rel="stylesheet" href="../css/selfSetCircleOff.css"/>-->
+
+    <style type="text/css">
+        /*城市选择插件*/
+        /*.weui-picker-modal .picker-item{*/
+            /*font-size: 0.8333rem;*/
+            /*color: #333333;*/
+            /*letter-spacing: 0;*/
+            /*text-align: center;*/
+        /*}*/
+        /*.weui-picker-modal{*/
+            /*background-color: #fff;*/
+        /*}*/
+
+        #mapScreen{
+            display: none;
+        }
+
+        .weui_select{
+            z-index:0;
+            outline: medium none;
+        }
+
+        /*提示字段*/
+        .weui_toast,.weui_toast_text,.weui_toast_visible{
+            width:auto;
+            height: auto;
+            font-size: 1.25rem;
+            line-height: 2.2222rem;
+            color:#fff;
+            opacity:0.75;
+            border-radius: 0.2222rem;
+        }
+        .toolbar{
+            text-align:left;
+        }
+
+
+    </style>
+
+</head>
+<!--图片上传模板-->
+<script type="text/html" id="uploadingImg">
+    <div class="photos btn_del">
+        <img src={{photoSrc}} alt="">
+    </div>
+</script>
+<body>
+<!--<div class="basic-info">-->
+    <!--<p class="circleName">猪场名称：<span class="name">张三的猪场</span></p>-->
+    <!--<p class="circleArea">所在地区：<span class="area">四川省德阳市三台县光明乡</span></p>-->
+<!--</div>-->
+<header>
+    <div class="stepAll">
+        <div class="step step1 currentStep">1<span>选择圈子</span></div>
+        <div class="step step2">2<span>拍卖场信息</span></div>
+        <div class="step step3">3<span>商品信息</span></div>
+        <div class="step step4">4<span>交割信息</span></div>
+    </div>
+    <div class="line line1"></div>
+    <div class="line line2"></div>
+    <div class="line line3"></div>
+</header>
+
+<section>
+    <!--第1步:选择圈子-->
+    <div style="display: none" id="step1_chooseCircle"  >
+        <p class="chooseCircle">选择圈子</p>
+        <!--<p class="hrefP"><a class="chooseHref" href="cxl_chooseCircle.html">点击去选择圈子<img src="../images/ic_list_detail.png"/></a></p>-->
+        <div style="display: flex;justify-content: center"><p class="hrefP"><a class="chooseHref">点击去选择圈子<img src="../images/ic_list_detail.png"/></a></p></div>
+        <p class="next-btn"><button class="nextStep">下一步</button></p>
+    </div>
+
+    <!--第2步:拍卖场信息-->
+    <div style="display: none" id="step2_auctionInfo">
+        <nav>拍卖场时间信息</nav>
+        <div class="timeInfo">
+            <div class="time1">
+                <p>
+                    <span>竞拍时间</span>
+                    <span class="notNUll">不能为空</span>
+                </p>
+                <div class="weui_row actionDate findinput">
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <input class="weui_input" id="IdauctionDate" type="text">
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="time2">
+                <p class="notNUll">
+                    <span class="notNUll">不能为空</span>
+                </p>
+                <!--<div class="weui-row fixedTime">-->
+                <!--<p class="fixedStart">10:00</p>-->
+                <!--<span>至</span>-->
+                <!--<p CLASS="fixedEnd">12:00</p>-->
+                <!--</div>-->
+                <div class="weui-row auctionTime">
+                    <div class="weui-col-40 findinput">
+                        <input class="weui_input" id="startTime" type="text" value="" placeholder="起始时间">
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </div>
+                    <div class="weui-col-6">至</div>
+                    <div class="weui-col-40 findinput">
+                        <input class="weui_input" id="endTime" type="text" value="" placeholder="终止时间">
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="weui-row stepChange">
+            <div class="weui-col-50">
+                <input type="button" id="step2Before" value="上一步">
+            </div>
+            <div class="weui-col-50">
+                <input type="button" id="step2After" value="下一步">
+            </div>
+        </div>
+    </div>
+
+    <!--第3步:商品信息-->
+    <div   id="step3_productInfo">
+        <nav>拍卖场时间信息</nav>
+        <ul>
+            <li>
+                <div class="weui-row weui-no-gutter">
+                    <div class="weui-col-25">
+                        <p>出栏品种:</p>
+                    </div>
+                    <div class="weui-col-75">
+                        <input type="text" id="pigType" value="" placeholder="请选择品种">
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="weui-row weui-no-gutter">
+                    <div class="weui-col-25">
+                        <p>出栏数量:</p>
+                    </div>
+                    <div class="weui-col-75">
+                        <input type="number"  value="" placeholder="请输入出栏数量">
+                        <span>头</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="weui-row weui-no-gutter">
+                    <div class="weui-col-25">
+                        <p>出栏价格:</p>
+                    </div>
+                    <!--出栏价格,现场议价切换按钮-->
+                    <div class="weui-col-75">
+                        <div id="priceWrite" class="btnPrice priceActive">价格录入</div>
+                        <div class="btnPrice btnPrice1">现场议价</div>
+                    </div>
+
+                    <!--待确定-->
+                    <!--<div class="weui-col-75">-->
+                        <!--<p>待确定</p>-->
+                    <!--</div>-->
+
+                    <!--固定价格列表 -->
+                    <!--<div class="weui-col-75">-->
+                        <!--<div class="priceList">-->
+                            <!--<p>￥18.86元/KG<span>(均重0-100KG)</span></p>-->
+                            <!--<p>￥18.86元/KG<span>(均重0-100KG)</span></p>-->
+                            <!--<p>￥18.86元/KG<span>(均重0-100KG)</span></p>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                </div>
+            </li>
+            <li class="LipriceWrite">
+                <ul>
+                    <!-- 均重列表 -->
+                    <!--<li>-->
+                        <!--<p>均重100-110KG</p>-->
+                        <!--<input type="number" value="18.92" />-->
+                        <!--<span>元/KG</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<p>均重100-110KG</p>-->
+                        <!--<input type="number" value="18.92" />-->
+                        <!--<span>元/KG</span>-->
+                    <!--</li>-->
+
+                    <!--手动输入-->
+                    <li class="handWrite">
+                        <input type="number" class="handWrite"  value="" placeholder="请输入出栏价格">
+                        <span class="Kg">元/KG</span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <div class="weui-row weui-no-gutter">
+                    <div class="weui-col-25">
+                        <p>预估均重:</p>
+                    </div>
+                    <div class="weui-col-75">
+                        <input type="number" value="" placeholder="请输入预估均重">
+                        <span>头</span>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="weui-row weui-no-gutter">
+                    <div class="weui-col-25">
+                        <p>控料情况:</p>
+                    </div>
+                    <div class="weui-col-75">
+                        <input type="text" id="kongliao" value="" placeholder="控料情况">
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <div class="addPigPhotos">
+            <p>添加猪群/控料照片
+                <span>(最多可以上传4张)</span>
+            </p>
+            <div id="addPhotos">
+                <div class="photoList">
+                    <!--<div class="photos btn_del">-->
+                    <!--<img src="../images/hj/pig_icon.png" alt="">-->
+                    <!--</div>-->
+                </div>
+                <div class="photos" id="addNewphoto">
+                    <img src="../images/hj/btn_addimg_normal.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="weui-row stepChange">
+            <div class="weui-col-50">
+                <input type="button" id="step3Before" value="上一步">
+            </div>
+            <div class="weui-col-50">
+                <input type="button" id="step3After" value="下一步">
+            </div>
+        </div>
+    </div>
+
+    <!--第4步:交割信息-->
+    <div style="display: none"  id="step4_jiaoGeInfo">
+        <nav>填写交割信息</nav>
+        <ul>
+            <li>
+                <div class="weui-row weui-no-gutter">
+                    <div class="weui-col-25">
+                        <p>交割日期:</p>
+                    </div>
+                    <div class="weui-col-75">
+                        <input type="text" id="jiaogeDate" value="" placeholder="请选择交割日期">
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="weui-row weui-no-gutter">
+                    <div class="weui-col-25">
+                        <p>猪场名字:</p>
+                    </div>
+                    <div class="weui-col-75">
+                        <input type="text" id="pigCircleName" value="" placeholder="请选择猪场名称">
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+                    </div>
+                    <div class="selectPig">
+                        <ul>
+                            <li>王二狗的猪场</li>
+                            <li>李花花的猪场</li>
+                            <li>张蛋蛋的猪场</li>
+                            <li>王二狗的猪场</li>
+                            <li>李花花的猪场</li>
+                            <li>张蛋蛋的猪场</li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="weui-col-25">
+                    <p>交割地址:</p>
+                </div>
+                <div class="weui-col-75">
+                    <input class="addr" type="text">
+                    <input type="button" id="location" value="定位" />
+                </div>
+
+            </li>
+            <li>
+                <div class="weui-col-25">
+                    <p>交通情况:</p>
+                </div>
+                <div class="weui-col-75 length">
+                    <input  type="text" id="lengthLimit" placeholder="限长" value="" >
+                    <i class="fa fa-caret-down" aria-hidden="true"></i>
+                </div>
+                <div class="weui-col-75 height">
+                    <input  type="text" id="heightLimit" placeholder="限高" value="" >
+                    <i class="fa fa-caret-down" aria-hidden="true"></i>
+                </div>
+            </li>
+            <li>
+                <textarea maxlength="15" name="otherTransportDetail" id="otherTransportDetail" placeholder="填写其他交通情况"></textarea>
+                <span>15字内</span>
+            </li>
+        </ul>
+        <div class="weui-row stepChange">
+            <div class="weui-col-50">
+                <input type="button" id="step4Before" value="上一步">
+            </div>
+            <div class="weui-col-50">
+                <input type="button" id="step4After" value="完成">
+            </div>
+        </div>
+    </div>
+
+</section>
+<!--蒙层-->
+<div style="display: none" class="mengceng">
+    <div class="Divimg">
+        <img src="../images/hj/pig_icon.png" id="preview" alt="">
+    </div>
+    <div class="DIvdelete">
+         <input type="button" id="btnDelete" value="删除" />
+    </div>
+</div>
+<div style="display: none" class="confirmDialog">
+    <p>删除这张照片？</p>
+    <div>
+        <input class="btnphotocancel" type="button" value="取消">
+        <input class="btnphotodel" type="button" value="删除">
+    </div>
+</div>
+<!--下拉选择蒙层-->
+<div style="display: none" class="selectType">
+
+</div>
+
+<!--  weui城市选择js -->
+<script src="../js/jquery-weui.min.js"></script>
+<script src="../js/city-picker.min.js"></script>
+<script src='../js/swiper.min.js' ></script>
+
+<script type="text/javascript">
+    //相关的配置文档
+    //获取当前时间
+    var myDate1 = new Date();
+    var currentDate = myDate1.toLocaleDateString();
+    var myDate2 = new Date(currentDate);
+    var localTime = myDate2.getTime();
+    var inputTime = "";
+    var inputTime_End = "";
+    console.log(localTime);
+
+    //value值
+    var IdauctionDate = '';
+    var newdate = "";
+
+    $("#IdauctionDate").calendar({
+        minDate:currentDate,
+        onChange: function (p, values, displayValues) {
+            $("#jiaogeDate").data("calendar").params.minDate = values[0];
+            $("#jiaogeDate").data("calendar").value = displayValues;
+            $("#jiaogeDate").val(values[0]);
+
+            IdauctionDate = $("#IdauctionDate").val();
+            var myDate = new Date(new Date(IdauctionDate).toLocaleDateString());
+            inputTime = myDate.getTime();
+            console.log("change",inputTime);
+
+
+        },
+        onOpen:function(){
+            IdauctionDate = $("#IdauctionDate").val();
+            var myDate = new Date(new Date(IdauctionDate).toLocaleDateString());
+
+            inputTime = myDate.getTime();
+            console.log("open",inputTime);
+
+        },
+        onClose:function(){
+            IdauctionDate = $("#IdauctionDate").val();
+            var myDate = new Date(new Date(IdauctionDate).toLocaleDateString());
+
+            inputTime_End = myDate.getTime();
+            console.log("close",inputTime_End);
+        }
+    });
+
+    //开始时间
+    var startValue = "";
+    var inputStartHour = " ";
+    var inputStartMinu = " ";
+    //结束时间
+    var endValue = " ";
+    var inputEndHour = " ";
+    var inputEndMinu = " ";
+    //获取当前的电脑时间
+    var startCurrentTime = new Date();
+    var startCurrentTimeHour = startCurrentTime.getHours();
+    var startCurrentTimeMinu= startCurrentTime.getMinutes();
+    $("#startTime").picker({
+        title: "选择开始时间",
+        cols: [
+            {
+                textAlign: 'center',
+                values: ['0点', '1点', '2点', '3点', '4点', '5点', '6点', '7点', '8点', '9点', '10点', '11点', '12点', '13点', '14点', '15点', '16点', '17点', '18点', '19点', '20点', '21点', '22点', '23点', '24点']
+            },
+            {
+                textAlign: 'center',
+                values: ['0分', '1分', '2分', '3分', '4分', '5分', '6分', '7分', '8分', '9分', '10分', '11分', '12分', '13分', '14分', '15分', '16分', '17分', '18分', '19分', '20分', '21分', '22分',
+                    '23分', '24分', '25分', '26分', '27分', '28分', '29分', '30分', '31分', '32分', '33分', '34分', '35分', '36分', '37分', '38分', '39分', '40分', '41分', '42分', '43分',
+                    '44分', '45分', '46分', '47分', '48分', '49分', '50分', '51分', '52分', '53分', '54分', '55分', '56分', '57分', '58分', '59分', '60分']
+            }
+        ],
+        onClose:function(){
+            //获取input的值
+            inputStartHour = parseInt(startValue[0]);
+            inputStartMinu = parseInt(startValue[1]);
+
+            //如果是当前local 日期一样
+            if(localTime == inputTime_End){
+                //比较大小
+                //hour的比较
+                if(inputStartHour < startCurrentTimeHour){
+                    $.toast("开始时间不能小于当前时间","text");
+                    //把选择框显示出来
+                    setTimeout(function(){
+                        $("#startTime").picker("open");
+                    },500);
+                }else if(inputStartHour ===  startCurrentTimeHour && inputStartMinu < startCurrentTimeMinu){
+                    $.toast("开始时间不能小于当前时间","text");
+                    //把选择框显示出来
+                    setTimeout(function(){
+                        $("#startTime").picker("open");
+                    },500);
+                }
+            }else{
+                console.log("开始时间随意");
+            }
+        },
+        onChange:function(p, values, displayValues){
+            startValue = values;
+        }
+
+    });
+    $("#endTime").picker({
+        title: "选择结束时间",
+        cols: [
+            {
+                textAlign: 'center',
+                values: ['0点', '1点', '2点', '3点', '4点', '5点', '6点', '7点', '8点', '9点', '10点', '11点', '12点', '13点', '14点', '15点', '16点', '17点', '18点', '19点', '20点', '21点', '22点', '23点', '24点']
+            },
+            {
+                textAlign: 'center',
+                values: ['0分', '1分', '2分', '3分', '4分', '5分', '6分', '7分', '8分', '9分', '10分', '11分', '12分', '13分', '14分', '15分', '16分', '17分', '18分', '19分', '20分', '21分', '22分',
+                    '23分', '24分', '25分', '26分', '27分', '28分', '29分', '30分', '31分', '32分', '33分', '34分', '35分', '36分', '37分', '38分', '39分', '40分', '41分', '42分', '43分',
+                    '44分', '45分', '46分', '47分', '48分', '49分', '50分', '51分', '52分', '53分', '54分', '55分', '56分', '57分', '58分', '59分', '60分']
+            }
+        ],
+        onClose:function(){
+            //获取input的值
+            var inputEndHour = parseInt(endValue[0]);
+            var inputEndMinu = parseInt(endValue[1]);
+
+            if(localTime == inputTime_End){
+                //比较大小
+                //hour的比较
+                console.log("结束时间随意");
+            }else{
+                if(inputEndHour < inputStartHour){
+                    $.toast("结束时间不能小于开始时间","text");
+                    //把选择框显示出来
+                    $("#endTime").picker("open");
+
+                }else if(inputEndHour ==  inputStartHour && inputEndMinu < inputStartMinu){
+                    $.toast("结束时间不能小于开始时间","text");
+                    //把选择框显示出来
+                    $("#endTime").picker("open");
+                }
+            }
+
+        },
+        onChange:function(p, values, displayValues){
+            endValue = values;
+        }
+    });
+
+    //交割日期
+    $("#jiaogeDate").calendar({
+        minDate:newdate,
+        onChange: function (p, values, displayValues) {
+
+        }
+    });
+    //控料选择
+    $("#kongliao").select({
+        title: "选择控料情况",
+        multi: false,
+        items: [
+            {
+                title: "自由采食",
+                value: 1
+            },
+            {
+                title: "控料4小时",
+                value: 2
+            },
+            {
+                title: "控料8小时",
+                value: 3
+            },
+            {
+                title: "控料12小时",
+                value: 4
+            },
+        ],
+        onClose:function(){
+            $(".selectType").css({"display":"none"});
+        }
+    });
+    //出栏品种
+    $("#pigType").select({
+        title: "选择出栏情况",
+        multi: false,
+        items: [
+            {
+                title: "黑猪",
+                value: 1
+            },
+            {
+                title: "土杂猪",
+                value: 2
+            },
+            {
+                title: "内三元",
+                value: 3
+            },
+            {
+                title: "外三元",
+                value: 4
+            },
+            {
+                title: "内二元",
+                value: 5
+            },
+            {
+                title: "外二元",
+                value: 6
+            },
+        ],
+        onClose:function(){
+            $(".selectType").css({"display":"none"});
+        }
+
+    });
+    //限制高度操作
+    $("#heightLimit").select({
+        title: "选择限高条件",
+        multi: false,
+        items: [
+            {
+                title: "未知",
+                value: 1
+            },
+            {
+                title: "3.5米运猪车",
+                value: 2
+            },
+            {
+                title: "4.5米运猪车",
+                value: 3
+            },
+            {
+                title: "5米运猪车",
+                value: 4
+            },
+        ],
+        onClose:function(){
+            $(".selectType").css({"display":"none"});
+        }
+    });
+    //限长操作
+    $("#lengthLimit").select({
+        title: "选择限长条件",
+        multi: false,
+        items: [
+            {
+                title: "未知",
+                value: 1
+            },
+            {
+                title: "4.8米运猪车",
+                value: 2
+            },
+            {
+                title: "5.3米运猪车",
+                value: 3
+            },
+            {
+                title: "6.8米运猪车",
+                value: 4
+            },
+            {
+                title: "7.2米运猪车",
+                value: 4
+            },
+            {
+                title: "9.6米运猪车",
+                value: 4
+            },
+        ],
+        onClose:function(){
+            $(".selectType").css({"display":"none"});
+    }
+    });
+</script>
+<script type="text/javascript">
+    $("#pigType").on("click",function(){
+        $(".selectType").css({"display":"block"});
+    })
+
+    $("#kongliao").on("click",function(){
+        $(".selectType").css({"display":"block"});
+    })
+
+    $("#lengthLimit").on("click",function(){
+        $(".selectType").css({"display":"block"});
+    })
+    $("#heightLimit").on("click",function(){
+        $(".selectType").css({"display":"block"});
+    })
+    $(".picker-button").on("click",function(){
+        alert("aaaa");
+        $(".selectType").css({"display":"none"});
+    })
+    $(".close-select").on("click",function(){
+        alert("close-select");
+        $(".selectType").css({"display":"none"});
+    })
+    $(".Divimg>img").on("click",function(){
+        $(".mengceng").hide();
+        $("header,section").show();
+    })
+
+</script>
+<script type="text/javascript">
+    $(function(){
+        var contentNum2 = 0;
+        var contentNum3 = 0;
+        var contentNum4 = 0;
+
+        //1)选择圈子，点击"下一步"，跳到拍卖场页面
+        var clickNum = 0;
+        $(".chooseHref").on("click",function(){
+            clickNum++;
+            $(this).removeClass("errMes");
+
+        })
+        $(".nextStep").on("click",function(){
+            if(clickNum > 0){
+                $("#step1_chooseCircle").hide();
+                $("#step2_auctionInfo").show();
+
+                $(".stepAll>.step2").addClass("currentStep");
+                $(".line1").addClass("currentLine");
+
+                alert("step1跳转成功");
+            }else{
+                $(".chooseHref").addClass("errMes");
+                alert("step1跳转失败");
+            }
+        })
+
+        //2)拍卖圈信息
+        //点击"上一步"，跳到选择圈子页面
+        $("#step2Before").on("click",function(){
+            $("#step2_auctionInfo").hide();
+            $("#step1_chooseCircle").show();
+
+            $(".stepAll>.step2,.stepAll>.step3,.stepAll>.step4").removeClass("currentStep");
+            $(".line1,.line2,.line3").removeClass("currentLine");
+        });
+        //点击"下一步"，跳到商品信息页面
+        $("#step2After").on("click",function(){
+            //不跳转样式
+            if(contentNum2 <3){
+                //竞拍时间
+                $(".time1 input").each(function(index,item){
+                    if($(this).val().length == 0){
+                        $(".time1").addClass("errMes");
+                        //不跳转
+                    }else{
+                        contentNum2++;
+                    }
+                })
+                //起始时间
+                $(".time2 input").each(function(index,item){
+                    if($(this).val().length == 0){
+                        $(this).parents().css({"border-color":"#FA4848 "});
+                        $(".time2").addClass("errMes");
+                        //不跳转
+                    }else{
+                        contentNum2++;
+                    }
+                })
+            }
+            //跳转样式
+            if(contentNum2 >= 3){
+                $("#step2_auctionInfo").hide();
+                $("#step3_productInfo").show();
+
+                $(".stepAll>.step3,.stepAll>.step2,.stepAll>.step1").addClass("currentStep");
+                $(".line1,.line2").addClass("currentLine");
+            }
+
+            //跳转判断代码
+            if(contentNum2 == 0){
+                alert("step2跳转失败");
+            }else if(contentNum2 >= 3){
+                alert("step2跳转成功");
+            }
+        })
+
+        //3)商品信息
+        //点击"上一步"，跳到拍卖场页面
+        $("#step3Before").on("click",function(){
+            $("#step3_productInfo").hide();
+            $("#step2_auctionInfo").show();
+
+            $(".stepAll>.step3,.stepAll>.step4").removeClass("currentStep");
+            $(".line2").removeClass("currentLine");
+
+        })
+        //点击"下一步"，跳到交割信息页面
+        $("#step3After").on("click",function(){
+            contentNum3 = 0;
+            //不跳转样式
+            if(contentNum3 < 4){
+                //竞拍时间
+                $("#step3_productInfo>ul>li>.weui-row>.weui-col-75>input").each(function(index,item){
+                    console.log($(this));
+                    if($(this).val().length == 0){
+                        $($(this)).addClass("errMes");
+                        //不跳转
+                    }else{
+                        contentNum3++;
+                        console.log(contentNum3);
+                    }
+                })
+            }
+            //跳转样式
+            if(contentNum3 >= 4){
+                $("#step3_productInfo").hide();
+                $("#step4_jiaoGeInfo").show();
+
+                $(".stepAll>.step4,.stepAll>.step3,.stepAll>.step2,.stepAll>.step1").addClass("currentStep");
+                $(".line3,.line2,.line1").addClass("currentLine");
+            }
+            //跳转判断代码
+            if(contentNum3 == 0){
+                alert("step3跳转失败");
+            }else if(contentNum3 >= 4){
+                alert("step3跳转成功");
+            }
+        })
+        //step 3 出栏价格切换
+        $(".btnPrice").on("click",function(){
+            if(!$(this).hasClass("priceActive")){
+                $(this).addClass("priceActive");
+                $(this).siblings().removeClass("priceActive");
+            }
+
+            if($(this).attr("id") == "priceWrite"){
+                //价格录入
+                $("li.LipriceWrite").show();
+            }else{
+                $("li.LipriceWrite").hide();
+            }
+        })
+
+        //4)交割信息
+        //点击"上一步"，跳到拍卖场页面
+        $("#step4Before").on("click",function(){
+            $("#step4_jiaoGeInfo").hide();
+            $("#step3_productInfo").show();
+
+            $(".stepAll>.step4").removeClass("currentStep");
+            $(".line3").removeClass("currentLine");
+
+        })
+        //点击"完成"，跳到下一个页面
+        $("#step4After").on("click",function(){
+            contentNum4 = 0;
+            //不跳转样式
+            if(contentNum4 < 5){
+                //竞拍时间
+                $("#step4_jiaoGeInfo>ul>li .weui-col-75>input").each(function(index,item){
+                    if($(this).val().length == 0){
+                        $(this).addClass("errMes");
+                        //不跳转
+                    }else{
+                        contentNum4++;
+                    }
+                })
+            }
+            //跳转样式
+            if(contentNum4 >= 5){
+                $("#step3_productInfo").hide();
+                $("#step4_jiaoGeInfo").show();
+
+                $(".stepAll>.step4,.stepAll>.step3,.stepAll>.step2,.stepAll>.step1").addClass("currentStep");
+                $(".line3,.line2,.line1").addClass("currentLine");
+            }
+
+            //跳转判断代码
+            if(contentNum4 < 5){
+                alert("step4跳转失败");
+            }else if(contentNum4 >= 5){
+                alert("step4跳转成功");
+            }
+        })
+
+        //头像上传
+        var delPhoto = "";
+        $("#addNewphoto").on("click",function(){
+            //上传的假的地址
+            var data = {
+                photoSrc: '../images/hj/pig_icon.png'
+            };
+            var html =  template('uploadingImg', data);
+            //将新的图片加入到photoList中
+            $(".photoList").append(html);
+            //判断上传的照片的数量 >4 ,就不允许上传
+            $(".photoList>div").each(function(index,item){
+                if(index == 3){
+                    //最大上传限度  隐藏上传按钮
+                    $("#addNewphoto").hide();
+                }
+            })
+
+            //图片点击事件
+            $(".btn_del").each(function(index,item){
+
+                $(this).click(function(){
+                    delPhoto = $(this);
+                    $(".mengceng").show();
+                    $("header,section").hide();
+                })
+            })
+        })
+
+        //图片删除事件
+        $(document).on("click", "#btnDelete", function() {
+            $(".confirmDialog").show();
+        });
+
+        //删除照片取消
+        $('.btnphotocancel').on("click",function(){
+            $(".confirmDialog").hide();
+            $(".mengceng").hide();
+            $("header,section").show();
+        })
+        //删除图片确认
+        $('.btnphotodel').on("click",function(){
+            $(".confirmDialog").hide();
+            $(".mengceng").hide();
+            $("header,section").show();
+
+            delPhoto.remove();
+
+            $(".photoList>div").each(function(index,item){
+                if(index <= 3){
+                    //最大上传限度  隐藏上传按钮
+                    $("#addNewphoto").show();
+                }
+            })
+
+        })
+
+
+        //验证表单
+        $(".time1 input").on("click",function(){
+            $(".time1").removeClass("errMes");
+        })
+        var count = 0;
+        $(".time2 input").on("click",function(){
+            if($(this).attr("id") == "startTime"){
+                count++;
+                $(this).parent().css({"border-color":"#D8D8D8"});
+            }
+            if($(this).attr("id") == "endTime"){
+                count++;
+                $(this).parent().css({"border-color":"#D8D8D8"});
+            }
+            if(count == 2){
+                $(".time2").removeClass("errMes");
+            }
+        })
+        $(".weui-col-75 input").on("click",function(){
+            $(this).removeClass("errMes");
+        })
+        $("#step4_jiaoGeInfo>ul>li .weui-col-75>input,#step4_jiaoGeInfo>ul>li>textarea").on("click",function(){
+            $(this).removeClass("errMes");
+        })
+
+        //猪场名字 点击出现下拉框
+        $("#pigCircleName").on("click",function(){
+            $(".selectPig").show();
+
+            $(".selectPig>ul>li").on("click",function(){
+//                console.log($(this).text());
+//                console.log( $("#pigCircleName").val());
+                $("#pigCircleName").val($(this).text());
+                $(".selectPig").hide();
+            })
+        })
+    })
+</script>
+</body>
+</html>

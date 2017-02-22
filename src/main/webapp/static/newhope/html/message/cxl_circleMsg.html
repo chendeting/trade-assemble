@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="x5-orientation" content="portrait">
+    <title>消息</title>
+    <link type="text/css" rel="stylesheet" href="../css/weui.min.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/huadongjiazai.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/common.css"/>
+    <!--<link type="text/css" rel="stylesheet" href="../css/myTradeRecord.css"/>-->
+    <!--<link type="text/css" rel="stylesheet" href="../css/Published.css"/>-->
+    <link type="text/css" rel="stylesheet" href="../css/font-awesome/css/font-awesome.min.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/messages.css"/>
+    <script type="text/javascript" charset="utf-8" src="../js/htmlsize.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/jquery.downCount.js"></script>
+    <!--动态加载模块-->
+    <script src="../js/template.js"></script>
+
+</head>
+<body>
+<div class="msg-box">
+    <ul class="msg-ul">
+        <li class="circle-msg">
+            <p class="img-p"><img class="system-img-g" src="../images/pig_icon.png"/><span class="haveMsg"></span></p>
+            <p class="msg-content">
+                <span class="title">暂不存在交易圈</span>
+                <span class="content">圈主将您移出了该交易圈.</span>
+            </p>
+            <p class="time">下午4:25</p>
+        </li>
+        <li class="circle-msg">
+            <p class="img-p"><img class="system-img-g" src="../images/pig_icon.png"/><span class="haveMsg"></span></p>
+            <div class="clickDiv">
+                <p class="msg-content">
+                    <span class="title">乐山放养交易圈</span>
+                    <span class="content">圈子的拍卖还有5分钟开始，请设定11月19日的销售价格.</span>
+                </p>
+                <p class="time">下午4:10</p>
+                <p class="detail-p">
+                    <img class="detail-img" src="../images/arrow.png"/>
+                </p>
+            </div>
+        </li>
+        <li class="circle-msg">
+            <p class="img-p"><img class="system-img-g" src="../images/pig_icon.png"/><span class="haveMsg"></span></p>
+            <p class="msg-content">
+                <span class="title">乐山放养交易圈</span>
+                <span class="content">王可可退出了乐山放养交易圈.</span>
+            </p>
+            <p class="time">下午4:08</p>
+            <span class="btn know">知道了</span>
+        </li>
+        <li class="circle-msg">
+            <p class="img-p"><img class="system-img-g" src="../images/pig_icon.png"/><span class="haveMsg"></span></p>
+            <div class="clickDiv">
+                <p class="msg-content">
+                    <span class="title">川北放养交易圈</span>
+                    <span class="content">有新猪500头上架，9月12日10:00:00开拍.</span>
+                </p>
+                <p class="time">下午4:10</p>
+                <p class="detail-p">
+                    <img class="detail-img" src="../images/arrow.png"/>
+                </p>
+            </div>
+        </li>
+        <li class="circle-msg">
+            <p class="img-p"><img class="system-img-g" src="../images/pig_icon.png"/><span class="haveMsg"></span></p>
+            <div class="clickDiv">
+                <p class="msg-content">
+                    <span class="title">乐山放养交易圈</span>
+                    <span class="content">您好，您的身份由“卖家”变成了“买家”，之后你在这个圈子只能进行买猪操作.</span>
+                </p>
+                <p class="time">上午8:00</p>
+                <p class="detail-p">
+                    <img class="detail-img" src="../images/arrow.png"/>
+                </p>
+            </div>
+        </li>
+        <li class="circle-msg">
+            <p class="img-p"><img class="system-img-g" src="../images/pig_icon.png"/><span class="haveMsg"></span></p>
+            <div class="clickDiv">
+                <p class="msg-content">
+                    <span class="title">乐山放养交易圈</span>
+                    <span class="content">王可可预订的王五猪场生猪100头还未交割，请尽快处理.</span>
+                </p>
+                <p class="time">上午6:00</p>
+                <p class="detail-p">
+                    <img class="detail-img" src="../images/arrow.png"/>
+                </p>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+
+
+<div class="weui_tabbar">
+    <a href="#" class="weui_tabbar_item">
+        <div class="weui_tabbar_icon">
+            <img class="normal" src="../images/btn_tabbar_jy_normal.png" alt="">
+            <img class="selected" src="../images/btn_tabbar_jy_selected.png"/>
+        </div>
+        <p class="weui_tabbar_label">交易</p>
+    </a>
+    <a href="../fabu/cxl_Published.html" class="weui_tabbar_item">
+        <div class="weui_tabbar_icon">
+            <img class="normal" src="../images/btn_tabbar_hq_normal.png" alt="">
+            <img class="selected" src="../images/btn_tabbar_hq_selected.png"/>
+        </div>
+        <p class="weui_tabbar_label">发布</p>
+    </a>
+    <a href="###" class="weui_tabbar_item  weui_bar_item_on">
+        <div class="weui_tabbar_icon">
+            <img class="normal" src="../images/btn_tabbar_xx_normal.png" alt="">
+            <img class="selected" src="../images/btn_tabbar_xx_selected.png"/>
+            <span class="haveMsg"></span>
+        </div>
+        <p class="weui_tabbar_label">消息</p>
+    </a>
+    <a href="../cxl_changePersonInfo.html" class="weui_tabbar_item">
+        <div class="weui_tabbar_icon">
+            <img class="normal"  src="../images/btn_tabbar_me_normal.png" alt="">
+            <img class="selected" src="../images/btn_tabbar_me_selected.png"/>
+        </div>
+        <p class="weui_tabbar_label">我</p>
+    </a>
+</div>
+<script type="text/javascript">
+    $(".msg-ul li").each(function(){
+        var liHeight=$(this).height();
+        var imgHeight=$(this).find(".img-p").height();
+        //console.log(imgHeight);
+        //console.log(liHeight);
+        var imgTop=((liHeight-imgHeight)/2+2)+'px';
+        $(this).find(".img-p").css("margin-top",imgTop);
+    });
+
+</script>
+
+</body>
+</html>

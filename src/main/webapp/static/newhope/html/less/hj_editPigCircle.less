@@ -1,0 +1,309 @@
+@navDatebg:#d8d8d8;
+@navDatefontColor:#fff;
+@navDatefontColor_active:#154fa1;
+@countdownfontColor:#6b6b6b;
+@farmNamecolor:#343434;
+@farmAddrcolor:#474747;
+@farmPrice:#727681;
+@farmWeigh:#abafb8;
+@saledColor:#afb0b2;
+@saledCount:#f1252e;
+
+//已经卖出bg
+@saledBgcolor:#f8f9fb;
+@borderTop:#d8dad9;
+@splitLine:#ebebeb;
+
+
+
+//新建交易圈
+//1）下拉箭头
+@setnewcircle-upIcon:#bababc;
+//2）border
+@setnewcircle-border:#d8d8d8;
+//3)bgcolor;
+@setnewcircle-textBgcolor:#fff;
+//4)fontcolor
+@setnewcircle-fontcolor:#999999;
+//borderWidth
+@setnewcircle-borderWidth:0.0556rem;
+//fontsize 26px;
+@setnewcircle-fontsize:0.7222rem;
+//整体背景色
+@setnewcircle-bgcolor:#ebebeb;
+//placeholder
+@placeholder-color:#cccccc;
+//输入的文字
+@enterfontColor:#282828;
+//新建按钮
+@btn_create:#1BBD3D;
+//30的字体大小
+@font30:0.8333rem;
+//color999
+@color999:#999;
+//color333
+@color333:#333;
+
+
+body{
+  -webkit-appearance: none;
+  height: 100%;
+  background-color: @setnewcircle-bgcolor;
+}
+input[type=button]{
+  -webkit-appearance:none;
+  outline:none
+}
+.createPigcircle{
+  width:17.3333rem;
+  margin:0 auto;
+  > ul{
+    >li{
+      margin:0;
+      width:17.3333rem;
+      >p{
+        font-size: @setnewcircle-fontsize;
+        color: @setnewcircle-fontcolor;
+        letter-spacing: 0;
+        line-height: @font30;
+      }
+      input,textarea{
+        resize:none;
+        //width:100%;
+        -webkit-appearance: none;
+        box-shadow: none;
+        outline: none;
+        border-radius: 0.1111rem;
+        border:@setnewcircle-borderWidth solid @setnewcircle-border;
+        background-color: @setnewcircle-textBgcolor;
+      }
+    }
+
+    >li:nth-child(1){
+      position: relative;
+      margin-top:1.3333rem;
+      >p{
+        margin-bottom: 0.4444rem;
+        font-size: @setnewcircle-fontsize;
+        display: flex;
+        justify-content: space-between;
+        line-height: @font30;
+        span{
+          line-height: @font30;
+          font-size: @setnewcircle-fontsize;
+        }
+      }
+      >input{
+        width: 16.2222rem;
+        height: 1.1222rem;
+        padding:0.55rem;
+        color: @enterfontColor;
+        font-size: 0.8333rem;
+        &::-webkit-input-placeholder {
+          font-size: 0.8333rem;
+          color: @placeholder-color;
+          letter-spacing: 0;
+          line-height: 1.0556rem;
+          text-align: left;
+        }
+      }
+    }
+    >li:nth-child(2){
+      margin-top:0.75rem;
+      >p{
+        display: flex;
+        justify-content: space-between;
+        line-height: @font30;
+        font-size: @setnewcircle-fontsize;
+        span{
+          line-height: @font30;
+          font-size: @setnewcircle-fontsize;
+        }
+      }
+      >input{
+          margin-top:0.4444rem;
+          color:#333333;
+          width: 16.2222rem;
+          height: 1.1222rem;
+          padding:0.55rem;
+          font-size: 0.8333rem;
+          &::-webkit-input-placeholder {
+            font-size: 0.8333rem;
+            color: @placeholder-color;
+            letter-spacing: 0;
+            line-height: 1.0556rem;
+            text-align: left;
+          }
+        }
+        > i{
+          color:@setnewcircle-fontcolor;
+          //line-height: 2.2222rem;
+          position: absolute;
+          bottom:1.3rem;
+          right:1rem;
+        }
+
+    }
+    >li:nth-child(3){
+      margin-top:0.6667rem;
+      >p{
+        display: flex;
+        justify-content: space-between;
+        line-height: @font30;
+        font-size: @setnewcircle-fontsize;
+        span{
+          line-height: @font30;
+          font-size: @setnewcircle-fontsize;
+        }
+      }
+      >div.weui-row{
+        margin-top: 0.4444rem;
+        >div.weui-col-70{
+          .content-block{
+            position: relative;
+            >input#start{
+              display: block;
+              width: 10rem;
+              height: 1rem;
+              color: @enterfontColor;
+              font-size: 0.8333rem;
+              padding:0.55rem 2rem 0.55rem 0.55rem;
+
+            }
+            >i{
+              position: absolute;
+              right:1rem;
+              top: 0.9rem;
+              font-size: 0.6rem;
+              color:@color999;
+            }
+          }
+        }
+        >div.weui-col-30{
+          position: relative;
+          display: flex;
+          align-items: center;
+          >input{
+            color: #fff;
+            width: 3.8444rem;
+            height: 2.2rem;
+            background: #1BBD3C;
+            border-radius: 0.1111rem;
+            background-image: url(../images/hj/ic_myzc_dress.png);
+            background-size: 0.8rem 0.9rem;
+            background-repeat: no-repeat;
+            background-position: 0.3rem 0.7rem;
+            padding-left: 0.6rem;
+          }
+        }
+      }
+      >input{
+        margin-top:0.2222rem;
+        width: 16.2222rem;
+        height: 1.1222rem;
+        padding:0.55rem;
+        color: @enterfontColor;
+        font-size: 0.8333rem;
+        &::-webkit-input-placeholder {
+          font-size: 0.8333rem;
+          color: @placeholder-color;
+          letter-spacing: 0;
+          line-height: 1.0556rem;
+          text-align: left;
+        }
+      }
+    }
+    >li:nth-child(4){
+      margin-top:0.6667rem;
+      position: relative;
+      >p{
+        margin-bottom:0.4444rem;
+        display: flex;
+        justify-content: space-between;
+        line-height: 1.1389rem;
+        font-size: @setnewcircle-fontsize;
+        span{
+          font-size: @setnewcircle-fontsize;
+          line-height: 1.1389rem;
+        }
+      }
+      >div.weui-row{
+        margin-bottom:0.2222rem;
+        >div.weui-col-14{
+          >p{
+            font-size: @font30;
+            color: @color333;
+            line-height: 2.22rem;
+          }
+        }
+        >div.weui-col-86{
+          >div.content-block{
+            position: relative;
+            >input{
+              display: block;
+              width: 12.2833rem;
+              height: 1.1222rem;
+              font-size: 0.8333rem;
+              color:#333333;
+              padding:0.55rem 2rem 0.55rem 0.55rem;
+            }
+            >i{
+              color:@setnewcircle-fontcolor;
+              //line-height: 2.2222rem;
+              position: absolute;
+              bottom:0.8rem;
+              right:1rem;
+            }
+          }
+        }
+      }
+      >textarea{
+        margin-top:0.6667rem;
+        height: 2.789rem;
+        color:#333333;
+        width: 16.2222rem;
+        padding:0.55rem;
+        font-size: 0.8333rem;
+        &::-webkit-input-placeholder {
+          font-size: 0.8333rem;
+          color: @placeholder-color;
+          letter-spacing: 0;
+          line-height: 1.0556rem;
+          text-align: left;
+        }
+      }
+      >span{
+        position: absolute;
+        right:1rem;
+        bottom: 0.5rem;
+        font-size: 0.6667rem;
+        color: @color999;
+      }
+    }
+  }
+
+  //  提交申请
+  #div_footer{
+    -webkit-appearance: none;
+    margin-top:0.8889rem;
+    margin-bottom:2rem;
+    width:100%;
+    display: flex;
+    //垂直居中
+    align-items: center;
+    //水平居中
+    justify-content: center;
+    >input{
+      display: block;
+      width: 17.3333rem;
+      height: 2.5rem;
+      background-color: @btn_create;
+      border:0;
+      border-radius:0.1111rem;
+      font-size:1rem;
+      color:#fff;
+    }
+
+  }
+
+}

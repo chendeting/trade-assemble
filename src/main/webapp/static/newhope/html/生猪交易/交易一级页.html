@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../css/index.css">
+    <script type="text/javascript" charset="utf-8" src="../js/htmlsize.js"></script>
+    <script style="text/javascript" charset="UTF-8" src="../js/jquery-1.8.3.min.js"></script>
+    <style type="text/css">
+        ::-webkit-scrollbar{width:0px}
+        li{list-style-type: none;
+
+        }
+    </style>
+    <script type="text/javascript">
+        $(function(){
+            $("#swiper_btn1").click(function(){
+
+                $(".part1").show();
+                $(".part2").hide();
+                $(".part3").hide();
+                $(".part4").hide();
+                $(".part5").hide();
+                $(".part6").hide();
+                $(".swiper-wrapper li").eq(0).addClass("on");
+                $(".swiper-wrapper li").eq(1).removeClass("on");
+                $(".swiper-wrapper li").eq(2).removeClass("on");
+                $(".swiper-wrapper li").eq(3).removeClass("on");
+                $(".swiper-wrapper li").eq(4).removeClass("on");
+                $(".swiper-wrapper li").eq(5).removeClass("on");
+                $("#xiahuaxian1").show();
+                $("#xiahuaxian2").hide();
+                $("#xiahuaxian3").hide();
+                $("#xiahuaxian4").hide();
+                $("#xiahuaxian5").hide();
+                $("#xiahuaxian6").hide();
+
+            });
+        });
+        $(function(){
+            $("#swiper_btn2").click(function(){
+
+                $(".part2").show();
+                $(".part1").hide();
+                $(".part3").hide();
+                $(".part4").hide();
+                $(".part5").hide();
+                $(".part6").hide();
+                $(".swiper-wrapper li").eq(1).addClass("on");
+                $(".swiper-wrapper li").eq(0).removeClass("on");
+                $(".swiper-wrapper li").eq(2).removeClass("on");
+                $(".swiper-wrapper li").eq(3).removeClass("on");
+                $(".swiper-wrapper li").eq(4).removeClass("on");
+                $(".swiper-wrapper li").eq(5).removeClass("on");
+                $("#xiahuaxian2").show();
+                $("#xiahuaxian1").hide();
+                $("#xiahuaxian3").hide();
+                $("#xiahuaxian4").hide();
+                $("#xiahuaxian5").hide();
+                $("#xiahuaxian6").hide();
+
+            });
+        });
+        $(function(){
+            $("#swiper_btn3").click(function(){
+
+                $(".part3").show();
+                $(".part1").hide();
+                $(".part2").hide();
+                $(".part4").hide();
+                $(".part5").hide();
+                $(".part6").hide();
+                $(".swiper-wrapper li").eq(2).addClass("on");
+                $(".swiper-wrapper li").eq(0).removeClass("on");
+                $(".swiper-wrapper li").eq(1).removeClass("on");
+                $(".swiper-wrapper li").eq(3).removeClass("on");
+                $(".swiper-wrapper li").eq(4).removeClass("on");
+                $(".swiper-wrapper li").eq(5).removeClass("on");
+                $("#xiahuaxian3").show();
+                $("#xiahuaxian1").hide();
+                $("#xiahuaxian2").hide();
+                $("#xiahuaxian4").hide();
+                $("#xiahuaxian5").hide();
+                $("#xiahuaxian6").hide();
+
+            });
+        });
+        $(function(){
+            $("#swiper_btn4").click(function(){
+
+                $(".part4").show();
+                $(".part1").hide();
+                $(".part2").hide();
+                $(".part3").hide();
+                $(".part5").hide();
+                $(".part6").hide();
+                $(".swiper-wrapper li").eq(3).addClass("on");
+                $(".swiper-wrapper li").eq(0).removeClass("on");
+                $(".swiper-wrapper li").eq(1).removeClass("on");
+                $(".swiper-wrapper li").eq(2).removeClass("on");
+                $(".swiper-wrapper li").eq(4).removeClass("on");
+                $(".swiper-wrapper li").eq(5).removeClass("on");
+                $("#xiahuaxian4").show();
+                $("#xiahuaxian1").hide();
+                $("#xiahuaxian2").hide();
+                $("#xiahuaxian3").hide();
+                $("#xiahuaxian5").hide();
+                $("#xiahuaxian6").hide();
+            });
+        });
+        $(function(){
+            $("#swiper_btn5").click(function(){
+
+                $(".part5").show();
+                $(".part1").hide();
+                $(".part2").hide();
+                $(".part3").hide();
+                $(".part4").hide();
+                $(".part6").hide();
+                $(".swiper-wrapper li").eq(4).addClass("on");
+                $(".swiper-wrapper li").eq(0).removeClass("on");
+                $(".swiper-wrapper li").eq(1).removeClass("on");
+                $(".swiper-wrapper li").eq(2).removeClass("on");
+                $(".swiper-wrapper li").eq(3).removeClass("on");
+                $(".swiper-wrapper li").eq(5).removeClass("on");
+                $("#xiahuaxian5").show();
+                $("#xiahuaxian1").hide();
+                $("#xiahuaxian2").hide();
+                $("#xiahuaxian3").hide();
+                $("#xiahuaxian4").hide();
+                $("#xiahuaxian6").hide();
+            });
+        });
+        $(function(){
+            $("#swiper_btn6").click(function(){
+
+                $(".part6").show();
+                $(".part1").hide();
+                $(".part2").hide();
+                $(".part3").hide();
+                $(".part5").hide();
+                $(".part4").hide();
+                $(".swiper-wrapper li").eq(5).addClass("on");
+                $(".swiper-wrapper li").eq(0).removeClass("on");
+                $(".swiper-wrapper li").eq(1).removeClass("on");
+                $(".swiper-wrapper li").eq(2).removeClass("on");
+                $(".swiper-wrapper li").eq(3).removeClass("on");
+                $(".swiper-wrapper li").eq(4).removeClass("on");
+                $("#xiahuaxian6").show();
+                $("#xiahuaxian1").hide();
+                $("#xiahuaxian2").hide();
+                $("#xiahuaxian3").hide();
+                $("#xiahuaxian5").hide();
+                $("#xiahuaxian4").hide();
+            });
+        });
+    </script>
+</head>
+<body >
+<div >
+    <div class="swiper-container" style="position:relative;">
+        <div class="swiper-wrapper" style="width:33rem;">
+            <ul>
+                <li class="swiper-li on">
+                    <button class="swiper-slide" id="swiper_btn1">已结束
+                    </button>
+                    <div class="xiahuaxian" id="xiahuaxian1"></div>
+                </li>
+                <li class="swiper-li">
+                    <button class="swiper-slide" id="swiper_btn2">10月9日
+                    </button>
+                    <div class="xiahuaxian" id="xiahuaxian2" style="display: none;"></div>
+                </li>
+                <li class="swiper-li">
+                    <button class="swiper-slide" id="swiper_btn3">10月10日
+                    </button>
+                    <div class="xiahuaxian" id="xiahuaxian3"  style="display: none;"></div>
+                </li>
+                <li  class="swiper-li" >
+                    <button class="swiper-slide" id="swiper_btn4">10月11日
+                    </button>
+                    <div class="xiahuaxian" id="xiahuaxian4"  style="display: none;"></div>
+                </li>
+                <li  class="swiper-li">
+                    <button class="swiper-slide" id="swiper_btn5">10月12日
+                    </button>
+                    <div class="xiahuaxian"  id="xiahuaxian5" style="display: none;"></div>
+                </li>
+                <li  class="swiper-li">
+                    <button class="swiper-slide" id="swiper_btn6">10月13日
+                    </button>
+                    <div class="xiahuaxian" id="xiahuaxian6"  style="display: none;"></div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+<div class="part1" style="position: absolute;font-family: 'Microsoft YaHei';">
+     <div style="width:20rem;height: 2rem;text-align: center;line-height:2rem;color: #848689;font-size:0.8rem;margin-top: 2rem;position: absolute;display: none;">暂时没有获取到数据信息</div>
+     <div class="deal_buy">
+        <div class="wall"></div>
+        <div class="deal_buy_3">
+            <div class="deal_buy3_pic">
+                <img src="../images/morentu.png" style="width:5rem;height: 5rem;border-radius: 0.2rem;"/>
+            </div>
+            <div class="deal_buy3_text">
+                    <div class="deal_zhuchang">
+                        乐山放养猪拍卖场
+                    </div>
+                    <div class="deal_time" >
+                        <span>开拍时间:</span><span >&nbsp;&nbsp;2016-9-19</span><span style="margin-left: 4px;">&nbsp;10:20</span>
+                    </div>
+                    <div class="deal_pin">
+                        <span>品类:</span><span >&nbsp;&nbsp;生猪</span>
+                    </div>
+                     <div class="deal_pin">
+                         <span>品级:</span><span>&nbsp;&nbsp;一级</span>
+                     </div>
+                    <div class="deal_number">
+                        <span >数量:</span><span style="color:#F02B2B;font-size: 0.83rem;"><span style="font-size: 1rem;">&nbsp;300</span>头</span>
+                    </div>
+             </div>
+        </div>
+         <div class="deal_buy_3">
+             <div class="deal_buy3_pic">
+                 <img src="../images/morentu.png" style="width:5rem;height: 5rem;border-radius: 0.2rem;"/>
+             </div>
+
+
+             <div class="deal_buy3_text">
+                 <div class="deal_zhuchang">
+                     乐山放养猪拍卖场
+                 </div>
+                 <div class="deal_time" >
+                     <span>开拍时间:</span><span >&nbsp;&nbsp;2016-9-19</span><span style="margin-left: 4px;">&nbsp;10:20</span>
+                 </div>
+                 <div class="deal_pin">
+                     <span>品类:</span><span >&nbsp;&nbsp;生猪</span>
+                 </div>
+                 <div class="deal_pin">
+                     <span>品级:</span><span>&nbsp;&nbsp;一级</span>
+                 </div>
+                 <div class="deal_number">
+                     <span >数量:</span><span style="color:#F02B2B;font-size: 0.83rem;"><span style="font-size: 1rem;">&nbsp;300</span>头</span>
+                 </div>
+             </div>
+         </div>
+      </div>
+    </div>
+<div class="part2" style="position: absolute;font-family: 'Microsoft YaHei';display: none;">
+    <div class="deal_buy">
+        <div class="wall"></div>
+        <div class="deal_buy_3">
+            <div class="deal_buy3_pic">
+                <img src="../images/morentu.png" style="width:5rem;height: 5rem;border-radius: 0.2rem;"/>
+            </div>
+
+
+            <div class="deal_buy3_text">
+                <div class="deal_zhuchang">
+                    绵阳放养猪拍卖场
+                </div>
+                <div class="deal_time" >
+                    <span>开拍时间:</span><span >&nbsp;&nbsp;2016-9-19</span><span style="margin-left: 4px;">&nbsp;10:20</span>
+                </div>
+                <div class="deal_pin">
+                    <span>品类:</span><span >&nbsp;&nbsp;生猪</span>
+                </div>
+                <div class="deal_pin">
+                    <span>品级:</span><span>&nbsp;&nbsp;一级</span>
+                </div>
+                <div class="deal_number">
+                    <span >数量:</span><span style="color:#F02B2B;font-size: 0.83rem;"><span style="font-size: 1rem;">&nbsp;300</span>头</span>
+                </div>
+            </div>
+        </div>
+        <div class="deal_buy_3">
+            <div class="deal_buy3_pic">
+                <img src="../images/morentu.png" style="width:5rem;height: 5rem;border-radius: 0.2rem;"/>
+            </div>
+
+
+            <div class="deal_buy3_text">
+                <div class="deal_zhuchang">
+                    乐山放养猪拍卖场
+                </div>
+                <div class="deal_time" >
+                    <span>开拍时间:</span><span >&nbsp;&nbsp;2016-9-19</span><span style="margin-left: 4px;">&nbsp;10:20</span>
+                </div>
+                <div class="deal_pin">
+                    <span>品类:</span><span >&nbsp;&nbsp;生猪</span>
+                </div>
+                <div class="deal_pin">
+                    <span>品级:</span><span>&nbsp;&nbsp;一级</span>
+                </div>
+                <div class="deal_number">
+                    <span >数量:</span><span style="color:#F02B2B;font-size: 0.83rem;"><span style="font-size: 1rem;">&nbsp;300</span>头</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="part3" style="position: absolute;font-family: 'Microsoft YaHei';display: none;">
+    <div class="deal_buy">
+        <div class="wall"></div>
+        <div class="deal_buy_3">
+            <div class="deal_buy3_pic">
+                <img src="../images/morentu.png;" style="width:5rem;height: 5rem;border-radius: 0.2rem;"/>
+            </div>
+
+
+            <div class="deal_buy3_text">
+                <div class="deal_zhuchang">
+                    乐山放养猪拍卖场
+                </div>
+                <div class="deal_time" >
+                    <span>开拍时间:</span><span >&nbsp;&nbsp;2016-9-19</span><span style="margin-left: 4px;">&nbsp;10:20</span>
+                </div>
+                <div class="deal_pin">
+                    <span>品类:</span><span >&nbsp;&nbsp;生猪</span>
+                </div>
+                <div class="deal_pin">
+                    <span>品级:</span><span>&nbsp;&nbsp;一级</span>
+                </div>
+                <div class="deal_number">
+                    <span >数量:</span><span style="color:#F02B2B;font-size: 0.83rem;"><span style="font-size: 1rem;">&nbsp;300</span>头</span>
+                </div>
+            </div>
+        </div>
+        <div class="deal_buy_3">
+            <div class="deal_buy3_pic">
+                <img src="../images/morentu.png" style="width:5rem;height: 5rem;border-radius: 0.2rem;"/>
+            </div>
+
+
+            <div class="deal_buy3_text">
+                <div class="deal_zhuchang">
+                    乐山放养猪拍卖场
+                </div>
+                <div class="deal_time" >
+                    <span>开拍时间:</span><span >&nbsp;&nbsp;2016-9-19</span><span style="margin-left: 4px;">&nbsp;10:20</span>
+                </div>
+                <div class="deal_pin">
+                    <span>品类:</span><span >&nbsp;&nbsp;生猪</span>
+                </div>
+                <div class="deal_pin">
+                    <span>品级:</span><span>&nbsp;&nbsp;一级</span>
+                </div>
+                <div class="deal_number">
+                    <span >数量:</span><span style="color:#F02B2B;font-size: 0.83rem;"><span style="font-size: 1rem;">&nbsp;300</span>头</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="part4" style="position: absolute;font-family: 'Microsoft YaHei';display: none;">
+    <div class="deal_buy">
+        <div class="wall"></div>
+        <div class="deal_buy_3">
+            <div class="deal_buy3_pic">
+                <img src="../images/morentu.png" style="width:5rem;height: 5rem;border-radius: 0.2rem;"/>
+            </div>
+
+
+            <div class="deal_buy3_text">
+                <div class="deal_zhuchang">
+                    乐山放养猪拍卖场
+                </div>
+                <div class="deal_time" >
+                    <span>开拍时间:</span><span >&nbsp;&nbsp;2016-9-19</span><span style="margin-left: 4px;">&nbsp;10:20</span>
+                </div>
+                <div class="deal_pin">
+                    <span>品类:</span><span >&nbsp;&nbsp;生猪</span>
+                </div>
+                <div class="deal_pin">
+                    <span>品级:</span><span>&nbsp;&nbsp;一级</span>
+                </div>
+                <div class="deal_number">
+                    <span >数量:</span><span style="color:#F02B2B;font-size: 0.83rem;"><span style="font-size: 1rem;">&nbsp;300</span>头</span>
+                </div>
+            </div>
+        </div>
+        <div class="deal_buy_3">
+            <div class="deal_buy3_pic">
+                <img src="../images/morentu.png" style="width:5rem;height: 5rem;border-radius: 0.2rem;"/>
+            </div>
+
+
+            <div class="deal_buy3_text">
+                <div class="deal_zhuchang">
+                    乐山放养猪拍卖场
+                </div>
+                <div class="deal_time" >
+                    <span>开拍时间:</span><span >&nbsp;&nbsp;2016-9-19</span><span style="margin-left: 4px;">&nbsp;10:20</span>
+                </div>
+                <div class="deal_pin">
+                    <span>品类:</span><span >&nbsp;&nbsp;生猪</span>
+                </div>
+                <div class="deal_pin">
+                    <span>品级:</span><span>&nbsp;&nbsp;一级</span>
+                </div>
+                <div class="deal_number">
+                    <span >数量:</span><span style="color:#F02B2B;font-size: 0.83rem;"><span style="font-size: 1rem;">&nbsp;300</span>头</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="part5" style="position: absolute;font-family: 'Microsoft YaHei';display: none;">
+    <div class="deal_buy">
+        <div class="wall"></div>
+        <div class="deal_buy_3">
+            <div class="deal_buy3_pic">
+                <img src="../images/morentu.png;" style="width:5rem;height: 5rem;border-radius: 0.2rem;"/>
+            </div>
+
+
+            <div class="deal_buy3_text">
+                <div class="deal_zhuchang">
+                    乐山放养猪拍卖场
+                </div>
+                <div class="deal_time" >
+                    <span>开拍时间:</span><span >&nbsp;&nbsp;2016-9-19</span><span style="margin-left: 4px;">&nbsp;10:20</span>
+                </div>
+                <div class="deal_pin">
+                    <span>品类:</span><span >&nbsp;&nbsp;生猪</span>
+                </div>
+                <div class="deal_pin">
+                    <span>品级:</span><span>&nbsp;&nbsp;一级</span>
+                </div>
+                <div class="deal_number">
+                    <span >数量:</span><span style="color:#F02B2B;font-size: 0.83rem;"><span style="font-size: 1rem;">&nbsp;300</span>头</span>
+                </div>
+            </div>
+        </div>
+        <div class="deal_buy_3">
+            <div class="deal_buy3_pic">
+                <img src="../images/morentu.png" style="width:5rem;height: 5rem;border-radius: 0.2rem;"/>
+            </div>
+
+
+            <div class="deal_buy3_text">
+                <div class="deal_zhuchang">
+                    乐山放养猪拍卖场
+                </div>
+                <div class="deal_time" >
+                    <span>开拍时间:</span><span >&nbsp;&nbsp;2016-9-19</span><span style="margin-left: 4px;">&nbsp;10:20</span>
+                </div>
+                <div class="deal_pin">
+                    <span>品类:</span><span >&nbsp;&nbsp;生猪</span>
+                </div>
+                <div class="deal_pin">
+                    <span>品级:</span><span>&nbsp;&nbsp;一级</span>
+                </div>
+                <div class="deal_number">
+                    <span >数量:</span><span style="color:#F02B2B;font-size: 0.83rem;"><span style="font-size: 1rem;">&nbsp;300</span>头</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="part6" style="position: absolute;font-family: 'Microsoft YaHei';display: none;">
+    <div class="deal_buy">
+        <div class="wall"></div>
+        <div class="deal_buy_3">
+            <div class="deal_buy3_pic">
+                <img src="../images/morentu.png;" style="width:5rem;height: 5rem;border-radius: 0.2rem;"/>
+            </div>
+
+
+            <div class="deal_buy3_text">
+                <div class="deal_zhuchang">
+                    乐山放养猪拍卖场
+                </div>
+                <div class="deal_time" >
+                    <span>开拍时间:</span><span >&nbsp;&nbsp;2016-9-19</span><span style="margin-left: 4px;">&nbsp;10:20</span>
+                </div>
+                <div class="deal_pin">
+                    <span>品类:</span><span >&nbsp;&nbsp;生猪</span>
+                </div>
+                <div class="deal_pin">
+                    <span>品级:</span><span>&nbsp;&nbsp;一级</span>
+                </div>
+                <div class="deal_number">
+                    <span >数量:</span><span style="color:#F02B2B;font-size: 0.83rem;"><span style="font-size: 1rem;">&nbsp;300</span>头</span>
+                </div>
+            </div>
+        </div>
+        <div class="deal_buy_3">
+            <div class="deal_buy3_pic">
+                <img src="../images/morentu.png" style="width:5rem;height: 5rem;border-radius: 0.2rem;"/>
+            </div>
+
+
+            <div class="deal_buy3_text">
+                <div class="deal_zhuchang">
+                    乐山放养猪拍卖场
+                </div>
+                <div class="deal_time" >
+                    <span>开拍时间:</span><span >&nbsp;&nbsp;2016-9-19</span><span style="margin-left: 4px;">&nbsp;10:20</span>
+                </div>
+                <div class="deal_pin">
+                    <span>品类:</span><span >&nbsp;&nbsp;生猪</span>
+                </div>
+                <div class="deal_pin">
+                    <span>品级:</span><span>&nbsp;&nbsp;一级</span>
+                </div>
+                <div class="deal_number">
+                    <span >数量:</span><span style="color:#F02B2B;font-size: 0.83rem;"><span style="font-size: 1rem;">&nbsp;300</span>头</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

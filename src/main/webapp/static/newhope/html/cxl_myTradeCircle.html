@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description"
+          content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>我的交易圈</title>
+    <script type="text/javascript" charset="utf-8" src="js/htmlsize.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/weui.min.css"/>
+    <link type="text/css" rel="stylesheet" href="css/jquery-weui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+    <link type="text/css" rel="stylesheet" href="css/myTradeCircle.css"/>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <!--动态加载模块-->
+    <script src="js/template.js"></script>
+</head>
+<body>
+<script type="text/html" id="temp1">
+    <li class="circle-list">
+        <div class="circle-info-box">
+            <img src="{{circleHead}}"/>
+            <ul class="info-ul">
+                <li class="circle-name">
+                    <span>{{circleName}}<img src="{{jrq}}"/>
+                    <img class="sm" src="{{sm}}"/></span>
+
+                </li>
+                <li class="activeness">活跃度
+                    <img src="images/ic_fire.png"/>
+                    <img src="images/ic_fire.png"/>
+                    <img src="images/ic_fire.png"/>
+                </li>
+                <li class="identity">
+                    我的身份：{{identity}}
+                </li>
+            </ul>
+        </div>
+        <button class="unified-price" style="display: {{unifiedPrice}}">
+            统一定价
+        </button>
+        <div class="redDot"></div>
+    </li>
+</script>
+<body>
+<div id="warp">
+    <div class="chooseCircle" style="border-bottom: 0.0555rem solid #d8d8d8">
+        <p class="haveChoose">交易圈数量（10个）</span></p>
+        <p class="btn-p"><button class="ok-btn">新建交易圈</button></p>
+    </div>
+    <ul class="circle-ul">
+
+    </ul>
+    <div class="weui-infinite-scroll">
+        <div class="infinite-preloader"></div>
+        正在加载...
+    </div>
+</div>
+
+<script src="js/jquery-weui.min.js"></script>
+
+<script type="text/javascript">
+
+    //分页功能
+    var loading = false;  //状态标记
+    var page = 0;    //当前显示页数
+
+    //每一页的显示数量
+    var size = 6;
+
+    //页面初始化时，加载8条数据
+    $.ajax({
+        type: 'POST',
+        url: 'data/myTradeCircle.json',
+        dataType: 'json',
+        success: function(data){
+            //console.log(data);
+            page++;
+            var result ="";
+            //总的数据长度
+            var dataLen = data.length;
+            if(dataLen < 6){
+                //就只加载当前的数据
+
+                for(var i = 0;i < dataLen;i++){
+                    result += template("temp1",data[i]);
+                }
+            }else{
+                for(var i = 0;i < size;i++){
+                    result += template("temp1",data[i]);
+                }
+            }
+            $(".circle-ul").append(result);
+
+
+        }
+    });
+    //初始化以后，再去按照分页加载条数
+    $(document.body).infinite().on("infinite", function() {
+        if(loading) return;
+        loading = true;
+        setTimeout(function() {
+            page++;
+            //发送请求，拿到json数据
+            $.ajax({
+                type: 'POST',
+                url: 'data/myTradeCircle.json',
+                dataType: 'json',
+                success: function(data){
+                    console.log("data.length")
+                    var result ="";
+                    //总的数据长度
+                    var dataLen = data.length;
+                    //计算总的页数
+                    var totalPage = Math.ceil(dataLen/size);
+                    if(page <= totalPage){
+                        //如果有数据
+                        if(page == totalPage){
+                            //最后一页
+                            for(var i = (page-1)*size;i < dataLen;i++){
+                                result += template("temp1",data[i]);
+                            }
+                            //没有数据了
+                            $(document.body).destroyInfinite();
+                            $(".weui-infinite-scroll").hide();
+//                                 $(".weui-infinite-scroll").html(" ");
+//                                 $(".weui-infinite-scroll").html("没有更多数据了哦~" );
+                        }else{
+                            //其他页
+                            for(var i = (page-1)*size ; i < page*size;i++){
+                                result += template("temp1",data[i]);
+                            }
+                        }
+                    }
+                    $(".circle-ul").append(result);
+                }
+            });
+            loading = false;
+        }, 1500);   //模拟延迟
+    });
+</script>
+</body>
+</html>

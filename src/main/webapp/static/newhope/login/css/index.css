@@ -1,0 +1,224 @@
+*{margin: 0px;
+  padding: 0px;
+ }
+
+.top{ width:100%;
+      height: 79px;
+      background-color:#ffffff;
+      border-bottom:#c9c9c9 1px solid;
+
+
+}
+.body{
+       width:100%;
+       height: 672px;
+       background-color: #f3f3f3;
+       position: absolute;
+}
+.box{
+    width: 896px;
+    height: 367px;
+    background-color: #ffffff;
+    margin:32px auto -42px auto;
+    border: #e2e2e2 1px solid;
+    position: relative;
+
+
+}
+.top_name{
+      font-size: 44px;
+      font-family:"Microsoft YaHei";
+      margin-left: 120px;
+
+
+}
+.text{float: left;
+    position: relative;
+     width: 1020px;
+     font-family: "Microsoft YaHei";
+     font-size: 20px;
+     color: #000000;
+    margin-left: 30px;
+    margin-top: 40px;
+}
+.lg-container{float: left;
+    width:440px;
+    height:428px;
+    margin-top: 40px;
+    margin-left:60px;
+
+    position: relative;
+
+
+
+}
+
+h1 {font-family: "Microsoft YaHei";
+           float: left;
+
+           font-size: 18px;
+
+           font-weight:bold;
+           color:#3d9da0;
+
+
+
+           }
+.input_out{
+
+    background-color:#ffffff;
+    border: #c9c9c9 1px solid;
+
+}
+
+.input_move{
+    background-color:#ffffff;
+    border: #009106 1px solid;
+}
+#userName{  width: 172px;
+    height:18px;
+    padding-left: 30px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom:5px;
+
+    color: #999999;
+
+
+
+}
+#password{
+    width: 172px;
+    height:18px;
+    padding-left: 30px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom:5px;
+
+    color: #999999;
+
+}
+#randCode{
+    width: 86px;
+        height: 18px;
+    padding-left: 30px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom:5px;
+    color: #999999;
+         }
+#input4{
+        width:80px;
+        height: 30px;
+
+
+       outline:none;
+      color: #ffffff;
+    border: none;
+        }
+.
+input{
+    font-family: "Microsoft YaHei";
+    font-size: 12px;
+    width: 172px;
+    height:18px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom:5px;
+
+    color: #999999;
+
+
+    outline:none;
+    }
+.log_row{
+    width: 216px;
+    height: 32px;
+    margin: 16px auto 0px auto ;
+    position: relative;
+}
+.log_login{
+    width: 216px;
+    height: 32px;
+    margin: 8px auto 0px auto ;
+    position: relative;
+}
+.log_forget{
+    width: 216px;
+    height: 20px;
+    margin: 6px auto 0px auto ;
+    line-height: 20px;
+
+    position: relative;
+}
+.log_yanzheng{float: left;
+    width: 128px;
+    height: 32px;
+
+
+}
+.log_fasong{float: left;
+    margin-left: 6px;
+    width: 80px;
+    height: 32px;
+
+}
+.log_head{
+    line-height: 32px;
+    width: 216px;
+    height: 32px;
+    margin: 10px auto  -8px auto ;
+    position: relative;
+}
+.log_banquan{
+       width: 500px;
+       height: 20px;
+    margin: 50px auto 20px auto;
+      font-family: "Microsoft YaHei";
+     font-size: 8px;
+    color: #777777;
+    font-weight: bold;
+    text-align: center;
+    line-height: 20px;
+}
+
+
+
+#forget{
+
+
+    float: right;
+    font-family: "Microsoft YaHei";
+    font-size:12px;
+    font-weight: normal;
+    color:#212121;
+}
+
+.submit_out{
+    width: 212px;
+    height: 28px;
+    cursor:pointer;
+    background-color:#009106;
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+    color:#ffffff;
+    font-style: normal;
+    border:none;
+
+    outline:none;
+             }
+.submit_move{
+    width: 212px;
+    height: 28px;
+
+    background-color: #008606;
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+    color:#ffffff;
+    font-style: normal;
+    border: none;
+
+    outline:none;
+    text-shadow:0 1px 5px #999999;
+}

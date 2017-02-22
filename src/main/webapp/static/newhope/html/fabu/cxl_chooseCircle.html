@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description"
+          content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>录入发布信息</title>
+    <script type="text/javascript" charset="utf-8" src="../js/htmlsize.js"></script>
+    <link type="text/css" rel="stylesheet" href="../css/weui.min.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/jquery-weui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/common.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/chooseCircle.css"/>
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <!--动态加载模块-->
+    <script src="../js/template.js"></script>
+</head>
+<script type="text/html" id="temp1">
+    <li class="circle-list">
+        <img src="../images/btn_xq_radiubox_normal.png"/>
+        <div class="circle-info-box">
+            <img src="{{circleHead}}"/>
+            <ul class="info-ul">
+                <li class="circle-name">
+                    <span>{{circleName}}
+                        <img src="{{jrq}}"/>
+                        <img class="sm" src="{{sm}}"/>
+                    </span>
+                </li>
+                <li class="activeness">活跃度
+                    <img src="../images/ic_fire.png"/>
+                    <img src="../images/ic_fire.png"/>
+                    <img src="../images/ic_fire.png"/>
+                </li>
+                <li class="identity">
+                    我的身份：{{identity}}
+                </li>
+            </ul>
+        </div>
+    </li>
+</script>
+<body>
+    <div id="warp">
+        <div class="chooseCircle">
+            <div class="flexBox">
+                <p class="haveChoose">已选择圈子：<span class="chooseTitle">IE佛期间foe积分斌给你比饿哦非你不嫁飞机杯</span></p>
+                <p class="btn-p"><button class="ok-btn">确定</button></p>
+            </div>
+        </div>
+        <div class="search-box">
+            <p>
+                <input type="text" class="search-input" name="searchInput" placeholder="请输入你需要查找圈子的名称"/>
+                <button class="search-btn">搜索</button>
+            </p>
+        </div>
+        <ul class="circle-ul">
+
+        </ul>
+        <div class="weui-infinite-scroll">
+            <div class="infinite-preloader"></div>
+            正在加载...
+        </div>
+    </div>
+
+    <script src="../js/jquery-weui.min.js"></script>
+
+    <script type="text/javascript">
+
+        //分页功能
+        var loading = false;  //状态标记
+        var page = 0;    //当前显示页数
+
+        //每一页的显示数量
+        var size = 6;
+
+        //页面初始化时，加载8条数据
+        $.ajax({
+            type: 'POST',
+            url: '../data/chooseCircle.json',
+            dataType: 'json',
+            success: function(data){
+                //console.log(data);
+                page++;
+                var result ="";
+                //总的数据长度
+                var dataLen = data.length;
+                if(dataLen < 6){
+                    //就只加载当前的数据
+
+                    for(var i = 0;i < dataLen;i++){
+                        result += template("temp1",data[i]);
+                    }
+                }else{
+                    for(var i = 0;i < size;i++){
+                        result += template("temp1",data[i]);
+                    }
+                }
+                $(".circle-ul").append(result);
+
+                //点击li时，选中该圈子，并改变其选中图片
+                var flag=false;
+                $(".circle-list").click(function () {
+                    if(flag==false){
+                        $(this).children("img").attr("src","../images/btn_xq_radiubox_selected.png");
+                        $(this).siblings("li").children("img").attr("src","../images/btn_xq_radiubox_normal.png");
+                        var circleName=$(this).find(".circle-name").children("span").text();
+                        $(".chooseTitle").html(circleName);
+                        $(".chooseCircle").show();
+                        flag=true;
+                    }else {
+                        $(this).children("img").attr("src","../images/btn_xq_radiubox_normal.png");
+                        $(".chooseTitle").html('');
+                        flag=false;
+                    };
+
+                });
+
+
+            }
+        });
+        //初始化以后，再去按照分页加载条数
+        $(document.body).infinite().on("infinite", function() {
+            if(loading) return;
+            loading = true;
+            setTimeout(function() {
+                page++;
+                //发送请求，拿到json数据
+                $.ajax({
+                    type: 'POST',
+                    url: '../data/chooseCircle.json',
+                    dataType: 'json',
+                    success: function(data){
+                        //console.log("data.length")
+                        var result ="";
+                        //总的数据长度
+                        var dataLen = data.length;
+                        //计算总的页数
+                        var totalPage = Math.ceil(dataLen/size);
+                        if(page <= totalPage){
+                            //如果有数据
+                            if(page == totalPage){
+                                //最后一页
+                                for(var i = (page-1)*size;i < dataLen;i++){
+                                    result += template("temp1",data[i]);
+                                }
+                                //没有数据了
+                                $(document.body).destroyInfinite();
+                                $(".weui-infinite-scroll").hide();
+//                                 $(".weui-infinite-scroll").html(" ");
+//                                 $(".weui-infinite-scroll").html("没有更多数据了哦~" );
+                            }else{
+                                //其他页
+                                for(var i = (page-1)*size ; i < page*size;i++){
+                                    result += template("temp1",data[i]);
+                                }
+                            }
+                        }
+                        $(".circle-ul").append(result);
+                    }
+                });
+                loading = false;
+            }, 1500);   //模拟延迟
+        });
+        $("button").click(function () {
+            //console.log("1111");
+            $(this).css("backgroundColor","#23943f");
+        });
+        $(".search-input").keydown(function () {
+            //console.log(1111);
+            $(this).css("color","#333");
+        })
+
+    </script>
+</body>
+</html>

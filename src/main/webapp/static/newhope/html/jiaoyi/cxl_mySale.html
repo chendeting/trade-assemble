@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description"
+          content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>2016-12-01详细</title>
+    <script type="text/javascript" charset="utf-8" src="../js/htmlsize.js"></script>
+    <link type="text/css" rel="stylesheet" href="../css/weui.min.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/jquery-weui.min.css"/>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/common.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/mySale.css"/>
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+    <div id="warp">
+        <header>
+            <div class="header-title">
+                <p class="title-date">2016-12-08</p>
+                <p class="title-name">猪场名称：<span class="circleName">张三的猪场</span></p>
+            </div>
+            <div class="detailInfo">
+                <p class="address">交割地址：<span>四川省德阳市三台县巫溪镇五乡六组</span></p>
+                <p class="tel">猪场电话：<span>136-5785-9452</span></p>
+                <p class="breed">出栏品种：<span>内三元</span></p>
+                <p class="publishedNum">发布数量：<span>700头</span></p>
+                <p class="orderNum">订购数量：<span>700头</span></p>
+                <p class="deliveryNum">交割数量：<span>20头</span></p>
+                <p class="price">出栏价格：<span>￥18.86元/KG</span>（预估均重100KG）</p>
+                <p class="publishedDate">发布日期：2016-1-11</p>
+            </div>
+        </header>
+        <div class="allOrderNum">订单数（4笔）</div>
+        <section>
+            <ul class="saleUl">
+                <li class="saleList">
+                    <p class="detail-info">订购时间：2016-12-10 12:13:21<img src="../images/ic_list_detail.png"/></p>
+                    <div class="basicInfo-box">
+                        <img class="userHead" src="../images/morentu.png"/>
+                        <ul class="info-ul">
+                            <li class="userName">张三</li>
+                            <li class="buyNum">购买数量：<span>700头</span></li>
+                            <li class="deliveryNum">交割数量：<span>700头</span></li>
+                        </ul>
+                        <a href="tel:1848205425" class="contactTa">联系TA</a>
+                        <div class="stateImg"><img src="../images/ic_label_yjg_yx.png"/></div>
+                    </div>
+                    <div class="btn-box"><button type="button" class="edit-delivery">修改交割信息</button></div>
+                </li>
+                <li class="saleList">
+                    <p class="detail-info trading-time">订购时间：2016-12-10 12:13:21</p>
+                    <div class="basicInfo-box trading-in">
+                        <img class="userHead trading-head" src="../images/morentu.png"/>
+                        <ul class="info-ul">
+                            <li class="userName">张三</li>
+                            <li class="buyNum">购买数量：<span>700头</span></li>
+                        </ul>
+                        <a href="tel:1848205425" class="contactTa">联系TA</a>
+                    </div>
+                    <div class="btn-box">
+                        <button type="button" class="revoke">撤单</button>
+                        <button type="button" class="delivery">交割</button>
+                    </div>
+                </li>
+                <li class="saleList">
+                    <p class="detail-info">订购时间：2016-12-10 12:13:21<img src="../images/ic_list_detail.png"/></p>
+                    <div class="basicInfo-box noneBorder">
+                        <img class="userHead trading-head" src="../images/morentu.png"/>
+                        <ul class="info-ul">
+                            <li class="userName">张三</li>
+                            <li class="buyNum">购买数量：<span>700头</span></li>
+                        </ul>
+                        <a href="tel:1848205425" class="contactTa">联系TA</a>
+                        <div class="stateImg"><img src="../images/ic_label_ycd_yx.png"/></div>
+                    </div>
+                </li>
+                <li class="saleList">
+                    <p class="detail-info">订购时间：2016-12-10 12:13:21<img src="../images/ic_list_detail.png"/></p>
+                    <div class="basicInfo-box">
+                        <img class="userHead trading-head" src="../images/morentu.png"/>
+                        <ul class="info-ul">
+                            <li class="userName">张三</li>
+                            <li class="buyNum">购买数量：<span>700头</span></li>
+                        </ul>
+                        <a href="tel:1848205425" class="contactTa">联系TA</a>
+                        <div class="stateImg"><img src="../images/ic_label_ypd_yx.png"/></div>
+                    </div>
+                    <div class="btn-box"><button type="button" class="edit-delivery">修改交割信息</button></div>
+                </li>
+            </ul>
+        </section>
+    </div>
+    <script src="../js/jquery-weui.min.js"></script>
+    <script type="text/javascript">
+        //点击撤单后的提示
+        $(".revoke").click(function () {
+
+            $.confirm({
+                title: '确定撤单',
+                text: '撤单后该订单将失效，是否确定撤单？',
+                onOK: function () {
+                    //点击确认
+                },
+                onCancel: function () {
+                    
+                }
+            });
+        });
+
+
+    </script>
+</body>
+</html>

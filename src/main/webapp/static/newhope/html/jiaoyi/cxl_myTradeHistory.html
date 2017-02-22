@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description"
+          content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>本圈交易历史</title>
+    <script type="text/javascript" charset="utf-8" src="../js/htmlsize.js"></script>
+    <link type="text/css" rel="stylesheet" href="../css/weui.min.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/huadongjiazai.min.css"/>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/common.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/myTradeHistory.css"/>
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/template.js"></script>
+</head>
+<script type="text/html" charset="UTF-8" id="auction_Member">
+    <li class="tradeHistory-list">
+        <div class="single-title">
+            <p class="sale-time">拍卖时间：<span>{{auction_time}}</span></p>
+            <p class="saler-name">卖方姓名：<span>{{auction_name}}</span></p>
+            <img src="../images/ic_list_detail.png"/>
+        </div>
+        <ul class="detail-ul">
+            <li><span>发布数量：</span>{{issue_num}}</li>
+            <li><span>购买人数：</span>{{buy_num}}</li>
+            <li><span>订购数量：</span>{{order_num}}</li>
+            <li><span>交割数量：</span>{{delivery_num}}</li>
+        </ul>
+        <div class="status-img"><img src="{{auction_pic}}"/></div>
+    </li>
+</script>
+<body>
+    <div id="warp">
+        <p class="allTrade">交易记录(<span>5</span>笔)</p>
+        <ul class="trade-ul" id="jiaoyijilu">
+            <li class="tradeHistory-list">
+                <div class="single-title">
+                    <p class="sale-time">拍卖时间：2016-12-06</p>
+                    <p class="saler-name">卖方姓名：某某某</p>
+                    <img src="../images/ic_list_detail.png"/>
+                </div>
+                <ul class="detail-ul">
+                    <li><span>发布数量：</span>70,000头</li>
+                    <li><span>购买人数：</span>4</li>
+                    <li><span>订购数量：</span>70,000头</li>
+                    <li><span>交割数量：</span>70,000头</li>
+                </ul>
+                <div class="status-img"><img src="../images/ic_wc.png"/></div>
+            </li>
+            <li class="tradeHistory-list">
+                <div class="single-title">
+                    <p class="sale-time">拍卖时间：2016-12-06</p>
+                    <p class="saler-name">卖方姓名：某某某</p>
+                    <img src="../images/ic_list_detail.png"/>
+                </div>
+                <ul class="detail-ul">
+                    <li><span>发布数量：</span>70,000头</li>
+                    <li><span>购买人数：</span>4</li>
+                    <li><span>订购数量：</span>70,000头</li>
+                    <li><span>交割数量：</span>70,000头</li>
+                </ul>
+                <div class="status-img"><img src="../images/ic_lable_jyq_jyz.png"/></div>
+            </li>
+            <li class="tradeHistory-list">
+                <div class="single-title">
+                    <p class="sale-time">拍卖时间：2016-12-06</p>
+                    <p class="saler-name">卖方姓名：某某某</p>
+                    <img src="../images/ic_list_detail.png"/>
+                </div>
+                <ul class="detail-ul">
+                    <li><span>发布数量：</span>70,000头</li>
+                    <li><span>购买人数：</span>4</li>
+                    <li><span>订购数量：</span>70,000头</li>
+                    <li><span>交割数量：</span>70,000头</li>
+                </ul>
+                <div class="status-img"><img src="../images/ic_lable_jgz_ys.png"/></div>
+            </li>
+        </ul>
+    </div>
+    <div class="weui-infinite-scroll">
+        <div class="infinite-preloader">
+
+        </div>
+        信息加载中...
+    </div>
+    <script src="../js/jquery-weui.min.js"></script>
+    <script type="text/javascript" charset="UTF-8">
+        $(document.body).infinite(500);
+        var loading = false;  //状态标记
+        var page = 0;    //当前显示页数
+
+        //每一页的显示数量
+        var size = 3;
+
+        //页面初始化时，加载3条数据
+        $.ajax({
+            type: 'POST',
+            url: '../data/tradingHistory.json',
+            dataType: 'json',
+            success: function(data){
+                page++;
+                var result ="";
+                //总的数据长度
+                var dataLen = data.length;
+                if(dataLen <0){
+                    //就只加载当前的数据
+                    for(var i = 0;i < dataLen;i++){
+                        result += template("auction_Member",data[i]);
+                    }
+                }else{
+                    for(var i = 0;i < size;i++){
+                        result += template("auction_Member",data[i]);
+                    }
+                }
+                $("#jiaoyijilu").append(result);
+
+            }
+        });
+        //初始化以后，再去按照分页加载条数
+        $(document.body).infinite().on("infinite", function() {
+            if(loading) return;
+            loading = true;
+            setTimeout(function() {
+                page++;
+                //发送请求，拿到json数据
+                $.ajax({
+                    type: 'POST',
+                    url: '../data/tradingHistory.json',
+                    dataType: 'json',
+                    success: function(data){
+                        var result ="";
+                        //总的数据长度
+                        var dataLen = data.length;
+                        //计算总的页数
+                        var totalPage = Math.ceil(dataLen/size);
+                        if(page <= totalPage){
+                            //如果有数据
+                            if(page == totalPage){
+                                //最后一页
+                                for(var i = (page-1)*size;i < dataLen;i++){
+                                    result += template("auction_Member",data[i]);
+                                }
+                                //没有数据了
+                                $(document.body).destroyInfinite();
+                                $(".weui-infinite-scroll").hide();
+//                                 $(".weui-infinite-scroll").html(" ");
+//                                 $(".weui-infinite-scroll").html("没有更多数据了哦~" );
+                            }else{
+                                //其他页
+                                for(var i = (page-1)*size ; i < page*size;i++){
+                                    result += template("auction_Member",data[i]);
+                                }
+                            }
+                        }
+                        $("#jiaoyijilu").append(result);
+                    }
+                });
+                loading = false;
+            }, 1500);   //模拟延迟
+        });
+    </script>
+</body>
+</html>

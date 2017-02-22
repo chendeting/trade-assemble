@@ -1,0 +1,33 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+.qt td {
+	font-size: 12px;
+	font-family: Tahoma,Verdana,新宋体;
+	border: 1px solid #cecece;
+	text-align: center;
+	display:table-cell; 
+	vertical-align:middle;
+	padding: 5;
+	word-wrap:break-word;
+}
+
+.qt th {
+	height: 35px;
+	font-size: 12px;
+	font-family: Tahoma,Verdana,新宋体;
+	border: 1px solid #cecece;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #bedfd4;
+	padding: 5;
+}
+.greenBackground{
+	background-color: #e0ebed;
+    cursor: pointer;
+	}
+.btn-default{
+ background-color: #E7E7E7;
+}	
+

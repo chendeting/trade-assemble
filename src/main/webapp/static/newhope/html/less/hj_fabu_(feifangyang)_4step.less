@@ -1,0 +1,1057 @@
+@navDatebg:#d8d8d8;
+@navDatefontColor:#fff;
+@navDatefontColor_active:#154fa1;
+@countdownfontColor:#6b6b6b;
+@farmNamecolor:#343434;
+@farmAddrcolor:#474747;
+@farmPrice:#727681;
+@farmWeigh:#abafb8;
+@saledColor:#afb0b2;
+@saledCount:#f1252e;
+
+//已经卖出bg
+@saledBgcolor:#f8f9fb;
+@borderTop:#d8dad9;
+@splitLine:#ebebeb;
+
+
+
+//新建交易圈
+//1）下拉箭头
+@setnewcircle-upIcon:#bababc;
+//2）border
+@setnewcircle-border:#d8d8d8;
+//3)bgcolor;
+@setnewcircle-textBgcolor:#fff;
+//4)fontcolor
+@setnewcircle-fontcolor:#999999;
+//borderWidth
+@setnewcircle-borderWidth:0.0556rem;
+//fontsize 26px;
+@setnewcircle-fontsize:0.7222rem;
+//整体背景色
+@setnewcircle-bgcolor:#ebebeb;
+//placeholder
+@placeholder-color:#cccccc;
+//输入的文字
+@enterfontColor:#282828;
+//新建按钮
+@btn_create:#1BBD3C;
+//30的字体大小
+@font30:0.8333rem;
+//color999
+@color999:#999;
+//color333
+@color333:#333;
+
+@font60:1.6667rem;
+@font24:0.6667rem;
+@font28:0.7778rem;
+@font26:0.7222rem;
+@border4:0.1111rem;
+@width624:17.666rem;
+@height180:5rem;
+@width280:7.7778rem;
+@height80:2.2222rem;
+@width324:9rem;
+@height90:2.5rem;
+@colorGreen:#1BBD3D;
+@height70:1.2622rem;
+@width500:13.8889rem;
+
+body{
+  -webkit-appearance: none;
+  height: 100%;
+  background-color: @setnewcircle-bgcolor;
+  overflow-x: hidden;
+}
+input{
+  -webkit-appearance: none;
+}
+input[type=button]{
+  -webkit-appearance:none;
+  outline:none
+}
+.toolbar .picker-button{
+  width:3.6111rem;
+  height:1.6666rem;
+  background-color: @colorGreen;
+  color:#fff;
+  border-radius: 0.1111rem;
+  text-align: center;
+  line-height: 1.6666rem;
+  top:0.3rem;
+  right:0.6666rem;
+}
+.toolbar .title{
+  font-size:0.7777rem;
+  color:#999;
+}
+.weui-picker-modal .picker-item.picker-selected{
+  color:#1bbd3d;
+  font-size: 1rem;
+}
+.weui-picker-modal .picker-items-col-wrapper{
+  width:10rem;
+  text-align: center;
+}
+.notNUll{
+  display: none;
+  >span{
+    display: none;
+  }
+}
+
+.mengceng{
+  width:100%;
+  height:100%;
+  position: fixed;
+  top:0;
+  background:#000;
+  z-index:999999;
+  .Divimg{
+    position: fixed;
+    width:100%;
+    background: #000;
+  }
+  .Divimg>img{
+    background: #000;
+    position: fixed;
+    width:100%;
+    height: 20rem;
+    z-index:999;
+    padding-top:6rem;
+  }
+
+  .DIvdelete{
+    width:100%;
+    text-align: center;
+    padding-top:27rem;
+    background: #000;
+    #btnDelete{
+      display: inline-block;
+      width:9rem;
+      height:2.5rem;
+      margin:0 auto;
+      background: #FA4848;
+      border-radius: 0.1111rem;
+      font-size: 1rem;
+      color: #FFFFFF;
+    }
+  }
+}
+
+.confirmDialog{
+  width:15.7778rem;
+  height:10rem;
+  background: #FFFFFF;
+  box-shadow: 0 0.02778rem 0.5556rem 0 rgba(0,0,0,0.10);
+  border-radius: 0.2222rem;
+  position: fixed;
+  top:12.7778rem;
+  left:2.1111rem;
+  z-index:9999999;
+  >p{
+    font-size: 1rem;
+    color: #333333;
+    text-align: center;
+    margin-top:3.1667rem;
+    margin-bottom:2.2778rem;
+  }
+  >div{
+    display: flex;
+    justify-content: space-around;
+    >input.btnphotocancel{
+      width:6.6667rem;
+      height:1.9444rem;
+      background: #999999;
+      border-radius:@border4;
+      color:#fff;
+    }
+    >input.btnphotodel{
+      width:6.6667rem;
+      height:1.9444rem;
+      background: #FA4848;
+      border-radius:@border4;
+      color:#fff;
+    }
+  }
+}
+.basic-info{
+  //height:4.4444rem;
+  background-color: #fff;
+  border-bottom: 0.0555rem solid #d8d8d8;
+  padding:1rem 0 1rem 0.6666rem;
+  p{
+    font-size: 0.7777rem;
+    color:#999;
+    span{
+      font-size:0.7777rem;
+      color:#333;
+    }
+  }
+}
+
+header{
+  width:100%;
+  height:@height180;
+  background-color: #fff;
+  position: relative;
+  >div.stepAll{
+    width:@width624;
+    margin:0 auto;
+    display: flex;
+    justify-content: space-around;
+
+    >div.step{
+      margin-top:@font30;
+      width:@font60;
+      height:@font60;
+      border-radius: @font30;
+      position: relative;
+      z-index:3;
+      font-size:@font28;
+      color:#fff;
+      line-height: @font60;
+      text-align: center;
+      background: #CCCCCC;
+      &.currentStep{
+        background-color: @btn_create;
+      }
+      >span{
+        margin-top:0.1rem;
+        position: absolute;
+        top:@font60;
+        left:-1rem;
+        font-size: @font24;
+        width:3.8rem;
+        color: @color333;
+      }
+    }
+  }
+  >div.line:nth-child(2){
+    width:4rem;
+    height:0.1389rem;
+    background: #CCCCCC;
+    position: absolute;
+    top:1.7rem;
+    left:3rem;
+    z-index:1;
+    &.currentLine{
+      background: @colorGreen;
+    }
+  }
+  >div.line:nth-child(3){
+    width:4rem;
+    height:0.1389rem;
+    background: #CCCCCC;
+    position: absolute;
+    top:1.7rem;
+    left:8rem;
+    z-index:1;
+    &.currentLine{
+      background: @colorGreen;
+    }
+  }
+  >div.line:nth-child(4){
+    width:4rem;
+    height:0.1389rem;
+    background: #CCCCCC;
+    position: absolute;
+    top:1.7rem;
+    left:12rem;
+    z-index:1;
+    &.currentLine{
+      background: @colorGreen;
+    }
+  }
+}
+
+section{
+  width:100%;
+  //第一步选择圈子样式
+  >div#step1_chooseCircle{
+    .hrefP{
+      line-height: 2.2222rem;
+      margin-bottom: 7.7777rem;
+      .chooseHref{
+        font-size: 0.8333rem;
+        color:#999;
+        display: block;
+        width:16.7777rem;
+        height:2.2222rem;
+        border:0.0555rem solid #d8d8d8;
+        border-radius: 0.1111rem;
+        background-color: #fff;
+        padding-left:0.5555rem;
+        position: relative;
+        &.errMes{
+          border:0.056rem solid #FA4848 !important;
+        }
+        img{
+          position: absolute;
+          width:0.7777rem;
+          height:0.7777rem;
+          top:0.7rem;
+          right:1rem;
+        }
+      }
+    }
+    .next-btn{
+      outline: none;
+      text-align: center;
+      margin-bottom: 10.9444rem;
+      .nextStep{
+        width:17.3333rem;
+        height:2.5rem;
+        background-color: #1bbd3d;
+        border-radius: 0.1111rem;
+        font-size: 1rem;
+      }
+    }
+    .chooseCircle{
+      margin:1.7777rem 0 0.4444rem 1.3333rem;
+      font-size: 0.7222rem;
+      color:#999;
+
+    }
+
+
+
+  }
+  >div#step2_auctionInfo{
+    //height:9.0833rem;
+    nav{
+      font-size: @font26;
+      color:@color999;
+      line-height: @font60;
+      padding-left:@font24;
+      background-color: @setnewcircle-bgcolor;
+
+    }
+    >div.timeInfo{
+      background-color: #fff;
+      >div.time1{
+        >p{
+          margin: 0 auto;
+          padding-top: 1.1111rem;
+          padding-bottom:0.4444rem;
+          width:@width624;
+          display: flex;
+          justify-content: space-between;
+          line-height: @font30;
+          >span{
+            font-size: @font26;
+            color: @color333;
+            line-height: @font30;
+          }
+        }
+        >div.actionDate{
+          width:@width624;
+          height:@height80;
+          margin:0 auto;
+          margin-bottom:@font26;
+          border: 1px solid #D8D8D8;
+          border-radius: 0.1111rem;
+          background: #F5F5F5;
+          >div.weui_cell_bd{
+            position: relative;
+            >input{
+              width:15.6733rem;
+              font-size: @font30;
+              color: @color333;
+              line-height: 1.0556rem;
+              padding:0.4rem 1.1rem 0.56rem 0.56rem;
+            }
+            >i{
+              color:@setnewcircle-fontcolor;
+              position: absolute;
+              bottom: 0.6rem;
+              right: 0.8rem;
+            }
+          }
+        }
+
+        &.errMes{
+          .findinput{
+            border:0.056rem solid #FA4848 !important;
+          }
+          .notNUll{
+            color:#FA4848;
+            display: flex;
+            justify-content: flex-end;
+          }
+        }
+
+      }
+      >div.time2{
+        >div.auctionTime{
+          width:@width624;
+          margin:0 auto;
+          padding-bottom:1.5278rem;
+          >div.weui-col-40{
+            position: relative;
+            background: #F5F5F5;
+            border: 1px solid #D8D8D8;
+            border-radius: 0.1111rem;
+            width:@width280;
+            height:@height80;
+            padding:0.4rem 1.1rem 0.56rem 0.56rem;
+            >input{
+              font-size: @font30;
+              color: @color333;
+              line-height: 1.0556rem;
+            }
+            >i{
+              color:@setnewcircle-fontcolor;
+              position: absolute;
+              bottom: 0.6rem;
+              right: 0.8rem;
+            }
+          }
+          >div.weui-col-6{
+            line-height:@height80;
+            font-size: @font30;
+            color: @color999;
+          }
+        }
+        >p.notNUll{
+          width: 17.666rem;
+          display: flex;
+          justify-content: flex-end;
+          margin:0 auto;
+          padding:0;
+          padding-top: 0.5rem;
+          padding-bottom: 0.4444rem;
+          >span{
+            font-size: 0.7222rem;
+            color: #333;
+            line-height: 0.8333rem;
+          }
+        }
+        &.errMes{
+          .notNUll{
+            color:#FA4848;
+            display: flex;
+            justify-content: flex-end;
+          }
+        }
+
+        >div.fixedTime{
+          width:@width624;
+          display: flex;
+          justify-content: flex-end;
+          text-align: right;
+          padding-bottom:2.1389rem;
+          >p{
+            font-size: @font30;
+            color: #333333;
+            line-height: 1.0556rem;
+          }
+          >span{
+            font-size: @font30;
+            color: #999;
+            line-height: 1.0556rem;
+            margin-left:@font24;
+            margin-right:@font24;
+          }
+
+        }
+      }
+
+
+    }
+    >div.stepChange{
+      background-color: @setnewcircle-bgcolor;
+      width:100%;
+      margin:0 auto;
+      padding-top:1.0833rem;
+      padding-bottom:1.0833rem;
+      //padding-left:0.3rem;
+      margin-top:5.3333rem;
+      >div.weui-col-50{
+        text-align: center;
+      }
+      input#step2Before{
+        width:@width324;
+        height:@height90;
+        background: @color999;
+        border-radius:@border4;
+        color:#fff;
+      }
+      input#step2After{
+        width:@width324;
+        height:@height90;
+        background: @colorGreen;
+        border-radius:@border4;
+        color:#fff;
+      }
+    }
+  }
+
+  >div#step3_productInfo{
+    width:100%;
+    background-color: #fff;
+    nav{
+      font-size: @font26;
+      color:@color999;
+      line-height: @font60;
+      padding-left:@font24;
+      background-color: @setnewcircle-bgcolor;
+
+    }
+    >ul{
+      font-size: @font30;
+      color: @color999;
+      width:100%;
+      >li{
+        >div.weui-row{
+          >div.weui-col-25{
+            >p{
+              width:4.0356rem;
+              line-height: @height80;
+              margin-right:0.4722rem;
+            }
+          }
+        }
+      }
+      >li:nth-child(1){
+        width:@width624;
+        margin:0 auto;
+        padding-top:0.8889rem;
+        position: relative;
+        div.weui-col-75{
+          >input{
+            -webkit-appearance: none;
+            width:11.5rem;
+            height:@height70;
+            background: #F5F5F5;
+            border: 1px solid #D8D8D8;
+            border-radius: @border4;
+            padding:0.4rem 1.8rem 0.4rem 0.56rem;
+
+            &.errMes{
+              border:0.056rem solid #FA4848 !important;
+            }
+
+          }
+          >i{
+            color:@setnewcircle-fontcolor;
+            position: absolute;
+            bottom: 0.7rem;
+            right: 0.2rem;
+          }
+        }
+      }
+      >li:nth-child(2){
+        width:@width624;
+        margin:0 auto;
+        padding-top:0.8889rem;
+        position: relative;
+        div.weui-col-75{
+          >input{
+            width:7.2rem;
+            height:@height70;
+            background: #F5F5F5;
+            border: 1px solid #D8D8D8;
+            border-radius: @border4;
+            padding:0.4rem 1.8rem 0.56rem 0.56rem;
+            &.errMes{
+              border:0.056rem solid #FA4848 !important;
+            }
+          }
+          span{
+            font-size: @font30;
+            color: @color333;
+            line-height: @height70;
+            margin-left:0.56rem;
+          }
+          >i{
+            color:@setnewcircle-fontcolor;
+            position: absolute;
+            bottom: 0.6rem;
+            right: 4.4rem;
+          }
+        }
+      }
+      >li:nth-child(3){
+        width:@width624;
+        margin:0 auto;
+        padding-top:0.8889rem;
+        position: relative;
+        div.weui-col-75{
+          display: flex;
+          justify-content: flex-start;
+          >div.btnPrice{
+            width:5rem;
+            height:1.6667rem;
+            border: 0.056rem solid #d8d8d8;
+            border-radius: 2.778rem;
+            background-color: #fff;
+            text-align: center;
+            line-height: 1.6667rem;
+            font-size: @font30;
+            color: #999;
+            &.priceActive{
+              border: 0.056rem solid @colorGreen;
+              color:@colorGreen;
+            }
+          }
+          >div.btnPrice1{
+            margin-left:0.444rem;
+          }
+          >div.priceList{
+            >p{
+              color:#333;
+              font-size:0.7rem;
+              >span{
+                color:#999;
+                font-size:0.7rem;
+              }
+            }
+          }
+          >p{
+            line-height: @height80;
+          }
+          input.handWrite{
+            width:7.2rem;
+            height:@height70;
+            background: #F5F5F5;
+            border: 1px solid #D8D8D8;
+            border-radius: @border4;
+            padding:0.4rem 1.8rem 0.56rem 0.56rem;
+            &.errMes{
+              border:0.056rem solid #FA4848 !important;
+            }
+          }
+          span.Kg{
+            font-size: @font30;
+            color: @color333;
+            line-height: @height80;
+            margin-left:0.56rem;
+          }
+          >i{
+            color:@setnewcircle-fontcolor;
+            position: absolute;
+            bottom: 0.6rem;
+            right: 4.4rem;
+          }
+        }
+      }
+      >li:nth-child(4){
+        background: #F5F5F5;
+        padding:0;
+        width:100%;
+
+
+        >ul{
+          padding-left:5.6rem;
+          //width:12.39rem;s
+          margin:0 auto;
+          >li{
+            padding-top:0.4444rem;
+            padding-bottom:0.4444rem;
+            input{
+              font-size: @font30;
+              color: #333333;
+              width:8rem;
+              height:@height80;
+              background-color: #fff;
+              padding-left:@font24;
+              &.errMes{
+                border:0.056rem solid #FA4848 !important;
+              }
+            }
+            >p{
+              font-size: @font28;
+              color: #999999;
+              margin-bottom:0.2222rem;
+              text-align: left;
+            }
+          }
+          >li.priceList{
+            >p{
+              color:#333;
+              >span{
+                color:#999;
+              }
+            }
+          }
+        }
+      }
+      >li:nth-child(5){
+        width:@width624;
+        margin:0 auto;
+        padding-top:0.8889rem;
+        position: relative;
+        div.weui-col-75{
+          >input{
+            width:7.2rem;
+            height:@height70;
+            background: #F5F5F5;
+            border: 1px solid #D8D8D8;
+            border-radius: @border4;
+            padding:0.4rem 1.8rem 0.56rem 0.56rem;
+            &.errMes{
+              border:0.056rem solid #FA4848 !important;
+            }
+          }
+          span{
+            font-size: @font30;
+            color: @color333;
+            line-height: @height70;
+            margin-left:0.56rem;
+          }
+          >i{
+            color:@setnewcircle-fontcolor;
+            position: absolute;
+            bottom: 0.6rem;
+            right: 4.4rem;
+          }
+        }
+      }
+      >li:nth-child(6){
+        width:@width624;
+        margin:0 auto;
+        padding-top:0.8889rem;
+        padding-bottom:1rem;
+        position: relative;
+        div.weui-col-75{
+          >input{
+            width:11.5rem;
+            height:@height70;
+            background: #F5F5F5;
+            border: 1px solid #D8D8D8;
+            border-radius: @border4;
+            padding:0.4rem 1.8rem 0.56rem 0.56rem;
+            &.errMes{
+              border:0.056rem solid #FA4848 !important;
+            }
+          }
+          >i{
+            color:@setnewcircle-fontcolor;
+            position: absolute;
+            bottom: 1.6rem;
+            right: 0.2rem;
+          }
+        }
+      }
+    }
+    >div.addPigPhotos{
+      padding-left:0.6667rem;
+      border-top:0.1rem solid #d8d8d8;
+      >p{
+        margin-top:0.9167rem;
+        font-size:@font26;
+        color: @color333;
+        line-height: @font30;
+        >span{
+          font-size:@font26;
+          color: @color999;
+          line-height: @font30;
+        }
+      }
+      >div#addPhotos{
+        margin-top:0.8889rem;
+        padding-bottom:1.3056rem;
+        display: flex;
+        justify-content: flex-start;
+        >div.photoList{
+          display: flex;
+          justify-content: flex-start;
+          >div.photos{
+            margin-left:0.4444rem;
+            width:3rem;
+            height:3rem;
+            border-radius: 0.056rem;
+            >img{
+              width:3rem;
+              height:3rem;
+              border-radius: 0.056rem;
+            }
+          }
+        }
+        >div.photos{
+          margin-left:0.4444rem;
+          width:3rem;
+          height:3rem;
+          border-radius: 0.056rem;
+          >img{
+            width:3rem;
+            height:3rem;
+            border-radius: 0.056rem;
+          }
+        }
+
+
+      }
+    }
+    >div.stepChange{
+      background-color: @setnewcircle-bgcolor;
+      width:100%;
+      margin:0 auto;
+      padding-top:1.0833rem;
+      padding-bottom:1.0833rem;
+      //padding-left:0.3rem;
+      >div.weui-col-50{
+        text-align: center;
+      }
+      //margin-top:5.3333rem;
+      input#step3Before{
+        width:@width324;
+        height:@height90;
+        background: @color999;
+        border-radius:@border4;
+        color:#fff;
+      }
+      input#step3After{
+        width:@width324;
+        height:@height90;
+        background: @colorGreen;
+        border-radius:@border4;
+        color:#fff;
+      }
+    }
+  }
+
+  >div#step4_jiaoGeInfo{
+    width:100%;
+    background-color: #fff;
+    nav{
+      font-size: @font26;
+      color:@color999;
+      line-height: @font60;
+      padding-left:@font24;
+      background-color: @setnewcircle-bgcolor;
+
+    }
+    >ul{
+      font-size: @font30;
+      color: @color999;
+      width:18.6667rem;
+      margin:0 auto;
+      >li{
+        div.weui-col-25{
+          >p{
+            width:4.0356rem;
+            line-height: @height80;
+            margin-right:0.4722rem;
+          }
+        }
+      }
+      >li:nth-child(1){
+        padding-top:0.8889rem;
+        position: relative;
+        div.weui-col-75{
+          >input{
+            width:11.5rem;
+            height:@height70;
+            background: #F5F5F5;
+            border: 0.0278rem solid #D8D8D8;
+            border-radius: @border4;
+            padding:0.4rem 1.8rem 0.56rem 0.56rem;
+            &.errMes{
+              border:0.056rem solid #FA4848 !important;
+            }
+          }
+          >i{
+            color:@setnewcircle-fontcolor;
+            position: absolute;
+            bottom: 0.7rem;
+            right: 0.8rem;
+          }
+        }
+      }
+      >li:nth-child(2){
+        position: relative;
+        padding-top:0.8889rem;
+        div.weui-col-75{
+          >input{
+            width:11.5rem;
+            height:@height70;
+            background: #F5F5F5;
+            border: 0.0278rem solid #D8D8D8;
+            border-radius: @border4;
+            padding:0.4rem 1.8rem 0.56rem 0.56rem;
+            &.errMes{
+              border:0.056rem solid #FA4848 !important;
+            }
+          }
+          >i{
+            color:@setnewcircle-fontcolor;
+            position: absolute;
+            bottom: 0.7rem;
+            right: 0.8rem;
+          }
+        }
+        div.selectPig{
+          display: none;
+          width:13.8889rem;
+          position: absolute;
+          top:3.3rem;
+          left:4.7rem;
+          z-index:999;
+          background-color: #fff;
+          border:0.02778rem solid #D8D8D8;
+          >ul{
+            height:8rem;
+            overflow-y: scroll;
+            >li{
+              padding-top: @font24;
+              padding-left:@font24;
+              padding-bottom:@font24;
+              font-size: @font30;
+              color: #999999;
+            }
+          }
+
+        }
+      }
+      >li:nth-child(3){
+        padding-top:0.8889rem;
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        div.weui-col-75{
+          display: flex;
+          justify-content: flex-start;
+          position: relative;
+          align-items: center;
+          >input.addr{
+            height:1.2622rem;
+            background: #F5F5F5;
+            border: 1px solid #D8D8D8;
+            border-radius: @border4;
+            padding:0.4rem 1.4rem 0.56rem 0.56rem;
+            width:7.04rem;
+            &.errMes{
+              border:0.056rem solid #FA4848 !important;
+            }
+          }
+          >input#location{
+            color:#fff;
+            padding:0;
+            margin-left:0.4444rem;
+            background-color: @colorGreen;
+            width: 4.4444rem;
+            height: 2.2222rem;
+            font-size: 1rem;
+            padding-left:1.2rem;
+            background-image: url(../images/hj/ic_myzc_dress.png);
+            background-size:0.8rem 0.9rem;
+            background-repeat: no-repeat;
+            background-position: 0.7rem 0.7rem ;
+          }
+        }
+      }
+      >li:nth-child(4){
+        padding-top:0.8889rem;
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        >div.weui-col-75{
+          >input{
+            width:5.1rem;
+            height:@height70;
+            background: #F5F5F5;
+            border-radius: @border4;
+            padding:0.4rem 1rem 0.56rem 0.56rem;
+
+          }
+        }
+        >div.length{
+          >#lengthLimit{
+            border: 0.0278rem solid #D8D8D8;
+            &.errMes{
+              border:0.056rem solid #FA4848 !important;
+            }
+          }
+          >i{
+            color:@setnewcircle-fontcolor;
+            position: absolute;
+            bottom: 0.7rem;
+            right: 8rem;
+          }
+        }
+        >div.height{
+          >#heightLimit{
+            margin-left:0.4444rem;
+            border: 0.0278rem solid #D8D8D8;
+
+            &.errMes{
+              border:0.056rem solid #FA4848 !important;
+            }
+          }
+          >i{
+            color:@setnewcircle-fontcolor;
+            position: absolute;
+            bottom: 0.7rem;
+            right: 0.8rem;
+          }
+        }
+      }
+      >li:nth-child(5){
+        position: relative;
+        >textarea{
+          resize: none;
+          margin-top:0.6667rem;
+          height: 2.789rem;
+          color:#333333;
+          width: 17.6rem;
+          padding:0.55rem;
+          margin-bottom:1.1111rem;
+          font-size: 0.8333rem;
+          background: #F5F5F5;
+          border: 0.0278rem solid #D8D8D8;
+          &.errMes{
+            border:0.056rem solid #FA4848 !important;
+          }
+        }
+        >span{
+          position: absolute;
+          right:1rem;
+          bottom: 1.5rem;
+          font-size: 0.6667rem;
+          color: @color999;
+        }
+      }
+    }
+    >div{
+      background-color: @setnewcircle-bgcolor;
+      padding-top:1.1111rem;
+      >a{
+        width:18.6667rem;
+        background-color: #1BBD3C;
+      }
+    }
+    >div.stepChange{
+      background-color: @setnewcircle-bgcolor;
+      width:100%;
+      margin:0 auto;
+      padding-top:1.0833rem;
+      padding-bottom:1.0833rem;
+      //padding-left:0.3rem;
+      >div.weui-col-50{
+        text-align: center;
+      }
+
+      input#step4Before{
+        width:@width324;
+        height:@height90;
+        background: @color999;
+        border-radius:@border4;
+        color:#fff;
+      }
+      input#step4After{
+        width:@width324;
+        height:@height90;
+        background: @colorGreen;
+        border-radius:@border4;
+        color:#fff;
+      }
+    }
+  }
+
+
+
+}

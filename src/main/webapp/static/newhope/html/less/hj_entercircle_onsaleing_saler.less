@@ -1,0 +1,144 @@
+
+
+//30px大小的字
+@fontsize:0.8333rem;
+//日期的颜色
+@datafontColor:#4A4A4A;
+//80的高度
+@lineHight:2.2222rem;
+//border:4px
+@border:0.1111rem;
+//整体背景色
+@bgcolor:#ebebeb;
+//#999999颜色
+@fontcolorHead:#999;
+//spancolor  #333
+@spancolor:#333;
+//交易中color
+@fontcolor_saleing:#1BBD3D;
+//28的font
+@font28:0.7778rem;
+
+
+
+
+body{
+  -webkit-appearance: none;
+  height: 100%;
+  background-color: @bgcolor;
+}
+.contactTa{
+  font-size: 1rem;
+  text-align: center;
+  line-height:1.944rem;
+  display: inline-block;
+  color:#fff;
+  width:4.4444rem;
+  height:1.944rem;
+  background: #1BBD3D;
+  border-radius: 0.1111rem;
+}
+section{
+  nav{
+    border-bottom: 0.0556rem solid @bgcolor;
+
+    .weui-row{
+    padding:0 0.6667rem;
+    height: @lineHight;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+
+    #dealState{
+      text-align: right;
+      .weui_btn,.weui_btn_mini,.weui_btn_default{
+        width:3.4444rem;
+        height: 1.3889rem;
+        //24px
+        font-size: 0.6667rem;
+        color:@fontcolor_saleing;
+        background: #F5F5F5;
+        border-radius: @border 0 0 @border;
+      }
+
+    }
+    .weui-col-50{
+      >p{
+        line-height: @lineHight;
+        font-size: @fontsize;
+        color: @datafontColor;
+        >span{
+          line-height: @lineHight;
+          font-size: @fontsize;
+          color: @datafontColor;
+        }
+      }
+    }
+
+  }
+
+}
+
+  .countCenter{
+    background-color: #fff;
+    padding:1.3333rem 0.6667rem;
+    >p{
+      font-size:@font28;
+      color: @fontcolorHead;
+      line-height: 1.1389rem;
+      p:nth-child(1){
+        margin-bottom: 0.8056rem;
+      }
+      >span{
+        margin-left:0.5rem;
+        font-size: 1rem;
+        color: @spancolor;
+        line-height: 1.5rem;
+      }
+    }
+  }
+
+
+  >p{
+  padding:0 0.6667rem;
+  font-size: 0.7222rem;
+  color:@fontcolorHead;
+  letter-spacing: 0;
+  line-height: 1.6667rem;
+}
+  ul{
+
+    background-color: #fff;
+  >li{
+    position: relative;
+    padding: 0.9167rem 0.6667rem;
+    border-bottom: 0.0556rem solid @bgcolor;
+    .weui-row{
+      align-items: center;
+    }
+    p{
+      font-size: @fontsize;
+      color:@fontcolorHead;
+      margin-bottom: 0.2222rem;
+      line-height: 1.25rem;
+      >span{
+        font-size: @fontsize;
+        color:@spancolor;
+      }
+    }
+    img{
+      width: 3.3889rem;
+      height: 2.5556rem;
+      position: absolute;
+      right:0;
+      top:0;
+    }
+
+
+  }
+
+  }
+
+}
+

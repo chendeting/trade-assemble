@@ -1,0 +1,50 @@
+*{
+	padding: 0px;
+}
+.modal_confirm_msg{
+	
+	margin-top: 10px;
+	height: 30px; 
+	width: 160px; 
+	padding: 0px;
+	margin-left: 45px;
+
+}
+.modal_confirm_btn{
+	margin-top: 25px;
+}
+.modal_confirm_btn button{
+	width: 60px;
+	height: 30px;
+}
+
+.modal_delete_content{
+	margin-left:130px;
+	width: 250px;
+	height: 150px;
+	margin-top: 160px;
+}
+.modal_confirm_err{
+	margin-top: 10px;
+	height: 30px; 
+	width: 160px; 
+	padding: 0px;
+	margin-left: 45px;
+	display: none;
+}
+.modal_confirm_success{
+	margin-top: 10px;
+	height: 30px; 
+	width: 160px; 
+	padding: 0px;
+	margin-left: 45px;
+	display: none;
+}
+.choice_app{
+	margin-top: 10px;
+	height: 30px; 
+	width: 200px; 
+	padding: 0px;
+	margin-left: 45px;
+	display: none;
+}

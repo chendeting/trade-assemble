@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="x5-orientation" content="portrait">
+    <title>我的拍卖场成员</title>
+
+    <!--weui-->
+    <link rel="stylesheet" href="css/weui.min.css">
+    <link rel="stylesheet" href="css/huadongjiazai.min.css">
+
+    <link type="text/css" rel="stylesheet" href="css/index.css">
+
+    <script type="text/javascript" charset="utf-8" src="js/htmlsize.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="js/jquery-3.1.1.min.js"></script>
+    <!--动态加载模块-->
+    <script src="js/template.js"></script>
+</head>
+    <script type="text/html" id="auction_Member">
+        <div class="auction_bg3">
+            <div class="auction_head_bg">
+                <img class="auction_head_pic" src="images/morentu.png"/>
+            </div>
+            <div class="auction_menber_message">
+                <div class="auction_menber_name">{{username}}</div>
+                <div class="auction_menber_phone">手机：<span>{{phoneNumber}}</span></div>
+            </div>
+            <input class="auction_list1_icon" type="button"/>
+            <i class="auction_mold_bg">
+                <img class="auction_mold_icon" src="images/ic_jing_big.png"/>
+            </i>
+            <i class="auction_mold_bg">
+                <img class="auction_mold_icon" src="images/ic_tu_big.png"/>
+            </i>
+        </div>
+        <div class="line"></div>
+    </script>
+<body>
+    <div id="content">
+         <div class="auction_bg1">
+               <div class="auction_notice_pic">
+               </div>
+               <div class="auction_notice_text">
+                   <span>2</span>
+                   <span>人申请加入</span>
+               </div>
+               <input class="auction_list_icon" type="button"/>
+               <div class="auction_notice_round">
+               </div>
+         </div>
+         <div class="line"></div>
+         <div class="wall"></div>
+         <div class="line"></div>
+         <div class="auction_bg2">
+             <div class="auction_menber_num">
+                 <span>成员数量</span>
+                 <span>(6)</span>
+             </div>
+         </div>
+         <div class="line"></div>
+         <div class="auction_bg3">
+             <div class="auction_head_bg">
+                 <img class="auction_head_pic" src="images/morentu.png"/>
+             </div>
+             <div class="auction_menber_message">
+                  <div class="auction_menber_name">黄浩</div>
+                  <div class="auction_menber_phone">手机：<span>187-8705-9806</span></div>
+             </div>
+             <input class="auction_list1_icon" type="button"/>
+             <i class="auction_mold_bg">
+                 <img class="auction_mold_icon" src="images/ic_jing_big.png"/>
+             </i>
+             <i class="auction_mold_bg">
+                 <img class="auction_mold_icon" src="images/ic_tu_big.png"/>
+             </i>
+             <i class="auction_mold_bg">
+                 <img class="auction_mold_icon" src="images/ic_fan_big.png"/>
+             </i>
+             <i class="auction_mold_bg">
+                 <img class="auction_mold_icon" src="images/ic_yang_big.png"/>
+             </i>
+             <i class="auction_mold_bg">
+                 <img class="auction_mold_icon" src="images/ic_bao_big.png"/>
+             </i>
+         </div>
+         <div class="line"></div>
+         <div class="auction_bg3">
+             <div class="auction_head_bg">
+                 <img class="auction_head_pic" src="images/morentu.png"/>
+             </div>
+             <div class="auction_menber_message">
+                 <div class="auction_menber_name">小飞机</div>
+                 <div class="auction_menber_phone">手机：<span>186-8532-3388</span></div>
+             </div>
+             <input class="auction_list1_icon" type="button"/>
+             <i class="auction_mold_bg">
+                 <img class="auction_mold_icon" src="images/ic_fan_big.png"/>
+             </i>
+             <i class="auction_mold_bg">
+                 <img class="auction_mold_icon" src="images/ic_yang_big.png"/>
+             </i>
+             <i class="auction_mold_bg">
+                 <img class="auction_mold_icon" src="images/ic_bao_big.png"/>
+             </i>
+         </div>
+         <div class="line"></div>
+         <div class="auction_bg3">
+             <div class="auction_head_bg">
+                 <img class="auction_head_pic" src="images/morentu.png"/>
+             </div>
+             <div class="auction_menber_message">
+                 <div class="auction_menber_name">艾斯</div>
+                 <div class="auction_menber_phone">手机：<span>188-8433-9443</span></div>
+             </div>
+             <input class="auction_list1_icon" type="button"/>
+             <i class="auction_mold_bg">
+                 <img class="auction_mold_icon" src="images/ic_bao_big.png"/>
+             </i>
+         </div>
+         <div class="line"></div>
+         <div class="auction_bg3">
+             <div class="auction_head_bg">
+                 <img class="auction_head_pic" src="images/morentu.png"/>
+             </div>
+             <div class="auction_menber_message">
+                 <div class="auction_menber_name">Evernlad</div>
+                 <div class="auction_menber_phone">手机：<span>152-1234-3322</span></div>
+             </div>
+             <input class="auction_list1_icon" type="button"/>
+         </div>
+         <div class="line"></div>
+
+    </div>
+
+     <div class="weui-infinite-scroll">
+         <div class="infinite-preloader"></div>
+         正在加载...
+     </div>
+
+     <!--  weui js -->
+     <script src="js/jquery-weui.min.js"></script>
+     <script type="text/javascript">
+
+         $(document.body).infinite(500);
+
+         var loading = false;  //状态标记
+         var page = 0;    //当前显示页数
+
+         //每一页的显示数量
+         var size = 6;
+
+         //页面初始化时，加载8条数据
+         $.ajax({
+             type: 'POST',
+             url: 'data/auctionMember.json',
+             dataType: 'json',
+             success: function(data){
+                 page++;
+                 var result ="";
+                 //总的数据长度
+                 var dataLen = data.length;
+                 if(dataLen < 6){
+                    //就只加载当前的数据
+                     for(var i = 0;i < dataLen;i++){
+                         result += template("auction_Member",data[i]);
+                     }
+                 }else{
+                     for(var i = 0;i < size;i++){
+                         result += template("auction_Member",data[i]);
+                     }
+                 }
+                 $("#content").append(result);
+
+             }
+         });
+         //初始化以后，再去按照分页加载条数
+         $(document.body).infinite().on("infinite", function() {
+             if(loading) return;
+             loading = true;
+             setTimeout(function() {
+                 page++;
+                 //发送请求，拿到json数据
+                 $.ajax({
+                     type: 'POST',
+                     url: 'data/auctionMember.json',
+                     dataType: 'json',
+                     success: function(data){
+                         var result ="";
+                         //总的数据长度
+                         var dataLen = data.length;
+                         //计算总的页数
+                         var totalPage = Math.ceil(dataLen/size);
+                         if(page <= totalPage){
+                             //如果有数据
+                             if(page == totalPage){
+                                 //最后一页
+                                 for(var i = (page-1)*size;i < dataLen;i++){
+                                     result += template("auction_Member",data[i]);
+                                 }
+                                 //没有数据了
+                                 $(document.body).destroyInfinite();
+                                 $(".weui-infinite-scroll").hide();
+//                                 $(".weui-infinite-scroll").html(" ");
+//                                 $(".weui-infinite-scroll").html("没有更多数据了哦~" );
+                             }else{
+                                 //其他页
+                                 for(var i = (page-1)*size ; i < page*size;i++){
+                                     result += template("auction_Member",data[i]);
+                                 }
+                             }
+                         }
+                         $("#content").append(result);
+                     }
+                 });
+                 loading = false;
+             }, 1500);   //模拟延迟
+         });
+     </script>
+</body>
+</html>

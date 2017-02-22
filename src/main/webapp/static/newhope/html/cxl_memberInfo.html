@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>成员信息</title>
+    <script type="text/javascript" charset="utf-8" src="js/htmlsize.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+    <link type="text/css" rel="stylesheet" href="css/memberInfo.css"/>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+
+</head>
+<body>
+    <div id="warp">
+        <div class="member-info">
+            <div class="headImg">
+                <img src="images/morentu.png"/>
+
+            </div>
+            <div class="member-message">
+                <p class="memberName">刘亚希</p>
+                <p>手机：136-2093-2345</p>
+                <p>入圈时间：2016-12-12</p>
+            </div>
+        </div>
+        <div class="volume">
+            <p class="all-volume">总交易量：<span>300头</span></p>
+            <p class="being-volume">正在交易：<span>50头</span></p>
+        </div>
+        <div class="line"></div>
+        <div class="TA-label">
+            <p class="hisLabel">给TA打个标签吧</p>
+            <ul class="all-label">
+                <li><img src="images/ic_bao_big.png"/><p>保证金</p><img class="checked" src="images/ic_bao_big_selected.png"/></li>
+                <li><img src="images/ic_yang_big.png"/><p>养殖户</p><img class="checked" src="images/ic_bao_big_selected.png"/></li>
+                <li><img src="images/ic_fan_big.png"/><p>猪贩子</p><img class="checked" src="images/ic_bao_big_selected.png"/></li>
+                <li><img src="images/ic_tu_big.png"/><p>屠宰场</p><img class="checked" src="images/ic_bao_big_selected.png"/></li>
+                <li><img src="images/ic_jing_big.png"/><p>猪经济</p><img class="checked" src="images/ic_bao_big_selected.png"/></li>
+            </ul>
+        </div>
+        <div class="member-role">
+            <span>成员角色：</span>
+            <input type="button" value="买家" name="buyer" class="buyer active"/>
+            <input type="button" value="卖家" name="seller" class="seller"/>
+        </div>
+        <div class="save-exit">
+            <button class="exit">踢出去</button>　
+            <button class="save">保存</button>
+        </div>
+
+    </div>
+    <script type="text/javascript">
+        $(".all-label li").click(function () {
+            var checked=$(this).find(".checked");
+            if(checked.css("display")=="none"){
+                checked.show();
+            }else{
+                checked.hide();
+            }
+        });
+        $(".buyer").click(function () {
+            $(this).addClass("active");
+            $(".seller").removeClass("active");
+        });
+        $(".seller").click(function () {
+            $(this).addClass("active");
+            $(".buyer").removeClass("active");
+        })
+    </script>
+</body>
+</html>

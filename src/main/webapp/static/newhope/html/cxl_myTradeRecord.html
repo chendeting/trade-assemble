@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta charset="UTF-8">
+    <title>我的交易记录</title>
+    <!--字体大小换脚本-->
+    <script type="text/javascript" charset="utf-8" src="js/htmlsize.js"></script>
+    <!--自定义公共样式-->
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+    <!--weui样式-->
+    <link rel="stylesheet" type="text/css" href="css/weui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/jquery-weui.min.css"/>
+    <!--jquery脚本-->
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+
+    <!--自身页面单独样式-->
+    <link rel="stylesheet" type="text/css" href="css/myTradeRecord.css"/>
+</head>
+<body>
+    <div id="warp">
+        <div class="weui_tab">
+            <div class="weui_navbar">
+                <a href="#sell" class="weui_navbar_item weui_bar_item_on">
+                    <span class="mySell active">我卖出的</span>
+                </a>
+                <a href="#buy" class="weui_navbar_item">
+                    <span class="mybuy">我买到的</span>
+                </a>
+            </div>
+            <div class="weui_tab_bd">
+                <div id="sell" class="weui_tab_bd_item weui_tab_bd_item_active">
+                    <p class="mysell-title">我卖出的交易记录(10笔)</p>
+                    <ul class="mysell-ul">
+                        <li class="mysell-list">
+                            <p class="mysell-date">2016-12-14<img src="images/ic_list_detail.png"/></p>
+                            <div class="trade-status">
+                                <ul class="record-info">
+                                    <li>买家数量：<span>2人</span></li>
+                                    <li>发布数量：<span>700头</span></li>
+                                    <li>订购数量：<span>700头</span></li>
+                                    <li>已成交量：<span>59头</span></li>
+                                </ul>
+                                <p class="status-pic"><img src="images/ic_pmz01.png"/></p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="line"></div>
+                    <ul class="mysell-ul">
+                        <li class="mysell-list">
+                            <p class="mysell-date">2016-12-14<img src="images/ic_list_detail.png"/></p>
+                            <div class="trade-status">
+                                <ul class="record-info">
+                                    <li>买家数量：<span>2人</span></li>
+                                    <li>发布数量：<span>700头</span></li>
+                                    <li>订购数量：<span>700头</span></li>
+                                    <li>已成交量：<span>59头</span></li>
+                                </ul>
+                                <p class="status-pic"><img src="images/ic_jyz01.png"/></p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="line"></div>
+                    <ul class="mysell-ul">
+                        <li class="mysell-list">
+                            <p class="mysell-date">2016-12-14<img src="images/ic_list_detail.png"/></p>
+                            <div class="trade-status">
+                                <ul class="record-info">
+                                    <li>买家数量：<span>2人</span></li>
+                                    <li>发布数量：<span>700头</span></li>
+                                    <li>订购数量：<span>700头</span></li>
+                                    <li>已成交量：<span>700头</span></li>
+                                </ul>
+                                <p class="status-pic"><img src="images/ic_wc01.png"/></p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="line"></div>
+                </div>
+                <div id="buy" class="weui_tab_bd_item">
+                    <p class="mysell-title">我买到的交易记录(10笔)</p>
+                    <ul class="mysell-ul">
+                        <li class="mysell-list">
+                            <p class="mysell-date">2016-12-14<img src="images/ic_list_detail.png"/></p>
+                            <div class="trade-status">
+                                <p class="record-info">订购数量：<span>700头</span></p>
+                                <p class="status-pic"><img src="images/ic_pd02.png"/></p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="line"></div>
+                    <ul class="mysell-ul">
+                        <li class="mysell-list">
+                            <p class="mysell-date">2016-12-14<img src="images/ic_list_detail.png"/></p>
+                            <div class="trade-status">
+                                <p class="record-info">订购数量：<span>700头</span></p>
+                                <p class="status-pic"><img src="images/ic_jyz02.png"/></p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="line"></div>
+                    <ul class="mysell-ul">
+                        <li class="mysell-list">
+                            <p class="mysell-date">2016-12-14<img src="images/ic_list_detail.png"/></p>
+                            <div class="trade-status">
+                                <p class="record-info">订购数量：<span>700头</span></p>
+                                <p class="status-pic"><img src="images/ic_wc02.png"/></p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--jquery weui脚本-->
+    <script type="text/javascript" src="js/jquery-weui.min.js"></script>
+
+    <script type="text/javascript">
+        $(".weui_navbar a").click(function () {
+            $(this).children().addClass("active");
+            $(this).siblings().children().removeClass("active");
+        })
+    </script>
+</body>
+</html>

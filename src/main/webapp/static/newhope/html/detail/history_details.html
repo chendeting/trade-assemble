@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="x5-orientation" content="portrait">
+    <title>订单详细</title>
+    <link type="text/css" rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/huadongjiazai.min.css">
+    <script type="text/javascript" charset="utf-8" src="../js/htmlsize.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/template.js"></script>
+    <style type="text/css">
+    </style>
+</head>
+<script type="text/html" charset="UTF-8" id="auction_Member">
+    <div class="line"></div>
+    <div class="wall"></div>
+    <div class="line"></div>
+    <div>
+        <div class="history_bg_1">
+            <div class="history_meassger_bg_1">
+                <div class="history_meassger_head_1">
+                    拍卖时间:
+                </div>
+                <div class="history_meassger_text_1">
+                    {{sale_time}}
+                </div>
+                <div class="history_meassger_head_1">
+                    发布数量:
+                </div>
+                <div class="history_meassger_text_1">
+                    {{sale_num}}
+                </div>
+            </div>
+            <div class="history_list1_icon"></div>
+        </div>
+        <div class="issued_module">
+            <div class="history_meassger_bg_2">
+                <div class="history_meassger_head_1">
+                    订购数量:
+                </div>
+                <div class="history_meassger_text_2">
+                    {{order_num}}
+                </div>
+                <div class="history_meassger_head_1">
+                    交割数量:
+                </div>
+                <div class="history_meassger_text_2">
+                    {{delivery_num}}
+                </div>
+                <div class="history_meassger_head_1">
+                    卖方姓名:
+                </div>
+                <div class="history_meassger_text_2">
+                    {{sale_name}}
+                </div>
+            </div>
+            <i class="history_superscript">
+                <img class="superscript_finish" src="{{superscript_pic}}"/>
+            </i>
+            <div class="history_meassger_bg_3">
+                <div class="history_meassger_head_1">
+                    购买情况:
+                </div>
+            </div>
+            <ul class="history_meassger_bg_4">
+                {{each list as value i}}
+                <li>
+                    <span class="history_meassger_text_3">
+                        {{index}}{{value.dinggou_name_1}}
+                    </span>
+                    <span class="history_meassger_text_4">
+                        {{index}}{{value.dinggou_num_1}}
+                    </span>
+                    <span class="history_meassger_text_4">
+                        {{index}}{{value.jiaoge_1}}
+                    </span>
+                </li>
+                {{/each}}
+
+            </ul>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+</script>
+<body>
+         <div class="mybuild_grouping">
+              交易记录&nbsp<span>(5条)</span>
+         </div>
+         <div class="line"></div>
+         <div>
+             <div class="history_bg_1">
+                   <div class="history_meassger_bg_1">
+                       <div class="history_meassger_head_1">
+                           拍卖时间:
+                       </div>
+                       <div class="history_meassger_text_1">
+                           2016-12-08
+                       </div>
+                       <div class="history_meassger_head_1">
+                           发布数量:
+                       </div>
+                       <div class="history_meassger_text_1">
+                           70,000头
+                       </div>
+                   </div>
+                   <div class="history_list1_icon"></div>
+             </div>
+             <div class="issued_module">
+                   <div class="history_meassger_bg_2">
+                       <div class="history_meassger_head_1">
+                           订购数量:
+                       </div>
+                       <div class="history_meassger_text_2">
+                           70,000头
+                       </div>
+                       <div class="history_meassger_head_1">
+                           交割数量:
+                       </div>
+                       <div class="history_meassger_text_2">
+                           70,000头
+                       </div>
+                       <div class="history_meassger_head_1">
+                           卖方姓名:
+                       </div>
+                       <div class="history_meassger_text_2">
+                           罗大爷
+                       </div>
+                   </div>
+                   <i class="history_superscript">
+                       <img class="superscript_finish" src="../images/ic_wc.png"/>
+                   </i>
+                   <div class="history_meassger_bg_3">
+                       <div class="history_meassger_head_1">
+                           购买情况:
+                       </div>
+                   </div>
+                   <div class="history_meassger_bg_4">
+                       <div>
+                           <div class="history_meassger_text_3">
+                               钟老师
+                           </div>
+                           <div class="history_meassger_text_4">
+                               订购3000头
+                           </div>
+                           <div class="history_meassger_text_4">
+                               交割500头
+                           </div>
+                       </div>
+                       <div>
+                           <div class="history_meassger_text_3">
+                               钟老师
+                           </div>
+                           <div class="history_meassger_text_4">
+                               订购3000头
+                           </div>
+                           <div class="history_meassger_text_4">
+                               交割500头
+                           </div>
+                       </div>
+                       <div>
+                           <div class="history_meassger_text_3">
+                               蒲老师
+                           </div>
+                           <div class="history_meassger_text_4">
+                               订购4000头
+                           </div>
+                           <div class="history_meassger_text_4 run">
+                               跑单
+                           </div>
+                       </div>
+                       <div>
+                           <div class="history_meassger_text_3">
+                               蒲老师
+                           </div>
+                           <div class="history_meassger_text_4">
+                               订购4000头
+                           </div>
+                           <div class="history_meassger_text_4 revoke">
+                               撤单
+                           </div>
+                       </div>
+
+
+                   </div>
+
+                   <div style="clear: both;"></div>
+             </div>
+         </div>
+         <div id="content">
+             <div class="line"></div>
+             <div class="wall"></div>
+             <div class="line"></div>
+             <div>
+                 <div class="history_bg_1">
+                     <div class="history_meassger_bg_1">
+                         <div class="history_meassger_head_1">
+                             拍卖时间:
+                         </div>
+                         <div class="history_meassger_text_1">
+                             2016-12-08
+                         </div>
+                         <div class="history_meassger_head_1">
+                             发布数量:
+                         </div>
+                         <div class="history_meassger_text_1">
+                             70,000头
+                         </div>
+                     </div>
+                     <div class="history_list1_icon"></div>
+                 </div>
+                 <div class="issued_module">
+                     <div class="history_meassger_bg_2">
+                         <div class="history_meassger_head_1">
+                             订购数量:
+                         </div>
+                         <div class="history_meassger_text_2">
+                             70,000头
+                         </div>
+                         <div class="history_meassger_head_1">
+                             交割数量:
+                         </div>
+                         <div class="history_meassger_text_2">
+                             70,000头
+                         </div>
+                         <div class="history_meassger_head_1">
+                             卖方姓名:
+                         </div>
+                         <div class="history_meassger_text_2">
+                             罗大爷
+                         </div>
+                     </div>
+                     <i class="history_superscript">
+                         <img class="superscript_finish" src="../images/ic_lable_jyz_ys.png"/>
+                     </i>
+                     <div class="history_meassger_bg_3">
+                         <div class="history_meassger_head_1">
+                             购买情况:
+                         </div>
+                     </div>
+                     <div class="history_meassger_bg_4">
+                         <div>
+                             <div class="history_meassger_text_3">
+                                 钟老师
+                             </div>
+                             <div class="history_meassger_text_4">
+                                 订购3000头
+                             </div>
+                             <div class="history_meassger_text_4">
+                                 交割500头
+                             </div>
+                         </div>
+                         <div>
+                             <div class="history_meassger_text_3">
+                                 钟老师
+                             </div>
+                             <div class="history_meassger_text_4">
+                                 订购3000头
+                             </div>
+                             <div class="history_meassger_text_4">
+                                 交割500头
+                             </div>
+                         </div>
+                         <div>
+                             <div class="history_meassger_text_3">
+                                 蒲老师
+                             </div>
+                             <div class="history_meassger_text_4">
+                                 订购4000头
+                             </div>
+                             <!-- 跑单样式-->
+                             <div class="history_meassger_text_4 run">
+                                 跑单
+                             </div>
+                         </div>
+                         <div>
+                             <div class="history_meassger_text_3">
+                                 蒲老师
+                             </div>
+                             <div class="history_meassger_text_4">
+                                 订购4000头
+                             </div>
+                             <!-- 撤单样式-->
+                             <div class="history_meassger_text_4 revoke">
+                                 撤单
+                             </div>
+                         </div>
+                     </div>
+                     <div style="clear: both;"></div>
+                 </div>
+             </div>
+             <div class="line"></div>
+             <div class="wall"></div>
+             <div class="line"></div>
+             <div>
+                 <div class="history_bg_1">
+                     <div class="history_meassger_bg_1">
+                         <div class="history_meassger_head_1">
+                             拍卖时间:
+                         </div>
+                         <div class="history_meassger_text_1">
+                             2016-12-08
+                         </div>
+                         <div class="history_meassger_head_1">
+                             发布数量:
+                         </div>
+                         <div class="history_meassger_text_1">
+                             70,000头
+                         </div>
+                     </div>
+                     <div class="history_list1_icon"></div>
+                 </div>
+                 <div class="issued_module">
+                     <div class="history_meassger_bg_2">
+                         <div class="history_meassger_head_1">
+                             订购数量:
+                         </div>
+                         <div class="history_meassger_text_2">
+                             70,000头
+                         </div>
+                         <div class="history_meassger_head_1">
+                             交割数量:
+                         </div>
+                         <div class="history_meassger_text_2">
+                             70,000头
+                         </div>
+                         <div class="history_meassger_head_1">
+                             卖方姓名:
+                         </div>
+                         <div class="history_meassger_text_2">
+                             罗大爷
+                         </div>
+                     </div>
+                     <i class="history_superscript">
+                         <img class="superscript_finish" src="../images/ic_lable_jgz_ys.png"/>
+                     </i>
+                     <div class="history_meassger_bg_3">
+                         <div class="history_meassger_head_1">
+                             购买情况:
+                         </div>
+                     </div>
+                     <div class="history_meassger_bg_4">
+                         <div>
+                             <div class="history_meassger_text_3">
+                                 钟老师
+                             </div>
+                             <div class="history_meassger_text_4">
+                                 订购3000头
+                             </div>
+                             <div class="history_meassger_text_4">
+                                 交割500头
+                             </div>
+                         </div>
+                         <div>
+                             <div class="history_meassger_text_3">
+                                 钟老师
+                             </div>
+                             <div class="history_meassger_text_4">
+                                 订购3000头
+                             </div>
+                             <div class="history_meassger_text_4">
+                                 交割500头
+                             </div>
+                         </div>
+                         <div>
+                             <div class="history_meassger_text_3">
+                                 蒲老师
+                             </div>
+                             <div class="history_meassger_text_4">
+                                 订购4000头
+                             </div>
+                             <div class="history_meassger_text_4 run">
+                                 跑单
+                             </div>
+                         </div>
+                         <div>
+                             <div class="history_meassger_text_3">
+                                 蒲老师
+                             </div>
+                             <div class="history_meassger_text_4">
+                                 订购4000头
+                             </div>
+                             <div class="history_meassger_text_4 revoke">
+                                 撤单
+                             </div>
+                         </div>
+                     </div>
+                     <div style="clear: both;"></div>
+                 </div>
+             </div>
+         </div>
+         <div class="weui-infinite-scroll">
+             <div class="infinite-preloader">
+
+             </div>
+             信息加载中...
+         </div>
+         <!--加载-->
+         <script src="../js/jquery-weui.min.js"></script>
+         <script type="text/javascript" charset="UTF-8">
+
+             $(document.body).infinite(500);
+
+             var loading = false;  //状态标记
+             var page = 0;    //当前显示页数
+
+             //每一页的显示数量
+             var size = 2;
+
+             //页面初始化时，加载3条数据
+             $.ajax({
+                 type: 'GET',
+                 url: '../data/history_details.json',
+                 dataType: 'json',
+                 success: function(data){
+                     page++;
+                     var result ="";
+                     //总的数据长度
+                     var dataLen = data.length;
+                     if(dataLen <2){
+                         //就只加载当前的数据
+                         for(var i = 0;i < dataLen;i++){
+                             result += template("auction_Member",data[i]);
+                         }
+                     }else{
+                         for(var i = 0;i < size;i++){
+                             result += template("auction_Member",data[i]);
+                         }
+                     }
+                     $("#content").append(result);
+
+                 }
+             });
+             //初始化以后，再去按照分页加载条数
+             $(document.body).infinite().on("infinite", function() {
+                 if(loading) return;
+                 loading = true;
+                 setTimeout(function() {
+                     page++;
+                     //发送请求，拿到json数据
+                     $.ajax({
+                         type: 'GET',
+                         url: '../data/history_details.json',
+                         dataType: 'json',
+                         success: function(data){
+                             var result ="";
+                             //总的数据长度
+                             var dataLen = data.length;
+                             //计算总的页数
+                             var totalPage = Math.ceil(dataLen/size);
+                             if(page <= totalPage){
+                                 //如果有数据
+                                 if(page == totalPage){
+                                     //最后一页
+                                     for(var i = (page-1)*size;i < dataLen;i++){
+                                         result += template("auction_Member",data[i]);
+                                     }
+                                     //没有数据了
+                                     $(document.body).destroyInfinite();
+                                     $(".weui-infinite-scroll").hide();
+//                                 $(".weui-infinite-scroll").html(" ");
+//                                 $(".weui-infinite-scroll").html("没有更多数据了哦~" );
+                                 }else{
+                                     //其他页
+                                     for(var i = (page-1)*size ; i < page*size;i++){
+                                         result += template("auction_Member",data[i]);
+                                     }
+                                 }
+                             }
+                             $("#content").append(result);
+                         }
+                     });
+                     loading = false;
+                 }, 1500);   //模拟延迟
+             });
+         </script>
+</body>
+</html>

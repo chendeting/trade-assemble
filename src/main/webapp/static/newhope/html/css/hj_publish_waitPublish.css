@@ -1,0 +1,31 @@
+* {
+  font-size: 0.8333rem;
+}
+.weui_tab .weui_navbar {
+  background-color: transparent;
+}
+.weui_tab .weui_navbar:after {
+  border-style: none;
+}
+.weui_tab .weui_navbar .weui_navbar_item:after {
+  border-style: none;
+}
+.weui_tab .weui_navbar .weui_navbar_item.weui_bar_item_on {
+  color: #666;
+  background-color: transparent;
+}
+.weui_tab .weui_navbar .weui_navbar_item span {
+  display: inline-block;
+  width: 6rem;
+  padding-bottom: 0.5833rem;
+  font-size: 0.8333rem;
+}
+.weui_tab .weui_navbar .weui_navbar_item span.active {
+  color: #1bbd3d;
+  border-bottom: 0.1666rem solid #1bbd3d;
+}
+.weui_tab_bd .line {
+  height: 1.0555rem;
+  background-color: #e6e6e6;
+  border-bottom: 0.0277rem solid #999;
+}

@@ -1,0 +1,294 @@
+@navDatebg:#d8d8d8;
+@navDatefontColor:#fff;
+@navDatefontColor_active:#154fa1;
+@countdownfontColor:#6b6b6b;
+@farmNamecolor:#343434;
+@farmAddrcolor:#474747;
+@farmPrice:#727681;
+@farmWeigh:#abafb8;
+@saledColor:#afb0b2;
+@saledCount:#f1252e;
+
+//已经卖出bg
+@saledBgcolor:#f8f9fb;
+@borderTop:#d8dad9;
+@splitLine:#ebebeb;
+
+
+
+//新建交易圈
+//1）下拉箭头
+@setnewcircle-upIcon:#bababc;
+//2）border
+@setnewcircle-border:#d8d8d8;
+//3)bgcolor;
+@setnewcircle-textBgcolor:#fff;
+//4)fontcolor
+@setnewcircle-fontcolor:#999999;
+//borderWidth
+@setnewcircle-borderWidth:0.0556rem;
+//fontsize 26px;
+@setnewcircle-fontsize:0.7222rem;
+//整体背景色
+@setnewcircle-bgcolor:#ebebeb;
+//placeholder
+@placeholder-color:#cccccc;
+//输入的文字
+@enterfontColor:#282828;
+//新建按钮
+@btn_create:#1BBD3D;
+
+
+body{
+  -webkit-appearance: none;
+  height: 100%;
+  background-color: @setnewcircle-bgcolor;
+}
+input[type=button]{
+  -webkit-appearance:none;
+  outline:none
+}
+.createcircleContent{
+
+  #imgParent{
+    display: flex;
+    justify-content: center;
+    .myheadPic{
+      margin-top:0.8889rem;
+      width: 3.889rem;
+      height: 3.889rem;
+      border-radius: 1.99rem;
+    }
+  }
+  > ul{
+    >li{
+      margin:0 auto;
+      width:17.3333rem;
+      //margin-left:1.3333rem;
+      >p{
+        font-size: @setnewcircle-fontsize;
+        color: @setnewcircle-fontcolor;
+        letter-spacing: 0;
+        line-height: 0.8333rem;
+      }
+      input,textarea{
+        resize:none;
+        //width:100%;
+        -webkit-appearance: none;
+        box-shadow: none;
+        outline: none;
+        border-radius: 0.1111rem;
+        border:@setnewcircle-borderWidth solid @setnewcircle-border;
+        background-color: @setnewcircle-textBgcolor;
+      }
+    }
+
+    >li:nth-child(1){
+      position: relative;
+      margin-top:0.5278rem;
+      >p{
+        margin-bottom: 0.4444rem;
+        font-size: @setnewcircle-fontsize;
+        display: flex;
+        justify-content: space-between;
+        span{
+          font-size: @setnewcircle-fontsize;
+        }
+      }
+      >input{
+        width: 16.2222rem;
+        height: 1.1222rem;
+        padding:0.55rem;
+        color: @enterfontColor;
+        font-size: 0.8333rem;
+        &::-webkit-input-placeholder {
+          font-size: 0.8333rem;
+          color: @placeholder-color;
+          letter-spacing: 0;
+          line-height: 1.0556rem;
+          text-align: left;
+        }
+      }
+    }
+    >li:nth-child(2){
+      position: relative;
+      margin-top:0.6667rem;
+      >p{
+        display: flex;
+        justify-content: space-between;
+        line-height: 0.8333rem;
+        font-size: @setnewcircle-fontsize;
+        span{
+          font-size: @setnewcircle-fontsize;
+        }
+      }
+      >div.weui-row{
+        margin-top: 0.4444rem;
+        >div.weui-col-70{
+          .content-block{
+            position: relative;
+            >input#start{
+              display: block;
+              width: 10rem;
+              height: 1rem;
+              color: @enterfontColor;
+              font-size: 0.8333rem;
+              padding:0.55rem 2rem 0.55rem 0.55rem;
+
+            }
+            >i{
+              position: absolute;
+              right:1rem;
+              top: 0.9rem;
+              font-size: 0.6rem;
+              color:#999;
+            }
+          }
+        }
+        >div.weui-col-30{
+          position: relative;
+          display: flex;
+          align-items: center;
+          >input{
+            color: #fff;
+            width: 3.8444rem;
+            height: 2.2rem;
+            background: #1BBD3C;
+            border-radius: 0.1111rem;
+            background-image: url(../images/hj/ic_myzc_dress.png);
+            background-size: 0.8rem 0.9rem;
+            background-repeat: no-repeat;
+            background-position:0.3rem 0.66rem;
+            padding-left: 0.6rem;
+          }
+        }
+      }
+    }
+    >li:nth-child(3){
+      position: relative;
+      margin-top:0.5278rem;
+      >p{
+        display: flex;
+        justify-content: space-between;
+        line-height: 1.94rem;
+        font-size: @setnewcircle-fontsize;
+        span{
+          font-size: @setnewcircle-fontsize;
+        }
+      }
+      >textarea{
+        width: 16.2222rem;
+        height: 3.9rem;
+        padding:0.55rem;
+        color: @enterfontColor;
+        font-size: 0.8333rem;
+        &::-webkit-input-placeholder {
+          font-size: 0.8333rem;
+          color: @placeholder-color;
+          letter-spacing: 0;
+          line-height: 1.0556rem;
+          text-align: left;
+        }
+      }
+      >span{
+        font-size:@setnewcircle-fontsize;
+        color:@setnewcircle-fontcolor;
+        position: absolute;
+        bottom:0.5rem;
+        right:0.6rem;
+      }
+
+    }
+    >li:nth-child(4){
+      position: relative;
+      margin-top:0.5278rem;
+      >p{
+        display: flex;
+        justify-content: space-between;
+        line-height: 1.94rem;
+        font-size: @setnewcircle-fontsize;
+        span{
+          font-size: @setnewcircle-fontsize;
+        }
+      }
+      >textarea{
+        width: 16.2222rem;
+        height: 3.9rem;
+        padding:0.55rem;
+        color: @enterfontColor;
+        font-size: 0.8333rem;
+
+        &::-webkit-input-placeholder {
+          font-size: 0.8333rem;
+          color: @placeholder-color;
+          letter-spacing: 0;
+          line-height: 1.0556rem;
+          text-align: left;
+        }
+      }
+      >span{
+        font-size:@setnewcircle-fontsize;
+        color:@setnewcircle-fontcolor;
+        position: absolute;
+        bottom:0.5rem;
+        right:0.6rem;
+      }
+
+    }
+    >li:nth-child(5){
+      position: relative;
+      margin-top:0.5278rem;
+      >p{
+        display: flex;
+        justify-content: space-between;
+        line-height: 1.94rem;
+        font-size: @setnewcircle-fontsize;
+        span{
+          font-size: @setnewcircle-fontsize;
+        }
+      }
+      div.weui-row{
+        display: flex;
+        align-items: center;
+        >div.weui-col-40{
+          >img{
+            width: 5rem;
+            height: 1.6667rem;
+          }
+        }
+        >div.weui-col-60{
+          >span{
+            font-size: 0.6667rem;
+            color: #999;
+            line-height: 0.7778rem;
+          }
+        }
+      }
+    }
+  }
+
+  //  提交申请
+  #div_footer{
+    -webkit-appearance: none;
+    margin-top:1.4444rem;
+    margin-bottom:2rem;
+    width:100%;
+    display: flex;
+    //垂直居中
+    align-items: center;
+    //水平居中
+    justify-content: center;
+    >input{
+      display: block;
+      width: 17.3333rem;
+      height: 2.5rem;
+      background-color: @btn_create;
+      border:0;
+      border-radius:0.1111rem;
+      font-size:1rem;
+      color:#fff;
+    }
+
+  }
+
+}

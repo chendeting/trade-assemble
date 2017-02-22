@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta charset="UTF-8">
+    <title>买家详情</title>
+    <link type="text/css" rel="stylesheet" href="../css/index.css">
+    <script type="text/javascript" charset="utf-8" src="../js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/htmlsize.js"></script>
+    <style type="text/css">
+        body{margin: 0px;  padding: 0px;font-family: "Microsoft YaHei";}
+        li {list-style:none;}
+        table{margin-left: 0.6rem;}
+
+    </style>
+</head>
+<body>
+        <div class="lunbo">
+             <ul class="pic">
+                  <li><img src="../images/pig.jpg" /></li>
+                  <li><img src="../images/pig1.jpg" /></li>
+                  <li><img src="../images/pig.jpg" /></li>
+                  <li><img src="../images/pig1.jpg" /></li>
+
+             </ul>
+             <ul class="btn">
+                   <li></li>
+                  <li></li>
+                 <li></li>
+                <li></li>
+             </ul>
+        </div>
+        <div class="contacts">
+
+               <table>
+                   <tr class="massage_details">
+                       <td style="width:2.9rem;text-align: right;font-size:0.666667rem;color:#848689;padding-top: 0.2rem;  ">联系人:</td>
+                       <td style="width:8rem;text-align: left;padding-left:0.3rem;font-size:0.666667rem;color:#848689;padding-top: 0.2rem;">张三</td>
+                   </tr>
+                   <tr class="massage_details">
+                       <td style="width:2.9rem;text-align: right;font-size:0.666667rem;color:#848689; padding-top: 0.1rem;">联系电话:</td>
+                       <td style="width:8rem;text-align: left;padding-left:0.3rem;font-size:0.666667rem;color:#353535;padding-top: 0.1rem;">15253243452</td>
+                   </tr>
+               </table>
+               <a class="phone">
+                   <img src="../images/phone.png" style="width: 100%;height:100%;">
+                     
+               </a>
+
+        </div>
+        <div class="wall"></div>
+        <div class="piggery">
+            <div class="piggery_name">绵阳山台希望猪场</div>
+            <div class="piggery_num">
+                <span style="font-size: 1rem;color: #F02B2B;">购入<span style="font-size:1.1rem;color: #F02B2B;" >300</span><span style="font-size:0.6rem;color: #F02B2B; ">&nbsp;头</span></span>
+
+            </div>
+            <div class="piggery_line"></div>
+            <table>
+                <tr class="massage_details">
+                    <td style="width:2.9rem;text-align: right;font-size:0.666667rem;color:#848689;padding-top: 0.4rem;">详细地址:</td>
+                    <td style="width:14rem;text-align: left;padding-left:0.3rem;font-size:0.666667rem;color: #353535;padding-top: 0.4rem;">四川省德阳三台光明乡4大队1组</td>
+                </tr>
+                <tr class="massage_details">
+                    <td style="width:2.9rem;text-align: right;font-size:0.666667rem;color:#848689; padding-top: 0.3rem;">交通情况:</td>
+                    <td style="width:14rem;text-align: left;padding-left:0.3rem;font-size:0.666667rem;color:#353535;padding-top: 0.3rem;">限1.5米内的运猪车通过</td>
+                </tr>
+            </table>
+            <div class="piggery_line"></div>
+            <table>
+                <tr class="massage_details">
+                    <td style="width:2.9rem;text-align: right;font-size:0.666667rem;color:#848689;padding-top: 0.4rem;">出栏时间:</td>
+                    <td style="width:14rem;text-align: left;padding-left:0.3rem;font-size:0.666667rem;color: #353535;padding-top: 0.4rem;">2016-09-26</td>
+                </tr>
+                <tr class="massage_details">
+                    <td style="width:2.9rem;text-align: right;font-size:0.666667rem;color:#848689; padding-top: 0.3rem;">出栏数量:</td>
+                    <td style="width:14rem;text-align: left;padding-left:0.3rem;font-size:0.666667rem;color:#353535;padding-top: 0.3rem;">700头</td>
+                </tr>
+
+                <tr class="massage_details">
+                    <td style="width:2.9rem;text-align: right;font-size:0.666667rem;color:#848689;padding-top: 0.3rem;">价格:</td>
+                    <td style="width:14rem;text-align: left;padding-left:0.3rem;font-size:0.666667rem;color: #353535;padding-top: 0.3rem;">¥18.86元/kg</td>
+                </tr>
+                <tr class="massage_details">
+                    <td style="width:2.9rem;text-align: right;font-size:0.666667rem;color:#848689; padding-top: 0.3rem;">品级:</td>
+                    <td style="width:14rem;text-align: left;padding-left:0.3rem;font-size:0.666667rem;color:#353535;padding-top: 0.3rem;">一级</td>
+                </tr>
+            </table>
+            <div class="piggery_line"></div>
+            <table>
+                <tr class="massage_details">
+                    <td style="width:2.9rem;text-align: right;font-size:0.666667rem;color:#848689;padding-top: 0.4rem;">控料情况:</td>
+                    <td style="width:14rem;text-align: left;padding-left:0.3rem;font-size:0.666667rem;color: #353535;padding-top: 0.4rem;">8小时</td>
+                </tr>
+             </table>
+        </div>
+        <script type="text/javascript">
+            $(function(){
+                var listLen = $(".pic li").length, i=0,setInter,speen = 5000;
+
+                $(".btn li:last").css({"margin":"0rem 0rem 0rem 0.5rem"});
+                $(".btn li:first").addClass("on");
+                $(".pic li:first").show();
+
+                $(".btn li").each(function(index,element){
+                    $(element).click(function(){
+                        i = index;
+                        $(this).addClass("on").siblings().removeClass("on");
+                        $(".pic li").eq(index).animate({opacity:"show"},200).siblings().animate({opacity:"hide"},200);
+                    })
+                    $(element).hover(function(){
+                        clearInterval(setInter);
+                    },function(){
+                        outPlay();
+                    });
+                })
+
+
+                out_fun = function(){
+                    if(i < listLen){i++;}else{i=0;};
+                    $(".btn li").eq(i).addClass("on").siblings().removeClass("on");
+                    $(".pic li").eq(i).animate({opacity:"show"},2000).siblings().animate({opacity:"hide"},2000);
+                }
+
+                outPlay = function(){
+                    setInter = setInterval("out_fun()",speen);
+                }
+                outPlay();
+            })
+        </script>
+</body>
+</html>

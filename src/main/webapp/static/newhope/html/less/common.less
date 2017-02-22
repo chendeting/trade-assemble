@@ -1,0 +1,236 @@
+
+.err-msg {
+  width: 20rem;
+  height: 2rem;
+  text-align: center;
+  line-height: 2rem;
+  color: #848689;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  position: absolute;
+}
+
+*{
+  padding:0;
+  margin:0;
+  font-size: 0.8888rem;
+  font-family: "Microsoft YaHei";
+}
+
+#warp {
+  width: 100%;
+  height: 100%;
+
+}
+
+p{
+  margin:0;
+  line-height:1.1111rem;
+}
+ul li{
+  list-style: none;
+}
+a{
+  color:#000;
+  text-decoration: none;
+}
+body{
+  background: #e9e9e9;
+}
+input,textarea{
+  outline: none;
+  background-color: #d8d8d8;
+  border-radius: 0.15625rem;
+  border-style: none;
+  -webkit-appearance: none;
+}
+button{
+  font-size: 0.7777rem;
+  border-style: none;
+  border-radius: 0.15625rem;
+  color: #fff;
+}
+.clearfloat{
+  clear: both;
+}
+.weui_tabbar_item{
+  .weui_tabbar_icon{
+    position: relative;
+    .selected{
+      position: absolute;
+      top:0;
+      left:0;
+      display: none;
+    }
+  }
+}
+.weui_bar_item_on{
+  .weui_tabbar_icon{
+    .normal{
+      display: none;
+    }
+    .selected{
+      top:0;
+      left:0;
+      display: block;
+    }
+  }
+}
+.weui_tabbar{
+  position: fixed;
+  bottom:0;
+}
+
+.mengceng{
+  width:100%;
+  height:100%;
+  position: fixed;
+  background:#000;
+  z-index:2;
+  .Divimg{
+    position: fixed;
+    width:100%;
+    background: #000;
+  }
+  .Divimg>img{
+    background: #000;
+    position: fixed;
+    width:100%;
+    height: 20rem;
+    z-index:999;
+    padding-top:6rem;
+  }
+
+  .DIvdelete{
+    width:100%;
+    text-align: center;
+    padding-top:27rem;
+    background: #000;
+    #btnDelete{
+      display: inline-block;
+      width:9rem;
+      height:2.5rem;
+      margin:0 auto;
+      background: #FA4848;
+      border-radius: 0.1111rem;
+      font-size: 1rem;
+      color: #FFFFFF;
+    }
+  }
+}
+
+#div_mapAddress{
+  >div.map_detail{
+    position: absolute;
+    top:0;
+    z-index:999999999999999999;
+    width:100%;
+    height:5.4167rem;
+    background-color: #fff;
+    >div:nth-child(1){
+      margin-left:0.8889rem;
+      width:18.3056rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      >p{
+        font-size: 1rem;
+        color: #333333;
+        padding-top:0.6111rem;
+        margin-bottom:0.4rem;
+      }
+      >div{
+        display: flex;
+        justify-content: flex-end;
+        width:7rem;
+          >input:nth-child(1){
+            width:3rem;
+            height:1.6rem;
+            line-height: 1rem;
+            background-color: #0bb20c;
+            color:#fff;
+          }
+          >input:nth-child(2){
+            width:3rem;
+            height:1.6rem;
+            line-height: 1rem;
+            background-color:#D8D8D8;
+            color:#fff;
+            margin-left:0.5rem;
+          }
+      }
+
+    }
+    >div:nth-child(2){
+      width:100%;
+      display: flex;
+      justify-content: center;
+      >input{
+        display: inline-block;
+        background: #F5F5F5;
+        border: 0.028rem solid #E1E1E1;
+        border-radius: 0.1111rem;
+        width:17.5056rem;
+        height:1.1667rem;
+        padding:0.5rem 0.4rem;
+        font-size: 0.7778rem;
+        color: #333333;
+      }
+    }
+  }
+}
+
+//模态框样式
+.weui_toast,.weui_toast_text,.weui_toast_visible{
+  width:auto;
+  height: auto;
+  font-size: 1.25rem;
+  line-height: 2.2222rem;
+  color:#fff;
+  opacity:0.75;
+  border-radius: 0.2222rem;
+}
+.weui_dialog_bd{
+  margin: 0 auto;
+  font-size: 1rem;
+  color:#333;
+  width:13.3055rem;
+  padding: 1rem 0;
+}
+.weui_dialog_ft a{
+  font-size: 1rem;
+}
+//下拉选择蒙层
+.selectType{
+  position: fixed;
+  height: 100%;
+  width:100%;
+  opacity: 0.3;
+  top:0;
+  z-index:20;
+  background: #000;
+}
+
+.cityPickerCancel{
+  width:3.6111rem;
+  height:1.6667rem;
+  background-color: #999;
+  border-radius: 0.1111rem;
+  color:#fff;
+  font-size: 0.8333rem;
+  text-align: center;
+  line-height:1.6667rem;
+  margin-left:0.6667rem;
+  margin-top:0.2778rem;
+}
+
+
+.mengceng1{
+  width:100%;
+  height:100%;
+  position: fixed;
+  top:0;
+  opacity: 0.2;
+  background:#000;
+  z-index:2222;
+}

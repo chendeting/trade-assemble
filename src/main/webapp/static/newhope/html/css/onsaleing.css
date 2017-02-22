@@ -1,0 +1,133 @@
+#swiper-navdate {
+  background-color: #d8d8d8;
+  height: 2.2rem;
+}
+#swiper-navdate .dateTextcenter {
+  text-align: center;
+}
+#swiper-navdate .dateTextcenter span {
+  color: #fff;
+  font-size: 0.777778rem;
+  display: inline-block;
+  line-height: 2rem;
+}
+#swiper-navdate .swiper-wrapper > div {
+  background-color: #d8d8d8;
+}
+#swiper-navdate .swiper-wrapper > div.active-nav span {
+  color: #154fa1;
+  border-bottom: 1rem solid #154fa1;
+}
+#swiper-maincontent #timeCountdown {
+  background-color: #ebebeb;
+}
+#swiper-maincontent #timeCountdown p {
+  text-align: center;
+  font-size: 0.777778rem;
+  color: #6b6b6b;
+  line-height: 2rem;
+}
+#swiper-maincontent #timeCountdown .countdown {
+  text-align: center;
+}
+#swiper-maincontent #timeCountdown .countdown > li {
+  font-size: 1.2rem;
+  color: red;
+  list-style: none;
+  display: inline-block;
+}
+#swiper-maincontent #onsaleingList > li {
+  border-bottom: 0.4rem solid #ebebeb;
+}
+#swiper-maincontent #onsaleingList > li > div.listop {
+  padding-top: 0.5rem;
+  padding-left: 1rem;
+  height: 5.5rem;
+}
+#swiper-maincontent #onsaleingList > li > div.listop > img {
+  display: inline-block;
+  float: left;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 0.5rem;
+}
+#swiper-maincontent #onsaleingList > li > div.listop > div.liRight {
+  display: inline-block;
+  float: left;
+  margin-left: 1rem;
+}
+#swiper-maincontent #onsaleingList > li > div.listop > div.liRight > h4 {
+  font-size: 0.777778rem;
+  color: #343434;
+}
+#swiper-maincontent #onsaleingList > li > div.listop > div.liRight > p {
+  margin-top: 0.1rem;
+  font-size: 0.666667rem;
+  color: #474747;
+}
+#swiper-maincontent #onsaleingList > li > div.listop > div.liRight > span {
+  margin-top: 0.1rem;
+  display: inline-block;
+  color: #727681;
+  float: left;
+  font-size: 0.666667rem;
+}
+#swiper-maincontent #onsaleingList > li > div.listop > div.liRight > ul {
+  float: left;
+  margin-top: 0.1rem;
+  display: inline-block;
+}
+#swiper-maincontent #onsaleingList > li > div.listop > div.liRight > ul > li {
+  color: #727681;
+  font-size: 0.666667rem;
+}
+#swiper-maincontent #onsaleingList > li > div.listop > div.liRight > ul > li > span {
+  display: inline-block;
+  margin-left: 0.5rem;
+  color: #abafb8;
+  font-size: 0.666667rem;
+}
+#swiper-maincontent #onsaleingList > li > div.listop > div.liRight::after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+#swiper-maincontent #onsaleingList > li > div.listop::after {
+  display: block;
+  content: " ";
+  clear: both;
+}
+#swiper-maincontent #onsaleingList > li > div.buyNow {
+  height: 2.3rem;
+  background-color: #f8f9fb;
+  border-top: 0.1rem solid #d8dad9;
+}
+#swiper-maincontent #onsaleingList > li > div.buyNow > p {
+  display: inline-block;
+  padding-left: 1rem;
+  font-size: 0.833333rem;
+  color: #afb0b2;
+  line-height: 2.3rem;
+  float: left;
+}
+#swiper-maincontent #onsaleingList > li > div.buyNow > p > span {
+  font-size: 0.833333rem;
+  color: #f1252e;
+}
+#swiper-maincontent #onsaleingList > li > div.buyNow > div.btn_buyNow {
+  float: right;
+  width: 8rem;
+  height: 1.8rem;
+  margin-top: 0.25rem;
+  margin-right: 0.4rem;
+  background-color: #f35556;
+  border-radius: 1rem;
+}
+#swiper-maincontent #onsaleingList > li > div.buyNow > div.btn_buyNow > span {
+  width: 8rem;
+  height: 1.8rem;
+  display: inline-block;
+  font-size: 0.777778rem;
+  color: #fff;
+  text-align: center;
+}

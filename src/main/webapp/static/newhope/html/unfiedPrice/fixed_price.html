@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description"
+          content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>统一定价</title>
+    <link type="text/css" rel="stylesheet" href="../css/weui.min.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/huadongjiazai.min.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/index.css">
+    <link type="text/css" rel="stylesheet" href="../css/unified-price.css">
+    <script type="text/javascript" charset="utf-8" src="../js/htmlsize.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="../js/jquery-3.1.1.min.js"></script>
+
+    <style type="text/css">
+    </style>
+</head>
+<body>
+    <div class="calendar">
+        <input id="input" type="text" data-toggle='date' style="display: none" />
+    </div>
+
+    <div class="price-form" style="display:none;">
+        <div class="warning-box">注意：当日价格设定后该圈所有未开拍猪只将按该价格售卖</div>
+        <p class="date-title date-after">2017年1月4日统一定价</p>
+        <div class="wall"></div>
+        <div class="price_box">
+            <div class="price_interval">
+                <p class="counterpoise-title">均重100-110KG：</p>
+                <p class="btn-box">
+                    <span class="bargain">议价</span>
+                    <span class="entering current">录入价格</span>
+                </p>
+            </div>
+            <div class="price_body">
+                <input class="price_entry" value="18.82"/>
+                    <span class="price_unit">
+                        元/KG
+                    </span>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="price_box">
+            <div class="price_interval">
+                <p class="counterpoise-title">均重110-120KG:</p>
+                <p class="btn-box">
+                    <span class="bargain">议价</span>
+                    <span class="entering current">录入价格</span>
+                </p>
+            </div>
+            <div class="price_body">
+                <input class="price_entry" value="19.02"/>
+                  <span class="price_unit">
+                      元/KG
+                  </span>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="price_box">
+            <div class="price_interval">
+                <p class="counterpoise-title">均重120-130KG:</p>
+                <p class="btn-box">
+                    <span class="bargain">议价</span>
+                    <span class="entering current">录入价格</span>
+                </p>
+            </div>
+            <div class="price_body">
+                <input class="price_entry" value="19.22"/>
+                  <span class="price_unit">
+                      元/KG
+                  </span>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="price_box">
+            <div class="price_interval">
+                <p class="counterpoise-title">均重130-140KG:</p>
+                <p class="btn-box">
+                    <span class="bargain">议价</span>
+                    <span class="entering current">录入价格</span>
+                </p>
+            </div>
+            <div class="price_body">
+                <input class="price_entry" value="19.52"/>
+                  <span class="price_unit">
+                      元/KG
+                  </span>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="price_box">
+            <div class="price_interval">
+                <p class="counterpoise-title">均重140KG以上:</p>
+                <p class="btn-box">
+                    <span class="bargain current">议价</span>
+                    <span class="entering">录入价格</span>
+                </p>
+            </div>
+            <div class="price_body" style="display: none">
+                <input class="price_entry" value="20.02"/>
+                  <span class="price_unit">
+                      元/KG
+                  </span>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <input class="join_input_submit" type="button" value="提交"/>
+</div>
+    <div class="before-price" style="display: none">
+        <p class="date-title date-before">2017年1月4日统一定价</p>
+        <ul class="detail-ul">
+            <li><span>均重100-110KG：</span>18.92/KG</li>
+            <li><span>均重110-120KG：</span>19.02/KG</li>
+            <li><span>均重120-130KG：</span>19.05/KG</li>
+            <li><span>均重130-140KG：</span>19.08/KG</li>
+            <li><span>均重140以上：</span>议价</li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="../js/jquery-weui.min.js"></script>
+    <script>
+        allClick();
+        historyBackground();
+        //当天之前的日期样式
+        function historyBackground(){
+            //获取当天日期
+            var myDate=new Date();
+            var todayDate =myDate.getFullYear();
+            todayDate += (String(myDate.getMonth()+1)).length==1?"0"+(myDate.getMonth()+1):(myDate.getMonth()+1);
+            todayDate += String(myDate.getDate()-1).length==1?"0"+(myDate.getDate()):myDate.getDate();
+            $(".picker-calendar-day").each(function(){
+                //获取当前的日期
+                var dataDT=($(this).data("date")).split("-");
+                var clickDate=dataDT[0];
+                clickDate+=dataDT[1].length==1?"0"+(parseInt(dataDT[1])+1):dataDT[1]+1;
+                clickDate+=dataDT[2].length==1?"0"+dataDT[2]:dataDT[2];
+                if(clickDate<todayDate){
+                    $(this).addClass("historyDate");
+                }
+            });
+        };
+        function allClick(){
+            $(".calendar").calendar({
+                container: ".calendar",
+                input: "#input",
+                multiple:true,
+                value:["2017-01-02","2017-01-03","2017-01-06","2017-01-23","2017-01-25"]
+            });
+            $(".calendar").calendar("addValue",["2017-01-10","2017-01-20"]);
+            //console.log($("#input").val());
+            //对已设置价格的日期做选中处理
+            var txt='<div class="havePrcing" data-status="todayAft"> <img src="../images/write.png"/></div>';
+            $(".picker-calendar-day-selected").append(txt);
+            var dateVal='';
+            //有选中图片的点击事件
+            $(".havePrcing").click(function(){
+                //获取当前点击日期
+                dateVal=$(this).parent().data("date")
+                var dateArr=dateVal.split('-');
+                var currentDate=dateArr[0]+'年'+(parseInt(dateArr[1])+1)+'月'+dateArr[2]+'日';
+
+                //当天之前已选中的，点击后显示的内容
+                if($(this).data("status")=="todayBef"){
+                    $(".date-before").text(currentDate+'统一定价');
+                    $(".calendar").hide();
+                    $(".before-price").show();
+                }
+                //当天及之后已选中的，点击后显示的内容
+                else{
+                    $(".date-after").text(currentDate+'统一定价');
+                    $(".calendar").hide();
+                    $(".price-form").show();
+                }
+            });
+
+            //点击某一天的事件
+            $(".picker-calendar-day").click(function(){
+                //console.log(todayDate);
+                //获取当前点击的日期
+                var dataDT=($(this).data("date")).split("-");
+                var clickDate=dataDT[0];
+                clickDate+=dataDT[1].length==1?"0"+(parseInt(dataDT[1])+1):dataDT[1]+1;
+                clickDate+=dataDT[2].length==1?"0"+dataDT[2]:dataDT[2]
+                //console.log(clickDate);
+                //只对未定价并且大于等于当天日期的的日期做相应处理
+                if($(this).find(".havePrcing").length==0 && clickDate >= todayDate){
+                    dateVal=$(this).data("date")
+                    var dateArr=dateVal.split('-');
+                    var currentDate=dateArr[0]+'年'+(parseInt(dateArr[1])+1)+'月'+dateArr[2]+'日';
+                    $(".date-after").text(currentDate+'统一定价');
+                    //console.log(currentDate);
+                    $(".price_entry").val('');
+                    $(".calendar").hide();
+                    $(".price-form").show();
+                }
+            });
+            $(".join_input_submit").click(function(){
+
+            });
+            //点击录入价格和议价
+            $(".btn-box span").click(function(){
+                $(this).addClass("current").siblings("span").removeClass("current");
+                if($(this).hasClass("bargain")){
+                    $(this).parent().parent().siblings(".price_body").hide();
+                }else{
+                    $(this).parent().parent().siblings(".price_body").show();
+                }
+            });
+        };
+
+        //切换月份与年时初始化日历
+        $(".link,.icon-only").click(function(){
+            allClick();
+            historyBackground();
+        })
+    </script>
+</body>
+</html>

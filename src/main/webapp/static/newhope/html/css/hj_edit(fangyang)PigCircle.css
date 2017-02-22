@@ -1,0 +1,203 @@
+body {
+  -webkit-appearance: none;
+  height: 100%;
+  background-color: #ebebeb;
+}
+input[type=button] {
+  -webkit-appearance: none;
+  outline: none;
+}
+header > p {
+  width: 100%;
+  font-size: 0.7222rem;
+  color: #4A4A4A;
+  line-height: 2.222rem;
+  background-color: #FFE9CB;
+  padding-left: 0.6667rem;
+}
+section {
+  padding-left: 0.6667rem;
+  padding-top: 0.9444rem;
+  padding-bottom: 0.8333rem;
+  background-color: #fff;
+}
+section > p {
+  font-size: 0.7778rem;
+  color: #999;
+  margin-bottom: 0.3333rem;
+}
+section > p > span {
+  font-size: 0.8333rem;
+  color: #333;
+}
+.editPigcircle {
+  width: 17.3333rem;
+  margin: 0 auto;
+}
+.editPigcircle > ul > li {
+  margin: 0;
+  width: 17.3333rem;
+}
+.editPigcircle > ul > li > p {
+  font-size: 0.7222rem;
+  color: #999999;
+  letter-spacing: 0;
+  line-height: 0.8333rem;
+}
+.editPigcircle > ul > li input,
+.editPigcircle > ul > li textarea {
+  resize: none;
+  -webkit-appearance: none;
+  box-shadow: none;
+  outline: none;
+  border-radius: 0.1111rem;
+  border: 0.0556rem solid #d8d8d8;
+  background-color: #fff;
+}
+.editPigcircle > ul > li:nth-child(1) {
+  margin-top: 0.8889rem;
+}
+.editPigcircle > ul > li:nth-child(1) > p {
+  display: flex;
+  justify-content: space-between;
+  line-height: 0.8333rem;
+  font-size: 0.7222rem;
+}
+.editPigcircle > ul > li:nth-child(1) > p span {
+  line-height: 0.8333rem;
+  font-size: 0.7222rem;
+}
+.editPigcircle > ul > li:nth-child(1) > div.weui-row {
+  margin-top: 0.4444rem;
+}
+.editPigcircle > ul > li:nth-child(1) > div.weui-row > div.weui-col-70 .content-block {
+  position: relative;
+}
+.editPigcircle > ul > li:nth-child(1) > div.weui-row > div.weui-col-70 .content-block > input#start {
+  display: block;
+  width: 10rem;
+  height: 1rem;
+  color: #282828;
+  font-size: 0.8333rem;
+  padding: 0.55rem 2rem 0.55rem 0.55rem;
+}
+.editPigcircle > ul > li:nth-child(1) > div.weui-row > div.weui-col-70 .content-block > i {
+  position: absolute;
+  right: 1rem;
+  top: 0.9rem;
+  font-size: 0.6rem;
+  color: #999;
+}
+.editPigcircle > ul > li:nth-child(1) > div.weui-row > div.weui-col-30 {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.editPigcircle > ul > li:nth-child(1) > div.weui-row > div.weui-col-30 > input {
+  color: #fff;
+  width: 3.8444rem;
+  height: 2.2rem;
+  background: #1BBD3C;
+  border-radius: 0.1111rem;
+  background-image: url(../images/hj/ic_myzc_dress.png);
+  background-size: 0.8rem 0.9rem;
+  background-repeat: no-repeat;
+  background-position: 0.3rem 0.7rem;
+  padding-left: 0.6rem;
+}
+.editPigcircle > ul > li:nth-child(1) > input {
+  margin-top: 0.2222rem;
+  width: 16.2222rem;
+  height: 1.1222rem;
+  padding: 0.55rem;
+  color: #282828;
+  font-size: 0.8333rem;
+}
+.editPigcircle > ul > li:nth-child(1) > input::-webkit-input-placeholder {
+  font-size: 0.8333rem;
+  color: #cccccc;
+  letter-spacing: 0;
+  line-height: 1.0556rem;
+  text-align: left;
+}
+.editPigcircle > ul > li:nth-child(2) {
+  margin-top: 0.6667rem;
+  position: relative;
+}
+.editPigcircle > ul > li:nth-child(2) > p {
+  margin-bottom: 0.4444rem;
+  display: flex;
+  justify-content: space-between;
+  line-height: 1.1389rem;
+  font-size: 0.7222rem;
+}
+.editPigcircle > ul > li:nth-child(2) > p span {
+  font-size: 0.7222rem;
+  line-height: 1.1389rem;
+}
+.editPigcircle > ul > li:nth-child(2) > div.weui-row {
+  margin-bottom: 0.2222rem;
+}
+.editPigcircle > ul > li:nth-child(2) > div.weui-row > div.weui-col-14 > p {
+  font-size: 0.8333rem;
+  color: #333;
+  line-height: 2.22rem;
+}
+.editPigcircle > ul > li:nth-child(2) > div.weui-row > div.weui-col-86 > div.content-block {
+  position: relative;
+}
+.editPigcircle > ul > li:nth-child(2) > div.weui-row > div.weui-col-86 > div.content-block > input {
+  display: block;
+  width: 12.2833rem;
+  height: 1.1222rem;
+  font-size: 0.8333rem;
+  color: #333333;
+  padding: 0.55rem 2rem 0.55rem 0.55rem;
+}
+.editPigcircle > ul > li:nth-child(2) > div.weui-row > div.weui-col-86 > div.content-block > i {
+  color: #999999;
+  position: absolute;
+  bottom: 0.8rem;
+  right: 1rem;
+}
+.editPigcircle > ul > li:nth-child(2) > textarea {
+  margin-top: 0.6667rem;
+  height: 2.789rem;
+  color: #333333;
+  width: 16.2222rem;
+  padding: 0.55rem;
+  font-size: 0.8333rem;
+}
+.editPigcircle > ul > li:nth-child(2) > textarea::-webkit-input-placeholder {
+  font-size: 0.8333rem;
+  color: #cccccc;
+  letter-spacing: 0;
+  line-height: 1.0556rem;
+  text-align: left;
+}
+.editPigcircle > ul > li:nth-child(2) > span {
+  position: absolute;
+  right: 1rem;
+  bottom: 0.5rem;
+  font-size: 0.6667rem;
+  color: #999;
+}
+.editPigcircle #div_footer {
+  -webkit-appearance: none;
+  margin-top: 0.8889rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.editPigcircle #div_footer > input {
+  display: block;
+  width: 17.3333rem;
+  height: 2.5rem;
+  background-color: #1BBD3D;
+  border: 0;
+  border-radius: 0.1111rem;
+  font-size: 1rem;
+  color: #fff;
+}

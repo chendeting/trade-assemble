@@ -1,0 +1,78 @@
+#warp {
+  background-color: #e9e9e9;
+}
+#warp .userForm {
+  background-color: #fff;
+  padding: 0.8rem 0.6666rem 1.1666rem 0.6666rem;
+}
+#warp .userForm .name-title {
+  font-size: 0.7777rem;
+  color: #999;
+  margin: 0.6666rem 0 0.4444rem 0;
+}
+#warp .userForm .name-title span {
+  font-size: 0.6666rem;
+}
+#warp .userForm .p-input input {
+  width: 96%;
+  height: 2.2222rem;
+  background-color: #f5f5f5;
+  border: 0.0555rem solid #eee;
+  border-radius: 0.1111rem;
+  font-size: 0.8333rem;
+  padding-left: 0.5555rem;
+}
+#warp .userForm .p-input input.username {
+  color: #333333;
+}
+#warp .userForm .p-input input.tel {
+  color: #999;
+}
+#warp .self-label {
+  background-color: #fff;
+  padding: 0 0.6666rem 1.3333rem 0.6666rem;
+  border-top: 0.05555rem solid #d8d8d8;
+}
+#warp .self-label .selfLabel {
+  font-size: 0.6666rem;
+  color: #999;
+  margin: 0.4444rem 0 1.3333rem 0;
+}
+#warp .self-label .all-label {
+  display: flex;
+  justify-content: space-around;
+}
+#warp .self-label .all-label li {
+  display: inline-block;
+  position: relative;
+}
+#warp .self-label .all-label li p {
+  font-size: 0.6666rem;
+  color: #333333;
+}
+#warp .self-label .all-label li img {
+  top: 0;
+  left: 0;
+  width: 2.2222rem;
+  height: 2.2222rem;
+  border-radius: 50%;
+}
+#warp .self-label .all-label li img.checked {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+#warp .btn-box {
+  height: 8rem;
+}
+#warp .btn-box .save-info {
+  width: 17.3333rem;
+  height: 2.5rem;
+  font-size: 1rem;
+  background-color: #1bbd3d;
+  border-radius: 0.1111rem;
+  display: block;
+  vertical-align: middle;
+  margin: 1.1111rem auto 0 auto;
+}

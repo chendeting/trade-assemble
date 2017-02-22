@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>我的猪场</title>
+    <script type="text/javascript" charset="utf-8" src="js/htmlsize.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/weui.min.css"/>
+    <link type="text/css" rel="stylesheet" href="css/jquery-weui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+    <link type="text/css" rel="stylesheet" href="css/myPigFarms-had.css"/>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+    <div id="warp">
+        <div class="pigFarm-num">
+            <p class="pigfarm-num-word">我的所有猪场（10个）</p>
+            <a href="#" class="newPigfarm">新建猪场</a>
+        </div>
+        <div class="pigfarmInfo">
+            <p class="pigfarmName">猪场名字：泸溪王老板的猪场</p>
+            <ul class="detailInfo">
+                <li><span class="detail—title">交割地址：</span><span class="detail-content">四川省德阳市三台县巫溪镇光明乡4大队1组</span></li>
+                <li><span class="detail—title">交割情况：</span><span class="detail-content">限1.5米内的运输车通过</span></li>
+                <li><span class="detail—title">手机号码：</span><span class="detail-content">183-2565-4875</span></li>
+            </ul>
+            <div class="detail-btn">
+                <a class="contactTA" href="tel:183-2565-4875">联系TA</a>
+                <div class="detail-btn-right">
+                    <button class="dis-del">删除</button>
+                    <a href="#" class="edit-pigfarm">编辑</a>
+                </div>
+            </div>
+        </div>
+        <div class="pigfarmInfo">
+            <p class="pigfarmName">猪场名字：泸溪王老板的猪场</p>
+            <ul class="detailInfo">
+                <li><span class="detail—title">交割地址：</span><span class="detail-content">四川省德阳市三台县巫溪镇光明乡4大队1组</span></li>
+                <li><span class="detail—title">交割情况：</span><span class="detail-content">限1.5米内的运输车通过</span></li>
+                <li><span class="detail—title">手机号码：</span><span class="detail-content">183-2565-4875</span></li>
+            </ul>
+            <div class="detail-btn">
+                <a class="contactTA" href="tel:183-2565-4875">联系TA</a>
+                <div class="detail-btn-right">
+                    <button class="del-pigfarm">删除</button>
+                    <a href="#" class="edit-pigfarm">编辑</a>
+                </div>
+            </div>
+        </div>
+        <div class="pigfarmInfo">
+            <p class="pigfarmName">猪场名字：泸溪王老板的猪场</p>
+            <ul class="detailInfo">
+                <li><span class="detail—title">交割地址：</span><span class="detail-content">四川省德阳市三台县巫溪镇光明乡4大队1组</span></li>
+                <li><span class="detail—title">交割情况：</span><span class="detail-content">限1.5米内的运输车通过</span></li>
+                <li><span class="detail—title">手机号码：</span><span class="detail-content">183-2565-4875</span></li>
+            </ul>
+            <div class="detail-btn">
+                <a class="contactTA" href="tel:183-2565-4875">联系TA</a>
+                <div class="detail-btn-right">
+                    <button class="del-pigfarm">删除</button>
+                    <a href="#" class="edit-pigfarm">编辑</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-weui.min.js"></script>
+
+    <script type="text/javascript">
+        $(".dis-del").click(function () {
+            $.toast("放养猪场不可删除", "text");
+        });
+        $(".del-pigfarm").click(function () {
+            $.toast("已成功删除李老板的猪场", "text");
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../css/index.css">
+    <script type="text/javascript" charset="utf-8" src="../js/htmlsize.js"></script>
+    <script style="text/javascript" charset="UTF-8" src="../js/jquery-1.8.3.min.js"></script>
+    <style type="text/css">
+        ::-webkit-scrollbar{width:0px}
+        li{list-style-type: none;
+
+        }
+    </style>
+    <script type="text/javascript">
+        $(function(){
+            $("#swiper_btn1").click(function(){
+
+                $(".part1").show();
+                $(".part2").hide();
+                $(".part3").hide();
+                $(".part4").hide();
+                $(".part5").hide();
+                $(".part6").hide();
+                $(".swiper-wrapper li").eq(0).addClass("on");
+                $(".swiper-wrapper li").eq(1).removeClass("on");
+                $(".swiper-wrapper li").eq(2).removeClass("on");
+                $(".swiper-wrapper li").eq(3).removeClass("on");
+                $(".swiper-wrapper li").eq(4).removeClass("on");
+                $(".swiper-wrapper li").eq(5).removeClass("on");
+                $("#xiahuaxian1").show();
+                $("#xiahuaxian2").hide();
+                $("#xiahuaxian3").hide();
+                $("#xiahuaxian4").hide();
+                $("#xiahuaxian5").hide();
+                $("#xiahuaxian6").hide();
+
+            });
+        });
+        $(function(){
+            $("#swiper_btn2").click(function(){
+
+                $(".part2").show();
+                $(".part1").hide();
+                $(".part3").hide();
+                $(".part4").hide();
+                $(".part5").hide();
+                $(".part6").hide();
+                $(".swiper-wrapper li").eq(1).addClass("on");
+                $(".swiper-wrapper li").eq(0).removeClass("on");
+                $(".swiper-wrapper li").eq(2).removeClass("on");
+                $(".swiper-wrapper li").eq(3).removeClass("on");
+                $(".swiper-wrapper li").eq(4).removeClass("on");
+                $(".swiper-wrapper li").eq(5).removeClass("on");
+                $("#xiahuaxian2").show();
+                $("#xiahuaxian1").hide();
+                $("#xiahuaxian3").hide();
+                $("#xiahuaxian4").hide();
+                $("#xiahuaxian5").hide();
+                $("#xiahuaxian6").hide();
+
+            });
+        });
+        $(function(){
+            $("#swiper_btn3").click(function(){
+
+                $(".part3").show();
+                $(".part1").hide();
+                $(".part2").hide();
+                $(".part4").hide();
+                $(".part5").hide();
+                $(".part6").hide();
+                $(".swiper-wrapper li").eq(2).addClass("on");
+                $(".swiper-wrapper li").eq(0).removeClass("on");
+                $(".swiper-wrapper li").eq(1).removeClass("on");
+                $(".swiper-wrapper li").eq(3).removeClass("on");
+                $(".swiper-wrapper li").eq(4).removeClass("on");
+                $(".swiper-wrapper li").eq(5).removeClass("on");
+                $("#xiahuaxian3").show();
+                $("#xiahuaxian1").hide();
+                $("#xiahuaxian2").hide();
+                $("#xiahuaxian4").hide();
+                $("#xiahuaxian5").hide();
+                $("#xiahuaxian6").hide();
+
+            });
+        });
+        $(function(){
+            $("#swiper_btn4").click(function(){
+
+                $(".part4").show();
+                $(".part1").hide();
+                $(".part2").hide();
+                $(".part3").hide();
+                $(".part5").hide();
+                $(".part6").hide();
+                $(".swiper-wrapper li").eq(3).addClass("on");
+                $(".swiper-wrapper li").eq(0).removeClass("on");
+                $(".swiper-wrapper li").eq(1).removeClass("on");
+                $(".swiper-wrapper li").eq(2).removeClass("on");
+                $(".swiper-wrapper li").eq(4).removeClass("on");
+                $(".swiper-wrapper li").eq(5).removeClass("on");
+                $("#xiahuaxian4").show();
+                $("#xiahuaxian1").hide();
+                $("#xiahuaxian2").hide();
+                $("#xiahuaxian3").hide();
+                $("#xiahuaxian5").hide();
+                $("#xiahuaxian6").hide();
+            });
+        });
+        $(function(){
+            $("#swiper_btn5").click(function(){
+
+                $(".part5").show();
+                $(".part1").hide();
+                $(".part2").hide();
+                $(".part3").hide();
+                $(".part4").hide();
+                $(".part6").hide();
+                $(".swiper-wrapper li").eq(4).addClass("on");
+                $(".swiper-wrapper li").eq(0).removeClass("on");
+                $(".swiper-wrapper li").eq(1).removeClass("on");
+                $(".swiper-wrapper li").eq(2).removeClass("on");
+                $(".swiper-wrapper li").eq(3).removeClass("on");
+                $(".swiper-wrapper li").eq(5).removeClass("on");
+                $("#xiahuaxian5").show();
+                $("#xiahuaxian1").hide();
+                $("#xiahuaxian2").hide();
+                $("#xiahuaxian3").hide();
+                $("#xiahuaxian4").hide();
+                $("#xiahuaxian6").hide();
+            });
+        });
+        $(function(){
+            $("#swiper_btn6").click(function(){
+
+                $(".part6").show();
+                $(".part1").hide();
+                $(".part2").hide();
+                $(".part3").hide();
+                $(".part5").hide();
+                $(".part4").hide();
+                $(".swiper-wrapper li").eq(5).addClass("on");
+                $(".swiper-wrapper li").eq(0).removeClass("on");
+                $(".swiper-wrapper li").eq(1).removeClass("on");
+                $(".swiper-wrapper li").eq(2).removeClass("on");
+                $(".swiper-wrapper li").eq(3).removeClass("on");
+                $(".swiper-wrapper li").eq(4).removeClass("on");
+                $("#xiahuaxian6").show();
+                $("#xiahuaxian1").hide();
+                $("#xiahuaxian2").hide();
+                $("#xiahuaxian3").hide();
+                $("#xiahuaxian5").hide();
+                $("#xiahuaxian4").hide();
+            });
+        });
+    </script>
+</head>
+<body >
+<div>
+    <div class="swiper-container" style="position:relative;">
+        <div class="swiper-wrapper" style="width:33rem;">
+            <ul>
+                <li class="swiper-li on">
+                    <button class="swiper-slide" id="swiper_btn1">已结束
+                    </button>
+                    <div class="xiahuaxian" id="xiahuaxian1"></div>
+                </li>
+                <li class="swiper-li">
+                    <button class="swiper-slide" id="swiper_btn2">10月9日
+                    </button>
+                    <div class="xiahuaxian" id="xiahuaxian2" style="display: none;"></div>
+                </li>
+                <li class="swiper-li">
+                    <button class="swiper-slide" id="swiper_btn3">10月10日
+                    </button>
+                    <div class="xiahuaxian" id="xiahuaxian3"  style="display: none;"></div>
+                </li>
+                <li  class="swiper-li" >
+                    <button class="swiper-slide" id="swiper_btn4">10月11日
+                    </button>
+                    <div class="xiahuaxian" id="xiahuaxian4"  style="display: none;"></div>
+                </li>
+                <li  class="swiper-li">
+                    <button class="swiper-slide" id="swiper_btn5">10月12日
+                    </button>
+                    <div class="xiahuaxian"  id="xiahuaxian5" style="display: none;"></div>
+                </li>
+                <li  class="swiper-li">
+                    <button class="swiper-slide" id="swiper_btn6">10月13日
+                    </button>
+                    <div class="xiahuaxian" id="xiahuaxian6"  style="display: none;"></div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+<div class="part1" style="position: absolute;font-family: 'Microsoft YaHei';">
+    <div class="box">
+        <div class="wall"></div>
+        <div class="deal_buy_1">
+            <div class="deal_buy_pic">
+                <img src="../images/morentu.png" style="width:4.5rem;height: 4.5rem;border-radius: 0.2rem;"/>
+            </div>
+            <div class="deal_buy_message">
+                <div class="deal_buy_message_1">绵阳三台希望猪场</div>
+                <div class="deal_buy_message_2">
+                    <div class="buy_message_head_1">地址:</div>
+                    <div class="buy_message_body_1">四川省德阳三台</div>
+                </div>
+                <div class="deal_buy_message_3">
+                    <div class="deal_buy_message_4">
+                        <div class="buy_message_head_1">价格:</div>
+                        <div class="buy_message_body_1">¥18.86元/kg</div>
+                        <div class="buy_message_body_2">(均重100-110kg)</div>
+                    </div>
+                    <div class="deal_buy_message_4">
+                        <div class="buy_message_body_3">¥19.26元/kg</div>
+                        <div class="buy_message_body_2">(均重110-120kg)</div>
+                    </div>
+                    <div class="deal_buy_message_4">
+                        <div class="buy_message_body_3">¥19.86元/kg</div>
+                        <div class="buy_message_body_2">(均重120kg以上)</div>
+                    </div>
+                </div>
+            </div>
+            <div style="width:4.7rem;height:3.75rem;float: left;position: absolute;margin-left: 15.3rem;">
+                <img src="../images/end.png" style="width: 100%;height: 100%;"/>
+            </div>
+        </div>
+        <div class="deal_buy_2">
+            <div style="float: left;margin-left: 1rem;height:2.3rem;width: 10rem; ">
+                <div style="height: 1.3rem;line-height: 1.3rem;"><span style="font-size:1rem;color:#F02B2B;opacity:1;">300</span><span style="font-size:0.833333rem;color:#F02B2B;">头</span></div>
+                <div style="font-size:0.6rem;color:#848689;opacity: 0.6;height: 1rem;line-height: 1rem;">
+                    <span>出栏:&nbsp<span>700</span>头</span>
+                    <span style="padding-left:0.5rem; ">剩余:&nbsp<span>100</span>头</span>
+                </div>
+            </div>
+            <button class="deal_btn btn_read">查看详情
+
+            </button>
+        </div>
+        <div class="wall"></div>
+    </div>
+    <div class="box">
+        <div class="deal_buy_1">
+            <div class="deal_buy_pic">
+                <img src="../images/morentu.png" style="width:4.5rem;height: 4.5rem;border-radius: 0.2rem;"/>
+            </div>
+            <div class="deal_buy_message">
+                <div class="deal_buy_message_1">绵阳三台希望猪场</div>
+                <div class="deal_buy_message_2">
+                    <div class="buy_message_head_1">地址:</div>
+                    <div class="buy_message_body_1">四川省德阳三台</div>
+                </div>
+                <div class="deal_buy_message_3">
+                    <div class="deal_buy_message_4">
+                        <div class="buy_message_head_1">价格:</div>
+                        <div class="buy_message_body_1">¥18.86元/kg</div>
+                        <div class="buy_message_body_2">(均重100-110kg)</div>
+                    </div>
+                    <div class="deal_buy_message_4">
+                        <div class="buy_message_body_3">¥19.26元/kg</div>
+                        <div class="buy_message_body_2">(均重110-120kg)</div>
+                    </div>
+                    <div class="deal_buy_message_4">
+                        <div class="buy_message_body_3">¥19.86元/kg</div>
+                        <div class="buy_message_body_2">(均重120kg以上)</div>
+                    </div>
+                </div>
+            </div>
+            <div style="width:4.7rem;height:3.75rem;float: left;position: absolute;margin-left: 15.3rem;">
+                <img src="../images/end.png" style="width: 100%;height: 100%;"/>
+            </div>
+        </div>
+        <div class="deal_buy_2">
+            <div style="float: left;margin-left: 1rem;height:2.3rem;width: 10rem; ">
+                <div style="height: 1.3rem;line-height: 1.3rem;"><span style="font-size:1rem;color:#F02B2B;opacity:1;">300</span><span style="font-size:0.833333rem;color:#F02B2B;">头</span></div>
+                <div style="font-size:0.6rem;color:#848689;opacity: 0.6;height: 1rem;line-height: 1rem;">
+                    <span>出栏:&nbsp<span>700</span>头</span>
+                    <span style="padding-left:0.5rem; ">剩余:&nbsp<span>100</span>头</span>
+                </div>
+            </div>
+            <button class="deal_btn btn_read">查看详情
+
+            </button>
+        </div>
+        <div class="wall"></div>
+    </div>
+</div>
+<div class="part2" style="position: absolute;font-family: 'Microsoft YaHei';display: none;">
+    <div class="daojishi">
+        <div class="daojishi_text">距离开拍结束</div>
+        <div class="daojishi_num">01:35:20</div>
+    </div>
+    <div class="deal_buy">
+        <div class="deal_shangjia">
+            <div class="deal_shangjia_pic">
+                <img src="../images/morentu.png" style="width:6.5rem;height: 6.5rem;border-radius: 0.7rem;"/>
+            </div>
+            <div class="deal_shangjia_text">
+                <div style="font-size:1rem;color: #F02B2B;position: absolute;float: left;width: 7.5rem;height: 2.3rem;margin-top: 0.3rem;">
+                    <div>
+                        <span>300</span>
+                        <span style="font-size:0.85rem;">头</span>
+                    </div>
+                    <div style="font-size:0.666667rem;">
+                        <span>已售完</span>
+                    </div>
+                </div>
+                <button class="btn_edit"></button>
+                <button class="btn_delete"></button>
+            </div>
+            <div class="deal_shangjia_text2">
+                <div style="float: left;font-size: 0.777778rem;color:#353535;position: absolute;">绵阳三台希望猪场</div>
+                <div style="float: left;margin-top:1rem;height:0.8rem;line-height: 0.8rem;position: absolute;">
+                    <div style="font-size: 0.666667rem;color:#4a4a4a;float: left;margin:0.1rem 0rem;">地址：</div>
+                    <div style="font-size: 0.666667rem;color:#4a4a4a;float: left;margin:0.1rem 0rem;">&nbsp;四川省德阳三台</div>
+                </div>
+                <div style="float: left;margin-top:2rem;width:12rem;position: absolute;">
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;position: absolute;">价格：</div>
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;margin-left: 2rem;position: absolute;">&nbsp;¥18.86元/kg</div>
+                    <div style="font-size: 0.666667rem;color:#abaeb3;float: left;margin-left: 6rem;position: absolute;">&nbsp;(均重100-110kg)</div>
+
+                </div>
+                <div style="float: left;margin-top:2.9rem;margin-left:2rem;width:10rem;position: absolute;">
+
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;position: absolute;">&nbsp;¥19.26元/kg</div>
+                    <div style="font-size: 0.666667rem;color:#abaeb3;float: left;position: absolute;margin-left: 4rem">&nbsp;(均重110-120kg)</div>
+                </div>
+                <div style="float: left;margin-top:3.8rem;margin-left:2rem;width:10rem;position: absolute;">
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;position: absolute;">&nbsp;¥19.86元/kg</div>
+                    <div style="font-size: 0.666667rem;color:#abaeb3;float: left;position: absolute;margin-left: 4rem">&nbsp;(均重110-120kg)</div>
+                </div>
+            </div>
+        </div>
+        <div class="deal_shangjia">
+            <div class="deal_shangjia_pic">
+                <img src="../images/morentu.png" style="width:6.5rem;height: 6.5rem;border-radius: 0.7rem;"/>
+            </div>
+            <div class="deal_shangjia_text">
+                <div style="font-size:1rem;color: #F02B2B;position: absolute;float: left;width: 7.5rem;height: 2.3rem;margin-top: 0.3rem;">
+                    <div>
+                        <span>300</span>
+                        <span style="font-size:0.85rem;">头</span>
+                    </div>
+                    <div style="font-size:0.666667rem;">
+                        <span>已售完</span>
+                    </div>
+                </div>
+                <button class="btn_edit"></button>
+                <button class="btn_delete"></button>
+            </div>
+            <div class="deal_shangjia_text2">
+                <div style="float: left;font-size: 0.777778rem;color:#353535;position: absolute;">绵阳三台希望猪场</div>
+                <div style="float: left;margin-top:1rem;height:0.8rem;line-height: 0.8rem;position: absolute;">
+                    <div style="font-size: 0.666667rem;color:#4a4a4a;float: left;margin:0.1rem 0rem;">地址：</div>
+                    <div style="font-size: 0.666667rem;color:#4a4a4a;float: left;margin:0.1rem 0rem;">&nbsp;四川省德阳三台</div>
+                </div>
+                <div style="float: left;margin-top:2rem;width:12rem;position: absolute;">
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;position: absolute;">价格：</div>
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;margin-left: 2rem;position: absolute;">&nbsp;¥18.86元/kg</div>
+                    <div style="font-size: 0.666667rem;color:#abaeb3;float: left;margin-left: 6rem;position: absolute;">&nbsp;(均重100-110kg)</div>
+
+                </div>
+                <div style="float: left;margin-top:2.9rem;margin-left:2rem;width:10rem;position: absolute;">
+
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;position: absolute;">&nbsp;¥19.26元/kg</div>
+                    <div style="font-size: 0.666667rem;color:#abaeb3;float: left;position: absolute;margin-left: 4rem">&nbsp;(均重110-120kg)</div>
+                </div>
+                <div style="float: left;margin-top:3.8rem;margin-left:2rem;width:10rem;position: absolute;">
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;position: absolute;">&nbsp;¥19.86元/kg</div>
+                    <div style="font-size: 0.666667rem;color:#abaeb3;float: left;position: absolute;margin-left: 4rem">&nbsp;(均重110-120kg)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="part3" style="position: absolute;font-family: 'Microsoft YaHei';display: none;">
+    <div class="daojishi">
+        <div class="daojishi_text">距离开拍结束</div>
+        <div class="daojishi_num">01:35:20</div>
+    </div>
+    <div class="deal_buy">
+        <div class="deal_shangjia">
+            <div class="deal_shangjia_pic">
+                <img src="../images/morentu.png" style="width:6.5rem;height: 6.5rem;border-radius: 0.7rem;"/>
+            </div>
+            <div class="deal_shangjia_text">
+                <div style="font-size:1rem;color: #F02B2B;position: absolute;float: left;width: 7.5rem;height: 2.3rem;margin-top: 0.3rem;">
+                    <div>
+                        <span>300</span>
+                        <span style="font-size:0.85rem;">头</span>
+                    </div>
+                    <div style="font-size:0.666667rem;">
+                        <span>已售完</span>
+                    </div>
+                </div>
+                <button class="btn_edit"></button>
+                <button class="btn_delete"></button>
+            </div>
+            <div class="deal_shangjia_text2">
+                <div style="float: left;font-size: 0.777778rem;color:#353535;position: absolute;">绵阳三台希望猪场</div>
+                <div style="float: left;margin-top:1rem;height:0.8rem;line-height: 0.8rem;position: absolute;">
+                    <div style="font-size: 0.666667rem;color:#4a4a4a;float: left;margin:0.1rem 0rem;">地址：</div>
+                    <div style="font-size: 0.666667rem;color:#4a4a4a;float: left;margin:0.1rem 0rem;">&nbsp;四川省德阳三台</div>
+                </div>
+                <div style="float: left;margin-top:2rem;width:12rem;position: absolute;">
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;position: absolute;">价格：</div>
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;margin-left: 2rem;position: absolute;">&nbsp;¥18.86元/kg</div>
+                    <div style="font-size: 0.666667rem;color:#abaeb3;float: left;margin-left: 6rem;position: absolute;">&nbsp;(均重100-110kg)</div>
+
+                </div>
+                <div style="float: left;margin-top:2.9rem;margin-left:2rem;width:10rem;position: absolute;">
+
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;position: absolute;">&nbsp;¥19.26元/kg</div>
+                    <div style="font-size: 0.666667rem;color:#abaeb3;float: left;position: absolute;margin-left: 4rem">&nbsp;(均重110-120kg)</div>
+                </div>
+                <div style="float: left;margin-top:3.8rem;margin-left:2rem;width:10rem;position: absolute;">
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;position: absolute;">&nbsp;¥19.86元/kg</div>
+                    <div style="font-size: 0.666667rem;color:#abaeb3;float: left;position: absolute;margin-left: 4rem">&nbsp;(均重110-120kg)</div>
+                </div>
+            </div>
+        </div>
+        <div class="deal_shangjia">
+            <div class="deal_shangjia_pic">
+                <img src="../images/morentu.png" style="width:6.5rem;height: 6.5rem;border-radius: 0.7rem;"/>
+            </div>
+            <div class="deal_shangjia_text">
+                <div style="font-size:1rem;color: #F02B2B;position: absolute;float: left;width: 7.5rem;height: 2.3rem;margin-top: 0.3rem;">
+                    <div>
+                        <span>300</span>
+                        <span style="font-size:0.85rem;">头</span>
+                    </div>
+                    <div style="font-size:0.666667rem;">
+                        <span>已售完</span>
+                    </div>
+                </div>
+                <button class="btn_edit"></button>
+                <button class="btn_delete"></button>
+            </div>
+            <div class="deal_shangjia_text2">
+                <div style="float: left;font-size: 0.777778rem;color:#353535;position: absolute;">绵阳三台希望猪场</div>
+                <div style="float: left;margin-top:1rem;height:0.8rem;line-height: 0.8rem;position: absolute;">
+                    <div style="font-size: 0.666667rem;color:#4a4a4a;float: left;margin:0.1rem 0rem;">地址：</div>
+                    <div style="font-size: 0.666667rem;color:#4a4a4a;float: left;margin:0.1rem 0rem;">&nbsp;四川省德阳三台</div>
+                </div>
+                <div style="float: left;margin-top:2rem;width:12rem;position: absolute;">
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;position: absolute;">价格：</div>
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;margin-left: 2rem;position: absolute;">&nbsp;¥18.86元/kg</div>
+                    <div style="font-size: 0.666667rem;color:#abaeb3;float: left;margin-left: 6rem;position: absolute;">&nbsp;(均重100-110kg)</div>
+
+                </div>
+                <div style="float: left;margin-top:2.9rem;margin-left:2rem;width:10rem;position: absolute;">
+
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;position: absolute;">&nbsp;¥19.26元/kg</div>
+                    <div style="font-size: 0.666667rem;color:#abaeb3;float: left;position: absolute;margin-left: 4rem">&nbsp;(均重110-120kg)</div>
+                </div>
+                <div style="float: left;margin-top:3.8rem;margin-left:2rem;width:10rem;position: absolute;">
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;position: absolute;">&nbsp;¥19.86元/kg</div>
+                    <div style="font-size: 0.666667rem;color:#abaeb3;float: left;position: absolute;margin-left: 4rem">&nbsp;(均重110-120kg)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="part4" style="position: absolute;font-family: 'Microsoft YaHei';display: none;">
+    <div class="daojishi">
+        <div class="daojishi_text">距离开拍结束</div>
+        <div class="daojishi_num">01:35:20</div>
+    </div>
+    <div class="deal_buy">
+        <div class="deal_shangjia">
+            <div class="deal_shangjia_pic">
+                <img src="../images/morentu.png" style="width:6.5rem;height: 6.5rem;border-radius: 0.7rem;"/>
+            </div>
+            <div class="deal_shangjia_text">
+                <div style="font-size:1rem;color: #F02B2B;position: absolute;float: left;width: 7.5rem;height: 2.3rem;margin-top: 0.3rem;">
+                    <div>
+                        <span>300</span>
+                        <span style="font-size:0.85rem;">头</span>
+                    </div>
+                    <div style="font-size:0.666667rem;">
+                        <span>已售完</span>
+                    </div>
+                </div>
+                <button class="btn_edit"></button>
+                <button class="btn_delete"></button>
+            </div>
+            <div class="deal_shangjia_text2">
+                <div style="float: left;font-size: 0.777778rem;color:#353535;position: absolute;">绵阳三台希望猪场</div>
+                <div style="float: left;margin-top:1rem;height:0.8rem;line-height: 0.8rem;position: absolute;">
+                    <div style="font-size: 0.666667rem;color:#4a4a4a;float: left;margin:0.1rem 0rem;">地址：</div>
+                    <div style="font-size: 0.666667rem;color:#4a4a4a;float: left;margin:0.1rem 0rem;">&nbsp;四川省德阳三台</div>
+                </div>
+                <div style="float: left;margin-top:2rem;width:12rem;position: absolute;">
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;position: absolute;">价格：</div>
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;margin-left: 2rem;position: absolute;">&nbsp;¥18.86元/kg</div>
+                    <div style="font-size: 0.666667rem;color:#abaeb3;float: left;margin-left: 6rem;position: absolute;">&nbsp;(均重100-110kg)</div>
+
+                </div>
+                <div style="float: left;margin-top:2.9rem;margin-left:2rem;width:10rem;position: absolute;">
+
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;position: absolute;">&nbsp;¥19.26元/kg</div>
+                    <div style="font-size: 0.666667rem;color:#abaeb3;float: left;position: absolute;margin-left: 4rem">&nbsp;(均重110-120kg)</div>
+                </div>
+                <div style="float: left;margin-top:3.8rem;margin-left:2rem;width:10rem;position: absolute;">
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;position: absolute;">&nbsp;¥19.86元/kg</div>
+                    <div style="font-size: 0.666667rem;color:#abaeb3;float: left;position: absolute;margin-left: 4rem">&nbsp;(均重110-120kg)</div>
+                </div>
+            </div>
+        </div>
+        <div class="deal_shangjia">
+            <div class="deal_shangjia_pic">
+                <img src="../images/morentu.png" style="width:6.5rem;height: 6.5rem;border-radius: 0.7rem;"/>
+            </div>
+            <div class="deal_shangjia_text">
+                <div style="font-size:1rem;color: #F02B2B;position: absolute;float: left;width: 7.5rem;height: 2.3rem;margin-top: 0.3rem;">
+                    <div>
+                        <span>300</span>
+                        <span style="font-size:0.85rem;">头</span>
+                    </div>
+                    <div style="font-size:0.666667rem;">
+                        <span>已售完</span>
+                    </div>
+                </div>
+                <button class="btn_edit"></button>
+                <button class="btn_delete"></button>
+            </div>
+            <div class="deal_shangjia_text2">
+                <div style="float: left;font-size: 0.777778rem;color:#353535;position: absolute;">绵阳三台希望猪场</div>
+                <div style="float: left;margin-top:1rem;height:0.8rem;line-height: 0.8rem;position: absolute;">
+                    <div style="font-size: 0.666667rem;color:#4a4a4a;float: left;margin:0.1rem 0rem;">地址：</div>
+                    <div style="font-size: 0.666667rem;color:#4a4a4a;float: left;margin:0.1rem 0rem;">&nbsp;四川省德阳三台</div>
+                </div>
+                <div style="float: left;margin-top:2rem;width:12rem;position: absolute;">
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;position: absolute;">价格：</div>
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;margin-left: 2rem;position: absolute;">&nbsp;¥18.86元/kg</div>
+                    <div style="font-size: 0.666667rem;color:#abaeb3;float: left;margin-left: 6rem;position: absolute;">&nbsp;(均重100-110kg)</div>
+
+                </div>
+                <div style="float: left;margin-top:2.9rem;margin-left:2rem;width:10rem;position: absolute;">
+
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;position: absolute;">&nbsp;¥19.26元/kg</div>
+                    <div style="font-size: 0.666667rem;color:#abaeb3;float: left;position: absolute;margin-left: 4rem">&nbsp;(均重110-120kg)</div>
+                </div>
+                <div style="float: left;margin-top:3.8rem;margin-left:2rem;width:10rem;position: absolute;">
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;position: absolute;">&nbsp;¥19.86元/kg</div>
+                    <div style="font-size: 0.666667rem;color:#abaeb3;float: left;position: absolute;margin-left: 4rem">&nbsp;(均重110-120kg)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="part5" style="position: absolute;font-family: 'Microsoft YaHei';display: none;">
+    <div class="daojishi">
+        <div class="daojishi_text">距离开拍结束</div>
+        <div class="daojishi_num">01:35:20</div>
+    </div>
+    <div class="deal_buy">
+        <div class="deal_shangjia">
+            <div class="deal_shangjia_pic">
+                <img src="../images/morentu.png" style="width:6.5rem;height: 6.5rem;border-radius: 0.7rem;"/>
+            </div>
+            <div class="deal_shangjia_text">
+                <div style="font-size:1rem;color: #F02B2B;position: absolute;float: left;width: 7.5rem;height: 2.3rem;margin-top: 0.3rem;">
+                    <div>
+                        <span>300</span>
+                        <span style="font-size:0.85rem;">头</span>
+                    </div>
+                    <div style="font-size:0.666667rem;">
+                        <span>已售完</span>
+                    </div>
+                </div>
+                <button class="btn_edit"></button>
+                <button class="btn_delete"></button>
+            </div>
+            <div class="deal_shangjia_text2">
+                <div style="float: left;font-size: 0.777778rem;color:#353535;position: absolute;">绵阳三台希望猪场</div>
+                <div style="float: left;margin-top:1rem;height:0.8rem;line-height: 0.8rem;position: absolute;">
+                    <div style="font-size: 0.666667rem;color:#4a4a4a;float: left;margin:0.1rem 0rem;">地址：</div>
+                    <div style="font-size: 0.666667rem;color:#4a4a4a;float: left;margin:0.1rem 0rem;">&nbsp;四川省德阳三台</div>
+                </div>
+                <div style="float: left;margin-top:2rem;width:12rem;position: absolute;">
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;position: absolute;">价格：</div>
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;margin-left: 2rem;position: absolute;">&nbsp;¥18.86元/kg</div>
+                    <div style="font-size: 0.666667rem;color:#abaeb3;float: left;margin-left: 6rem;position: absolute;">&nbsp;(均重100-110kg)</div>
+
+                </div>
+                <div style="float: left;margin-top:2.9rem;margin-left:2rem;width:10rem;position: absolute;">
+
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;position: absolute;">&nbsp;¥19.26元/kg</div>
+                    <div style="font-size: 0.666667rem;color:#abaeb3;float: left;position: absolute;margin-left: 4rem">&nbsp;(均重110-120kg)</div>
+                </div>
+                <div style="float: left;margin-top:3.8rem;margin-left:2rem;width:10rem;position: absolute;">
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;position: absolute;">&nbsp;¥19.86元/kg</div>
+                    <div style="font-size: 0.666667rem;color:#abaeb3;float: left;position: absolute;margin-left: 4rem">&nbsp;(均重110-120kg)</div>
+                </div>
+            </div>
+        </div>
+        <div class="deal_shangjia">
+            <div class="deal_shangjia_pic">
+                <img src="../images/morentu.png" style="width:6.5rem;height: 6.5rem;border-radius: 0.7rem;"/>
+            </div>
+            <div class="deal_shangjia_text">
+                <div style="font-size:1rem;color: #F02B2B;position: absolute;float: left;width: 7.5rem;height: 2.3rem;margin-top: 0.3rem;">
+                    <div>
+                        <span>300</span>
+                        <span style="font-size:0.85rem;">头</span>
+                    </div>
+                    <div style="font-size:0.666667rem;">
+                        <span>已售完</span>
+                    </div>
+                </div>
+                <button class="btn_edit"></button>
+                <button class="btn_delete"></button>
+            </div>
+            <div class="deal_shangjia_text2">
+                <div style="float: left;font-size: 0.777778rem;color:#353535;position: absolute;">绵阳三台希望猪场</div>
+                <div style="float: left;margin-top:1rem;height:0.8rem;line-height: 0.8rem;position: absolute;">
+                    <div style="font-size: 0.666667rem;color:#4a4a4a;float: left;margin:0.1rem 0rem;">地址：</div>
+                    <div style="font-size: 0.666667rem;color:#4a4a4a;float: left;margin:0.1rem 0rem;">&nbsp;四川省德阳三台</div>
+                </div>
+                <div style="float: left;margin-top:2rem;width:12rem;position: absolute;">
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;position: absolute;">价格：</div>
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;margin-left: 2rem;position: absolute;">&nbsp;¥18.86元/kg</div>
+                    <div style="font-size: 0.666667rem;color:#abaeb3;float: left;margin-left: 6rem;position: absolute;">&nbsp;(均重100-110kg)</div>
+
+                </div>
+                <div style="float: left;margin-top:2.9rem;margin-left:2rem;width:10rem;position: absolute;">
+
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;position: absolute;">&nbsp;¥19.26元/kg</div>
+                    <div style="font-size: 0.666667rem;color:#abaeb3;float: left;position: absolute;margin-left: 4rem">&nbsp;(均重110-120kg)</div>
+                </div>
+                <div style="float: left;margin-top:3.8rem;margin-left:2rem;width:10rem;position: absolute;">
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;position: absolute;">&nbsp;¥19.86元/kg</div>
+                    <div style="font-size: 0.666667rem;color:#abaeb3;float: left;position: absolute;margin-left: 4rem">&nbsp;(均重110-120kg)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="part6" style="position: absolute;font-family: 'Microsoft YaHei';display: none;">
+    <div class="daojishi">
+        <div class="daojishi_text">距离开拍结束</div>
+        <div class="daojishi_num">01:35:20</div>
+    </div>
+    <div class="deal_buy">
+        <div class="deal_shangjia">
+            <div class="deal_shangjia_pic">
+                <img src="../images/morentu.png" style="width:6.5rem;height: 6.5rem;border-radius: 0.7rem;"/>
+            </div>
+            <div class="deal_shangjia_text">
+                <div style="font-size:1rem;color: #F02B2B;position: absolute;float: left;width: 7.5rem;height: 2.3rem;margin-top: 0.3rem;">
+                    <div>
+                        <span>300</span>
+                        <span style="font-size:0.85rem;">头</span>
+                    </div>
+                    <div style="font-size:0.666667rem;">
+                        <span>已售完</span>
+                    </div>
+                </div>
+                <button class="btn_edit"></button>
+                <button class="btn_delete"></button>
+            </div>
+            <div class="deal_shangjia_text2">
+                <div style="float: left;font-size: 0.777778rem;color:#353535;position: absolute;">绵阳三台希望猪场</div>
+                <div style="float: left;margin-top:1rem;height:0.8rem;line-height: 0.8rem;position: absolute;">
+                    <div style="font-size: 0.666667rem;color:#4a4a4a;float: left;margin:0.1rem 0rem;">地址：</div>
+                    <div style="font-size: 0.666667rem;color:#4a4a4a;float: left;margin:0.1rem 0rem;">&nbsp;四川省德阳三台</div>
+                </div>
+                <div style="float: left;margin-top:2rem;width:12rem;position: absolute;">
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;position: absolute;">价格：</div>
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;margin-left: 2rem;position: absolute;">&nbsp;¥18.86元/kg</div>
+                    <div style="font-size: 0.666667rem;color:#abaeb3;float: left;margin-left: 6rem;position: absolute;">&nbsp;(均重100-110kg)</div>
+
+                </div>
+                <div style="float: left;margin-top:2.9rem;margin-left:2rem;width:10rem;position: absolute;">
+
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;position: absolute;">&nbsp;¥19.26元/kg</div>
+                    <div style="font-size: 0.666667rem;color:#abaeb3;float: left;position: absolute;margin-left: 4rem">&nbsp;(均重110-120kg)</div>
+                </div>
+                <div style="float: left;margin-top:3.8rem;margin-left:2rem;width:10rem;position: absolute;">
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;position: absolute;">&nbsp;¥19.86元/kg</div>
+                    <div style="font-size: 0.666667rem;color:#abaeb3;float: left;position: absolute;margin-left: 4rem">&nbsp;(均重110-120kg)</div>
+                </div>
+            </div>
+        </div>
+        <div class="deal_shangjia">
+            <div class="deal_shangjia_pic">
+                <img src="../images/morentu.png" style="width:6.5rem;height: 6.5rem;border-radius: 0.7rem;"/>
+            </div>
+            <div class="deal_shangjia_text">
+                <div style="font-size:1rem;color: #F02B2B;position: absolute;float: left;width: 7.5rem;height: 2.3rem;margin-top: 0.3rem;">
+                    <div>
+                        <span>300</span>
+                        <span style="font-size:0.85rem;">头</span>
+                    </div>
+                    <div style="font-size:0.666667rem;">
+                        <span>已售完</span>
+                    </div>
+                </div>
+                <button class="btn_edit"></button>
+                <button class="btn_delete"></button>
+            </div>
+            <div class="deal_shangjia_text2">
+                <div style="float: left;font-size: 0.777778rem;color:#353535;position: absolute;">绵阳三台希望猪场</div>
+                <div style="float: left;margin-top:1rem;height:0.8rem;line-height: 0.8rem;position: absolute;">
+                    <div style="font-size: 0.666667rem;color:#4a4a4a;float: left;margin:0.1rem 0rem;">地址：</div>
+                    <div style="font-size: 0.666667rem;color:#4a4a4a;float: left;margin:0.1rem 0rem;">&nbsp;四川省德阳三台</div>
+                </div>
+                <div style="float: left;margin-top:2rem;width:12rem;position: absolute;">
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;position: absolute;">价格：</div>
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;margin-left: 2rem;position: absolute;">&nbsp;¥18.86元/kg</div>
+                    <div style="font-size: 0.666667rem;color:#abaeb3;float: left;margin-left: 6rem;position: absolute;">&nbsp;(均重100-110kg)</div>
+
+                </div>
+                <div style="float: left;margin-top:2.9rem;margin-left:2rem;width:10rem;position: absolute;">
+
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;position: absolute;">&nbsp;¥19.26元/kg</div>
+                    <div style="font-size: 0.666667rem;color:#abaeb3;float: left;position: absolute;margin-left: 4rem">&nbsp;(均重110-120kg)</div>
+                </div>
+                <div style="float: left;margin-top:3.8rem;margin-left:2rem;width:10rem;position: absolute;">
+                    <div style="font-size: 0.666667rem;color:#848689;float: left;position: absolute;">&nbsp;¥19.86元/kg</div>
+                    <div style="font-size: 0.666667rem;color:#abaeb3;float: left;position: absolute;margin-left: 4rem">&nbsp;(均重110-120kg)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

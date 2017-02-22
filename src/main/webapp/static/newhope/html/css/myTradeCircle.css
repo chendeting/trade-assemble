@@ -1,0 +1,105 @@
+#warp {
+  background-color: #e9e9e9;
+}
+#warp .chooseCircle {
+  background-color: #fff;
+}
+#warp .chooseCircle:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+#warp .chooseCircle p {
+  height: 3.3333rem;
+  line-height: 3.3333rem;
+  float: left;
+}
+#warp .chooseCircle .haveChoose {
+  padding-left: 0.6666rem;
+  color: #4a4a4a;
+  font-size: 0.8333rem;
+}
+#warp .chooseCircle .btn-p {
+  float: right;
+  padding-right: 0.6666rem;
+}
+#warp .chooseCircle .btn-p .ok-btn {
+  background-color: #1BBD3D;
+  width: 5.5555rem;
+  height: 2.5rem;
+  font-size: 1rem;
+}
+#warp .circle-ul .circle-list {
+  background-color: #fff;
+  padding: 0.6666rem;
+  border-bottom: 0.0555rem solid #D8D8D8;
+  position: relative;
+}
+#warp .circle-ul .circle-list .redDot {
+  position: absolute;
+  display: block;
+  width: 0.5555rem;
+  height: 0.5555rem;
+  background: #fa4848;
+  border-radius: 50%;
+  top: 50%;
+  right: 1.5rem;
+}
+#warp .circle-ul .circle-list .info-img {
+  position: absolute;
+  top: 45%;
+  right: 0.6666rem;
+}
+#warp .circle-ul .circle-list .info-img img {
+  width: 0.7777rem;
+  height: 0.7777rem;
+}
+#warp .circle-ul .circle-list .circle-info-box:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+#warp .circle-ul .circle-list .circle-info-box > img {
+  position: absolute;
+  width: 3.3333rem;
+  height: 3.3333rem;
+  border-radius: 50%;
+  top: 15%;
+  left: 0.6666rem;
+}
+#warp .circle-ul .circle-list .circle-info-box .info-ul {
+  padding-left: 22%;
+}
+#warp .circle-ul .circle-list .circle-info-box .info-ul li {
+  font-size: 0.7777rem;
+  color: #999;
+}
+#warp .circle-ul .circle-list .circle-info-box .info-ul .circle-name {
+  width: 100%;
+  font-size: 0.8888rem;
+  color: #333;
+}
+#warp .circle-ul .circle-list .circle-info-box .info-ul .circle-name span {
+  display: inline-block;
+}
+#warp .circle-ul .circle-list .circle-info-box .info-ul .circle-name img {
+  width: 2.3888rem;
+  height: 0.8888rem;
+  display: inline-block;
+}
+#warp .circle-ul .circle-list .circle-info-box .info-ul .circle-name img.sm {
+  width: 1.6666rem;
+}
+#warp .circle-ul .circle-list .circle-info-box .info-ul .activeness img {
+  width: 0.6111rem;
+  height: 0.6944rem;
+}
+#warp .unified-price {
+  width: 4.8333rem;
+  height: 1.6666rem;
+  background-color: #1bbd3d;
+  text-align: center;
+  line-height: 1.6666rem;
+  margin-left: 4rem;
+  color: #fff;
+}

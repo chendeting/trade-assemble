@@ -1,0 +1,144 @@
+@navDatebg:#d8d8d8;
+@navDatefontColor:#fff;
+@navDatefontColor_active:#154fa1;
+@countdownfontColor:#6b6b6b;
+@farmNamecolor:#343434;
+@farmAddrcolor:#474747;
+@farmPrice:#727681;
+@farmWeigh:#abafb8;
+@saledColor:#afb0b2;
+@saledCount:#f1252e;
+
+//已经卖出bg
+@saledBgcolor:#f8f9fb;
+@borderTop:#d8dad9;
+@splitLine:#ebebeb;
+
+
+//字体
+//@mainFont:微软雅黑;
+
+//字体大小
+
+@firstbaseSize:0.777778rem;
+@secondbaseSize:0.666667rem;
+@thirdbaseSize:0.4rem;
+
+//剩余数量+已售
+@saledFont:0.833333rem;
+
+
+
+#mainindex{
+  header{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    >p{
+      font-size: @firstbaseSize;
+      //width: 3rem;
+      color:red;
+    }
+  }
+
+  //nav  筛选
+  nav{
+    ul{
+      background-color: @navDatebg;
+      >li{
+        list-style: none;
+        display: inline-block;
+        width:32%;
+        text-align: center;
+        font-size: @firstbaseSize;
+        background-color: @navDatebg;
+        color:#fff;
+      }
+    }
+
+
+  }
+
+  //li 猪场图片
+  section{
+    #newuser_saleList{
+
+      >li{
+        border-bottom:0.4rem solid @splitLine;
+        //height: 5.5rem;
+        .listTop{
+          padding-top:0.5rem;
+          padding-left:1rem;
+          img{
+            display: inline-block;
+            float:left;
+            width: 5rem;
+            height: 5rem;
+            border-radius: 0.5rem;
+          }
+          .liRight{
+            margin-left:1rem;
+            float:left;
+            >h4{
+              font-size: @firstbaseSize;
+              color:@farmNamecolor;
+            }
+            //倒计时
+            .timeCountdown{
+              >p{
+                display: inline-block;
+                margin-top:0.1rem;
+                font-size: @secondbaseSize;
+                color:@farmAddrcolor;
+              }
+              ul{
+                display: inline-block;
+                >li{
+                  display: inline-block;
+                  margin-top:0.1rem;
+                  font-size: @secondbaseSize;
+                  color:@farmAddrcolor;
+                }
+              }
+            }
+            >p{
+              margin-top:0.1rem;
+              font-size: @secondbaseSize;
+              color:@farmAddrcolor;
+            }
+          }
+        }
+
+        /* 剩余数量 */
+        .remainCount{
+          height: 2.3rem;
+          background-color: @saledBgcolor;
+          border-top:0.1rem solid @borderTop;
+          p:nth-child(1){
+            display: inline-block;
+            padding-left:1rem;
+            font-size: @saledFont;
+            color:@saledColor;
+            line-height: 2.3rem;
+            float:left;
+            span{
+              color:@saledCount;
+            }
+          }
+          p:nth-child(2){
+            padding-right:1rem;
+            display: inline-block;
+            font-size: @saledFont;
+            color:@saledColor;
+            line-height: 2.3rem;
+            float:right;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+
+

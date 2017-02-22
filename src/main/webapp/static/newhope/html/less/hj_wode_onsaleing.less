@@ -1,0 +1,246 @@
+@navDatebg:#d8d8d8;
+@navDatefontColor:#fff;
+@navDatefontColor_active:#154fa1;
+@countdownfontColor:#6b6b6b;
+@farmNamecolor:#343434;
+@farmAddrcolor:#474747;
+@farmPrice:#727681;
+@farmWeigh:#abafb8;
+@saledColor:#afb0b2;
+@saledCount:#f1252e;
+
+//已经卖出bg
+@saledBgcolor:#f8f9fb;
+@borderTop:#d8dad9;
+@splitLine:#ebebeb;
+
+
+
+//新建交易圈
+//1）下拉箭头
+@setnewcircle-upIcon:#bababc;
+//2）border
+@setnewcircle-border:#d8d8d8;
+//3)bgcolor;
+@setnewcircle-textBgcolor:#fff;
+//4)fontcolor
+@setnewcircle-fontcolor:#999999;
+//borderWidth
+@setnewcircle-borderWidth:0.0556rem;
+//fontsize 26px;
+@setnewcircle-fontsize:0.7222rem;
+//整体背景色
+@setnewcircle-bgcolor:#ebebeb;
+//placeholder
+@placeholder-color:#cccccc;
+//输入的文字
+@enterfontColor:#282828;
+//新建按钮
+@btn_create:#1BBD3C;
+//30的字体大小
+@font30:0.8333rem;
+//color999
+@color999:#999;
+//color333
+@color333:#333;
+
+@font60:1.6667rem;
+@font24:0.6667rem;
+@font28:0.7778rem;
+@font26:0.7222rem;
+@border4:0.1111rem;
+@width624:17.666rem;
+@height180:5rem;
+@width280:7.7778rem;
+@height80:2.2222rem;
+@width324:9rem;
+@height90:2.5rem;
+@colorGreen:#1BBD3D;
+@height70:1.2622rem;
+@width500:13.8889rem;
+@width672:18.6667rem;
+@bordercolor:#d8d8d8;
+@height60:1.6667rem;
+@color9:#999;
+@colord8:#d8d8d8;
+@color1b:#1bbd3d;
+@colorfa:#fa4848;
+body{
+  -webkit-appearance: none;
+  height: 100%;
+  background-color: @setnewcircle-bgcolor;
+}
+input{
+  -webkit-appearance: none;
+}
+input[type=button]{
+  -webkit-appearance:none;
+  outline:none
+}
+html,body{
+  overflow-x: hidden;
+}
+ul{
+  >li{
+    >p{
+      font-size: @font30;
+      color: #999999;
+      >span{
+        font-size: @font30;
+        color: #333;
+      }
+    }
+  }
+}
+.notNUll{
+  display: none;
+  >span{
+    display: none;
+  }
+}
+
+span{
+  width:4.4444rem;
+  text-align: center;
+  font-size: @font30;
+  color: #999999;
+
+  &.tabActive{
+    color:#1BBD3D !important;
+    border-bottom:0.16667rem solid @colorGreen;
+  }
+}
+
+
+
+section{
+  .weui_tab{
+    .weui_navbar{
+      background-color: #fff;
+      &:after{
+        border-style: none;
+      }
+      .weui_navbar_item{
+        padding-bottom: 0;
+        &:after{
+          border-style: none;
+        }
+        &.weui_bar_item_on {
+          color: #666;
+          background-color: transparent;
+        }
+        span{
+          display:inline-block;
+          width:4.4444rem;
+          padding-bottom: 0.5833rem;
+          font-size: 0.8333rem;
+          &.tabActive{
+            color:#1bbd3d;
+            border-bottom:0.1666rem solid @color1b;
+          }
+        }
+      }
+    }
+  }
+  .weui_tab_bd{
+    margin-top:2.7rem;
+      >div{
+        >p{
+          padding-left:@font24;
+          font-size: @font26;
+          color: #999999;
+          line-height: 1.6667rem;
+          >span{
+            font-size: @font26;
+            color: #333;
+            line-height: 1.6667rem;
+          }
+        }
+        >ul{
+          >li{
+            margin-bottom:@font24;
+            >a{
+              background: #F5F5F5;
+              width:100%;
+              height:3.3333rem;
+              display: flex;
+              justify-content: space-between;
+              >div{
+                padding-left: @font24;
+                height:@height90;
+                  >p{
+                    padding-top:0.4167rem;
+                    font-size: @font30;
+                    color: #4A4A4A;
+                  }
+              }
+              >i{
+                font-size: @font28;
+                color: #B9BABB;
+                line-height:3.3333rem;
+                padding-right:@font24;
+              }
+            }
+            >div{
+              background-color: #fff;
+              height:6.3056rem;
+              position: relative;
+              border-bottom:0.0278rem solid #D8D8D8;;
+              >p{
+                padding-left:@font24;
+                padding-top:@font24;
+                font-size: @font30;
+                color: #999999;
+              }
+              >div.time{
+                width:7.7222rem;
+                height:1.3889rem;
+                background: #F5F5F5;
+                border-radius: @border4 0 0 @border4;
+                padding-left:0.7222rem;
+                position: absolute;
+                right:0;
+                top:@font24;
+
+                >span{
+                  font-size: @font24;
+                  color: #333;
+
+                  &.endTitle{
+                    color:#FA4848;
+                  }
+                }
+              }
+              >div.orderFrom{
+                width:8.6389rem;
+                height:1.3889rem;
+                background: #F5F5F5;
+                padding-left:@font24;
+                position: absolute;
+                bottom:0;
+                right:0;
+                >span{
+                  display:block;
+                  white-space:nowrap;
+                  overflow:hidden;
+                  text-overflow:ellipsis;
+                  width:8rem;
+                  font-size: @font24;
+                  color: #999999;
+                  line-height:1.3889rem;
+                }
+              }
+              >img.state{
+                width:3.3889rem;
+                height:2.5556rem;
+                position: absolute;
+                bottom:1.3889rem;
+                right:0;
+              }
+            }
+          }
+        }
+      }
+  }
+}
+

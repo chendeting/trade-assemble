@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<meta name="x5-orientation" content="portrait">
+<title>详情</title>
+<link type="text/css" rel="stylesheet" href="../css/index.css">
+<link type="text/css" rel="stylesheet" href="../css/mengceng.css">
+<script type="text/javascript" charset="utf-8" src="../js/htmlsize.js"></script>
+<script type="text/javascript" charset="UTF-8" src="../js/jquery-3.1.1.min.js"></script>
+<script src="../js/jquery.downCount.js"></script>
+<!--导入插件-->
+<script type="text/javascript" src="../js/jqthumb.min.js"></script>
+<script>
+    $(function() {
+        $(".pic li img").jqthumb({
+            width:'100%',
+            height:'100%',
+            after: function(imgObj){
+                imgObj.css('opacity', 0).animate({opacity: 1}, 2000);
+            }
+        })
+    });
+</script>
+<style type="text/css">
+    li{
+        list-style: none;
+    }
+</style>
+</head>
+<body style="background-color: #ffffff;">
+<!--蒙层-->
+<div style="display: none" class="mengceng">
+    <div class="Divimg">
+        <img class="bigImg" src="../images/pig_icon.png" alt="">
+    </div>
+</div>
+<div class="zhuqunzhaopian">猪群照片</div>
+<div class="lunbo">
+    <ul class="pic">
+        <li><img src="../images/morentu.png" /></li>
+        <li><img src="../images/pig1.jpg" /></li>
+        <li><img src="../images/morentu.png" /></li>
+        <li><img src="../images/pig1.jpg" /></li>
+
+    </ul>
+    <ul class="btn">
+        <li style="margin-left:8.25rem;"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<div>
+    <div class="transaction_bg_1">
+        <a href="tel:123456789" class="transaction_contact">联系TA</a>
+        <div class="transaction_message_1" >
+            <div class="iGot_number">
+                <div class="transaction_number_residue">
+                    已订购300头
+                </div>
+            </div>
+            <div class="transaction_name">
+                <span style="float: left;">卖家：</span>
+                <label style="float: left;">王老板</label>
+            </div>
+        </div>
+    </div>
+    <div class="line"></div>
+    <div class="issued_module">
+        <input class="transaction_navigation" type="button" value="导航"/>
+        <div class="transaction_bg_2">
+            <div class="transaction_head">猪场名字：</div>
+            <div class="transaction_message">
+                张老板的猪场
+            </div>
+            <div class="transaction_head">交割地址：</div>
+            <div class="transaction_message">
+                四川省德阳三台光明乡4大队1
+            </div>
+            <div class="transaction_head">交通情况：</div>
+            <div class="transaction_message">
+                限4.2米高的运猪车通过
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+    </div>
+    <div class="line"></div>
+    <div class="issued_module">
+        <div class="transaction_bg_2">
+            <div class="transaction_head">交割日期：</div>
+            <div class="transaction_message">
+                2016-12-17
+            </div>
+            <div class="transaction_head">出栏数量：</div>
+            <div class="transaction_message">
+                700头
+            </div>
+            <div class="transaction_head">出栏品种：</div>
+            <div class="transaction_message">
+                内三元
+            </div>
+            <!--定价分级显示-->
+            <div>
+                <div class="transaction_head">出栏价格：</div>
+                <div class="transaction_message">
+                    <div class="transaction_message_text">
+                        <span>¥18.20</span><span>元/KG</span>
+                    </div>
+                </div>
+            </div>
+            <div class="transaction_head">预估均重：</div>
+            <div class="transaction_message">
+                120KG
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+    </div>
+    <div class="line"></div>
+    <div class="issued_module">
+        <div class="transaction_bg_2">
+            <div class="transaction_head">控料情况：</div>
+            <div class="transaction_message">
+                8小时
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+    </div>
+</div>
+<!--图片点击放大-->
+<script>
+    //图片点击事件
+    $(document).ready(function(){
+        $(".pic li").click(function(){
+            var imgSrc=$(this).find("img").attr("src");
+            $(".mengceng").find("img").attr("src",imgSrc);
+            $(".mengceng").show();
+            $(".Divimg .bigImg").jqthumb({
+                width:'100%',
+                height:'100%',
+                after: function(imgObj){
+                    imgObj.css('opacity', 0).animate({opacity: 1}, 2000);
+                }
+            })
+        })
+        //蒙层点击事件
+        $(".mengceng").on("click",function(){
+            $(".mengceng").hide();
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑李老板的猪场</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="format-detection" content="telephone=no">
+    <!--script 适配-->
+    <script src="js/htmlsize.js"></script>
+    <!--jquery-->
+    <script src="js/jquery-3.1.1.min.js"></script>
+
+    <!--引入外部自定义js-->
+    <script src="js/commonFunction.js"></script>
+
+    <!-- 城市选择 -->
+    <link rel="stylesheet" href="css/LArea.css">
+    <!--动态加载模块-->
+    <script src="js/template.js"></script>
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+
+    <!--weui-->
+    <link rel="stylesheet" href="css/weui.min.css">
+    <link rel="stylesheet" href="css/jquery-weui.min.css">
+
+    <!--引入onsaleing 自定义样式表-->
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/hj_editPigCircle.css"/>
+    <style type="text/css">
+        .toolbar>.toolbar-inner>h1.title{
+            text-align: left;
+            color:#333333;
+            font-size: 0.7778rem;
+            line-height: 2.2222rem;
+            padding-left: 0.6667rem;
+        }
+        div.weui_cell_bd,.weui_cell_primary > p{
+            color:#333333;
+            font-size: 0.7778rem;
+        }
+        /*城市选择插件*/
+        .weui-picker-modal .picker-item{
+            font-size: 0.8333rem;
+            color: #333333;
+            letter-spacing: 0;
+            text-align: center;
+        }
+        .weui-picker-modal{
+            background-color: #fff;
+        }
+        /*地图*/
+        #mapScreen{
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            position: fixed;
+            top:0;
+            left:0;
+            display: none;
+            padding-top:1rem;
+        }
+
+        #mapScreen>.weui-row{
+            padding:0 1rem;
+        }
+        .weui-col-80>span{
+            line-height: 0.861rem;
+        }
+        #map{
+            margin-top:1rem;
+            background-color: #00A1CB;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="createPigcircle">
+        <ul>
+            <li>
+                <p>
+                    <span>猪场名称</span>
+                    <span id="circleName_fontlimit">15字内</span>
+                </p>
+                <input value="李老板的猪场" maxlength="15" id="circleName" type="text" placeholder="请创建您的猪场名称"/>
+            </li>
+            <li>
+                <p>
+                    <span>手机号码</span>
+                    <span id="phoneNumber">不能为空</span>
+                </p>
+                <input value="18325678921"  maxlength="15"  type="number" placeholder="请输入您的手机号码" />
+            </li>
+            <li>
+                <p>
+                    <span>交割地址</span>
+                    <span class="notNull"></span>
+                </p>
+                <div class="weui-row">
+                    <div class="weui-col-70">
+                        <div class="content-block">
+                            <input  id="start" type="text" >
+                            <i class="fa fa-caret-down @upIcon" id="icon_citypicker" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="weui-col-30">
+                        <input type="button" id="location" value="定位">
+                    </div>
+                </div>
+                <input id="detailAddr"  maxlength="15"  type="text" placeholder="请填写门牌号等详细地址" />
+            </li>
+            <li>
+                <p>
+                    <span>交通情况</span>
+                    <span class="notNull"></span>
+                </p>
+                <div class="weui-row">
+                    <div class="weui-col-14" >
+                        <p>限高</p>
+                    </div>
+                    <div class="weui-col-86" >
+                        <div class="content-block">
+                            <input type="text" id="heightLimit"/>
+                            <i class="fa fa-caret-down @upIcon" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="weui-row">
+                    <div class="weui-col-14">
+                        <p >限长</p>
+                    </div>
+                    <div class="weui-col-86">
+                        <div class="content-block">
+                            <input id="lengthLimit" type="text" />
+                            <i class="fa fa-caret-down @upIcon"  aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+                <textarea maxlength="15" name="otherTransportDetail" id="otherTransportDetail" placeholder="填写其他交通情况"></textarea>
+                <span>15字内</span>
+            </li>
+        </ul>
+
+        <div id="div_footer">
+            <input type="button" value="提交" id="btn_submit"/>
+        </div>
+    </div>
+    <!--地图-->
+    <div id="mapScreen">
+        <div class="weui-row">
+            <div class="weui-col-20">
+                <a href="javascript:;" id="mapLocation" class="weui_btn weui_btn_mini weui_btn_primary">定位</a>
+            </div>
+            <div class="weui-col-80">
+                <span>点击定位按钮获取准确位置</span>
+            </div>
+        </div>
+        <!--这下面可以放你要加进去的地图-->
+        <div id="map">
+            地图可以放在这个div里面
+        </div>
+    </div>
+
+    <!--  weui城市选择js -->
+    <script src="js/jquery-weui.min.js"></script>
+    <script src="js/city-picker.min.js"></script>
+
+    <script type="text/javascript">
+        $(function(){
+            //设置交割地址的状态。0(默认，提交失败) 1(成功提交)
+            var state = 0;
+            $("#btn_submit").click(function(){
+
+                //假如提交失败，交割地址报错
+                //阻止提交操作：
+                if(state == 0){
+                    //出错了
+                    $("#detailAddr").css({"border":"0.0556rem solid #FA4848"});
+                    $("#detailAddr").siblings("p").children("span[class=notNull]").html("提交失败，请填写详细交割地址");
+                    $("#detailAddr").siblings("p").children("span[class=notNull]").css({"color":"#FA4848"});
+                    //do something
+
+                }else if(state == 1){
+                    //地址正确
+                    $("#detailAddr").css({"border":"0.0556rem solid #D8D8D8"});
+                    $("#detailAddr").siblings("p").children("span[class=notNull]").html(" ");
+                    //do something
+
+                }
+            })
+
+
+            //限制高度操作
+            $("#heightLimit").select({
+                title: "选择限高条件",
+                multi: false,
+                items: [
+                    {
+                        title: "未知",
+                        value: 1
+                    },
+                    {
+                        title: "3.5米运猪车",
+                        value: 2
+                    },
+                    {
+                        title: "4.5米运猪车",
+                        value: 3
+                    },
+                    {
+                        title: "5米运猪车",
+                        value: 4
+                    },
+                ]
+            });
+            //限长操作
+            $("#lengthLimit").select({
+                title: "选择限高条件",
+                multi: false,
+                items: [
+                    {
+                        title: "未知",
+                        value: 1
+                    },
+                    {
+                        title: "4.8米运猪车",
+                        value: 2
+                    },
+                    {
+                        title: "5.3米运猪车",
+                        value: 3
+                    },
+                    {
+                        title: "6.8米运猪车",
+                        value: 4
+                    },
+                    {
+                        title: "7.2米运猪车",
+                        value: 4
+                    },
+                    {
+                        title: "9.6米运猪车",
+                        value: 4
+                    },
+                ]
+            });
+            //城市选择
+            var city1 = "湖北省";
+            var city2 = "武汉市";
+            var city3 = "武昌区";
+            $("#start").val(city1+" "+city2+" "+city3);
+            $("#start").cityPicker({
+                title: "选择所在区域",
+                onChange: function (picker, values, displayValues) {
+                    //do something
+                }
+            });
+
+            //点击定位按钮的时候
+            $("#location").on("click",function(e){
+
+//                $("#mapScreen").css({"height":"100%"});
+                $("#mapScreen").show();
+
+                //设置map的高度
+                $("#map").css({"height":"100%"})
+
+            })
+
+            $("#mapLocation").on("click",function(){
+                $("#mapScreen").hide();
+            })
+
+        })
+    </script>
+</body>
+</html>

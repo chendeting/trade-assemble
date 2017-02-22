@@ -1,0 +1,158 @@
+body {
+  height: 100%;
+  width: 100%;
+}
+.date-title {
+  line-height: 2.2222rem;
+  width: 100%;
+  font-size: 0.7777rem;
+  color: #4A4A4A;
+  background-color: #fff;
+  padding-left: 0.6666rem;
+  margin: 0;
+}
+.price_interval:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.price_interval .btn-box {
+  float: right;
+}
+.price_interval .btn-box span {
+  display: inline-block;
+  width: 5rem;
+  height: 1.3888rem;
+  border-radius: 2.7777rem;
+  border: 0.0555rem solid #d8d8d8;
+  text-align: center;
+  line-height: 1.3888rem;
+  font-size: 0.8333rem;
+  color: #999;
+}
+.price_interval .btn-box .current {
+  color: #1BBD3D;
+  border-color: #1bbd3d;
+}
+.price_interval .counterpoise-title {
+  float: left;
+  font-size: 0.7777rem;
+}
+.join_input_submit {
+  font-size: 1rem;
+}
+.price_box .price_body {
+  text-align: right;
+  margin: 0.5555rem 0 1.2777rem 0;
+}
+.price_box .price_body .price_entry {
+  width: 35%;
+}
+.before-price .detail-ul {
+  background-color: #fff;
+  padding: 0 0.6666rem;
+  border-top: 0.0555rem solid #D8D8D8;
+}
+.before-price .detail-ul li {
+  font-size: 0.8333rem;
+  color: #4A4A4A;
+  line-height: 2.1944rem;
+  text-align: left;
+}
+.before-price .detail-ul li span {
+  display: inline-block;
+  font-size: 0.8333rem;
+  color: #999;
+  width: 7.2222rem;
+}
+.warning-box {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #FFE9CB;
+  font-size: 0.7777rem;
+  color: #4A4A4A;
+  padding: 0.3rem 0.6666rem;
+  vertical-align: middle;
+}
+.weui-picker-calendar .toolbar {
+  background-color: #fff;
+}
+.weui-picker-calendar .picker-calendar-week-days {
+  background-color: #fff;
+  border-top: 0.0555rem solid #D8D8D8;
+}
+.weui-picker-calendar .picker-calendar-row:after {
+  height: 0;
+}
+.picker-calendar-week-days .picker-calendar-week-day {
+  font-size: 0.6666rem;
+}
+.picker-calendar-week-days {
+  height: 2rem;
+}
+.picker-calendar-week-days:after {
+  height: 0;
+}
+.weui-picker-calendar {
+  height: auto;
+  padding-bottom: 0.6666rem;
+}
+.weui-picker-calendar .picker-modal-inner {
+  height: 19rem;
+}
+.picker-calendar-week-days + .picker-calendar-months {
+  height: 17rem;
+}
+.picker-calendar-day.picker-calendar-day-next,
+.picker-calendar-day {
+  margin: 0.0555rem;
+  height: 2.7777rem;
+  width: 2.7777rem;
+  border: 0.0555rem solid #D8D8D8;
+}
+.picker-calendar-day.picker-calendar-day-selected span {
+  background-color: transparent;
+  color: #000;
+}
+.picker-calendar-day.picker-calendar-day-today {
+  border-color: #1bbd3d;
+}
+.picker-calendar-day.picker-calendar-day-today span {
+  color: #1bbd3d;
+}
+.picker-calendar-week-day-weekend {
+  color: #f64f4a;
+}
+.picker-calendar-week-days .picker-calendar-week-day {
+  line-height: 2rem;
+}
+.picker-calendar-day.picker-calendar-day-today span {
+  background-color: transparent;
+}
+.picker-calendar-day.historyDate {
+  color: #000;
+  background-color: #f5f5f5;
+  border-style: none;
+}
+.picker-calendar-day.picker-calendar-day-next,
+.picker-calendar-day.picker-calendar-day-prev {
+  color: #999;
+}
+.havePrcing {
+  width: 2.7777rem;
+  height: 2.7777rem;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+}
+.havePrcing img {
+  width: 1.25rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.picker-calendar-day {
+  position: relative;
+}

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="x5-orientation" content="portrait">
+    <title>发布详情</title>
+    <link type="text/css" rel="stylesheet" href="../css/index.css">
+    <link type="text/css" rel="stylesheet" href="../css/mengceng.css">
+    <script type="text/javascript" charset="utf-8" src="../js/htmlsize.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/jquery.downCount.js"></script>
+    <style type="text/css">
+        li{
+            list-style: none;
+        }
+    </style>
+
+</head>
+<!--导入插件-->
+<script type="text/javascript" src="../js/jqthumb.min.js"></script>
+<script>
+    $(function() {
+        $(".pic li img").jqthumb({
+            width:'100%',
+            height:'100%',
+            after: function(imgObj){
+                imgObj.css('opacity', 0).animate({opacity: 1}, 2000);
+            }
+        })
+    });
+
+</script>
+<body>
+<!--蒙层-->
+<div style="display: none" class="mengceng">
+    <div class="Divimg">
+        <img class="bigImg" src="images/pig_icon.png" alt="">
+    </div>
+</div>
+<div class="lunbo">
+    <ul class="pic">
+        <li><img src="../images/x.jpg" /></li>
+        <li><img src="../images/y.jpg" /></li>
+        <li><img src="../images/z.jpg" /></li>
+        <li><img src="../images/a.jpg" /></li>
+    </ul>
+    <ul class="btn">
+        <li style="margin-left:8.25rem;"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<div>
+    <div class="issued_bg_1">
+           <div class="issued_yfb_time" id="timeCountdown">
+                   <div style="float: left;margin-left: 0.5rem;">距开始</div>
+                   <ul class="countdown" style="color:#333333;">
+                       <li>
+                           <span class="hours" style="float: left;margin-left: 0.4rem;">00</span>
+                       </li>
+                       <li class="seperator" style="float: left;margin-left: 0.2rem">:</li>
+                       <li>
+                           <span class="minutes" style="float: left;margin-left: 0.2rem">00</span>
+                       </li>
+                       <li class="seperator" style="float: left;margin-left: 0.2rem">:</li>
+                       <li>
+                           <span class="seconds" style="float: left;margin-left: 0.2rem">00</span>
+                       </li>
+                       <div style="clear: both;"></div>
+                   </ul>
+           </div>
+          <div class="issued_dfb_time" style="display: none">
+              发布超期2天
+          </div>
+          <div class="issued_message_1" >
+               <div class="issued_message_name">乐山李老板</div>
+               <div class="issued_message_date">
+                   <span style="float: left;">计划出栏日期：</span>
+                   <label style="float: left;">2016-12-17</label>
+               </div>
+          </div>
+    </div>
+    <div class="line"></div>
+    <div class="issued_module">
+        <div class="issued_bg_2">
+            <div class="issued_message_text">
+                <span class="issued_message_title">控料情况：</span>
+                <span class="myring_message_content">8小时</span>
+            </div>
+            <div class="issued_message_text">
+                <span class="issued_message_title">发布数量：</span>
+                <span class="myring_message_content">500头</span>
+            </div>
+            <div class="issued_message_text">
+                <span class="issued_message_title">预估均重：</span>
+                <span class="myring_message_content">200KG</span>
+            </div>
+            <div class="issued_message_text">
+                <span class="issued_message_title">交通情况：</span>
+                <span class="myring_message_content">限长7.2米内，限高4.5米内</span>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+    </div>
+    <div class="line"></div>
+    <!--详情已发布页面显示-->
+    <div class="yifabuxiangqing">
+        <div class="issued_module">
+            <div class="issued_bg_2">
+                <div class="issued_price_head">价格：</div>
+                <div class="issued_price_message">
+                    <div class="issued_message_text">
+                        <span>¥18.20</span><span>元/KG</span>&nbsp;<span class="issued_junzhong">（均重0-100KG）</span>
+                    </div>
+                    <div class="issued_message_text">
+                        <span>¥18.90</span><span>元/KG</span>&nbsp;<span class="issued_junzhong">（均重100-200KG）</span>
+                    </div>
+                    <div class="issued_message_text">
+                        <span>¥19.60</span><span>元/KG</span>&nbsp;<span class="issued_junzhong">（均重200KG以上）</span>
+                    </div>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+         </div>
+        <div class="line"></div>
+    </div>
+    <div class="issued_module">
+        <div class="issued_bg_3">
+            <div class="issued_price_head">交割地址：</div>
+            <div class="issued_address_message">
+                四川省德阳市三台县光明镇元华乡5组
+            </div>
+            <input class="issued_navigation" type="button" value="导航"/>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="issued_module">
+            <div class="issued_bg_3">
+                <div class="issued_price_head">联系电话：</div>
+                <div class="issued_phone_message">
+                       182-9542-4325
+                </div>
+                <input class="issued_contact" type="button" value="联系TA"/>
+                <div style="clear: both;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 已发布页面调使用删除修改，隐藏退回发布。待发布页面使用退回，发布，隐藏删除，修改-->
+<input class="issued_input delete" type="button" value="删除"/>
+<input class="issued_input back" type="button" value="退回" style="display: none"/>
+<input class="issued_input alter" type="button" value="修改"/>
+<input class="issued_input release" type="button" value="发布" style="display: none"/>
+<script type="text/javascript">
+    $(function(){
+        var listLen = $(".pic li").length, i=0,setInter,speen = 5000;
+
+        $(".btn li:last").css({"margin":"0rem 0rem 0rem 0.5rem"});
+        $(".btn li:first").addClass("on");
+        $(".pic li:first").show();
+
+        $(".btn li").each(function(index,element){
+            $(element).click(function(){
+                i = index;
+                $(this).addClass("on").siblings().removeClass("on");
+                $(".pic li").eq(index).animate({opacity:"show"},200).siblings().animate({opacity:"hide"},200);
+            })
+            $(element).hover(function(){
+                clearInterval(setInter);
+            },function(){
+                outPlay();
+            });
+        })
+
+
+        out_fun = function(){
+            if(i < listLen){i++;}else{i=0;};
+            $(".btn li").eq(i).addClass("on").siblings().removeClass("on");
+            $(".pic li").eq(i).animate({opacity:"show"},2000).siblings().animate({opacity:"hide"},2000);
+        }
+
+        outPlay = function(){
+            setInter = setInterval("out_fun()",speen);
+        }
+        outPlay();
+    })
+</script>
+<script type="text/javascript">
+    //2) 倒计时插件
+        $('.countdown').downCount({
+            date: '12/20/2016 21:00:00',
+            offset: 8
+        }, function () {
+            //显示拍卖结束相关的界面
+            alert('拍卖已经结束了');
+        });
+</script>
+<!--图片点击放大-->
+<script>
+    //图片点击事件
+    $(".pic li").click(function(){
+        var imgSrc=$(this).find("img").attr("src");
+        $(".mengceng").find("img").attr("src",imgSrc);
+        $(".mengceng").show();
+        $(function() {
+            $(".bigimg").jqthumb({
+                width:'100%',
+                height:'100%',
+                after: function(imgObj){
+                    imgObj.css('opacity', 0).animate({opacity: 1}, 2000);
+                }
+            })
+        })
+    })
+    //蒙层点击事件
+    $(".mengceng").on("click",function(){
+        $(".mengceng").hide();
+    })
+</script>
+</body>
+</html>

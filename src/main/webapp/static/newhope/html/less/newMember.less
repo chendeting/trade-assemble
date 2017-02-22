@@ -1,0 +1,144 @@
+@color9:#999;
+@colord8:#d8d8d8;
+@color1b:#1bbd3d;
+@colorfa:#fa4848;
+*{
+  font-family: "Microsoft YaHei";
+}
+#warp{
+  background-color: #fff;
+}
+.modal-backdrop.in {
+  opacity: 0;
+}
+.modal-dialog{
+  width:17.75rem;
+  margin:0 auto;
+}
+.modal-footer{
+  text-align: center;
+}
+.sendReason{
+  background-color: @color1b;
+  width:11.25rem;
+  height:2.1875rem;
+  border-style: none;
+  border-radius: 0.15625rem;
+  color:#fff;
+}
+.newmember-list{
+  border-bottom: 0.0555rem solid @colord8;
+  &:after{
+    content: '';
+    display: block;
+    overflow: hidden;
+    clear:both;
+  }
+
+  padding:0.8888rem 0.266rem 1.066rem 1.066rem;
+  .headImg{
+    width:2.8125rem;
+    height:2.8125rem;
+    float:left;
+    img{
+      width:2.8125rem;
+      height:2.8125rem;
+      border-radius:50%;
+    }
+  }
+  .newmember-info{
+    float:left;
+    color:#999;
+    width:13rem;
+    height: auto;
+    margin:0 0.8rem;
+    li{
+      width:13rem;
+      line-height:1.1111rem;
+      &.member-info-tel{
+        font-size:0.7222rem;
+      }
+      &.member-info-msg{
+        font-size:0.6666rem;
+        //color:#3f3f3f;
+      }
+    }
+    .trueName{
+      font-size:0.8333rem;
+      color:#333;
+      img{
+        width:1.875rem;
+        height:0.937rem;
+        display: inline-block;
+        margin-left: 0.3125rem;
+      }
+    }
+  }
+  .isNot{
+    float: right;
+    margin-top: 0.5333rem;
+    button{
+      margin-right:0.5rem;
+      width:5rem;
+      height:1.9444rem;
+      color:#fff;
+      font-size:0.8333rem;
+    }
+    .agree{
+      background-color: @color1b;
+    }
+    .disagree{
+      background-color:@colorfa;
+    }
+  }
+}
+  .reason-content{
+    resize: none;
+    width:16rem;
+    height:8.4375rem;
+    border-style: none;
+    padding:0.533rem;
+    font-size: 0.7777rem;
+  }
+ .modal-body{
+   position: relative;
+   text-align: center;
+   .del-tip{
+     width:0.8888rem;
+     height:0.8888rem;
+     position: absolute;
+     left:5rem;
+     top:1.4rem;
+   }
+ }
+.maxlength{
+  position: absolute;
+  top:8rem;
+  left:14rem;
+  color:@color9;
+  background-color: transparent;
+}
+
+//通过成员申请后出现的模态框样式
+//放养猪场模态框样式
+.weui_toast,.weui_toast_text,.weui_toast_visible{
+  width:auto;
+  height: auto;
+  font-size: 1.25rem;
+  line-height: 2.2222rem;
+  color:#fff;
+  opacity:0.75;
+  border-radius: 0.2222rem;
+  z-index: 20000;
+}
+.weui_dialog_bd{
+  margin: 0 auto;
+  font-size: 1rem;
+  color:#333;
+  width:13.3055rem;
+  padding: 1rem 0;
+}
+.weui_dialog_ft a{
+  font-size: 1rem;
+}
+

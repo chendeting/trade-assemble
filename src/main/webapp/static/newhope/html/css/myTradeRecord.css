@@ -1,0 +1,99 @@
+* {
+  font-size: 0.8333rem;
+}
+.weui_tab .weui_navbar {
+  background-color: #fff;
+}
+.weui_tab .weui_navbar:after {
+  border-style: none;
+}
+.weui_tab .weui_navbar .weui_navbar_item {
+  padding-bottom: 0;
+}
+.weui_tab .weui_navbar .weui_navbar_item:after {
+  border-style: none;
+}
+.weui_tab .weui_navbar .weui_navbar_item.weui_bar_item_on {
+  color: #666;
+  background-color: transparent;
+}
+.weui_tab .weui_navbar .weui_navbar_item span {
+  display: inline-block;
+  width: 6rem;
+  padding-bottom: 0.5833rem;
+  font-size: 0.8333rem;
+}
+.weui_tab .weui_navbar .weui_navbar_item span.active {
+  color: #1bbd3d;
+  border-bottom: 0.1666rem solid #1bbd3d;
+}
+.weui_tab_bd .line {
+  height: 1.0555rem;
+  background-color: #e6e6e6;
+  border-bottom: 0.0277rem solid #999;
+}
+.weui_tab_bd .mysell-title {
+  padding-left: 0.8333rem;
+  font-size: 0.7222rem;
+  color: #999;
+  height: 2rem;
+  line-height: 2rem;
+  background-color: #e6e6e6;
+  border-bottom: 0.0833rem solid #eee;
+  border-top: 0.0833rem solid #eee;
+}
+.weui_tab_bd .mysell-ul .mysell-list .mysell-date {
+  position: relative;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  background-color: #f5f5f5;
+  padding-left: 0.8333rem;
+  color: #4a4a4a;
+}
+.weui_tab_bd .mysell-ul .mysell-list .mysell-date img {
+  width: 0.7777rem;
+  height: 0.7777rem;
+  position: absolute;
+  right: 0.6944rem;
+  top: 0.8rem;
+}
+.weui_tab_bd .trade-status {
+  padding: 0.8333rem 0 0.8333rem 0.8333rem;
+  position: relative;
+}
+.weui_tab_bd .trade-status .record-info li {
+  color: #999;
+  margin-bottom: 0.2222rem;
+}
+.weui_tab_bd .trade-status .record-info li span {
+  color: #333;
+}
+.weui_tab_bd .trade-status .status-pic {
+  position: absolute;
+  right: 0;
+  top: 0.8rem;
+}
+.weui_tab_bd .trade-status .status-pic img {
+  width: 5.8333rem;
+  height: 5.8333rem;
+}
+#buy .trade-status {
+  padding: 0 0 0 0.6666rem;
+}
+#buy .trade-status .record-info {
+  margin-bottom: 1.0555rem;
+}
+#buy .trade-status .status-pic {
+  top: -1.2rem;
+}
+#buy .trade-status .status-pic img {
+  width: 5.75rem;
+  height: 3.3333rem;
+}
+#buy .trade-status .record-info {
+  margin-top: 1.0555rem;
+  color: #999;
+}
+#buy .trade-status .record-info span {
+  color: #333;
+}

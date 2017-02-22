@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="x5-orientation" content="portrait">
+    <title>加入拍卖圈</title>
+    <link type="text/css" rel="stylesheet" href="css/index.css">
+    <script type="text/javascript" charset="utf-8" src="js/htmlsize.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript">
+
+        var InterValObj; //timer变量，控制时间
+        var count = 60; //间隔函数，1秒执行
+        var curCount;//当前剩余秒数
+
+        function sendMessage() {
+            curCount = count;
+            //设置button效果，开始计时
+            $("#btnSendCode1").attr("disabled", "true");
+            $("#btnSendCode1").val(curCount + "S");
+            $("#btnSendCode1").addClass("wait");
+            InterValObj = window.setInterval(SetRemainTime, 1000); //启动计时器，1秒执行一次
+            //向后台发送处理数据
+            $.ajax({
+                type: "POST", //用POST方式传输
+                dataType: "text", //数据格式:JSON
+                url: 'Login.ashx', //目标地址
+                data: "dealType=" + dealType +"&uid=" + uid + "&code=" + code,
+                error: function (XMLHttpRequest, textStatus, errorThrown) { },
+                success: function (msg){ }
+            });
+        }
+
+        //timer处理函数
+        function SetRemainTime() {
+            if (curCount == 0) {
+                window.clearInterval(InterValObj);//停止计时器
+                $("#btnSendCode1").removeAttr("disabled");//启用按钮
+                $("#btnSendCode1").val("重新发送验证码");
+                $("#btnSendCode1").removeClass("wait");
+            }
+            else {
+                curCount--;
+                $("#btnSendCode1").val(+ curCount + "S");
+            }
+        }
+    </script>
+</head>
+<body>
+   <!--part3部分点击提交时弹出-->
+    <div class="join_part3"  style="display: none;">
+         <div class="join_part3_tankuang">
+              <div class="join_tankuang_pic">
+              </div>
+              <div class="join_tankuang_text">
+                  <div>您的申请已成功提交</div>
+                  <div>请耐心等待管理员联系您</div>
+              </div>
+              <input type="button" class="join_tankuang_lianxi" value="联系TA"/>
+             <input type="button" class="join_tankuang_queding" value="确定"/>
+         </div>
+    </div>
+    <div class="join_part1">
+        <div class="join_part1_head">
+            <div class="join_headpic_bg">
+                <img class="join_head_pic" src="images/morentu.png"/>
+            </div>
+            <div class="join_head_message">
+                 <div class="join_circle_1">
+                     江油放养交易圈
+                 </div>
+                <div class="join_circle_2">
+                    江油新希望六合放养猪交易圈江油新希望六合放养猪交易圈江油新希望六合放养猪交易圈江油新希望六合放养猪交易圈江油新希望六合放养猪交易圈
+                </div>
+                <div class="join_circle_3">
+                    <div style="float: left;">活跃度</div>
+                    <img class="vitality_icon" src="images/ic_fire.png"/>
+                    <img class="vitality_icon" src="images/ic_fire.png"/>
+                    <img class="vitality_icon" src="images/ic_fire.png"/>
+                    <div style="float: right;font-size: 0.67rem;">
+                        成员数量
+                        <span>(52)</span>
+                    </div>
+                </div>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="line"></div>
+        <div class="join_part1_person">
+            <img class="join_person_icon" src="images/ic_lxr.png"/>
+            <div class="join_person_lxr">
+                联系人
+            </div>
+            <div class="join_person_phone">
+                <span>张瑞</span><span style="margin-left: 0.4rem;">187-8765-0987</span>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="join_part1_condition">
+             <div class="join_condition_1">
+                 <img class="join_person_icon" src="images/ic_jrtj.png"/>
+                 <div class="join_person_lxr">
+                     加入条件
+                 </div>
+             </div>
+             <div class="join_person_2">
+                 <div class="join_person_text">专业生猪经营户缴纳保证金5000元专业生猪经营户缴纳保证金5000元</div>
+             </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="line"></div>
+
+        <div style="clear: both;"></div>
+    </div>
+
+    <div class="wall"></div>
+
+    <div class="join_part2">
+        <div class="line" style="margin-top:0.44rem"></div>
+        <div class="join_part2_text">
+
+            <div class="join_part2_text1">
+                称呼
+            </div>
+            <div class="join_part2_text2">
+                (使用真实姓名让对方觉得靠谱)
+            </div>
+        </div>
+        <input class="join_input_1" placeholder="用户名"/>
+        <div class="wall_2"></div>
+      <!--注册过的用户进入这个页面隐藏下面这段DIV-->
+        <div class="join_zhucebufen">
+            <input class="join_input_1" placeholder="手机号码"/>
+            <div class="wall_2"></div>
+            <input class="join_input_2 wrong" placeholder="请输入发给您的验证码"/>
+            <input id="btnSendCode1" class="join_input_3" type="button" onclick="sendMessage()" value="获取验证码"/>
+            <div class="wall_2"></div>
+            <label class="join_remind">
+                验证码输入错误
+            </label>
+            <label class="join_remind on" style="display: none">
+                发送验证码成功
+            </label>
+        </div>
+        <div class="join_part2_dzh">
+            <div style="margin-left: 0.7rem;float: left;">打个招呼</div>
+            <input type="button" class="join_part2_btnbuy" id="buy_btn1" value="我是卖家"/>
+            <input type="button" class="join_part2_btnbuy on" id="buy_btn2" value="我是买家"/>
+        </div>
+        <textarea maxlength="30" class="join_part2_textarea" placeholder="我想加入圈子卖猪，请尽快联系我"></textarea>
+        <span class="textarea_beizhu">30字内</span>
+        <div style="clear: both;"></div>
+    </div>
+    <div class="line"></div>
+    <input class="join_input_submit" type="button" value="提交"/>
+</body>
+</html>

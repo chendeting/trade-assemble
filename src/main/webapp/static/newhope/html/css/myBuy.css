@@ -1,0 +1,167 @@
+#warp {
+  background-color: #e9e9e9;
+}
+#warp .weui_tab_bd .mysell-title {
+  border-style: none;
+  font-size: 0.7777rem;
+}
+#warp .weui_tab_bd .mysell-title i {
+  font-style: normal ;
+  font-size: 0.7777rem;
+}
+#warp .weui_tab_bd .mysell-title span {
+  font-size: 0.7777rem;
+  color: #333;
+}
+#warp .weui_tab_bd .tradingUl .tradingList {
+  position: relative;
+}
+#warp .weui_tab_bd .tradingUl .tradingList .trading-head {
+  padding-left: 0.6666rem;
+  background-color: #f5f5f5;
+  height: 3.3333rem;
+  border-top: 0.0555rem solid #D8D8D8;
+}
+#warp .weui_tab_bd .tradingUl .tradingList .trading-head p {
+  color: #333;
+}
+#warp .weui_tab_bd .tradingUl .tradingList .trading-head > div {
+  position: absolute;
+  margin-top: 0.5rem;
+}
+#warp .weui_tab_bd .tradingUl .tradingList .trading-head > div .trading-date {
+  margin: 0 auto;
+}
+#warp .weui_tab_bd .tradingUl .tradingList .trading-head > img {
+  position: absolute;
+  right: 0.666rem;
+  top: 1.2rem;
+  width: 0.7777rem;
+  height: 0.7777rem;
+}
+#warp .weui_tab_bd .tradingUl .tradingList .trading-info {
+  background-color: #fff;
+  padding: 0.6666rem;
+  margin-bottom: 0.6666rem;
+}
+#warp .weui_tab_bd .tradingUl .tradingList .trading-info li {
+  line-height: 1.3888rem;
+  color: #999;
+  font-size: 0.7777rem;
+}
+#warp .weui_tab_bd .tradingUl .tradingList .trading-info .trading-address {
+  margin-bottom: 0.8333rem;
+}
+#warp .weui_tab_bd .tradingUl .tradingList .trading-info .trading-address:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+#warp .weui_tab_bd .tradingUl .tradingList .trading-info .trading-address .title {
+  font-size: 0.7777rem;
+  float: left;
+  display: block;
+}
+#warp .weui_tab_bd .tradingUl .tradingList .trading-info .trading-address .detail {
+  font-size: 0.7777rem;
+  width: 50%;
+  display: block;
+  float: left;
+}
+#warp .weui_tab_bd .tradingUl .tradingList .trading-info .trading-tel {
+  position: absolute;
+  top: 4rem;
+  right: 0.6666rem;
+  width: 3.6111rem;
+  height: 1.6666rem;
+  background-color: #1bbd3d;
+  border-radius: 0.1111rem;
+  text-align: center;
+  line-height: 1.6666rem;
+}
+#warp .weui_tab_bd .tradingUl .tradingList .trading-info .trading-tel a {
+  color: #fff;
+}
+#warp .weui_tab_bd .tradingUl .tradingList .trading-info .GPS {
+  width: 3.5rem;
+  height: 1.6666rem;
+  line-height: 1.6666rem;
+  border: 0.0555rem solid #1bbd3d;
+  text-align: center;
+  color: #1bbd3d;
+  border-radius: 0.1111rem;
+  position: absolute;
+  right: 0.6666rem;
+  top: 6rem;
+}
+#warp .weui_tab_bd .tradingUl .tradingList .trading-info .fromWhere {
+  width: 9.3055rem;
+  height: 1.3888rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: #f5f5f5;
+  font-size: 0.7222rem;
+  text-align: center;
+  line-height: 1.3888rem;
+}
+#warp .weui_tab_bd .weui_cell:before {
+  border-style: none;
+}
+#warp .weui_tab_bd .weui_cell .weui_input {
+  width: 75%;
+  height: 2.2222rem;
+  padding-left: 0.3rem;
+  font-size: 0.7222rem;
+  background-color: #fff;
+  border: 0.0555rem solid #D8D8D8;
+}
+#warp .weui_tab_bd .weui_cell .weui_cell_bd {
+  position: relative;
+}
+#warp .weui_tab_bd .weui_cell .weui_cell_bd .zhi {
+  display: inline-block;
+  color: #999;
+  font-size: 0.7777rem;
+}
+#warp .weui_tab_bd .weui_cell .weui_cell_bd .fa {
+  position: absolute;
+  right: 25%;
+  top: 35%;
+  font-size: 0.7222rem;
+  color: #999;
+}
+#warp .weui_tab_bd .weui_cell .btnBox {
+  width: 25%;
+  height: 2.2222rem;
+}
+#warp .weui_tab_bd .weui_cell .btnBox input {
+  width: 100%;
+  height: 2.2222rem;
+  background-color: #1bbd3d;
+  text-align: center;
+  line-height: 2.2222rem;
+  color: #fff;
+  font-size: 0.7222rem;
+}
+#warp #completed .stateImg {
+  position: absolute;
+  right: 0;
+  bottom: 1rem;
+}
+#warp #completed .stateImg img {
+  width: 3.3888rem;
+  height: 2.5555rem;
+}
+.weui_toast,
+.weui_toast_text,
+.weui_toast_visible {
+  width: auto;
+  height: auto;
+  font-size: 0.8333rem;
+  line-height: 2.2222rem;
+  color: #fff;
+  opacity: 0.75;
+  border-radius: 0.2222rem;
+  text-align: center;
+}

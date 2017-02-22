@@ -1,0 +1,136 @@
+* {
+  font-family: "Microsoft YaHei";
+}
+#warp {
+  background-color: #fff;
+}
+.modal-backdrop.in {
+  opacity: 0;
+}
+.modal-dialog {
+  width: 17.75rem;
+  margin: 0 auto;
+}
+.modal-footer {
+  text-align: center;
+}
+.sendReason {
+  background-color: #1bbd3d;
+  width: 11.25rem;
+  height: 2.1875rem;
+  border-style: none;
+  border-radius: 0.15625rem;
+  color: #fff;
+}
+.newmember-list {
+  border-bottom: 0.0555rem solid #d8d8d8;
+  padding: 0.8888rem 0.266rem 1.066rem 1.066rem;
+}
+.newmember-list:after {
+  content: '';
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+.newmember-list .headImg {
+  width: 2.8125rem;
+  height: 2.8125rem;
+  float: left;
+}
+.newmember-list .headImg img {
+  width: 2.8125rem;
+  height: 2.8125rem;
+  border-radius: 50%;
+}
+.newmember-list .newmember-info {
+  float: left;
+  color: #999;
+  width: 13rem;
+  height: auto;
+  margin: 0 0.8rem;
+}
+.newmember-list .newmember-info li {
+  width: 13rem;
+  line-height: 1.1111rem;
+}
+.newmember-list .newmember-info li.member-info-tel {
+  font-size: 0.7222rem;
+}
+.newmember-list .newmember-info li.member-info-msg {
+  font-size: 0.6666rem;
+}
+.newmember-list .newmember-info .trueName {
+  font-size: 0.8333rem;
+  color: #333;
+}
+.newmember-list .newmember-info .trueName img {
+  width: 1.875rem;
+  height: 0.937rem;
+  display: inline-block;
+  margin-left: 0.3125rem;
+}
+.newmember-list .isNot {
+  float: right;
+  margin-top: 0.5333rem;
+}
+.newmember-list .isNot button {
+  margin-right: 0.5rem;
+  width: 5rem;
+  height: 1.9444rem;
+  color: #fff;
+  font-size: 0.8333rem;
+}
+.newmember-list .isNot .agree {
+  background-color: #1bbd3d;
+}
+.newmember-list .isNot .disagree {
+  background-color: #fa4848;
+}
+.reason-content {
+  resize: none;
+  width: 16rem;
+  height: 8.4375rem;
+  border-style: none;
+  padding: 0.533rem;
+  font-size: 0.7777rem;
+}
+.modal-body {
+  position: relative;
+  text-align: center;
+}
+.modal-body .del-tip {
+  width: 0.8888rem;
+  height: 0.8888rem;
+  position: absolute;
+  left: 5rem;
+  top: 1.4rem;
+}
+.maxlength {
+  position: absolute;
+  top: 8rem;
+  left: 14rem;
+  color: #999;
+  background-color: transparent;
+}
+.weui_toast,
+.weui_toast_text,
+.weui_toast_visible {
+  width: auto;
+  height: auto;
+  font-size: 1.25rem;
+  line-height: 2.2222rem;
+  color: #fff;
+  opacity: 0.75;
+  border-radius: 0.2222rem;
+  z-index: 20000;
+}
+.weui_dialog_bd {
+  margin: 0 auto;
+  font-size: 1rem;
+  color: #333;
+  width: 13.3055rem;
+  padding: 1rem 0;
+}
+.weui_dialog_ft a {
+  font-size: 1rem;
+}

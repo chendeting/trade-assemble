@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>我要发布</title>
+    <script type="text/javascript" charset="utf-8" src="../js/htmlsize.js"></script>
+    <link type="text/css" rel="stylesheet" href="../css/weui.min.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/jquery-weui.min.css"/>
+    <link rel="stylesheet" href="../js/dist/dropload.css">
+
+    <link rel="stylesheet" type="text/css" href="../css/common.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/myTradeRecord.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/Published.css"/>
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/dist/dropload.min.js"></script>
+    <!--动态加载模块-->
+    <script src="../js/template.js"></script>
+</head>
+<script type="text/html" id="temp1">
+    <li class="published-list">
+        <div class="floatBox">
+            <div class="pulished-pic"><img src="{{imgSrc}}"/></div>
+            <div class="pulished-info">
+                <p class="info-title">{{bossName}}</p>
+                <p>发布数量：{{pubNum}}头</p>
+                <p>预估均重：{{weight}}KG</p>
+                <p>出栏品种：{{breed}}</p>
+                <p>计划出栏日期：{{outputDate}}</p>
+            </div>
+            <div class="over-due" style="display: {{overDue}}">发布超期105天</div>
+        </div>
+
+        <div class="btn-box">
+            <p class="published-p" style="display: {{publishedBtn}}"><input class="published-btn" type="button" value="发布"></p>
+            <p class="send-p"><input class="send-back" type="button" value="退回"></p>
+        </div>
+    </li>
+</script>
+<script type="text/html" id="temp2">
+    <li class="published-list">
+        <div class="floatBox">
+            <div class="pulished-pic"><img src="{{imgSrc}}"/></div>
+            <div class="pulished-info">
+                <p class="info-title">{{bossName}}</p>
+                <p>发布数量：{{publishedNum}}头</p>
+                <p>订购数量：{{orderNum}}头</p>
+                <p>出栏品种：{{breed}}</p>
+                <p>价格：<span class="unit-price">￥{{unitPrice}}/kg</span>(均重{{counterpoise}}kg)</p>
+            </div>
+            <div class="over-due">距开始<span class="fromStart">12:05:25</span></div>
+        </div>
+
+        <div class="btn-box">
+            <input type="button" class="del-btn" value="删除">
+            <input class="recompose" type="button" value="修改">
+        </div>
+    </li>
+</script>
+<body>
+    <div id="warp">
+        <div class="weui_tab">
+            <div class="weui_navbar">
+                <a href="#unpublished" class="weui_navbar_item weui_bar_item_on">
+                    <span class="mySell active">待发布</span>
+                </a>
+                <a href="#havePublished" class="weui_navbar_item">
+                    <span class="mybuy">已发布</span>
+                </a>
+            </div>
+            <div class="weui_tab_bd">
+                <div id="unpublished" class="weui_tab_bd_item weui_tab_bd_item_active">
+                    <div class="noData" style="display: none">
+                        <div class="noData-img"><img src="../images/img_fb_default01.png"/></div>
+                        <p>暂无放养上市的发布请求，请耐心等待</p>
+                    </div>
+                    <div class="hideDiv1">
+                        <p class="Published-title">待发布（4笔）</p>
+                        <ul class="unpublished-box">
+
+                        </ul>
+                        <div class="weui-infinite-scroll">
+                            <div class="infinite-preloader"></div>
+                            正在加载...
+                        </div>
+                    </div>
+                </div>
+                <div id="havePublished" class="weui_tab_bd_item">
+                    <div class="noData" style="display: none">
+                        <div class="noData-img"><img src="../images/img_fb_default02.png"/></div>
+                        <p>还未发布过买猪消息赶紧发布一条吧~</p>
+                    </div>
+                    <div class="hideDiv2">
+                        <p class="Published-title">已发布（4笔）</p>
+                        <ul class="havepublished-box" >
+
+                        </ul>
+
+                        <div class="weui-infinite-scroll">
+                            <div class="infinite-preloader"></div>
+                            正在加载...
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="published-details">
+        <a href="#"><img src="../images/btn_fb_float_normal.png"/></a>
+    </div>
+    <div class="weui_tabbar">
+        <a href="../jiaoyi/cxl_jiaoyiquan.html" class="weui_tabbar_item">
+            <div class="weui_tabbar_icon">
+                <img class="normal" src="../images/btn_tabbar_jy_normal.png" alt="">
+                <img class="selected" src="../images/btn_tabbar_jy_selected.png"/>
+            </div>
+            <p class="weui_tabbar_label">交易</p>
+        </a>
+        <a href="#" class="weui_tabbar_item weui_bar_item_on">
+            <div class="weui_tabbar_icon">
+                <img class="normal" src="../images/btn_tabbar_hq_normal.png" alt="">
+                <img class="selected" src="../images/btn_tabbar_hq_selected.png"/>
+            </div>
+            <p class="weui_tabbar_label">发布</p>
+        </a>
+        <a href="" class="weui_tabbar_item">
+            <div class="weui_tabbar_icon">
+                <img class="normal" src="../images/btn_tabbar_xx_normal.png" alt="">
+                <img class="selected" src="../images/btn_tabbar_xx_selected.png"/>
+            </div>
+            <p class="weui_tabbar_label">消息</p>
+        </a>
+        <a href="../cxl_changePersonInfo.html" class="weui_tabbar_item">
+            <div class="weui_tabbar_icon">
+                <img class="normal" class="normal" src="../images/btn_tabbar_me_normal.png" alt="">
+                <img class="selected" src="../images/btn_tabbar_me_selected.png"/>
+            </div>
+            <p class="weui_tabbar_label">我</p>
+        </a>
+    </div>
+<script type="text/javascript" src="../js/jquery-weui.min.js"></script>
+<script type="text/javascript">
+    $(".all-label li").click(function () {
+        var checked=$(this).find(".checked");
+        if(checked.css("display")=="none"){
+            checked.show();
+        }else{
+            checked.hide();
+        }
+    });
+    $(".weui_navbar a").click(function () {
+        $(this).children().addClass("active");
+        $(this).siblings().children().removeClass("active");
+        page = 0;
+        loading=false;
+    });
+
+    //加载模板数据，分页功能
+    $(document.body).infinite(500);
+
+    var loading = false;  //状态标记
+    var page = 0;    //当前显示页数
+
+    //每一页的显示数量
+    var size = 6;
+
+    //页面初始化时，加载8条数据
+    $.ajax({
+        type: 'POST',
+        url: '../data/unpublished.json',
+        dataType: 'json',
+        success: function(data){
+            page++;
+            var result ="";
+            //总的数据长度
+            var dataLen = data.length;
+            if(dataLen < 6){
+                //就只加载当前的数据
+
+                for(var i = 0;i < dataLen;i++){
+                    result += template("temp1",data[i]);
+                }
+            }else{
+                for(var i = 0;i < size;i++){
+                    result += template("temp1",data[i]);
+                }
+            }
+            $(".unpublished-box").append(result);
+
+            //在待发布页面点击退回后弹出的警告框
+            $(".send-back").click(function () {
+                //console.log(111);
+                $.confirm({
+                    title:'提示',
+                    text: '确定退回张老板的猪场的出栏申请',
+                    onOK: function () {
+                        //点击确认后需进行的操作
+
+                    },
+                    onCancel: function () {
+                    }
+                });
+            });
+
+
+        }
+    });
+    //初始化以后，再去按照分页加载条数
+    $(document.body).infinite().on("infinite", function() {
+
+        if(loading) return;
+        loading = true;
+        setTimeout(function() {
+            page++;
+            //发送请求，拿到json数据
+            $.ajax({
+                type: 'POST',
+                url: '../data/unpublished.json',
+                dataType: 'json',
+                success: function(data){
+                    $(document).scrollTop();
+                    var result ="";
+                    //总的数据长度
+                    var dataLen = data.length;
+                    //计算总的页数
+                    var totalPage = Math.ceil(dataLen/size);
+                    if(page <= totalPage){
+                        //如果有数据
+                        if(page == totalPage){
+                            //最后一页
+                            for(var i = (page-1)*size;i < dataLen;i++){
+                                result += template("temp1",data[i]);
+                            }
+                            //没有数据了
+                            $(document.body).destroyInfinite();
+                            $(".weui-infinite-scroll").hide();
+//                                 $(".weui-infinite-scroll").html(" ");
+//                                 $(".weui-infinite-scroll").html("没有更多数据了哦~" );
+                        }else{
+                            //其他页
+                            for(var i = (page-1)*size ; i < page*size;i++){
+                                result += template("temp1",data[i]);
+                            }
+                        }
+                    }
+                    $(".unpublished-box").append(result);
+                }
+            });
+            loading = false;
+        }, 1500);   //模拟延迟
+    });
+
+    //页面初始化时，加载8条数据
+    $.ajax({
+        type: 'GET',
+        url: '../data/havepublished.json',
+        dataType: 'json',
+        success: function(data){
+            page++;
+            var result ="";
+            //总的数据长度
+            var dataLen = data.length;
+            if(dataLen < 6){
+                //就只加载当前的数据
+
+                for(var i = 0;i < dataLen;i++){
+                    result += template("temp2",data[i]);
+                }
+                }else{
+                for(var i = 0;i < size;i++){
+                    result += template("temp2",data[i]);
+                }
+            }
+            $(".havepublished-box").append(result);
+
+            //在已发布页面点击删除后弹出的警告框
+            $(".del-btn").click(function () {
+                console.log(111);
+                $.confirm({
+                    title:'提示',
+                    text: '确定删除泸溪张老板的发布信息',
+                    onOK: function () {
+                        //点击确认后需进行的操作
+
+                    },
+                    onCancel: function () {
+                    }
+                });
+            })
+        }
+    });
+    //初始化以后，再去按照分页加载条数
+    $(document.body).infinite(300).on("infinite", function() {
+
+        if(loading) return;
+        loading = true;
+        setTimeout(function() {
+            page++;
+            //发送请求，拿到json数据
+            $.ajax({
+                type: 'GET',
+                url: '../data/havepublished.json',
+                dataType: 'json',
+                success: function(data){
+                    var result ="";
+                    //总的数据长度
+                    var dataLen = data.length;
+                    //计算总的页数
+                    var totalPage = Math.ceil(dataLen/size);
+
+                    if(page <= totalPage){
+
+                        //如果有数据
+                        if(page == totalPage){
+                            //最后一页
+                            for(var i = (page-1)*size;i < dataLen;i++){
+                                result += template("temp2",data[i]);
+                            }
+                            //没有数据了
+                            $(document.body).destroyInfinite();
+                            $(".weui-infinite-scroll").hide();
+//                                 $(".weui-infinite-scroll").html(" ");
+//                                 $(".weui-infinite-scroll").html("没有更多数据了哦~" );
+                        }else{
+                            //其他页
+                            for(var i = (page-1)*size ; i < page*size;i++){
+                                result += template("temp2",data[i]);
+                            }
+                        }
+                    }
+                    $(".havepublished-box").append(result);
+                }
+            });
+            loading = false;
+        }, 1500);   //模拟延迟
+    });
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<div class="bottom_menu" ontouchstart = "">
+    <ul>
+        <li>
+            <a herf="#" class="bottom_menu_div" onclick="changeColor('icon1_out','icon1_on','menu_text1')">
+                <div id="icon1_out" class="bottom_menu_icon1_out icon_hide"></div>
+                <div id="icon1_on" class="bottom_menu_icon1_on icon_show"></div>
+                <div id="menu_text1" class="bottom_menu_text">交易</div>
+            </a>
+            <ul>
+	            <c:if test="${fn:indexOf(userType, 'NORMAL')!= -1}">
+	                <li><a class="haha"  href="/trade/auctionpage?channel=M12" title="我要买">我要买</a></li>
+	            </c:if>
+	            <c:if test="${fn:indexOf(userType, 'ADMIN')!= -1 || fn:indexOf(userType, 'CREATOR')!= -1}">
+	            	<li><a class="haha"  href="/trade/product/toPublishPage?channel=M13" title="我要上架">我要上架</a></li>
+                </c:if>
+            </ul>
+        </li>
+        <li>
+            <div class="bottom_menu_fenge">
+                <div class="bottom_menu_line"></div>
+            </div>
+        </li>
+        <li>
+            <a href="/static/newhope/html/web/fenxiang.html" class="bottom_menu_div" onclick="changeColor('icon2_out','icon2_on','menu_text2')">
+                <div id="icon2_out" class="bottom_menu_icon2_out icon_hide"></div>
+                <div id="icon2_on" class="bottom_menu_icon2_on icon_show"></div>
+                <div id="menu_text2" class="bottom_menu_text">关于</div>
+            </a>
+            <!-- <ul>
+                <li><a class="haha" href="#" title="点点点">点点点</a></li>
+                <li><a class="haha" href="#" title="点">点</a></li>
+                <li><a class="haha" href="#" title="点点">点点</a></li>
+            </ul> -->
+        </li>
+        <li>
+            <div class="bottom_menu_fenge">
+                <div class="bottom_menu_line1"></div>
+            </div>
+        </li>
+        <li>
+            <a href="/trade/mineindex?channel=M11" class="bottom_menu_div" onclick="changeColor('icon3_out','icon3_on','menu_text3')">
+                <div id="icon3_out" class="bottom_menu_icon3_out icon_hide"></div>
+                <div id="icon3_on" class="bottom_menu_icon3_on icon_show" ></div>
+                <div id="menu_text3" class="bottom_menu_text on">我的</div>
+            </a>
+
+            <!-- <ul class="left">
+                <li><a class="haha" href="#" title="点点点点">点点点点</a></li>
+                <li><a class="haha" href="#" title="点点点">点点点</a></li>
+                <li><a class="haha" href="#" title="点点">点点</a></li>
+                <li><a class="haha" href="#" title="点">点</a></li>
+            </ul> -->
+        </li>
+    </ul>
+</div>
+<script>
+function changeColor(icon_out,icon_on,menu_text){
+}
+</script>

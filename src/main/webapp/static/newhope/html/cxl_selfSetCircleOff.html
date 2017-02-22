@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description"
+          content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>江油圈交易规则</title>
+    <script type="text/javascript" charset="utf-8" src="js/htmlsize.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/weui.min.css"/>
+    <link type="text/css" rel="stylesheet" href="css/jquery-weui.min.css"/>
+    <link rel="stylesheet" href="css/demos.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css"/>
+    <link type="text/css" rel="stylesheet" href="css/selfSetCircleOff.css"/>
+</head>
+<body>
+<div id="warp">
+    <!--定时区-->
+    <div class="same-bg">
+        <p class="auction-title">统一拍卖时间</p>
+
+        <p class="slide-btn"><img id="time" src="images/hj/btn_sm_off.png" alt=""></p>
+    </div>
+    <div class="weui_cells weui_cells_form" style="display: none">
+
+
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <input class="weui_input" id="start" type="text" value="8点 10分" placeholder="起始时间">
+                <span class="zhi">至</span>
+                <i class="fa fa-caret-down" aria-hidden="true"></i>
+            </div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <input class="weui_input" id="end" type="text" value="9点 20分" placeholder="结束时间">
+                <i class="fa fa-caret-down" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+    <div id="picker-container"></div>
+
+
+    <!--分级区-->
+    <div class="same-bg">
+        <p class="auction-title tip-p">猪只定价分级</p>
+        <p class="slide-btn"><img id="rank" src="images/hj/btn_sm_off.png" alt=""></p>
+        <p class="tip-content">改变圈子出栏品级（不影响已上架商品）</p>
+
+    </div>
+    <div class="rankBox" style="display: none">
+        <input type="hidden" id="interval-input" value="50,90,90,120,10">
+        <div class="interval-box">
+            <div class="interval-bar"></div>
+            <div class="interval-top-box">
+
+            </div>
+            <div class="interval-bar-button-box">
+
+            </div>
+        </div>
+        <div class="edit-btn">
+            <button class="del-cancel-btn">取消删除分级重量</button>
+            <button class="del-btn">删除分级重量</button>
+            <button class="add-btn">新增分组重量</button>
+        </div>
+    </div>
+    <div class="on-off">
+        <div>
+            <button class="off">取消</button>
+            <span class="on-off-word">新增分级重量</span>
+            <button class="on">确定</button>
+        </div>
+        <p><input class="rank-input" type="number" placeholder="请输入分级重量"/><span class="unit">KG</span></p>
+    </div>
+    <!--定价区-->
+    <div class="same-bg unfiedPrice">
+        <p class="auction-title tip-p">统一价格</p>
+        <p class="slide-btn"><img id="price" src="images/hj/btn_sm_off.png" alt=""></p>
+        <p class="tip-content">改变圈子价格模式（不影响已上架商品）</p>
+    </div>
+</div>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/fastclick.js"></script>
+<script>
+    $(function () {
+        FastClick.attach(document.body);
+    });
+</script>
+<script src="js/jquery-weui.min.js"></script>
+<script>
+    (function($){$.fn.addBack=$.fn.addBack||$.fn.andSelf;$.fn.extend({actual:function(method,options){if(!this[method]){throw'$.actual => The jQuery method "'+method+'" you called does not exist'}var defaults={absolute:false,clone:false,includeMargin:false};var configs=$.extend(defaults,options);var $target=this.eq(0);var fix,restore;if(configs.clone===true){fix=function(){var style="position: absolute !important; top: -1000 !important; ";$target=$target.clone().attr("style",style).appendTo("body")};restore=function(){$target.remove()}}else{var tmp=[];var style="";var $hidden;fix=function(){$hidden=$target.parents().addBack().filter(":hidden");style+="visibility: hidden !important; display: block !important; ";if(configs.absolute===true){style+="position: absolute !important; "}$hidden.each(function(){var $this=$(this);tmp.push($this.attr("style"));$this.attr("style",style)})};restore=function(){$hidden.each(function(i){var $this=$(this);var _tmp=tmp[i];if(_tmp===undefined){$this.removeAttr("style")}else{$this.attr("style",_tmp)}})}}fix();var actual=/(outer)/.test(method)?$target[method](configs.includeMargin):$target[method]();restore();return actual}})})(jQuery);
+
+    (function ($) {
+        var intervalArray=[];
+        var interval_data=$("#interval-input").val();
+        if(interval_data&&interval_data.length>0){
+            interval_data=interval_data.split(",");
+        }
+        interval_fun(interval_data);
+        function interval_fun(data) {
+            var top="",button="";
+            var interval_top=$(".interval-top-box");
+            var interval_button=$(".interval-bar-button-box");
+            interval_top.hide();
+            interval_button.hide();
+            button='<div class="interval-button"> <div class="interval-bar-button">重</div> <div class="interval-bar-button-text">0KG</div> </div>';
+            if(data&& $.isArray(data)&&data.length>0){
+                data=$.unique(data.sort(function(a,b){return a-b}));
+                intervalArray=data;
+                var interval=[];
+                $(data).each(function(i){
+                    if(i>0){
+                        interval[i]=data[i]-data[i-1];
+                    }else{
+                        interval[i]=data[i];
+                    }
+                });
+                var cont=0;
+                $(interval).each(function(i){
+                    cont=cont+parseFloat(interval[i]);
+                });
+                var average=cont/interval.length;
+                var deviation=[];
+                $(interval).each(function(i){
+                    deviation[i]=(interval[i]-average)/average;
+                });
+                $("#interval-input").val(data.join(","));
+                var postion=[];
+                $(data).each(function(i){
+                    var this_deviation=0;
+                    for (var k=0;k<=i;k++){
+                        this_deviation=this_deviation+deviation[k];
+                    }
+                    this_deviation=this_deviation.toFixed(5)*5;
+                    postion[i]=((i+1)/data.length)*80+this_deviation;
+                    button=button+'<div class="interval-button" style="left:'+postion[i]+'%"> <div class="interval-del-button">X</div> <div class="interval-bar-button">重</div> <div class="interval-bar-button-text">'+data[i]+'KG</div></div>';
+                    if(i==0){
+                        top=top+'<div class="tag" style="left:'+postion[i]/2+'%">0-'+data[i]+'KG</div>';
+                    }else{
+                        top=top+'<div class="tag" style="left:'+(postion[i]+postion[i-1])/2+'%">'+data[i-1]+'-'+data[i]+'KG</div>';
+                    }
+                });
+                top=top+'<div class="tag" style="left:'+(100+postion[postion.length-1])/2+'%">'+data[data.length-1]+'KG以上</div>';
+            }
+            interval_top.html(top);
+            interval_button.html(button);
+            interval_top.find(".tag").each(function(){
+                $(this).css("marginLeft","-"+$(this).actual('outerWidth')/2+"px");
+            });
+            interval_top.show();
+            interval_button.show();
+        }
+
+        $(document).on("click", ".interval-del-button", function (){
+        if($(".interval-del-button").length<2){
+            $.toast("至少保留一个分组重量，否则请关闭定价分级开关", "text");
+            return;
+        }
+            var this_button=$(this).closest(".interval-button");
+
+            var index=$(this_button).index('.interval-button')-1;
+            intervalArray.splice(index,1);
+            interval_fun(intervalArray);
+        });
+
+        $(".edit-btn .del-cancel-btn").click(function () {
+            $(".rankBox").removeClass("del-state");
+        });
+        $(".edit-btn .del-btn").click(function () {
+            $(".rankBox").addClass("del-state");
+        });
+        $(".edit-btn .add-btn").click(function () {
+            $(".on-off").show();
+            //var rankVal;
+            $(".on").click(function () {
+                var rankVal=$(".rank-input").val();
+                $(".on-off").hide();
+                $(".unfiedPrice").show();
+                if(rankVal.length>0) {
+                    intervalArray.push(parseInt(rankVal));
+                    interval_fun(intervalArray);
+                }
+            });
+            $(".off").click(function () {
+                $(".on-off").hide();
+                $(".unfiedPrice").show();
+            })
+        });
+        $(".rank-input").focus(function(){
+            $(".unfiedPrice").hide();
+        })
+    })(jQuery);
+
+
+    $("#start").picker({
+        title: "选择拍卖时间",
+        cssClass:"startTime",
+        cols: [
+            {
+                textAlign: 'center',
+                values: ['0点', '1点', '2点', '3点', '4点', '5点', '6点', '7点', '8点', '9点', '10点', '11点', '12点', '13点', '14点', '15点', '16点', '17点', '18点', '19点', '20点', '21点', '22点', '23点', '24点']
+            },
+            {
+                textAlign: 'center',
+                values: ['0分', '1分', '2分', '3分', '4分', '5分', '6分', '7分', '8分', '9分', '10分', '11分', '12分', '13分', '14分', '15分', '16分', '17分', '18分', '19分', '20分', '21分', '22分',
+                    '23分', '24分', '25分', '26分', '27分', '28分', '29分', '30分', '31分', '32分', '33分', '34分', '35分', '36分', '37分', '38分', '39分', '40分', '41分', '42分', '43分',
+                    '44分', '45分', '46分', '47分', '48分', '49分', '50分', '51分', '52分', '53分', '54分', '55分', '56分', '57分', '58分', '59分', '60分']
+            }
+        ],
+
+        onChange:function () {
+
+        }
+    }
+    );
+    $("#end").picker({
+        title: "选择拍卖时间",
+        cssClass:"endTime",
+        cols: [
+            {
+                textAlign: 'center',
+                values: ['0点', '1点', '2点', '3点', '4点', '5点', '6点', '7点', '8点', '9点', '10点', '11点', '12点', '13点', '14点', '15点', '16点', '17点', '18点', '19点', '20点', '21点', '22点', '23点', '24点']
+            },
+            {
+                textAlign: 'center',
+                values: ['0分', '1分', '2分', '3分', '4分', '5分', '6分', '7分', '8分', '9分', '10分', '11分', '12分', '13分', '14分', '15分', '16分', '17分', '18分', '19分', '20分', '21分', '22分',
+                    '23分', '24分', '25分', '26分', '27分', '28分', '29分', '30分', '31分', '32分', '33分', '34分', '35分', '36分', '37分', '38分', '39分', '40分', '41分', '42分', '43分',
+                    '44分', '45分', '46分', '47分', '48分', '49分', '50分', '51分', '52分', '53分', '54分', '55分', '56分', '57分', '58分', '59分', '60分']
+            }
+        ]
+
+    });
+
+    //滑动按钮状态切换
+
+    var time = document.querySelector("#time");
+    var rank = document.querySelector("#rank");
+    var price = document.querySelector("#price");
+
+    var timeInput = $(".weui_cells");
+    var rankBox = $(".rankBox");
+    var priceBox=$(".priceBox");
+
+    changeStateBtn(time,timeInput);
+    changeStateBtn(rank,rankBox);
+    changeStateBtn(price,priceBox);
+
+
+    function changeStateBtn(changeState,id) {
+        //默认为关闭状态 flag = false
+        var flag = false;
+        var xStart;
+        var left;
+        changeState.addEventListener("touchstart",function(e){
+            xStart = e.changedTouches[0].clientX;
+            left = parseInt(changeState.style.left) || 0;
+        });
+		
+        //开启状态
+//        $(changeState).attr("src","images/hj/btn_sm_on.png");
+//        flag = true;
+//        //do something
+//        id.show();
+        
+        changeState.addEventListener("touchmove",function(e){
+            var xEnd = e.changedTouches[0].clientX;
+            var move = xEnd-xStart;
+
+            if(move > 5 && flag == false){
+                //开启状态
+                $(this).attr("src","images/hj/btn_sm_on.png");
+                flag = true;
+                //do something
+                id.show();
+            }else if(move < -5 && flag == true){
+                //关闭状态
+                $(this).attr("src","images/hj/btn_sm_off.png");
+                flag = false;
+                id.hide();
+            }
+        });
+    }
+
+
+</script>
+</body>
+</html>

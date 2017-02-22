@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html style="font-size: 36px;">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta charset="utf-8">
+    <title>我要上架</title>
+    <link type="text/css" rel="stylesheet" href="../css/index.css">
+    <script type="text/javascript" charset="utf-8" src="../js/htmlsize.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/moment.js"></script>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <script src="../js/jquery.1.7.2.min.js"></script>
+    <script src="../js/mobiscroll_002.js" type="text/javascript"></script>
+    <script src="../js/mobiscroll_004.js" type="text/javascript"></script>
+    <link href="../css/mobiscroll_002.css" rel="stylesheet" type="text/css">
+    <link href="../css/mobiscroll.css" rel="stylesheet" type="text/css">
+    <script src="../js/mobiscroll.js" type="text/javascript"></script>
+    <script src="../js/mobiscroll_003.js" type="text/javascript"></script>
+    <script src="../js/mobiscroll_005.js" type="text/javascript"></script>
+    <link href="../css/mobiscroll_003.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+           input{
+                border: none;
+               outline: none;
+           }
+           input[type="radio"]{
+               margin-top:0rem;
+           }
+           li{list-style-type: none;}
+    </style>
+    <style type="text/css">
+          .grounp_tanchu{
+
+              width:20rem;
+              height:60rem;
+              background-color:#ffffff;
+              position: fixed;
+              display: none;
+          }
+          .goundp_close{
+              float: left;
+              margin-left: 7.75rem;
+              margin-top:30rem;
+              width:4.5rem;
+              height:1.777778rem;
+              border-radius:1rem;
+              background-image: linear-gradient(-180deg, #FABC61 0%, #F76B1C 100%);
+              border: none;
+              outline: none;
+              color: #ffffff;
+              font-size: 0.777778rem;
+              position: fixed;
+          }
+    </style>
+    <script type="text/javascript">
+        $(function(){
+            $("#grounp_btn1").click(function(){
+                $(".grounp_tanchu").show();
+                $(".box1").hide();
+            });
+            $("#grounp_close1").click(function(){
+                $(".grounp_tanchu").hide();
+                $(".box1").show();
+
+            });
+        });
+
+    </script>
+
+    <script type="text/javascript" language="javascript">
+        var i=0;
+        function opendiv1()
+        {
+            if(i > 0)
+            {
+                document.getElementById('test1').style.display="none";
+                i=0;
+            }
+            else
+            {
+                document.getElementById('test1').style.display="block";
+                i++;
+            }
+        }
+        function changediv(obj)
+        {
+            document.getElementById('f1').innerHTML = obj.innerText;
+            document.getElementById('test1').style.display="none";
+        }
+
+        /********模拟select的onblur事件(select本来没有onblur事件)*********/
+        document.onclick=function(oEvent){
+            var e;
+            var ta;
+            if(document.all){
+                e=window.event;
+                ta=e.srcElement;
+            }
+            else{
+                e=oEvent;
+                ta=e.target;
+            }
+
+            if(document.getElementById('fff1'))
+            {
+                if(ta.name!="fff1")
+                {
+
+                    document.getElementById('test1').style.display="none";
+                }
+            }
+        };
+    </script>
+
+    <script type="text/javascript">
+
+        $(function(){
+            $("#huadong1").click(function(){
+
+                $(".load").hide();
+                $(".jiage_bg li").eq(0).addClass("on");
+                $(".jiage_bg li").eq(1).removeClass("on");
+            });
+        });
+        $(function(){
+            $("#huadong2").click(function(){
+                $(".load").show();
+                $(".jiage_bg li").eq(1).addClass("on");
+                $(".jiage_bg li").eq(0).removeClass("on");
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            var currYear = (new Date()).getFullYear();
+            var opt = {};
+            opt.date = {preset: 'date'};
+            opt.datetime = {preset: 'datetime'};
+            opt.time = {preset: 'time'};
+            opt.default = {
+                theme: 'android-ics light', //皮肤样式
+                display: 'modal', //显示方式
+                mode: 'scroller', //日期选择模式
+                dateFormat: 'yyyy-mm-dd',
+                lang: 'zh',
+                showNow: true,
+                nowText: "今天",
+                startYear: currYear - 2, //开始年份
+                endYear: currYear + 2 //结束年份
+            };
+            var optDateTime = $.extend(opt['datetime'], opt['default'])
+            $("#appDateTime1").mobiscroll(optDateTime).datetime(optDateTime);
+            $("#appDateTime2").mobiscroll(optDateTime).datetime(optDateTime);
+            var optDate = $.extend(opt['date'], opt['default']);
+            $("#appDate").mobiscroll(optDate);
+        });
+    </script>
+</head>
+<body onclick="turnoff('delete_pic')">
+           <div class="grounp_tanchu">
+                 <button class="goundp_close" id="grounp_close1">关闭</button>
+              </div>
+    <div style="position:absolute;" class="box1">
+      <div>
+         <div class="grounding_1" >
+              <span class="grounding_message">
+              猪场名称:
+              </span>
+              <span>
+                    <div class="grounding_select">
+                        <div style="width:12.8rem;height:2.5rem;margin: auto;">
+                            <input type="text"  id="f1" class="grounding_find" placeholder="选择养户姓名定位猪场"/>
+                            <div class="find_icon" onclick="opendiv1()" id="fff1" name="fff1" ></div>
+                        </div>
+                    </div>
+                    <div class="xialakuangbg" id="test1" name="test1">
+                        <div class="xialakuangdiv"  onclick="changediv(this)" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='#fff'">2222222222</div>
+                        <div class="xialakuangdiv" onclick="changediv(this)" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='#fff'">333333333</div>
+                        <div class="xialakuangdiv" onclick="changediv(this)" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='#fff'">444444444</div>
+                    </div>
+              </span>
+          </div>
+          <div class="line"></div>
+      </div>
+      <div>
+          <div class="grounding_1" >
+              <span class="grounding_message">
+              所在地区:
+              </span>
+              <span>
+                    <div class="grounding_select"  id="f2">
+                        四川省德阳市山台县光明乡
+                    </div>
+              </span>
+          </div>
+          <div class="line"></div>
+      </div>
+      <div>
+          <div class="grounding_1">
+               <span class="grounding_message">
+              详细地址:
+              </span>
+              <div class="grounding_select"  id="f2">
+                  四大队一组
+              </div>
+              <div style="float:left;"><input type="button" class="grounding_group_pic" id="grounp_btn1"></div>
+          </div>
+          <div class="line">
+
+          </div>
+      </div>
+      <div>
+          <div class="grounding_1" >
+              <span class="grounding_message">
+                  交通状况:
+              </span>
+              <span>
+                    <div class="grounding_select"  id="f3">
+                        限宽1.5米运猪车
+                    </div>
+                    <div style="float:left;"><input type="button"  onclick="opendiv3()" id="fff3" name="fff3" class="grounding_select_pic"></div>
+                    <div class="xialakuangbg" id="test3" name="test3">
+                        <div class="xialakuangdiv"  onclick="changediv(this)" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='#fff'">2222222222</div>
+                        <div class="xialakuangdiv" onclick="changediv(this)" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='#fff'">333333333</div>
+                        <div class="xialakuangdiv" onclick="changediv(this)" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='#fff'">444444444</div>
+                        <div class="xialakuangdiv"  onclick="changediv(this)" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='#fff'">2222222222</div>
+                        <div class="xialakuangdiv" onclick="changediv(this)" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='#fff'">333333333</div>
+                        <div class="xialakuangdiv" onclick="changediv(this)" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='#fff'">444444444</div>
+                        <div class="xialakuangdiv"  onclick="changediv(this)" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='#fff'">2222222222</div>
+                        <div class="xialakuangdiv" onclick="changediv(this)" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='#fff'">333333333</div>
+                        <div class="xialakuangdiv" onclick="changediv(this)" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='#fff'">444444444</div>
+                        <div class="xialakuangdiv"  onclick="changediv(this)" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='#fff'">2222222222</div>
+                        <div class="xialakuangdiv" onclick="changediv(this)" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='#fff'">333333333</div>
+                        <div class="xialakuangdiv" onclick="changediv(this)" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='#fff'">444444444</div>
+                        <div class="xialakuangdiv"  onclick="changediv(this)" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='#fff'">2222222222</div>
+                        <div class="xialakuangdiv" onclick="changediv(this)" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='#fff'">333333333</div>
+                        <div class="xialakuangdiv" onclick="changediv(this)" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='#fff'">444444444</div>
+                    </div>
+              </span>
+          </div>
+          <div class="line"></div>
+      </div>
+      <div>
+          <div class="grounding_1" >
+              <span class="grounding_message">
+                  起止时间:
+              </span>
+              <span>
+                    <div class="grounding_select1">
+                        <input class="time_qujian" value="2016.10.10 14:20" readonly="readonly" name="appDateTime1" id="appDateTime1" type="text">
+                        <div class="time_fenge">~</div>
+                        <input class="time_qujian" value="2016.10.10 20:20"  readonly="readonly" name="appDateTime2" id="appDateTime2" type="text">
+                    </div>
+
+
+              </span>
+          </div>
+          <div class="line"></div>
+      </div>
+      <div class="wall">
+
+      </div>
+      <div>
+          <div class="grounding_1" >
+              <span class="grounding_message">
+                  出栏日期:
+              </span>
+              <span>
+                    <div class="grounding_select">
+                        <input value="2016-10-20" class="time_date" readonly="readonly" name="appDate" id="appDate" type="text">
+                    </div>
+              </span>
+          </div>
+          <div class="line"></div>
+      </div>
+      <div>
+          <div class="grounding_1" >
+              <span class="grounding_message">
+                  出栏类型:
+              </span>
+              <span>
+                    <div class="grounding_select"  id="f5">
+                        内三元
+                    </div>
+                    <div style="float:left;"><input type="button"  onclick="opendiv5()" id="fff5" name="fff5" class="grounding_select_pic"></div>
+                    <div class="xialakuangbg" id="test5" name="test5">
+                        <div  class="xialakuangdiv" onclick="changediv(this)" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='#fff'">内三元</div>
+                        <div class="xialakuangdiv" onclick="changediv(this)" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='#fff'">外二元</div>
+                        <div class="xialakuangdiv" onclick="changediv(this)" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='#fff'">外三元</div>
+                    </div>
+              </span>
+          </div>
+          <div class="line"></div>
+      </div>
+      <div>
+          <div class="grounding_1" >
+              <span class="grounding_message">
+                  出栏品级:
+              </span>
+              <span>
+                    <div class="grounding_select">
+                       <div style="float: left;">
+                        <input  class="input_radio" type="radio" name="sex" value="1"><span>&nbsp;一级</span>
+                       </div>
+                       <div style="margin-left: 1.5rem;float: left;">
+                        <input  class="input_radio1" type="radio" name="sex" value="2"><span>&nbsp;非一级</span>
+                       </div>
+                    </div>
+              </span>
+          </div>
+          <div class="line"></div>
+      </div>
+      <div>
+          <div class="grounding_1" >
+              <span class="grounding_message">
+                  出栏数量:
+              </span>
+              <span>
+                  <div class="grounding_select">
+                      <input class="input_small"><span>&nbsp;头</span>
+
+                  </div>
+
+              </span>
+          </div>
+          <div class="line"></div>
+      </div>
+      <div>
+          <div class="grounding_1" >
+              <span class="grounding_message">
+                  出栏价格:
+              </span>
+              <span>
+                  <div class="grounding_select">
+                      <div class="jiage_bg">
+                         <ul>
+                                 <li class="jiage_huadong_1">
+                                   <button class="input_huadong" id="huadong1" style="margin-left:-0.6rem;">待确定</button>
+                                 </li>
+                                 <li  class="jiage_huadong_2 on" >
+                                   <button class="input_huadong" id="huadong2" style="margin-left:0.1rem;">录入价格</button>
+                                 </li>
+                         </ul>
+                      </div>
+
+
+                  </div>
+
+              </span>
+          </div>
+          <div class="line"></div>
+      </div>
+      <div class="load">
+         <div style="width:20rem;height:7.7rem;">
+          <div style="font-size:0.777778rem;color:#4a90e2;width:3.8rem;text-align: right;height:2.5rem;line-height: 2.5rem;float:left;position: absolute;">V0价格</div>
+          <div style="width:1px;height: 0.6rem;background-color:#4a90e2;float: left;position: absolute;margin-left: 4.4rem;margin-top:1rem; "></div>
+          <div class="grounding_luru" >
+              <span class="grounding_luru_text">
+                  均重100-110kg:
+              </span>
+               <span>
+                  <div class="grounding_luru_input">
+                      <input class="input_small"><span>&nbsp;元</span>
+
+                  </div>
+
+              </span>
+          </div>
+          <div class="grounding_luru" >
+              <span class="grounding_luru_text">
+                  均重110-120kg:
+              </span>
+               <span>
+                  <div class="grounding_luru_input">
+                      <input class="input_small"><span>&nbsp;元</span>
+
+                  </div>
+
+              </span>
+          </div>
+          <div class="grounding_luru" >
+              <span class="grounding_luru_text">
+                  均重120kg以上:
+              </span>
+               <span>
+                  <div class="grounding_luru_input">
+                      <input class="input_small"><span>&nbsp;元</span>
+
+                  </div>
+
+              </span>
+          </div>
+         </div>
+         <div class="line"></div>
+          <div style="width:20rem;height:7.7rem;">
+              <div style="font-size:0.777778rem;color:#4a90e2;width:3.8rem;text-align: right;height:2.5rem;line-height: 2.5rem;float:left;position: absolute;">V1价格</div>
+              <div style="width:1px;height: 0.6rem;background-color:#4a90e2;float: left;position: absolute;margin-left: 4.4rem;margin-top:1rem; "></div>
+              <div class="grounding_luru" >
+              <span class="grounding_luru_text">
+                  均重100-110kg:
+              </span>
+               <span>
+                  <div class="grounding_luru_input">
+                      <input class="input_small"><span>&nbsp;元</span>
+
+                  </div>
+
+              </span>
+              </div>
+              <div class="grounding_luru" >
+              <span class="grounding_luru_text">
+                  均重110-120kg:
+              </span>
+               <span>
+                  <div class="grounding_luru_input">
+                      <input class="input_small"><span>&nbsp;元</span>
+
+                  </div>
+
+              </span>
+              </div>
+              <div class="grounding_luru" >
+              <span class="grounding_luru_text">
+                  均重120kg以上:
+              </span>
+               <span>
+                  <div class="grounding_luru_input">
+                      <input class="input_small"><span>&nbsp;元</span>
+
+                  </div>
+
+              </span>
+              </div>
+          </div>
+          <div class="line"></div>
+      </div>
+      <div>
+          <div class="grounding_1" >
+              <span class="grounding_message">
+                  预估均重:
+              </span>
+              <span>
+                  <div class="grounding_select">
+                      <input class="input_small"><span>&nbsp;kg</span>
+
+                  </div>
+
+              </span>
+          </div>
+          <div class="line"></div>
+      </div>
+      <div>
+          <div class="grounding_1" >
+              <span class="grounding_message">
+                  控料情况:
+              </span>
+              <span>
+                    <span></span>
+                    <div class="grounding_select"  id="f4">
+                        8小时
+                    </div>
+                    <div style="float:left;"><input type="button"  onclick="opendiv4()" id="fff4" name="fff4" class="grounding_select_pic"></div>
+                    <div class="xialakuangbg" id="test4" name="test4">
+                        <div class="xialakuangdiv"  onclick="changediv(this)" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='#fff'">16小时</div>
+                        <div class="xialakuangdiv" onclick="changediv(this)" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='#fff'">12小时</div>
+                        <div class="xialakuangdiv" onclick="changediv(this)" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background='#fff'">15小时</div>
+
+                    </div>
+              </span>
+          </div>
+          <div class="line"></div>
+      </div>
+      <div>
+          <div class="grounding_2" >
+              <div style="margin-left: 1rem;padding-top: 0.3rem;">
+                  <span style="font-size: 0.777778rem;color: #353535;">添加猪群/控料照片</span>
+                  <span style="font-size: 0.6rem;color: #848689;">（最多可以上传4张）</span>
+              </div>
+              <div class="shangchuanpic" id="shangchuanpic1" style="margin-left: 1rem;margin-top:0.7rem;width:3rem;height: 3rem;float: left;position: relative;background-color: #ffffff">
+                  <img src="../images/pig1.jpg" style="width: 100%;height: 100%;float: left;position: absolute;" >
+              </div>
+              <div style="margin-left: 0.8rem;margin-top:0.7rem;width:3rem;height: 3rem;float: left;position: relative;background-color: #fff">
+                  <button style="background-image: url('../images/tianjia.png');width: 3rem;height: 3rem;border: none;outline: none;background-size: cover;"></button>
+              </div>
+          </div>
+      </div>
+        <div style="width:20rem;height:4rem;background-color: #ebebeb;float: left;position: relative;">
+            <button id="shangjia" style="width:17rem;height:2.2rem;margin-top:0.9rem;margin-left:1.5rem;border:none;outline:none;background: #F02B2B;background-image: linear-gradient(-180deg, #F04746 0%, #DD4B39 100%);box-shadow: 0rem 0rem 0.36rem 0rem  rgba(235,72,66,0.50);border-radius: 1.5rem;font-size:1rem;color: #ffffff;font-family: 'Microsoft YaHei';text-align: center;">上&nbsp&nbsp架</button>
+        </div>
+    </div>
+    <div class="tanchuxuanzhe" style="display: none;">
+        <div class="zhezhao">
+            <div class="tanchuxuanzhe_bg">
+                 <div class="tanchuxuanzhe_body">
+                     <div class="tanchuxuanzhe_message">haahhahahah</div>
+                     <div class="tanchuxuanzhe_message on">haahhahahah</div>
+                 </div>
+            </div>
+        </div>
+    </div>
+     <div style="height: 100%;width:100%;position: fixed;background-color: #000000;opacity: 0;display: none;"></div>
+           <script>
+               var timeOutEvent=0;
+               var longClick = false;
+               $(function(){
+                   $("#shangchuanpic1").on({
+                       touchstart: function(){
+                           timeOutEvent = setTimeout("longPress()",700);
+                       },
+                       touchmove: function(){
+                           clearTimeout(timeOutEvent);
+                           timeOutEvent = 0;
+                       },
+                       touchend: function(){
+                           clearTimeout(timeOutEvent);
+                           if(timeOutEvent!=0){
+                               alert("hahaha");
+                           }
+                           return false;
+                       }
+                   })
+               });
+               function longPress(){
+                   timeOutEvent = 0;
+                   if(!longClick){
+                       $("#shangchuanpic1").append("<div class='delete_pic' id='delete_pic1' onclick='javascript:alert()'></div>");
+                   //这里显示删除
+                   longClick = true;}
+               }
+               function turnoff(){
+                 $(".delete_pic").hide();
+                   longClick=false
+               }
+           </script>
+</body>
+</html>

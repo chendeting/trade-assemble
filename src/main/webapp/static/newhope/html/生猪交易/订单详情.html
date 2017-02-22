@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <title>订单详情</title>
+    <link type="text/css" rel="stylesheet" href="../css/index.css">
+    <script type="text/javascript" charset="utf-8" src="../js/htmlsize.js"></script>
+    <script style="text/javascript" charset="UTF-8" src="../js/jquery-1.8.3.min.js"></script>
+    <style type="text/css">
+        input{
+            border: none;
+            outline: none;
+        }
+        input[type="radio"]{
+            margin-top:0rem;
+        }
+    </style>
+</head>
+<body>
+      <div class="order_head">
+          <div class="order_head_1">
+              绵阳三台希望猪场
+          </div>
+          <div class="order_head_2">
+              <span>
+                    已卖出：
+                   <span style="font-size: 1rem;color:#F02B2B;">
+                     300
+                  </span>
+                    <span style="font-size:0.85rem;color:#F02B2B;">头</span>
+              </span>
+
+              <span >
+                    &nbsp;剩余：
+              </span>
+              <span style="font-size: 1rem;color:#F02B2B;">
+                   0
+              </span>
+              <span style="font-size:0.85rem;color:#F02B2B;">头</span>
+          </div>
+      </div>
+      <div class="order_part1" style="display: none;">
+          <div>
+              <div class="order_bg_1">
+                    <div class="order_pic_bg"></div>
+                    <div class="order_phone_bg">
+                        <a href="#" class="order_phone_pic"></a>
+                    </div>
+                    <div class="order_text">
+                         <div class="order_username">金三胖</div>
+                         <div class="order_message">
+                             <div class="order_message_1">拍猪数量:</div>
+                             <div class="order_message_2">500头</div>
+                         </div>
+                        <div class="order_message">
+                            <div class="order_message_1">订单号:</div>
+                            <div class="order_message_2">1093820304</div>
+                        </div>
+                        <div class="order_message">
+                            <div class="order_message_3">录入情况</div>
+                            <div class="order_message_4">
+                                <div class="order_radio1">是</div>
+                                <div class="order_radio2"></div>
+                                <div class="order_radio3">否</div>
+                                <div class="order_radio4"></div>
+                            </div>
+                        </div>
+                        <div class="order_message" style="display: none;">
+                            已录入信息
+                        </div>
+                    </div>
+              </div>
+              <div class="order_bg_2" style="display: none;">
+                  <div style="margin-left:6.5rem;position: relative;">
+                      <button class="order_xiala_pic">
+                      </button>
+                      <div class="order_xiala_text">
+                          修改更多订单信息
+                      </div>
+                  </div>
+              </div>
+              <div class="wall"></div>
+          </div>
+          <div>
+              <div class="order_bg_1">
+                  <div class="order_pic_bg"></div>
+                  <div class="order_phone_bg">
+                      <a href="#" class="order_phone_pic"></a>
+                  </div>
+                  <div class="order_text">
+                      <div class="order_username">金三胖</div>
+                      <div class="order_message">
+                          <div class="order_message_1">拍猪数量:</div>
+                          <div class="order_message_2">400头</div>
+                      </div>
+                      <div class="order_message">
+                          <div class="order_message_1">订单号:</div>
+                          <div class="order_message_2">1093820304</div>
+                      </div>
+                      <div class="order_message" style="display: none;">
+                          <div class="order_message_3">录入情况</div>
+                          <div class="order_message_4">
+                              <div class="order_radio1">是</div>
+                              <div class="order_radio2"></div>
+                              <div class="order_radio3">否</div>
+                              <div class="order_radio4"></div>
+                          </div>
+                      </div>
+                      <div class="order_message">
+                          <div class="order_wancheng_icon"></div>
+                          <div class="order_wancheng_text">已完成录入</div>
+                      </div>
+                  </div>
+              </div>
+              <div class="order_bg_2">
+                  <div style="margin-left:6.5rem;position: relative;">
+                      <button class="order_xiala_pic">
+                      </button>
+                      <div class="order_xiala_text">
+                          修改更多订单信息
+                      </div>
+                  </div>
+              </div>
+              <div class="wall"></div>
+          </div>
+          <div>
+              <div class="order_bg_1">
+                  <div class="order_pic_bg"></div>
+                  <div class="order_phone_bg">
+                      <a href="#" class="order_phone_pic"></a>
+                  </div>
+                  <div class="order_text">
+                      <div class="order_username">金三胖</div>
+                      <div class="order_message">
+                          <div class="order_message_1">拍猪数量:</div>
+                          <div class="order_message_2">300头</div>
+                      </div>
+                      <div class="order_message">
+                          <div class="order_message_1">订单号:</div>
+                          <div class="order_message_2">1093820304</div>
+                      </div>
+                      <div class="order_message" style="display: none;">
+                          <div class="order_message_3">录入情况</div>
+                          <div class="order_message_4">
+                              <div class="order_radio1">是</div>
+                              <div class="order_radio2" style="display: none;"></div>
+                              <div class="order_radio3">否</div>
+                              <div class="order_radio4"></div>
+                          </div>
+                      </div>
+                      <div class="order_message">
+                          <div class="order_wancheng_icon"></div>
+                          <div class="order_wancheng_text">已完成录入</div>
+                      </div>
+                  </div>
+              </div>
+              <div class="order_bg_2">
+                  <div style="margin-left:6.5rem;position: relative;">
+                      <button class="order_xiala_pic">
+                      </button>
+                      <div class="order_xiala_text">
+                          查看更多订单信息
+                      </div>
+                  </div>
+              </div>
+              <div class="wall"></div>
+          </div>
+      </div>
+      <div class="order_part2" style="background-color:#fafafc" >
+          <div class="order_part2_bg">
+          </div>
+        <div>
+          <div class="order_bg_1" >
+              <div class="order_pic_bg"></div>
+              <div class="order_phone_bg">
+                  <a href="#" class="order_phone_pic"></a>
+              </div>
+              <div class="order_text">
+                  <div class="order_username">无名氏</div>
+                  <div class="order_message">
+                      <div class="order_message_1">拍猪数量:</div>
+                      <div class="order_message_2">500头</div>
+                  </div>
+                  <div class="order_message">
+                      <div class="order_message_1">订单号:</div>
+                      <div class="order_message_2">1093820304</div>
+                  </div>
+                  <div class="order_message">
+                      <div class="order_message_3">录入情况</div>
+                      <div class="order_message_5">
+                          <div class="order_radio1">是</div>
+                          <div class="order_radio5" style="display: none;"></div>
+                          <div class="order_radio3" style="display: none;">否</div>
+                          <div class="order_radio6"></div>
+                      </div>
+                  </div>
+                  <div class="order_message" style="display: none;">
+                      已完成录入
+                  </div>
+              </div>
+          </div>
+          <div class="order_bg_2">
+              <div style="margin-left:6.5rem;position: relative;">
+                  <button class="order_shangla_pic">
+                  </button>
+                  <div class="order_xiala_text">
+                      收起订单信息
+                  </div>
+              </div>
+          </div>
+          <div class="line"></div>
+          <div class="order_check">
+              <div class="order_select">
+                  <div style="float: left;margin-left: 0.5rem;">
+                      <input  class="order_check1" type="radio" name="sex" value="1"><span>&nbsp;已拉猪</span>
+                  </div>
+                  <div style="margin-left: 5.3rem;float: left;">
+                      <input  class="order_check2" type="radio" name="sex" value="2"><span>&nbsp;弃单</span>
+                  </div>
+              </div>
+          </div>
+          <div class="line3" style="width: 14rem;height: 1px;background-color:#979797;opacity:0.2;margin: auto;"></div>
+          <div style="width: 20rem;height:0.8rem;"></div>
+          <div>
+              <div class="order_xiala_message1">
+                    <div class="order_xiala_message_1" >
+                          拉猪头数:
+                    </div>
+                    <div class="order_xiala_message_2">
+                         <input value="20" class="order_xiala_message_input"/>
+                        <div class="order_xiala_message_unit">头</div>
+
+                    </div>
+              </div>
+              <div class="order_xiala_message1">
+                  <div  class="order_xiala_message_1" >
+                      猪只总重:
+                  </div>
+                  <div class="order_xiala_message_2">
+                      <input value="2800" class="order_xiala_message_input"/>
+                      <div class="order_xiala_message_unit">kg</div>
+
+                  </div>
+              </div>
+              <div class="order_xiala_message1">
+                  <div class="order_xiala_message_1" >
+                      猪只总重:
+                  </div>
+                  <div class="order_xiala_message_2">
+                      <label class="order_xiala_message_label">140kg</label>
+                  </div>
+              </div>
+              <div class="order_xiala_message1">
+                  <div class="order_xiala_message_1" >
+                      单价:
+                  </div>
+                  <div class="order_xiala_message_2">
+                      <input value="18.20" class="order_xiala_message_input"/>
+                      <div class="order_xiala_message_unit">元/kg</div>
+
+                  </div>
+              </div>
+              <div class="order_xiala_message1">
+                  <div class="order_xiala_message_1" >
+                      总金额:
+                  </div>
+                  <div class="order_xiala_message_2">
+                      <input value="50960.00"  class="order_xiala_message_input"/>
+                      <div class="order_xiala_message_unit">元</div>
+
+                  </div>
+              </div>
+          </div>
+          <div>
+              <div class="order_xiala_message2">
+                  <div class="order_xiala_message_1" >
+                      异常情况:
+                  </div>
+                  <div class="order_xiala_message_2">
+                      <textarea class="order_xiala_message_textarea"></textarea>
+                  </div>
+              </div>
+          </div>
+        </div>
+          <button id="tijiaodingdan" style="margin-bottom:1rem;width:17rem;height:2.222222rem;margin-top: 1rem;margin-left:1.5rem;border:none;outline:none;background: #F02B2B;background-image: linear-gradient(-180deg, #F04746 0%, #DD4B39 100%);box-shadow: 0rem 0rem 0.36rem 0rem  rgba(235,72,66,0.50);border-radius: 1.5rem;font-size:1rem;color: #ffffff;font-family: 'Microsoft YaHei';text-align: center;">提交</button>
+      </div>
+</body>
+</html>

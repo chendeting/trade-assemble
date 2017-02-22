@@ -1,0 +1,131 @@
+.weui_tabbar_icon{
+  position: relative;
+}
+.haveMsg{
+  position: absolute;
+  display: block;
+  width:0.5555rem;
+  height:0.5555rem;
+  background: #fa4848;
+  border-radius: 50%;
+  top:0;
+  right: 0;
+}
+.msg-box{
+  margin-bottom: 3rem;
+  .msg-ul{
+    background: #fff;
+    li{
+      position: relative;
+      border-bottom: 0.0555rem solid #D8D8D8;
+      padding: 0.6666rem;
+      &:after{
+        content: '';
+        display: block;
+        clear: both;
+      }
+      .img-p{
+        width:2.4444rem;
+        height: 2.4444rem;
+        z-index: 99;
+        img{
+          width:2.4444rem;
+          height: 2.4444rem;
+          border-radius: 50%;
+        }
+        position: relative;
+        float: left;
+        //margin-top:calc(7% - 2.4444rem);
+      }
+      .msg-content{
+        -webkit-touch-callout: none;
+        float: left;
+        width:10.5rem;
+        font-size: 0.8333rem;
+        color:#4A4A4A;
+        padding-left:0.6666rem;
+      }
+      .time{
+        position: absolute;
+        top:0.2rem;
+        right:0.6666rem;
+        font-size: 0.7777rem;
+        color:#666;
+      }
+      .detail-p{
+        width:6rem;
+        height:100%;
+        position: absolute;
+        top:0;
+        right: 0.6666rem;
+        text-align: right;
+      }
+    }
+    .btn{
+      display: inline-block;
+      width:3.6111rem;
+      height:1.6666rem;
+      background: #1BBD3D;
+      color:#fff;
+      text-align: center;
+      line-height: 1.6666rem;
+      border-radius: 0.1111rem;
+      position: absolute;
+      bottom:0.6666rem;
+      right:0.6666rem;
+    }
+  }
+}
+.detail-div{
+  position: absolute;
+  right:0.6666rem;
+}
+.detail-img{
+  position: absolute;
+  top:45%;
+  right:0.6666rem;
+  width:0.7777rem;
+
+}
+//系统消息圈子样式
+.systemMsg-green{
+  .img-p{
+    //margin-top: 5%;
+  }
+}
+//圈子消息样式
+.circle-msg{
+  .msg-content{
+    span{
+      display: block;
+      font-size: 0.8333rem;
+      color:#333;
+    }
+    .content{
+      color:#666;
+    }
+  }
+}
+//对话框样式
+.weui_btn_dialog.primary{
+  color:#fff;
+  background-color:#fa4848 ;
+  margin: 0 1rem 1.2rem 0.6666rem;
+}
+.weui_dialog_ft:after{
+  border-top: none;
+}
+.weui_dialog .weui_btn_dialog+.weui_btn_dialog:after, .weui_toast .weui_btn_dialog+.weui_btn_dialog:after{
+  border-left: none;
+}
+.weui_btn_dialog{
+  border-radius: 0.1111rem;
+}
+.weui_btn_dialog.default{
+  color:#fff;
+  background-color: #999;
+  margin: 0 0 1.2rem 1rem;
+}
+.weui_mask{
+background-color: rgba(0,0,0,.3);
+}

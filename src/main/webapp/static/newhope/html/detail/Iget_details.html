@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="x5-orientation" content="portrait">
+    <title>订单详细</title>
+    <link type="text/css" rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/huadongjiazai.min.css">
+    <script type="text/javascript" charset="utf-8" src="../js/htmlsize.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/template.js"></script>
+    <style type="text/css">
+
+    </style>
+</head>
+<script type="text/html" id="auction_Member">
+     <div>
+         <div class="issued_module">
+             <div class="Iget_list_bg">
+                 <label class="Iget_list_num">
+                     {{list_num}}
+                 </label>
+             </div>
+             <div class="Iget_bg_1">
+                 <div class="Iget_item">
+                     <div>
+                         <div class="Iget_message_head">
+                             出栏总重：
+                         </div>
+                         <div class="Iget_message_body">
+                             {{total_weight_num}}
+                         </div>
+                     </div>
+                     <div>
+                         <div class="Iget_message_head">
+                             交割数量：
+                         </div>
+                         <div class="Iget_message_body">
+                             {{delivery_num}}
+                         </div>
+                     </div>
+                     <div>
+                         <div class="Iget_message_head">
+                             交割单价：
+                         </div>
+                         <div class="Iget_message_body">
+                             {{delivery_univalent_num}}
+                         </div>
+                     </div><div>
+                     <div class="Iget_message_head">
+                         应收金额：
+                     </div>
+                     <div class="Iget_message_body">
+                         {{receivable_money_num}}
+                     </div>
+                 </div>
+                     <div>
+                         <div class="Iget_message_head">
+                             实付金额：
+                         </div>
+                         <div class="Iget_message_body">
+                             {{payment_money_num}}
+                         </div>
+                     </div>
+                     <div>
+                         <div class="Iget_message_head">
+                             扣罚金额：
+                         </div>
+                         <div class="Iget_message_body">
+                             {{forfeit_money_num}}
+                         </div>
+                     </div>
+                     <div>
+                         <div class="Iget_message_head">
+                             扣罚原因：
+                         </div>
+                         <div class="Iget_message_body">
+                             {{forfeit_causation_text}}
+                         </div>
+                     </div>
+                     <div style="clear: both;"></div>
+                 </div>
+             </div>
+             <div style="width: 20rem;height:0.75rem;clear: both;"></div>
+         </div>
+         <div class="line"></div>
+     </div>
+</script>
+<body>
+      <div class="issued_module">
+          <div class="Iget_bg_1">
+              <div>
+                  <div class="Iget_message_head">
+                      卖方：
+                  </div>
+                  <div class="Iget_message_body">
+                      张春
+                  </div>
+              </div>
+              <div>
+                  <div class="Iget_message_head">
+                      手机号码：
+                  </div>
+                  <div class="Iget_message_body">
+                      135-9432-4233
+                  </div>
+              </div>
+              <div>
+                  <div class="Iget_message_head">
+                      订购时间：
+                  </div>
+                  <div class="Iget_message_body">
+                      <span>2016-12-21</span>
+                      &nbsp
+                      <span>21:00:00</span>
+                  </div>
+              </div>
+              <div>
+                  <div class="Iget_message_head">
+                      订购数量：
+                  </div>
+                  <div class="Iget_message_body">
+                      700头
+                  </div>
+              </div>
+              <div style="clear: both"></div>
+          </div>
+      </div>
+      <div class="line"></div>
+      <div class="mybuild_grouping">
+          交割信息
+      </div>
+      <div class="line"></div>
+      <div class="issued_module">
+          <div class="Iget_bg_1">
+              <div>
+                  <div class="Iget_message_head">
+                      交割地址：
+                  </div>
+                  <div class="Iget_message_body">
+                      四川省德阳市三台县巫溪镇五乡六组七队八号
+                  </div>
+              </div>
+              <div>
+                  <div class="Iget_message_head">
+                      交割时间：
+                  </div>
+                  <div class="Iget_message_body">
+                      2016-12-22
+                  </div>
+              </div>
+              <div>
+                  <div class="Iget_message_head">
+                      收款方式：
+                  </div>
+                  <div class="Iget_message_body">
+                      转账
+                  </div>
+              </div>
+              <div style="clear: both"></div>
+          </div>
+      </div>
+      <div class="line"></div>
+   <div id="content">
+      <div class="issued_module">
+          <div class="Iget_list_bg">
+              <label class="Iget_list_num">
+                     第一条
+              </label>
+          </div>
+          <div class="Iget_bg_1">
+              <div class="Iget_item">
+                  <div>
+                      <div class="Iget_message_head">
+                          出栏总重：
+                      </div>
+                      <div class="Iget_message_body">
+                          20000KG
+                      </div>
+                  </div>
+                  <div>
+                      <div class="Iget_message_head">
+                          交割数量：
+                      </div>
+                      <div class="Iget_message_body">
+                          300头
+                      </div>
+                  </div>
+                  <div>
+                      <div class="Iget_message_head">
+                          交割单价：
+                      </div>
+                      <div class="Iget_message_body">
+                          ¥18.86元/KG
+                      </div>
+                  </div><div>
+                  <div class="Iget_message_head">
+                      应收金额：
+                  </div>
+                  <div class="Iget_message_body">
+                      7,00,00.00
+                  </div>
+              </div>
+                  <div>
+                      <div class="Iget_message_head">
+                          实付金额：
+                      </div>
+                      <div class="Iget_message_body">
+                          5，00，00.00
+                      </div>
+                  </div>
+                  <div>
+                      <div class="Iget_message_head">
+                          扣罚金额：
+                      </div>
+                      <div class="Iget_message_body">
+                          50，00.00
+                      </div>
+                  </div>
+                  <div>
+                      <div class="Iget_message_head">
+                          扣罚原因：
+                      </div>
+                      <div class="Iget_message_body">
+                          花猪5头，每头扣罚100元
+                      </div>
+                  </div>
+                  <div style="clear: both;"></div>
+              </div>
+          </div>
+          <div style="width: 20rem;height:0.75rem;clear: both;"></div>
+      </div>
+      <div class="line"></div>
+      <div class="issued_module">
+          <div class="Iget_list_bg">
+              <label class="Iget_list_num">
+                  第二条
+              </label>
+          </div>
+          <div class="Iget_bg_1">
+              <div class="Iget_item">
+                  <div>
+                      <div class="Iget_message_head">
+                          出栏总重：
+                      </div>
+                      <div class="Iget_message_body">
+                          20000KG
+                      </div>
+                  </div>
+                  <div>
+                      <div class="Iget_message_head">
+                          交割数量：
+                      </div>
+                      <div class="Iget_message_body">
+                          300头
+                      </div>
+                  </div>
+                  <div>
+                      <div class="Iget_message_head">
+                          交割单价：
+                      </div>
+                      <div class="Iget_message_body">
+                          ¥18.86元/KG
+                      </div>
+                  </div><div>
+                  <div class="Iget_message_head">
+                      应收金额：
+                  </div>
+                  <div class="Iget_message_body">
+                      7,00,00.00
+                  </div>
+              </div>
+                  <div>
+                      <div class="Iget_message_head">
+                          实付金额：
+                      </div>
+                      <div class="Iget_message_body">
+                          5，00，00.00
+                      </div>
+                  </div>
+                  <div>
+                      <div class="Iget_message_head">
+                          扣罚金额：
+                      </div>
+                      <div class="Iget_message_body">
+                          50，00.00
+                      </div>
+                  </div>
+                  <div>
+                      <div class="Iget_message_head">
+                          扣罚原因：
+                      </div>
+                      <div class="Iget_message_body">
+                          花猪5头，每头扣罚100元
+                      </div>
+                  </div>
+                  <div style="clear: both;"></div>
+              </div>
+          </div>
+          <div style="width: 20rem;height:0.75rem;clear: both;"></div>
+      </div>
+      <div class="line"></div>
+   </div>
+      <div class="weui-infinite-scroll">
+          <div class="infinite-preloader">
+
+          </div>
+          信息加载中...
+      </div>
+
+<!--加载-->
+<script src="../js/jquery-weui.min.js"></script>
+<script type="text/javascript">
+
+    $(document.body).infinite(500);
+
+    var loading = false;  //状态标记
+    var page = 0;    //当前显示页数
+
+    //每一页的显示数量
+    var size = 2;
+
+    //页面初始化时，加载3条数据
+    $.ajax({
+        type: 'POST',
+        url: '../data/iget_details.json',
+        dataType: 'json',
+        success: function(data){
+            page++;
+            var result ="";
+            //总的数据长度
+            var dataLen = data.length;
+            if(dataLen <4){
+                //就只加载当前的数据
+                for(var i = 0;i < dataLen;i++){
+                    result += template("auction_Member",data[i]);
+                }
+            }else{
+                for(var i = 0;i < size;i++){
+                    result += template("auction_Member",data[i]);
+                }
+            }
+            $("#content").append(result);
+
+        }
+    });
+    //初始化以后，再去按照分页加载条数
+    $(document.body).infinite().on("infinite", function() {
+        if(loading) return;
+        loading = true;
+        setTimeout(function() {
+            page++;
+            //发送请求，拿到json数据
+            $.ajax({
+                type: 'POST',
+                url: '../data/iget_details.json',
+                dataType: 'json',
+                success: function(data){
+                    var result ="";
+                    //总的数据长度
+                    var dataLen = data.length;
+                    //计算总的页数
+                    var totalPage = Math.ceil(dataLen/size);
+                    if(page <= totalPage){
+                        //如果有数据
+                        if(page == totalPage){
+                            //最后一页
+                            for(var i = (page-1)*size;i < dataLen;i++){
+                                result += template("auction_Member",data[i]);
+                            }
+                            //没有数据了
+                            $(document.body).destroyInfinite();
+                            $(".weui-infinite-scroll").hide();
+//                                 $(".weui-infinite-scroll").html(" ");
+//                                 $(".weui-infinite-scroll").html("没有更多数据了哦~" );
+                        }else{
+                            //其他页
+                            for(var i = (page-1)*size ; i < page*size;i++){
+                                result += template("auction_Member",data[i]);
+                            }
+                        }
+                    }
+                    $("#content").append(result);
+                }
+            });
+            loading = false;
+        }, 1500);   //模拟延迟
+    });
+</script>
+
+
+</body>
+</html>

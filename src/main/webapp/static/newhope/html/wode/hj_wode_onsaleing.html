@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>我卖出的</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="format-detection" content="telephone=no">
+    <!--script 适配-->
+    <script src="../js/htmlsize.js"></script>
+    <!--jquery-->
+    <script src="../js/jquery-3.1.1.min.js"></script>
+
+    <!--引入外部自定义js-->
+    <script src="../js/commonFunction.js"></script>
+
+    <!-- 城市选择 -->
+    <link rel="stylesheet" href="../css/LArea.css">
+
+    <!--动态加载模块-->
+    <script src="../js/template.js"></script>
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.min.css">
+
+    <!--weui-->
+    <link rel="stylesheet" href="../css/weui.min.css">
+    <link rel="stylesheet" href="../css/huadongjiazai.min.css">
+
+    <!--引入onsaleing 自定义样式表-->
+    <link rel="stylesheet" href="../css/common.css"/>
+    <link rel="stylesheet" href="../css/hj_wode_onsaleing.css"/>
+</head>
+
+<script type="text/html" id="jiaoyizhong">
+    <li>
+        <a href="###">
+            <div>
+                <p>竞拍时间：{{currentTime}}</p>
+                <p>猪场名称:{{pigCircleName}}</p>
+            </div>
+            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+        </a>
+        <div>
+            <p>发布头数：{{public}}头</p>
+            <p>剩余数量：{{remained}}头</p>
+            <div class="time">
+                <span class="endTitle">距拍卖结束：</span>
+                <span>{{remainedTime}}</span>
+            </div>
+            <div class="orderFrom">
+                <span>该笔订单来自{{fromCity}}</span>
+            </div>
+            {{if chedan}}
+            <img class="state" src="../images/hj/ic_label_fscd.png" alt="">
+            {{else if paodan}}
+            <img class="state" src="../images/hj/ic_label_ypd.png" alt="">
+            {{else if}}
+            <img class="state" src="" alt="">
+            {{/if}}
+
+        </div>
+    </li>
+</script>
+
+<body>
+<section>
+    <div id="warp">
+        <div class="weui_tab">
+            <div class="weui_navbar">
+                <a href="#jiaoYi" class="weui_navbar_item weui_bar_item_on">
+                    <span class="jiaoyi_ing tabActive">交易中</span>
+                </a>
+                <a href="#jiaoGe" class="weui_navbar_item">
+                    <span class="jiaoge_ing">交割中</span>
+                </a>
+                <a href="#wanCheng" class="weui_navbar_item">
+                    <span class="complete">完成</span>
+                </a>
+            </div>
+            <div class="clearfloat"></div>
+            <div class="weui_tab_bd">
+                <div id="jiaoYi" class="weui_tab_bd_item weui_tab_bd_item_active">
+                    <p>我卖出的共10笔,<span>交易中的记录（6笔）</span></p>
+                    <ul>
+                        <li>
+                            <a href="###">
+                                <div>
+                                    <p>竞拍时间：2016-12-08</p>
+                                    <p>猪场名称：王老板的猪场</p>
+                                </div>
+                                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            </a>
+                            <div>
+                                <p>发布头数：700头</p>
+                                <p>剩余数量：700头</p>
+                                <div class="time">
+                                    <span class="endTitle">距拍卖结束：</span>
+                                    <span>12:05:05</span>
+                                </div>
+                                <div class="orderFrom">
+                                    <span>该笔订单来自川北交易圈</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="###">
+                                <div>
+                                    <p>竞拍时间：2016-12-08</p>
+                                    <p>猪场名称：王老板的猪场</p>
+                                </div>
+                                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            </a>
+                            <div>
+                                <p>发布头数：700头</p>
+                                <p>剩余数量：700头</p>
+                                <div class="time">
+                                    <span class="endTitle">距拍卖结束：</span>
+                                    <span>12:05:05</span>
+                                </div>
+                                <div class="orderFrom">
+                                    <span>该笔订单来自川北交易圈</span>
+                                </div>
+                                <img class="state" src="../images/hj/ic_label_fscd.png" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <a href="###">
+                                <div>
+                                    <p>2016-12-08</p>
+                                    <p>猪场名称:王老板的猪场</p>
+                                </div>
+                                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            </a>
+                            <div>
+                                <p>发布头数：700头</p>
+                                <p>剩余数量：700头</p>
+                                <div class="time">
+                                    <span class="endTitle">距拍卖结束：</span>
+                                    <span>12:05:05</span>
+                                </div>
+                                <div class="orderFrom">
+                                    <span>该笔订单来自川北交易圈</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="weui-infinite-scroll">
+                        <div class="infinite-preloader"></div>
+                        <span id="inLoading">正在加载...</span>
+                    </div>
+                </div>
+                <div id="jiaoGe" class="weui_tab_bd_item">
+                    <p>我卖出的共10笔,<span>交易中的记录（6笔）</span></p>
+                    <ul>
+                        <li>
+                            <a href="###">
+                                <div>
+                                    <p>2016-12-08</p>
+                                    <p>猪场名称:王老板的猪场</p>
+                                </div>
+                                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            </a>
+                            <div>
+                                <p>发布头数：700头</p>
+                                <p>订购数量：700头</p>
+                                <p>已交割数量：700头</p>
+                                <div class="orderFrom">
+                                    <span>该笔订单来自川北交易圈</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="###">
+                                <div>
+                                    <p>2016-12-08</p>
+                                    <p>猪场名称:王老板的猪场</p>
+                                </div>
+                                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            </a>
+                            <div>
+                                <p>发布头数：700头</p>
+                                <p>订购数量：700头</p>
+                                <p>已交割数量：700头</p>
+                                <div class="orderFrom">
+                                    <span>该笔订单来自川北交易圈</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="###">
+                                <div>
+                                    <p>2016-12-08</p>
+                                    <p>猪场名称:王老板的猪场</p>
+                                </div>
+                                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            </a>
+                            <div>
+                                <p>发布头数：700头</p>
+                                <p>订购数量：700头</p>
+                                <p>已交割数量：700头</p>
+                                <div class="orderFrom">
+                                    <span>该笔订单来自川北交易圈</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="###">
+                                <div>
+                                    <p>2016-12-08</p>
+                                    <p>猪场名称:王老板的猪场</p>
+                                </div>
+                                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            </a>
+                            <div>
+                                <p>发布头数：700头</p>
+                                <p>订购数量：700头</p>
+                                <p>已交割数量：700头</p>
+                                <div class="orderFrom">
+                                    <span>该笔订单来自川北交易圈</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="wanCheng" class="weui_tab_bd_item">
+                    <p>我卖出的共10笔,<span>交易中的记录（6笔）</span></p>
+                    <ul>
+                        <li>
+                            <a href="###">
+                                <div>
+                                    <p>2016-12-08</p>
+                                    <p>猪场名称:王老板的猪场</p>
+                                </div>
+                                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            </a>
+                            <div>
+                                <p>发布头数：700头</p>
+                                <p>订购数量：700头</p>
+                                <p>交割数量：700头</p>
+                                <div class="orderFrom">
+                                    <span>该笔订单来自川北交易圈</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="###">
+                                <div>
+                                    <p>2016-12-08</p>
+                                    <p>猪场名称:王老板的猪场</p>
+                                </div>
+                                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            </a>
+                            <div>
+                                <p>发布头数：700头</p>
+                                <p>订购数量：700头</p>
+                                <p>交割数量：700头</p>
+                                <div class="orderFrom">
+                                    <span>该笔订单来自川北交易圈</span>
+                                </div>
+                                <img class="state" src="../images/hj/ic_label_ypd.png" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <a href="###">
+                                <div>
+                                    <p>2016-12-08</p>
+                                    <p>猪场名称:王老板的猪场</p>
+                                </div>
+                                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            </a>
+                            <div>
+                                <p>发布头数：700头</p>
+                                <p>订购数量：700头</p>
+                                <p>交割数量：700头</p>
+                                <div class="orderFrom">
+                                    <span>该笔订单来自川北交易圈</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="###">
+                                <div>
+                                    <p>2016-12-08</p>
+                                    <p>猪场名称:王老板的猪场</p>
+                                </div>
+                                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            </a>
+                            <div>
+                                <p>发布头数：700头</p>
+                                <p>订购数量：700头</p>
+                                <p>交割数量：700头</p>
+                                <div class="orderFrom">
+                                    <span>该笔订单来自川北交易圈</span>
+                                </div>
+                                <img class="state" src="../images/hj/ic_label_ypd.png" alt="">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<script src="../js/jquery-weui.min.js"></script>
+<script type="text/javascript">
+    $(".weui_navbar a").click(function () {
+        $(this).children().addClass("tabActive");
+        $(this).siblings().children().removeClass("tabActive");
+    })
+
+    //分页功能
+    var loading = false;  //状态标记
+    var page = 1;    //当前显示页数
+
+    //每一页的显示数量
+    var size = 6;
+    var el1=$(".tradingUl:first");
+    var url1='/trade/product/list.json';
+
+    var el2=$(".tradingUl:last");
+    var url2='/trade/product/list.json';
+    //页面初始化时，加载6条数据
+
+    initialPage("POST",url1,el1);
+    initialPage("POST",url2,el2);
+    pagingFun("POST",url1,el1);
+    pagingFun("POST",url2,el2);
+
+    function initialPage(type,url,el) {
+        $("#inLoading").text("正在加载...");
+
+        //data.pageIndex = page;
+        //页面初始化时，加载8条数据
+        $.ajax({
+            type:type,
+            url: url,
+            dataType: 'json',
+            contentType:"application/json",
+            //data:JSON.stringify(data),
+            success: function(data){
+                //console.log(data.data);
+                if(data.success==true){
+                    var result ="";
+                    //总的数据长度
+                    var dataLen = data.data.totalCount;
+                    if(dataLen < 6){
+                        //就只加载当前的数据
+                        $(".weui-infinite-scroll").hide();
+                        $(document.body).destroyInfinite();
+                        for(var i = 0;i < dataLen;i++){
+                            result += template("jiaoyizhong",data.data.objects[i]);
+                        }
+                    }else{
+                        for(var i = 0;i < size;i++){
+                            result += template("jiaoyizhong",data.data.objects[i]);
+                        }
+                    }
+                    el.append(result);
+
+
+                }else{
+                    $(".infinite-preloader").hide();
+                    $("#inLoading").text(data.msg);
+                }
+            },error:function(XMLHttpRequest,textStatus, errorThrown){
+                if(textStatus == 'timeout'){
+                    $.toast("连接超时", "text");
+                    $(".infinite-preloader").hide();
+                    $("#inLoading").hide();
+                }else{
+                    $(".weui-infinite-scroll").hide();
+                    $.toast("系统内部错误,请联系客服", "text");
+                }
+            }
+        });
+    };
+
+    function pagingFun(type,url,el){
+        //初始化以后，再去按照分页加载条数
+        $(document.body).infinite().on("infinite", function() {
+            $(".infinite-preloader").show();
+            $("#inLoading").text("正在加载...");
+            $("#inLoading").show();
+            if(loading) return;
+            loading = true;
+            setTimeout(function() {
+                page++;
+                //search.pageIndex =page;
+                //发送请求，拿到json数据
+                $.ajax({
+                    type: type,
+                    url: url,
+                    dataType: 'json',
+                    contentType:"application/json",
+                    //data:JSON.stringify(search),
+                    success: function(data){
+                        if(data.success==true){
+                            var result ="";
+                            //总的数据长度
+                            var dataLen = data.data.objects.length;
+                            //计算总的页数
+                            var totalPage = data.data.totalPages;
+                            for(var i = 0;i < dataLen;i++){
+                                result += template("temp1",data.data.objects[i]);
+                            }
+                            el.append(result);
+
+                            if(page > totalPage){
+                                $(document.body).destroyInfinite();
+                                $(".weui-infinite-scroll").hide();
+                            }else{
+                                $(".weui-infinite-scroll").show();
+                            }
+
+                        }else{
+                            $(".infinite-preloader").hide();
+                            $("#inLoading").text(data.msg);
+                        }
+                    },error:function(XMLHttpRequest,textStatus, errorThrown){
+                        if(textStatus == 'timeout'){
+                            $.toast("连接超时", "text");
+                            $(".infinite-preloader").hide();
+                            $("#inLoading").hide();
+                        }else{
+                            $.toast("系统内部错误,请联系客服", "text");
+                        }
+                    }
+                });
+                loading = false;
+            }, 1500);   //模拟延迟
+        });
+    }
+
+</script>
+
+</body>
+</html>

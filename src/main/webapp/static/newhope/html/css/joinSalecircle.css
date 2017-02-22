@@ -1,0 +1,53 @@
+section.joincircleTitle {
+  padding-top: 0.5rem;
+  padding-left: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.4rem solid #ebebeb;
+}
+section.joincircleTitle > img {
+  display: inline-block;
+  float: left;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 0.5rem;
+}
+section.joincircleTitle .saleDetail {
+  display: inline-block;
+  float: left;
+}
+section.joincircleTitle .saleDetail > h4 {
+  font-size: 0.777778rem;
+  color: #343434;
+}
+section.joincircleTitle .saleDetail > p {
+  margin-top: 0.1rem;
+  font-size: 0.666667rem;
+  color: #474747;
+}
+section.joincircleTitle::after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+div.joincircleContent {
+  padding-top: 0.5rem;
+  padding-left: 2rem;
+}
+#detail {
+  display: flex;
+  justify-content: center;
+}
+#detail #detailContent {
+  width: 80%;
+  height: 4rem;
+  overflow-y: hidden;
+}
+#btn_submit {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+#btn_submit #btn_addCircle {
+  width: 80%;
+  height: 2rem;
+}

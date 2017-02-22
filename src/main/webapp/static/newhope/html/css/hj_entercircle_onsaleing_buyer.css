@@ -1,0 +1,95 @@
+body {
+  -webkit-appearance: none;
+  height: 100%;
+  background-color: #ebebeb;
+}
+.contactTa {
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.944rem;
+  display: inline-block;
+  color: #fff;
+  width: 4.4444rem;
+  height: 1.944rem;
+  background: #1BBD3D;
+  border-radius: 0.1111rem;
+}
+section nav {
+  border-bottom: 0.0556rem solid #ebebeb;
+}
+section nav .weui-row {
+  padding: 0 0.6667rem;
+  height: 2.2222rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+}
+section nav .weui-row #dealState {
+  text-align: right;
+}
+section nav .weui-row #dealState .weui_btn,
+section nav .weui-row #dealState .weui_btn_mini,
+section nav .weui-row #dealState .weui_btn_default {
+  width: 3.4444rem;
+  height: 1.3889rem;
+  font-size: 0.6667rem;
+  color: #1BBD3D;
+  background: #F5F5F5;
+  border-radius: 0.1111rem 0 0 0.1111rem;
+}
+section nav .weui-row .weui-col-50 > p {
+  line-height: 2.2222rem;
+  font-size: 0.8333rem;
+  color: #4A4A4A;
+}
+section nav .weui-row .weui-col-50 > p > span {
+  line-height: 2.2222rem;
+  font-size: 0.8333rem;
+  color: #4A4A4A;
+}
+section .countCenter {
+  background-color: #fff;
+  padding: 1.3333rem 0.6667rem;
+}
+section .countCenter > p {
+  font-size: 0.7778rem;
+  color: #999;
+  line-height: 1.1389rem;
+}
+section .countCenter > p p:nth-child(1) {
+  margin-bottom: 0.8056rem;
+}
+section .countCenter > p > span {
+  margin-left: 0.5rem;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5rem;
+}
+section > p {
+  padding: 0 0.6667rem;
+  font-size: 0.7222rem;
+  color: #999;
+  letter-spacing: 0;
+  line-height: 1.6667rem;
+}
+section ul {
+  background-color: #fff;
+}
+section ul > li {
+  padding: 0.9167rem 0.6667rem;
+  border-bottom: 0.0556rem solid #ebebeb;
+}
+section ul > li .weui-row {
+  align-items: center;
+}
+section ul > li p {
+  font-size: 0.8333rem;
+  color: #999;
+  margin-bottom: 0.2222rem;
+  line-height: 1.25rem;
+}
+section ul > li p > span {
+  font-size: 0.8333rem;
+  color: #333;
+}

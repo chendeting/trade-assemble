@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>修改个人信息</title>
+    <script type="text/javascript" charset="utf-8" src="js/htmlsize.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/weui.min.css"/>
+    <link type="text/css" rel="stylesheet" href="css/jquery-weui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+    <link type="text/css" rel="stylesheet" href="css/changePersonInfo.css"/>
+    <link rel="stylesheet" type="text/css" href="css/myTradeRecord.css"/>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+    <div id="warp">
+        <form class="userForm">
+            <p class="name-title">姓名<span>（录入真实姓名让对方觉得真实可靠）</span></p>
+            <p class="p-input"><input class="username" type="text" name="username" value="王可可" /></p>
+            <p class="name-title">手机号码<span>（不可更改）</span></p>
+            <p class="p-input"><input class="tel" type="text" name="tel" value="184-5864-4578" readonly="readonly"/></p>
+        </form>
+        <div class="self-label">
+            <p class="selfLabel">给自己打个标签吧</p>
+            <ul class="all-label">
+                <li><img src="images/ic_yang_big.png"/><p>养殖户</p><img class="checked" src="images/ic_bao_big_selected.png"/></li>
+                <li><img src="images/ic_fan_big.png"/><p>猪贩子</p><img class="checked" src="images/ic_bao_big_selected.png"/></li>
+                <li><img src="images/ic_tu_big.png"/><p>屠宰场</p><img class="checked" src="images/ic_bao_big_selected.png"/></li>
+                <li><img src="images/ic_jing_big.png"/><p>猪经济</p><img class="checked" src="images/ic_bao_big_selected.png"/></li>
+            </ul>
+        </div>
+        <div class="btn-box">
+            <button class="save-info">保存</button>
+        </div>
+    </div>
+    <div class="weui_tabbar">
+        <a href="jiaoyi/cxl_jiaoyiquan.html" class="weui_tabbar_item">
+            <div class="weui_tabbar_icon">
+                <img class="normal" src="images/btn_tabbar_jy_normal.png" alt="">
+                <img class="selected" src="images/btn_tabbar_jy_selected.png"/>
+            </div>
+            <p class="weui_tabbar_label">交易</p>
+        </a>
+        <a href="fabu/cxl_Published.html" class="weui_tabbar_item">
+            <div class="weui_tabbar_icon">
+                <img class="normal" src="images/btn_tabbar_hq_normal.png" alt="">
+                <img class="selected" src="images/btn_tabbar_hq_selected.png"/>
+            </div>
+            <p class="weui_tabbar_label">发布</p>
+        </a>
+        <a href="#" class="weui_tabbar_item">
+            <div class="weui_tabbar_icon">
+                <img class="normal" src="images/btn_tabbar_xx_normal.png" alt="">
+                <img class="selected" src="images/btn_tabbar_xx_selected.png"/>
+            </div>
+            <p class="weui_tabbar_label">消息</p>
+        </a>
+        <a href="#" class="weui_tabbar_item weui_bar_item_on">
+            <div class="weui_tabbar_icon">
+                <img class="normal" src="images/btn_tabbar_me_normal.png" alt="">
+                <img class="selected" src="images/btn_tabbar_me_selected.png"/>
+            </div>
+            <p class="weui_tabbar_label">我</p>
+        </a>
+    </div>
+    <script type="text/javascript" src="js/jquery-weui.min.js"></script>
+    <script type="text/javascript">
+        $(".all-label li").click(function () {
+            var checked=$(this).find(".checked");
+            if(checked.css("display")=="none"){
+                checked.show();
+            }else{
+                checked.hide();
+            }
+        });
+
+    </script>
+</body>
+</html>

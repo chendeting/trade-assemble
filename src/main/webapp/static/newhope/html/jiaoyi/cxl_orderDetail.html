@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description"
+          content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>2016-12-01详细</title>
+    <script type="text/javascript" charset="utf-8" src="../js/htmlsize.js"></script>
+    <link type="text/css" rel="stylesheet" href="../css/weui.min.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/huadongjiazai.min.css"/>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="../css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/common.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/mySale.css"/>
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/template.js"></script>
+    <style type="text/css">
+        #warp section .saleUl .saleList .basicInfo-box .stateImg{
+            top:0;
+        }
+        #warp section .saleUl .saleList .detail-info{
+            border-bottom-style:none ;
+        }
+    </style>
+</head>
+<script type="text/html" charset="UTF-8" id="order_Member">
+    <li class="saleList">
+        <p class="detail-info">订单号：{{order_number}}<img src="../images/ic_list_detail.png"/></p>
+        <div class="basicInfo-box">
+            <img class="userHead" src="../images/morentu.png"/>
+            <ul class="info-ul">
+                <li class="userName">{{userName}}</li>
+                <li class="buyNum">购买数量：<span>{{buy_num}}</span></li>
+                <li class="deliveryNum">交割数量：<span>{{delivery_num}}</span></li>
+            </ul>
+            <div class="stateImg"><img src="{{trading_status}}"/></div>
+        </div>
+    </li>
+</script>
+<body>
+    <div id="warp">
+        <header>
+            <div class="header-title">
+                <p class="title-date">2016-12-08&emsp;12:00:00</p>
+                <p class="title-name">卖方名字：<span class="circleName">某某某</span></p>
+            </div>
+            <div class="detailInfo">
+                <p class="tel">猪场名字：<span>王可可的猪场</span></p>
+                <p class="address">交割地址：<span>四川省德阳市三台县巫溪镇五乡六组</span></p>
+                <p class="breed">出栏品种：<span>内三元</span></p>
+                <p class="publishedNum">发布数量：<span>700头</span></p>
+                <p class="orderNum">订购数量：<span>700头</span></p>
+                <p class="deliveryNum">交割数量：<span>20头</span></p>
+                <p class="price">出栏价格：<span>￥18.86元/KG</span>（预估均重100KG）</p>
+                <p class="publishedDate">发布日期：2016-1-11</p>
+            </div>
+        </header>
+        <div class="allOrderNum">订单数（4笔）</div>
+        <section>
+            <ul class="saleUl" id="xiangxi">
+                <li class="saleList">
+                    <p class="detail-info">订单号：12345678<img src="../images/ic_list_detail.png"/></p>
+                    <div class="basicInfo-box">
+                        <img class="userHead" src="../images/morentu.png"/>
+                        <ul class="info-ul">
+                            <li class="userName">张三</li>
+                            <li class="buyNum">购买数量：<span>700头</span></li>
+                            <li class="deliveryNum">交割数量：<span>700头</span></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="saleList">
+                    <p class="detail-info">订单号：12584481</p>
+                    <div class="basicInfo-box trading-in">
+                        <img class="userHead trading-head" src="../images/morentu.png"/>
+                        <ul class="info-ul">
+                            <li class="userName">张三</li>
+                            <li class="buyNum">拍猪数量：<span>700头</span></li>
+                        </ul>
+                        <div class="stateImg"><img src="../images/ic_lable_jyq_pmz.png"/></div>
+                    </div>
+                </li>
+                <li class="saleList">
+                    <p class="detail-info">订单号：12584481</p>
+                    <div class="basicInfo-box noneBorder">
+                        <img class="userHead trading-head" src="../images/morentu.png"/>
+                        <ul class="info-ul">
+                            <li class="userName">张三</li>
+                            <li class="buyNum">拍猪数量：<span>700头</span></li>
+                        </ul>
+                        <div class="stateImg"><img src="../images/ic_lable_jyq_jyz.png"/></div>
+                    </div>
+                </li>
+                <li class="saleList">
+                    <p class="detail-info">订单号：12584481</p>
+                    <div class="basicInfo-box">
+                        <img class="userHead trading-head" src="../images/morentu.png"/>
+                        <ul class="info-ul">
+                            <li class="userName">张三</li>
+                            <li class="buyNum">拍猪数量：<span>700头</span></li>
+                        </ul>
+                        <div class="stateImg"><img src="../images/ic_lable_jyq_cd.png"/></div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </div>
+    <div class="weui-infinite-scroll">
+        <div class="infinite-preloader">
+
+        </div>
+        信息加载中...
+    </div>
+    <script src="../js/jquery-weui.min.js"></script>
+    <script type="text/javascript">
+
+        $(document.body).infinite(500);
+        var loading = false;  //状态标记
+        var page = 0;    //当前显示页数
+
+        //每一页的显示数量
+        var size = 2;
+
+        //页面初始化时，加载3条数据
+        $.ajax({
+            type: 'POST',
+            url: '../data/orderMember.json',
+            dataType: 'json',
+            success: function(data){
+                page++;
+                var result ="";
+                //总的数据长度
+                var dataLen = data.length;
+                if(dataLen <2){
+                    //就只加载当前的数据
+                    for(var i = 0;i < dataLen;i++){
+                        result += template("order_Member",data[i]);
+                    }
+                }else{
+                    for(var i = 0;i < size;i++){
+                        result += template("order_Member",data[i]);
+                    }
+                }
+                $("#xiangxi").append(result);
+
+            }
+        });
+        //初始化以后，再去按照分页加载条数
+        $(document.body).infinite().on("infinite", function() {
+            if(loading) return;
+            loading = true;
+            setTimeout(function() {
+                page++;
+                //发送请求，拿到json数据
+                $.ajax({
+                    type: 'POST',
+                    url: '../data/orderMember.json',
+                    dataType: 'json',
+                    success: function(data){
+                        var result ="";
+                        //总的数据长度
+                        var dataLen = data.length;
+                        //计算总的页数
+                        var totalPage = Math.ceil(dataLen/size);
+                        if(page <= totalPage){
+                            //如果有数据
+                            if(page == totalPage){
+                                //最后一页
+                                for(var i = (page-1)*size;i < dataLen;i++){
+                                    result += template("order_Member",data[i]);
+                                }
+                                //没有数据了
+                                $(document.body).destroyInfinite();
+                                $(".weui-infinite-scroll").hide();
+//                                 $(".weui-infinite-scroll").html(" ");
+//                                 $(".weui-infinite-scroll").html("没有更多数据了哦~" );
+                            }else{
+                                //其他页
+                                for(var i = (page-1)*size ; i < page*size;i++){
+                                    result += template("order_Member",data[i]);
+                                }
+                            }
+                        }
+                        $("#xiangxi").append(result);
+                    }
+                });
+                loading = false;
+            }, 1500);   //模拟延迟
+        });
+
+    </script>
+</body>
+</html>

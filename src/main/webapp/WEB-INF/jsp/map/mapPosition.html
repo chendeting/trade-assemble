@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<style type="text/css">
+#container{
+  min-height:22rem;
+  width:20rem;
+ }
+</style>
+<div>
+    <div style="height:2rem;width:20rem;margin-top: 0.5rem">
+        <div style="width:4.5rem;height:2rem;line-height:2rem;float:left;margin-left:1rem;font-size:0.777778rem;color:#343536;text-align: right;" id="r-result">
+            地址检索:
+        </div>
+        <input style="width:11rem;padding-left:1rem;box-sizing:content-box;height:1.4rem;line-height:1.4rem;border-radius:1rem;float:left;margin-top:0.2rem;margin-left:0.3rem;background-color:#ffffff;font-size:0.777778rem;color:#343536;padding-top:0;padding-bottom:0;border:1px solid #979797;outline:none;" type="text" id="suggestId" size="20" value="" style="width:300px;" />
+        <div id="searchResultPanel" style="border:1px solid #C0C0C0;width:150px;height:auto; display:none;"></div>
+    </div>
+    <div style="height:2rem;width:20rem;">
+        <button style="width:4.5rem;height:1.4rem;border-radius: 1rem;float:left;margin-top:0.2rem;margin-left:1rem;background-color: #2D88FF;font-size:0.777778rem;color:#ffffff;padding:0;border:none;outline:none;" type="button" onclick="dingwei()">定位</button>
+        <lable style="width:12rem;height:2rem;line-height:2rem;color:#343535;font-size:0.7777778rem;margin-left:0.3rem;float:left;" id="desAddress"></lable>
+    </div> 
+</div>
+<hr>
+<div id="container"></div>
+<script type="text/javascript" charset="utf-8" src="/static/trade/js/mapNavigation.js?v=20161029111"></script>

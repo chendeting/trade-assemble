@@ -1,0 +1,193 @@
+body {
+  -webkit-appearance: none;
+  height: 100%;
+  background-color: #ebebeb;
+}
+input[type=button] {
+  -webkit-appearance: none;
+  outline: none;
+}
+.createcircleContent #imgParent {
+  display: flex;
+  justify-content: center;
+}
+.createcircleContent #imgParent .myheadPic {
+  margin-top: 0.8889rem;
+  width: 3.889rem;
+  height: 3.889rem;
+  border-radius: 1.99rem;
+}
+.createcircleContent > ul > li {
+  margin: 0;
+  width: 17.3333rem;
+  margin-left: 1.3333rem;
+}
+.createcircleContent > ul > li > p {
+  font-size: 0.7222rem;
+  color: #999999;
+  letter-spacing: 0;
+  line-height: 0.8333rem;
+}
+.createcircleContent > ul > li input,
+.createcircleContent > ul > li textarea {
+  resize: none;
+  width: 100%;
+  -webkit-appearance: none;
+  box-shadow: none;
+  outline: none;
+  border-radius: 0.1111rem;
+  border: 0.0556rem solid #d8d8d8;
+  background-color: #fff;
+}
+.createcircleContent > ul > li:nth-child(1) {
+  position: relative;
+  margin-top: 0.5278rem;
+}
+.createcircleContent > ul > li:nth-child(1) > p {
+  margin-bottom: 0.4444rem;
+  font-size: 0.7222rem;
+  display: flex;
+  justify-content: space-between;
+}
+.createcircleContent > ul > li:nth-child(1) > p span {
+  font-size: 0.7222rem;
+}
+.createcircleContent > ul > li:nth-child(1) > input {
+  width: 16.2222rem;
+  height: 1.1222rem;
+  padding: 0.55rem;
+  color: #282828;
+  font-size: 0.8333rem;
+}
+.createcircleContent > ul > li:nth-child(1) > input::-webkit-input-placeholder {
+  font-size: 0.8333rem;
+  color: #cccccc;
+  letter-spacing: 0;
+  line-height: 1.0556rem;
+  text-align: left;
+}
+.createcircleContent > ul > li:nth-child(2) {
+  position: relative;
+  margin-top: 0.6667rem;
+}
+.createcircleContent > ul > li:nth-child(2) > p {
+  display: flex;
+  justify-content: space-between;
+  line-height: 1.94rem;
+  font-size: 0.7222rem;
+}
+.createcircleContent > ul > li:nth-child(2) > p span {
+  font-size: 0.7222rem;
+}
+.createcircleContent > ul > li:nth-child(2) .content-block {
+  position: relative;
+}
+.createcircleContent > ul > li:nth-child(2) .content-block > input {
+  color: #333333;
+  width: 16.2222rem;
+  height: 1.1222rem;
+  padding: 0.55rem;
+  font-size: 0.8333rem;
+}
+.createcircleContent > ul > li:nth-child(2) .content-block > input::-webkit-input-placeholder {
+  font-size: 0.8333rem;
+  color: #cccccc;
+  letter-spacing: 0;
+  line-height: 1.0556rem;
+  text-align: left;
+}
+.createcircleContent > ul > li:nth-child(2) .content-block > i {
+  width: 0.4444rem;
+  height: 0.3056rem;
+  color: #999999;
+  position: absolute;
+  bottom: 1.3rem;
+  right: 1rem;
+}
+.createcircleContent > ul > li:nth-child(3) {
+  position: relative;
+  margin-top: 0.5278rem;
+}
+.createcircleContent > ul > li:nth-child(3) > p {
+  display: flex;
+  justify-content: space-between;
+  line-height: 1.94rem;
+  font-size: 0.7222rem;
+}
+.createcircleContent > ul > li:nth-child(3) > p span {
+  font-size: 0.7222rem;
+}
+.createcircleContent > ul > li:nth-child(3) > textarea {
+  width: 16.2222rem;
+  height: 3.9rem;
+  padding: 0.55rem;
+  color: #282828;
+  font-size: 0.8333rem;
+}
+.createcircleContent > ul > li:nth-child(3) > textarea::-webkit-input-placeholder {
+  font-size: 0.8333rem;
+  color: #cccccc;
+  letter-spacing: 0;
+  line-height: 1.0556rem;
+  text-align: left;
+}
+.createcircleContent > ul > li:nth-child(3) > span {
+  font-size: 0.7222rem;
+  color: #999999;
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.6rem;
+}
+.createcircleContent > ul > li:nth-child(4) {
+  position: relative;
+  margin-top: 0.5278rem;
+}
+.createcircleContent > ul > li:nth-child(4) > p {
+  display: flex;
+  justify-content: space-between;
+  line-height: 1.94rem;
+  font-size: 0.7222rem;
+}
+.createcircleContent > ul > li:nth-child(4) > p span {
+  font-size: 0.7222rem;
+}
+.createcircleContent > ul > li:nth-child(4) > textarea {
+  width: 16.2222rem;
+  height: 3.9rem;
+  padding: 0.55rem;
+  color: #282828;
+  font-size: 0.8333rem;
+}
+.createcircleContent > ul > li:nth-child(4) > textarea::-webkit-input-placeholder {
+  font-size: 0.8333rem;
+  color: #cccccc;
+  letter-spacing: 0;
+  line-height: 1.0556rem;
+  text-align: left;
+}
+.createcircleContent > ul > li:nth-child(4) > span {
+  font-size: 0.7222rem;
+  color: #999999;
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.6rem;
+}
+.createcircleContent #div_footer {
+  -webkit-appearance: none;
+  margin-top: 1.4444rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.createcircleContent #div_footer > a {
+  display: block;
+  width: 17.3333rem;
+  height: 2.5rem;
+  background-color: #1BBD3D;
+  border: 0;
+  border-radius: 0.1111rem;
+  font-size: 1rem;
+  color: #fff;
+}

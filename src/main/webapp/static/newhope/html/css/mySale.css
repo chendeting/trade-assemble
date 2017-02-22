@@ -1,0 +1,163 @@
+#warp {
+  background-color: #e9e9e9;
+}
+#warp header {
+  background-color: #fff;
+}
+#warp header .header-title {
+  border-bottom: 0.0555rem solid #D8D8D8;
+  padding: 0.6666rem;
+}
+#warp header .header-title .title-date {
+  color: #999;
+  line-height: 1.3333rem;
+  font-size: 0.8333rem;
+}
+#warp header .header-title .title-name {
+  font-size: 0.8333rem;
+  color: #999;
+}
+#warp header .header-title .title-name .circleName {
+  color: #333;
+  font-size: 0.8333rem;
+}
+#warp header .detailInfo {
+  padding: 0.6666rem;
+  color: #999;
+}
+#warp header .detailInfo p {
+  line-height: 1.2222rem;
+  font-size: 0.7222rem;
+}
+#warp header .detailInfo p span {
+  font-size: 0.7222rem;
+  color: #333;
+}
+#warp header .detailInfo .publishedDate {
+  text-align: right;
+  margin-top: 0.5555rem;
+}
+#warp .allOrderNum {
+  font-size: 0.7777rem;
+  color: #999;
+  line-height: 1.6666rem;
+  padding-left: 0.6666rem;
+}
+#warp section .saleUl .saleList {
+  border-bottom: 0.0555rem solid #D8D8D8;
+  margin-bottom: 0.6666rem;
+}
+#warp section .saleUl .saleList .detail-info {
+  position: relative;
+  background-color: #f5f5f5;
+  padding-left: 0.6666rem;
+  line-height: 2.2222rem;
+  color: #333;
+  border-top: 0.0555rem solid #D8D8D8;
+  border-bottom: 0.0555rem solid #D8D8D8;
+}
+#warp section .saleUl .saleList .detail-info img {
+  width: 0.7777rem;
+  height: 0.7777rem;
+  position: absolute;
+  right: 0.6666rem;
+  top: 35%;
+}
+#warp section .saleUl .saleList .trading-time {
+  background-color: #fff;
+  border-bottom-style: none ;
+}
+#warp section .saleUl .saleList .basicInfo-box {
+  border-bottom: 0.0555rem solid #D8D8D8;
+  position: relative;
+  background-color: #fff;
+  padding: 1rem 0.6666rem;
+  height: 4rem;
+  line-height: 4rem;
+}
+#warp section .saleUl .saleList .basicInfo-box:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+#warp section .saleUl .saleList .basicInfo-box > img {
+  width: 3.3333rem;
+  height: 3.3333rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+#warp section .saleUl .saleList .basicInfo-box .trading-head {
+  margin-top: 0;
+}
+#warp section .saleUl .saleList .basicInfo-box .info-ul {
+  color: #999;
+  display: inline-block;
+  width: 70%;
+  vertical-align: middle;
+  line-height: 1.4rem;
+}
+#warp section .saleUl .saleList .basicInfo-box .info-ul span {
+  color: #333;
+}
+#warp section .saleUl .saleList .basicInfo-box .stateImg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 2.5555rem;
+}
+#warp section .saleUl .saleList .basicInfo-box .stateImg img {
+  width: 3.3888rem;
+  height: 2.5555rem;
+}
+#warp section .saleUl .saleList .basicInfo-box .contactTa {
+  display: block;
+  width: 3.6111rem;
+  height: 1.6666rem;
+  line-height: 1.6666rem;
+  color: #fff;
+  background-color: #1bbd3d;
+  position: absolute;
+  right: 0.6666rem;
+  top: 1rem;
+  text-align: center;
+  border-radius: 0.1111rem;
+  font-size: 0.8333rem;
+}
+#warp section .saleUl .saleList .noneBorder {
+  border-bottom-style: none ;
+}
+#warp section .saleUl .saleList .btn-box {
+  height: 2.7777rem;
+  background-color: #f5f5f5;
+  line-height: 2.7777rem;
+  text-align: right;
+  padding-right: 0.6666rem;
+}
+#warp section .saleUl .saleList .btn-box .edit-delivery {
+  height: 1.9444rem;
+  width: 7.2222rem;
+  font-size: 1rem;
+  background-color: #1bbd3d;
+}
+#warp section .saleUl .saleList .btn-box .revoke {
+  width: 6.1111rem;
+  height: 1.9444rem;
+  background-color: #999;
+  font-size: 1rem;
+}
+#warp section .saleUl .saleList .btn-box .delivery {
+  width: 6.1111rem;
+  height: 1.9444rem;
+  background-color: #1bbd3d;
+  font-size: 1rem;
+}
+.weui_dialog_bd {
+  margin: 0 auto;
+  font-size: 0.8888rem;
+  width: 10rem;
+}
+.weui_dialog_title {
+  font-size: 1rem;
+}

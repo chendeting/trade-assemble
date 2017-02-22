@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../css/index.css">
+    <script type="text/javascript" charset="utf-8" src="../js/htmlsize.js"></script>
+    <script style="text/javascript" charset="UTF-8" src="../js/jquery-1.8.3.min.js"></script>
+    <style type="text/css">
+        ::-webkit-scrollbar{width:0px}
+        li{list-style-type: none;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function(){
+            $("#swiper_btn1").click(function(){
+
+                $(".part1").show();
+                $(".part2").hide();
+                $(".part3").hide();
+                $(".part4").hide();
+                $(".part5").hide();
+                $(".part6").hide();
+                $(".swiper-wrapper li").eq(0).addClass("on");
+                $(".swiper-wrapper li").eq(1).removeClass("on");
+                $(".swiper-wrapper li").eq(2).removeClass("on");
+                $(".swiper-wrapper li").eq(3).removeClass("on");
+                $(".swiper-wrapper li").eq(4).removeClass("on");
+                $(".swiper-wrapper li").eq(5).removeClass("on");
+                $("#xiahuaxian1").show();
+                $("#xiahuaxian2").hide();
+                $("#xiahuaxian3").hide();
+                $("#xiahuaxian4").hide();
+                $("#xiahuaxian5").hide();
+                $("#xiahuaxian6").hide();
+
+            });
+        });
+        $(function(){
+            $("#swiper_btn2").click(function(){
+
+                $(".part2").show();
+                $(".part1").hide();
+                $(".part3").hide();
+                $(".part4").hide();
+                $(".part5").hide();
+                $(".part6").hide();
+                $(".swiper-wrapper li").eq(1).addClass("on");
+                $(".swiper-wrapper li").eq(0).removeClass("on");
+                $(".swiper-wrapper li").eq(2).removeClass("on");
+                $(".swiper-wrapper li").eq(3).removeClass("on");
+                $(".swiper-wrapper li").eq(4).removeClass("on");
+                $(".swiper-wrapper li").eq(5).removeClass("on");
+                $("#xiahuaxian2").show();
+                $("#xiahuaxian1").hide();
+                $("#xiahuaxian3").hide();
+                $("#xiahuaxian4").hide();
+                $("#xiahuaxian5").hide();
+                $("#xiahuaxian6").hide();
+
+            });
+        });
+        $(function(){
+            $("#swiper_btn3").click(function(){
+
+                $(".part3").show();
+                $(".part1").hide();
+                $(".part2").hide();
+                $(".part4").hide();
+                $(".part5").hide();
+                $(".part6").hide();
+                $(".swiper-wrapper li").eq(2).addClass("on");
+                $(".swiper-wrapper li").eq(0).removeClass("on");
+                $(".swiper-wrapper li").eq(1).removeClass("on");
+                $(".swiper-wrapper li").eq(3).removeClass("on");
+                $(".swiper-wrapper li").eq(4).removeClass("on");
+                $(".swiper-wrapper li").eq(5).removeClass("on");
+                $("#xiahuaxian3").show();
+                $("#xiahuaxian1").hide();
+                $("#xiahuaxian2").hide();
+                $("#xiahuaxian4").hide();
+                $("#xiahuaxian5").hide();
+                $("#xiahuaxian6").hide();
+
+            });
+        });
+        $(function(){
+            $("#swiper_btn4").click(function(){
+
+                $(".part4").show();
+                $(".part1").hide();
+                $(".part2").hide();
+                $(".part3").hide();
+                $(".part5").hide();
+                $(".part6").hide();
+                $(".swiper-wrapper li").eq(3).addClass("on");
+                $(".swiper-wrapper li").eq(0).removeClass("on");
+                $(".swiper-wrapper li").eq(1).removeClass("on");
+                $(".swiper-wrapper li").eq(2).removeClass("on");
+                $(".swiper-wrapper li").eq(4).removeClass("on");
+                $(".swiper-wrapper li").eq(5).removeClass("on");
+                $("#xiahuaxian4").show();
+                $("#xiahuaxian1").hide();
+                $("#xiahuaxian2").hide();
+                $("#xiahuaxian3").hide();
+                $("#xiahuaxian5").hide();
+                $("#xiahuaxian6").hide();
+            });
+        });
+        $(function(){
+            $("#swiper_btn5").click(function(){
+
+                $(".part5").show();
+                $(".part1").hide();
+                $(".part2").hide();
+                $(".part3").hide();
+                $(".part4").hide();
+                $(".part6").hide();
+                $(".swiper-wrapper li").eq(4).addClass("on");
+                $(".swiper-wrapper li").eq(0).removeClass("on");
+                $(".swiper-wrapper li").eq(1).removeClass("on");
+                $(".swiper-wrapper li").eq(2).removeClass("on");
+                $(".swiper-wrapper li").eq(3).removeClass("on");
+                $(".swiper-wrapper li").eq(5).removeClass("on");
+                $("#xiahuaxian5").show();
+                $("#xiahuaxian1").hide();
+                $("#xiahuaxian2").hide();
+                $("#xiahuaxian3").hide();
+                $("#xiahuaxian4").hide();
+                $("#xiahuaxian6").hide();
+            });
+        });
+        $(function(){
+            $("#swiper_btn6").click(function(){
+
+                $(".part6").show();
+                $(".part1").hide();
+                $(".part2").hide();
+                $(".part3").hide();
+                $(".part5").hide();
+                $(".part4").hide();
+                $(".swiper-wrapper li").eq(5).addClass("on");
+                $(".swiper-wrapper li").eq(0).removeClass("on");
+                $(".swiper-wrapper li").eq(1).removeClass("on");
+                $(".swiper-wrapper li").eq(2).removeClass("on");
+                $(".swiper-wrapper li").eq(3).removeClass("on");
+                $(".swiper-wrapper li").eq(4).removeClass("on");
+                $("#xiahuaxian6").show();
+                $("#xiahuaxian1").hide();
+                $("#xiahuaxian2").hide();
+                $("#xiahuaxian3").hide();
+                $("#xiahuaxian5").hide();
+                $("#xiahuaxian4").hide();
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(function(){
+            $(".btn_buy").click(function(){
+
+                $(".Part_2").show();
+            });
+        });
+        $(function(){
+            $("#quxiao").click(function(){
+
+                $(".Part_2").hide();
+            });
+            $("#queren").click(function(){
+
+                $(".Part_2").hide();
+                $(".Part_3").show();
+
+            });
+            $("#zhidaole").click(function(){
+
+                $(".Part_3").hide();
+
+            });
+        });
+    </script>
+</head>
+<body >
+  <div>
+    <div class="swiper-container" style="position:relative;">
+        <div class="swiper-wrapper" style="width:33rem;">
+            <ul>
+                <li class="swiper-li on">
+                    <button class="swiper-slide" id="swiper_btn1">已结束
+                    </button>
+                    <div class="xiahuaxian" id="xiahuaxian1"></div>
+                </li>
+                <li class="swiper-li">
+                    <button class="swiper-slide" id="swiper_btn2">10月9日
+                    </button>
+                    <div class="xiahuaxian" id="xiahuaxian2" style="display: none;"></div>
+                </li>
+                <li class="swiper-li">
+                    <button class="swiper-slide" id="swiper_btn3">10月10日
+                    </button>
+                    <div class="xiahuaxian" id="xiahuaxian3"  style="display: none;"></div>
+                </li>
+                <li  class="swiper-li" >
+                    <button class="swiper-slide" id="swiper_btn4">10月11日
+                    </button>
+                    <div class="xiahuaxian" id="xiahuaxian4"  style="display: none;"></div>
+                </li>
+                <li  class="swiper-li">
+                    <button class="swiper-slide" id="swiper_btn5">10月12日
+                    </button>
+                    <div class="xiahuaxian"  id="xiahuaxian5" style="display: none;"></div>
+                </li>
+                <li  class="swiper-li">
+                    <button class="swiper-slide" id="swiper_btn6">10月13日
+                    </button>
+                    <div class="xiahuaxian" id="xiahuaxian6"  style="display: none;"></div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+  </div>
+    <div class="part1" style="position: absolute;font-family: 'Microsoft YaHei';">
+    <div class="box">
+        <div class="wall"></div>
+        <div class="deal_buy_1">
+            <div class="deal_buy_pic">
+                <img src="../images/morentu.png" style="width:4.5rem;height: 4.5rem;border-radius: 0.2rem;"/>
+            </div>
+            <div class="deal_buy_message">
+                   <div class="deal_buy_message_1">绵阳三台希望猪场</div>
+                   <div class="deal_buy_message_2">
+                       <div class="buy_message_head_1">地址:</div>
+                       <div class="buy_message_body_1">四川省德阳三台</div>
+                   </div>
+                   <div class="deal_buy_message_3">
+                       <div class="deal_buy_message_4">
+                           <div class="buy_message_head_1">价格:</div>
+                           <div class="buy_message_body_1">¥18.86元/kg</div>
+                           <div class="buy_message_body_2">(均重100-110kg)</div>
+                       </div>
+                       <div class="deal_buy_message_4">
+                           <div class="buy_message_body_3">¥19.26元/kg</div>
+                           <div class="buy_message_body_2">(均重110-120kg)</div>
+                       </div>
+                       <div class="deal_buy_message_4">
+                           <div class="buy_message_body_3">¥19.86元/kg</div>
+                           <div class="buy_message_body_2">(均重120kg以上)</div>
+                       </div>
+                   </div>
+            </div>
+            <div style="width:4.7rem;height:3.75rem;float: left;position: absolute;margin-left: 15.3rem;">
+                <img src="../images/end.png" style="width: 100%;height: 100%;"/>
+            </div>
+        </div>
+        <div class="deal_buy_2">
+            <div style="float: left;margin-left: 1rem;height:2.3rem;width: 10rem; ">
+                <div style="height: 1.3rem;line-height: 1.3rem;"><span style="font-size:1rem;color:#F02B2B;opacity:1;">300</span><span style="font-size:0.833333rem;color:#F02B2B;">头</span></div>
+                <div style="font-size:0.6rem;color:#848689;opacity: 0.6;height: 1rem;line-height: 1rem;">
+                    <span>出栏:&nbsp<span>700</span>头</span>
+                    <span style="padding-left:0.5rem; ">剩余:&nbsp<span>100</span>头</span>
+                </div>
+            </div>
+            <button class="deal_btn btn_read">查看详情
+
+            </button>
+        </div>
+        <div class="wall"></div>
+    </div>
+        <div class="box">
+            <div class="deal_buy_1">
+                <div class="deal_buy_pic">
+                    <img src="../images/morentu.png" style="width:4.5rem;height: 4.5rem;border-radius: 0.2rem;"/>
+                </div>
+                <div class="deal_buy_message">
+                    <div class="deal_buy_message_1">绵阳三台希望猪场</div>
+                    <div class="deal_buy_message_2">
+                        <div class="buy_message_head_1">地址：</div>
+                        <div class="buy_message_body_1">四川省德阳三台</div>
+                    </div>
+                    <div class="deal_buy_message_3">
+                        <div class="deal_buy_message_4">
+                            <div class="buy_message_head_1">价格:</div>
+                            <div class="buy_message_body_1">¥18.86元/kg</div>
+                            <div class="buy_message_body_2">(均重100-110kg)</div>
+                        </div>
+                        <div class="deal_buy_message_4">
+                            <div class="buy_message_body_3">¥19.26元/kg</div>
+                            <div class="buy_message_body_2">(均重110-120kg)</div>
+                        </div>
+                        <div class="deal_buy_message_4">
+                            <div class="buy_message_body_3">¥19.86元/kg</div>
+                            <div class="buy_message_body_2">(均重120kg以上)</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="width:4.7rem;height:3.75rem;float: left;position: absolute;margin-left: 15.3rem;">
+                    <img src="../images/end.png" style="width: 100%;height: 100%;"/>
+                </div>
+            </div>
+            <div class="deal_buy_2">
+                <div style="float: left;margin-left: 1rem;height:2.3rem;width: 10rem; ">
+                    <div style="height: 1.3rem;line-height: 1.3rem;"><span style="font-size:1rem;color:#F02B2B;opacity:1;">300</span><span style="font-size:0.833333rem;color:#F02B2B;">头</span></div>
+                    <div style="font-size:0.6rem;color:#848689;opacity: 0.6;height: 1rem;line-height: 1rem;">
+                        <span>出栏:&nbsp<span>700</span>头</span>
+                        <span style="padding-left:0.5rem; ">剩余:&nbsp<span>100</span>头</span>
+                    </div>
+                </div>
+                <button class="deal_btn btn_read">查看详情
+
+                </button>
+            </div>
+            <div class="wall"></div>
+        </div>
+</div>
+    <div class="part2" style="position: absolute;display: none;font-family:'Microsoft YaHei';display: none;">
+    <div class="daojishi">
+        <div class="daojishi_text">距离拍卖结束</div>
+        <div class="daojishi_num">01:35:20</div>
+    </div>
+    <div class="box">
+        <div class="deal_buy_1">
+            <div class="deal_buy_pic">
+                <img src="../images/morentu.png" style="width:4.5rem;height: 4.5rem;border-radius: 0.2rem;"/>
+            </div>
+
+            <div class="deal_buy_message">
+                <div class="deal_buy_message_1">绵阳三台希望猪场</div>
+                <div class="deal_buy_message_2">
+                    <div class="buy_message_head_1">地址:</div>
+                    <div class="buy_message_body_1">四川省德阳三台</div>
+                </div>
+                <div class="deal_buy_message_3">
+                    <div class="deal_buy_message_4">
+                        <div class="buy_message_head_1">价格:</div>
+                        <div class="buy_message_body_1">¥18.86元/kg</div>
+                        <div class="buy_message_body_2">(均重100-110kg)</div>
+                    </div>
+                    <div class="deal_buy_message_4">
+                        <div class="buy_message_body_3">¥19.26元/kg</div>
+                        <div class="buy_message_body_2">(均重110-120kg)</div>
+                    </div>
+                    <div class="deal_buy_message_4">
+                        <div class="buy_message_body_3">¥19.86元/kg</div>
+                        <div class="buy_message_body_2">(均重120kg以上)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="deal_buy_2">
+            <div style="float: left;margin-left: 1rem;height:1.3rem;margin-top:0.5rem;width: 10rem; ">
+                <span ><span style="font-size:0.833333rem;color:#848689;opacity: 0.6;">剩余</span><span style="font-size:1rem;color:#F02B2B;opacity:1;">300</span><span style="font-size:0.833333rem;color:#F02B2B;">头</span></span>
+                <span style="font-size:0.833333rem;color:#848689;opacity: 0.6;">已售<span>100</span>头</span>
+            </div>
+            <button class="deal_btn btn_buy" id="lijiqiangzhu1">立即抢猪
+
+            </button>
+        </div>
+        <div class="wall"></div>
+    </div>
+        <div class="box">
+            <div class="deal_buy_1">
+                <div class="deal_buy_pic">
+                    <img src="../images/morentu.png" style="width:4.5rem;height: 4.5rem;border-radius: 0.2rem;"/>
+                </div>
+
+                <div class="deal_buy_message">
+                    <div class="deal_buy_message_1">绵阳三台希望猪场</div>
+                    <div class="deal_buy_message_2">
+                        <div class="buy_message_head_1">地址:</div>
+                        <div class="buy_message_body_1">四川省德阳三台</div>
+                    </div>
+                    <div class="deal_buy_message_3">
+                        <div class="deal_buy_message_4">
+                            <div class="buy_message_head_1">价格:</div>
+                            <div class="buy_message_body_1">¥18.86元/kg</div>
+                            <div class="buy_message_body_2">(均重100-110kg)</div>
+                        </div>
+                        <div class="deal_buy_message_4">
+                            <div class="buy_message_body_3">¥19.26元/kg</div>
+                            <div class="buy_message_body_2">(均重110-120kg)</div>
+                        </div>
+                        <div class="deal_buy_message_4">
+                            <div class="buy_message_body_3">¥19.86元/kg</div>
+                            <div class="buy_message_body_2">(均重120kg以上)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="deal_buy_2">
+                <div style="float: left;margin-left: 1rem;height:1.3rem;margin-top:0.5rem;width: 10rem; ">
+                    <span ><span style="font-size:0.833333rem;color:#848689;opacity: 0.6;">剩余</span><span style="font-size:1rem;color:#F02B2B;opacity:1;">300</span><span style="font-size:0.833333rem;color:#F02B2B;">头</span></span>
+                    <span style="font-size:0.833333rem;color:#848689;opacity: 0.6;">已售<span>100</span>头</span>
+                </div>
+                <button class="deal_btn btn_buy" id="lijiqiangzhu1">立即抢猪
+
+                </button>
+            </div>
+            <div class="wall"></div>
+        </div>
+
+</div>
+    <div class="part3" style="position: absolute;display:none;font-family: 'Microsoft YaHei'；display: none;">
+       <div class="daojishi">
+           <div class="daojishi_text">拍卖倒计时</div>
+           <div class="daojishi_num">02:34:20</div>
+       </div>
+       <div class="box">
+           <div class="deal_buy_1">
+            <div class="deal_buy_pic">
+                <img src="../images/morentu.png" style="width:4.5rem;height: 4.5rem;border-radius: 0.2rem;"/>
+            </div>
+            <div class="deal_buy_message">
+                <div class="deal_buy_message_1">绵阳三台希望猪场</div>
+                <div class="deal_buy_message_2">
+                    <div class="buy_message_head_1">地址:</div>
+                    <div class="buy_message_body_1">四川省德阳三台</div>
+                </div>
+                <div class="deal_buy_message_3">
+                    <div class="deal_buy_message_4">
+                        <div class="buy_message_head_1">价格:</div>
+                        <div class="buy_message_body_1">¥18.86元/kg</div>
+                        <div class="buy_message_body_2">(均重100-110kg)</div>
+                    </div>
+                    <div class="deal_buy_message_4">
+                        <div class="buy_message_body_3">¥19.26元/kg</div>
+                        <div class="buy_message_body_2">(均重110-120kg)</div>
+                    </div>
+                    <div class="deal_buy_message_4">
+                        <div class="buy_message_body_3">¥19.86元/kg</div>
+                        <div class="buy_message_body_2">(均重120kg以上)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+           <div class="deal_buy_2">
+            <div style="float: left;margin-left: 1rem;height:1.3rem;margin-top:0.5rem;width: 10rem; ">
+                <span ><span style="font-size:1rem;color:#F02B2B;opacity:1;">300</span><span style="font-size:0.833333rem;color:#F02B2B;">头</span></span>
+                <span style="font-size:0.833333rem;color:#848689;opacity: 0.6;">还未售卖</span>
+            </div>
+            <button class="deal_btn btn_remind">提醒我
+
+            </button>
+        </div>
+           <div class="wall"></div>
+       </div>
+        <div class="box">
+            <div class="deal_buy_1">
+                <div class="deal_buy_pic">
+                    <img src="../images/morentu.png" style="width:4.5rem;height: 4.5rem;border-radius: 0.2rem;"/>
+                </div>
+                <div class="deal_buy_message">
+                    <div class="deal_buy_message_1">绵阳三台希望猪场</div>
+                    <div class="deal_buy_message_2">
+                        <div class="buy_message_head_1">地址:</div>
+                        <div class="buy_message_body_1">四川省德阳三台</div>
+                    </div>
+                    <div class="deal_buy_message_3">
+                        <div class="deal_buy_message_4">
+                            <div class="buy_message_head_1">价格:</div>
+                            <div class="buy_message_body_1">¥18.86元/kg</div>
+                            <div class="buy_message_body_2">(均重100-110kg)</div>
+                        </div>
+                        <div class="deal_buy_message_4">
+                            <div class="buy_message_body_3">¥19.26元/kg</div>
+                            <div class="buy_message_body_2">(均重110-120kg)</div>
+                        </div>
+                        <div class="deal_buy_message_4">
+                            <div class="buy_message_body_3">¥19.86元/kg</div>
+                            <div class="buy_message_body_2">(均重120kg以上)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="deal_buy_2">
+                <div style="float: left;margin-left: 1rem;height:1.3rem;margin-top:0.5rem;width: 10rem; ">
+                    <span ><span style="font-size:1rem;color:#F02B2B;opacity:1;">300</span><span style="font-size:0.833333rem;color:#F02B2B;">头</span></span>
+                    <span style="font-size:0.833333rem;color:#848689;opacity: 0.6;">还未售卖</span>
+                </div>
+                <button class="deal_btn btn_remind">提醒我
+
+                </button>
+            </div>
+            <div class="wall"></div>
+        </div>
+    </div>
+    <div class="part4" style="position: absolute;display:none;font-family: 'Microsoft YaHei'；display: none;">
+          <div class="daojishi">
+              <div class="daojishi_text">拍卖倒计时</div>
+              <div class="daojishi_num">02:34:20</div>
+          </div>
+          <div class="box">
+              <div class="deal_buy_1">
+                  <div class="deal_buy_pic">
+                      <img src="../images/morentu.png" style="width:4.5rem;height: 4.5rem;border-radius: 0.2rem;"/>
+                  </div>
+                  <div class="deal_buy_message">
+                      <div class="deal_buy_message_1">绵阳三台希望猪场</div>
+                      <div class="deal_buy_message_2">
+                          <div class="buy_message_head_1">地址:</div>
+                          <div class="buy_message_body_1">四川省德阳三台</div>
+                      </div>
+                      <div class="deal_buy_message_3">
+                          <div class="deal_buy_message_4">
+                              <div class="buy_message_head_1">价格:</div>
+                              <div class="buy_message_body_1">¥18.86元/kg</div>
+                              <div class="buy_message_body_2">(均重100-110kg)</div>
+                          </div>
+                          <div class="deal_buy_message_4">
+                              <div class="buy_message_body_3">¥19.26元/kg</div>
+                              <div class="buy_message_body_2">(均重110-120kg)</div>
+                          </div>
+                          <div class="deal_buy_message_4">
+                              <div class="buy_message_body_3">¥19.86元/kg</div>
+                              <div class="buy_message_body_2">(均重120kg以上)</div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="deal_buy_2">
+                  <div style="float: left;margin-left: 1rem;height:1.3rem;margin-top:0.5rem;width: 10rem; ">
+                      <span ><span style="font-size:1rem;color:#F02B2B;opacity:1;">300</span><span style="font-size:0.833333rem;color:#F02B2B;">头</span></span>
+                      <span style="font-size:0.833333rem;color:#848689;opacity: 0.6;">还未售卖</span>
+                  </div>
+                  <button class="deal_btn btn_remind">提醒我
+
+                  </button>
+              </div>
+              <div class="wall"></div>
+          </div>
+          <div class="box">
+              <div class="deal_buy_1">
+                  <div class="deal_buy_pic">
+                      <img src="../images/morentu.png" style="width:4.5rem;height: 4.5rem;border-radius: 0.2rem;"/>
+                  </div>
+                  <div class="deal_buy_message">
+                      <div class="deal_buy_message_1">绵阳三台希望猪场</div>
+                      <div class="deal_buy_message_2">
+                          <div class="buy_message_head_1">地址:</div>
+                          <div class="buy_message_body_1">四川省德阳三台</div>
+                      </div>
+                      <div class="deal_buy_message_3">
+                          <div class="deal_buy_message_4">
+                              <div class="buy_message_head_1">价格:</div>
+                              <div class="buy_message_body_1">¥18.86元/kg</div>
+                              <div class="buy_message_body_2">(均重100-110kg)</div>
+                          </div>
+                          <div class="deal_buy_message_4">
+                              <div class="buy_message_body_3">¥19.26元/kg</div>
+                              <div class="buy_message_body_2">(均重110-120kg)</div>
+                          </div>
+                          <div class="deal_buy_message_4">
+                              <div class="buy_message_body_3">¥19.86元/kg</div>
+                              <div class="buy_message_body_2">(均重120kg以上)</div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="deal_buy_2">
+                  <div style="float: left;margin-left: 1rem;height:1.3rem;margin-top:0.5rem;width: 10rem; ">
+                      <span ><span style="font-size:1rem;color:#F02B2B;opacity:1;">300</span><span style="font-size:0.833333rem;color:#F02B2B;">头</span></span>
+                      <span style="font-size:0.833333rem;color:#848689;opacity: 0.6;">还未售卖</span>
+                  </div>
+                  <button class="deal_btn btn_remind" style="display: none;">提醒我
+
+                  </button>
+
+                  <button class="deal_btn btn_remind2">已提醒
+
+                  </button>
+              </div>
+              <div class="wall"></div>
+          </div>
+      </div>
+    <div class="part5" style="position: absolute;display:none;font-family: 'Microsoft YaHei'；display: none;">
+          <div class="daojishi">
+              <div class="daojishi_text">拍卖倒计时</div>
+              <div class="daojishi_num">02:34:20</div>
+          </div>
+          <div class="box">
+              <div class="deal_buy_1">
+                  <div class="deal_buy_pic">
+                      <img src="../images/morentu.png" style="width:4.5rem;height: 4.5rem;border-radius: 0.2rem;"/>
+                  </div>
+                  <div class="deal_buy_message">
+                      <div class="deal_buy_message_1">绵阳三台希望猪场</div>
+                      <div class="deal_buy_message_2">
+                          <div class="buy_message_head_1">地址:</div>
+                          <div class="buy_message_body_1">四川省德阳三台</div>
+                      </div>
+                      <div class="deal_buy_message_3">
+                          <div class="deal_buy_message_4">
+                              <div class="buy_message_head_1">价格:</div>
+                              <div class="buy_message_body_1">¥18.86元/kg</div>
+                              <div class="buy_message_body_2">(均重100-110kg)</div>
+                          </div>
+                          <div class="deal_buy_message_4">
+                              <div class="buy_message_body_3">¥19.26元/kg</div>
+                              <div class="buy_message_body_2">(均重110-120kg)</div>
+                          </div>
+                          <div class="deal_buy_message_4">
+                              <div class="buy_message_body_3">¥19.86元/kg</div>
+                              <div class="buy_message_body_2">(均重120kg以上)</div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="deal_buy_2">
+                  <div style="float: left;margin-left: 1rem;height:1.3rem;margin-top:0.5rem;width: 10rem; ">
+                      <span ><span style="font-size:1rem;color:#F02B2B;opacity:1;">300</span><span style="font-size:0.833333rem;color:#F02B2B;">头</span></span>
+                      <span style="font-size:0.833333rem;color:#848689;opacity: 0.6;">还未售卖</span>
+                  </div>
+                  <button class="deal_btn btn_remind">提醒我
+
+                  </button>
+              </div>
+              <div class="wall"></div>
+          </div>
+          <div class="box">
+              <div class="deal_buy_1">
+                  <div class="deal_buy_pic">
+                      <img src="../images/morentu.png" style="width:4.5rem;height: 4.5rem;border-radius: 0.2rem;"/>
+                  </div>
+                  <div class="deal_buy_message">
+                      <div class="deal_buy_message_1">绵阳三台希望猪场</div>
+                      <div class="deal_buy_message_2">
+                          <div class="buy_message_head_1">地址:</div>
+                          <div class="buy_message_body_1">四川省德阳三台</div>
+                      </div>
+                      <div class="deal_buy_message_3">
+                          <div class="deal_buy_message_4">
+                              <div class="buy_message_head_1">价格:</div>
+                              <div class="buy_message_body_1">¥18.86元/kg</div>
+                              <div class="buy_message_body_2">(均重100-110kg)</div>
+                          </div>
+                          <div class="deal_buy_message_4">
+                              <div class="buy_message_body_3">¥19.26元/kg</div>
+                              <div class="buy_message_body_2">(均重110-120kg)</div>
+                          </div>
+                          <div class="deal_buy_message_4">
+                              <div class="buy_message_body_3">¥19.86元/kg</div>
+                              <div class="buy_message_body_2">(均重120kg以上)</div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="deal_buy_2">
+                  <div style="float: left;margin-left: 1rem;height:1.3rem;margin-top:0.5rem;width: 10rem; ">
+                      <span ><span style="font-size:1rem;color:#F02B2B;opacity:1;">300</span><span style="font-size:0.833333rem;color:#F02B2B;">头</span></span>
+                      <span style="font-size:0.833333rem;color:#848689;opacity: 0.6;">还未售卖</span>
+                  </div>
+                  <button class="deal_btn btn_remind">提醒我
+
+                  </button>
+              </div>
+              <div class="wall"></div>
+          </div>
+      </div>
+    <div class="part6" style="position: absolute;display:none;font-family: 'Microsoft YaHei'；display: none;">
+          <div class="daojishi">
+              <div class="daojishi_text">拍卖倒计时</div>
+              <div class="daojishi_num">02:34:20</div>
+          </div>
+          <div class="deal_buy">
+              <div class="deal_buy_1">
+                  <div class="deal_buy_pic">
+                      <img src="../images/morentu.png" style="width:4.5rem;height: 4.5rem;border-radius: 0.2rem;"/>
+                  </div>
+                  <div class="deal_buy_message">
+                      <div class="deal_buy_message_1">绵阳三台希望猪场</div>
+                      <div class="deal_buy_message_2">
+                          <div class="buy_message_head_1">地址:</div>
+                          <div class="buy_message_body_1">四川省德阳三台</div>
+                      </div>
+                      <div class="deal_buy_message_3">
+                          <div class="deal_buy_message_4">
+                              <div class="buy_message_head_1">价格:</div>
+                              <div class="buy_message_body_1">¥18.86元/kg</div>
+                              <div class="buy_message_body_2">(均重100-110kg)</div>
+                          </div>
+                          <div class="deal_buy_message_4">
+                              <div class="buy_message_body_3">¥19.26元/kg</div>
+                              <div class="buy_message_body_2">(均重110-120kg)</div>
+                          </div>
+                          <div class="deal_buy_message_4">
+                              <div class="buy_message_body_3">¥19.86元/kg</div>
+                              <div class="buy_message_body_2">(均重120kg以上)</div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="deal_buy_2">
+                  <div style="float: left;margin-left: 1rem;height:1.3rem;margin-top:0.5rem;width: 10rem; ">
+                      <span ><span style="font-size:1rem;color:#F02B2B;opacity:1;">300</span><span style="font-size:0.833333rem;color:#F02B2B;">头</span></span>
+                      <span style="font-size:0.833333rem;color:#848689;opacity: 0.6;">还未售卖</span>
+                  </div>
+                  <button class="deal_btn btn_remind">提醒我
+
+                  </button>
+              </div>
+              <div class="wall"></div>
+          </div>
+          <div class="deal_buy">
+              <div class="deal_buy_1">
+                  <div class="deal_buy_pic">
+                      <img src="../images/morentu.png" style="width:4.5rem;height: 4.5rem;border-radius: 0.2rem;"/>
+                  </div>
+                  <div class="deal_buy_message">
+                      <div class="deal_buy_message_1">绵阳三台希望猪场</div>
+                      <div class="deal_buy_message_2">
+                          <div class="buy_message_head_1">地址:</div>
+                          <div class="buy_message_body_1">四川省德阳三台</div>
+                      </div>
+                      <div class="deal_buy_message_3">
+                          <div class="deal_buy_message_4">
+                              <div class="buy_message_head_1">价格:</div>
+                              <div class="buy_message_body_1">¥18.86元/kg</div>
+                              <div class="buy_message_body_2">(均重100-110kg)</div>
+                          </div>
+                          <div class="deal_buy_message_4">
+                              <div class="buy_message_body_3">¥19.26元/kg</div>
+                              <div class="buy_message_body_2">(均重110-120kg)</div>
+                          </div>
+                          <div class="deal_buy_message_4">
+                              <div class="buy_message_body_3">¥19.86元/kg</div>
+                              <div class="buy_message_body_2">(均重120kg以上)</div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="deal_buy_2">
+                  <div style="float: left;margin-left: 1rem;height:1.3rem;margin-top:0.5rem;width: 10rem; ">
+                      <span ><span style="font-size:1rem;color:#F02B2B;opacity:1;">300</span><span style="font-size:0.833333rem;color:#F02B2B;">头</span></span>
+                      <span style="font-size:0.833333rem;color:#848689;opacity: 0.6;">还未售卖</span>
+                  </div>
+                  <button class="deal_btn btn_remind">提醒我
+
+                  </button>
+              </div>
+              <div class="wall"></div>
+          </div>
+      </div>
+</div>
+  <div class="Part_2" style="display: none;position: absolute;">
+      <div class="zhezhao" id="zhezhao" style="margin-top: -2.3rem;">
+          <div class="popup">
+              <p style="font-size: 1rem;color: #353535;height:2.2rem;line-height: 2.2rem;margin-top: 0px;margin-bottom:0px;position:relative;">下订单</p>
+              <div style="width:100%;height: 1px;background-color: #979797;margin-top: 0px;position:relative;"></div>
+              <div style="width:16rem;height: 2.4rem;margin: auto;clear: both;margin-top:0.4rem">
+                  <div style="float: left;font-size: 0.777778rem;width:16rem;height:1.2rem;line-height: 1.2rem;text-align: left;">绵阳三台希望猪场</div>
+                  <div style="float: left;font-size: 0.777778rem;width:16rem;height:1.2rem;line-height: 1.2rem;color:#f02b2b;margin-left:0;text-align: left;">剩余
+                      <span>400</span>
+                      头
+                  </div>
+              </div>
+              <div style="width:16rem;height: 1.2rem;line-height:1.2rem;margin: auto;clear: both;">
+                  <span style="float: left;font-size: 0.666667rem;color: #848689;">地址：</span>
+                  <div style="float: left;margin-left:0.2rem;font-size: 0.666667rem;color:#848689;">XXXXXX</div>
+              </div>
+              <div style="width:16rem;height:1.2rem;line-height:1.2rem;margin: auto;clear: both;">
+                  <span style="float: left;font-size: 0.666667rem;color: #848689;">交通：</span>
+                  <div style="float: left;margin-left:0.2rem;font-size: 0.666667rem;color:#848689;">限1.5米内的车辆通过</div>
+              </div>
+              <div style="width:16rem;height:3.6rem;margin: auto;clear: both;">
+                  <div style="width:16rem;height:1.2rem;line-height:1.2rem;margin: auto;clear: both;">
+                      <span style="float: left;font-size: 0.666667rem;color: #848689;">价格：</span>
+                      <div style="float: left;margin-left:2.2rem;font-size: 0.666667rem;color:#848689;position: absolute;">¥18.86元/kg</div>
+                      <div style="float: left;margin-left:6.2rem;font-size: 0.666667rem;color:#848689;position: absolute;">(均重100-110kg)</div>
+                  </div>
+                  <div style="width:16rem;height:1.2rem;line-height:1.2rem;margin: auto;clear: both;">
+                      <div style="float: left;margin-left:2.2rem;font-size: 0.666667rem;color:#848689;position: absolute;">¥12.26元/kg</div>
+                      <div style="float: left;margin-left:6.2rem;font-size: 0.666667rem;color:#848689;position: absolute;">(均重110-120kg)</div>
+                  </div>
+                  <div style="width:16rem;height:1.2rem;line-height:1.2rem;margin: auto;clear: both;">
+                      <div style="float: left;margin-left:2.2rem;font-size: 0.666667rem;color:#848689;position: absolute;">¥19.86元/kg</div>
+                      <div style="float: left;margin-left:6.2rem;font-size: 0.666667rem;color:#848689;position: absolute;">(均重120kg以上)</div>
+                  </div>
+
+
+              </div>
+              <div style="width:16rem;height: 3.5rem;line-height:3.5rem;margin: auto;clear: both;">
+                  <span style="float:left;font-size: 0.666667rem;color: #848689;line-height: 3.5rem;">数量：</span>
+                  <input style="float:left;width: 5.5rem;height:2.2223rem;border-radius:2rem;border: 2px solid #dddddd;padding-left: 0.633333rem;margin-left: 0.2rem;text-align: left;font-size:0.777778rem;color: #353535;margin-top:0.6rem;position: relative;outline: none; "/>
+                  <span style="float: left;font-size:0.666667rem;color: #353535;margin-left:0.3rem;">头</span>
+
+              </div>
+              <div>
+                  <button id="quxiao" class="submit_change">取消</button>
+                  <button id="queren" class="submit_agree">确认</button>
+              </div>
+
+          </div>
+
+      </div>
+  </div>
+  <div class="Part_3" style="position: absolute;display: none;">
+      <div class="zhezhao">
+          <div class="popup1">
+              <div style="width: 3rem;height: 3rem;margin: auto;margin-top:2rem;">
+                  <img src="../images/right.png" style="width: 100%;height: 100%;">
+              </div>
+              <p style="height: 2rem;font-size:1rem;color:#3884ff;text-align: center;line-height: 2rem;margin:0 auto;">订单提交成功</p>
+              <p style="height: 1rem;font-size:0.777778rem;color:#848689;text-align: center;line-height: 1rem;margin:0 auto;">您的订单已提交成功，我们将尽快与您联系！</p>
+              <p style="height: 1rem;font-size:0.777778rem;color:#848689;text-align: center;line-height: 1rem;margin:0 auto;">如需了解订单状态,</p>
+              <p style="height: 1rem;font-size:0.777778rem;color:#848689;text-align: center;line-height: 1rem;margin:0 auto;">可以点击“我的”进行查询！</p>
+              <div style="width:100%;height: 1px;background-color: #979797;margin-top:2rem;position:relative;"></div>
+              <button id="zhidaole" style="text-align: center;width: 17.6rem;height:2.5rem;color:#848689;font-size: 1rem;outline: none;border: none;background-color: #ffffff;">知道了</button>
+          </div>
+      </div>
+  </div>
+
+</body>
+</html>

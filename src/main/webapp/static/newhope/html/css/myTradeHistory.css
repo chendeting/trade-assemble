@@ -1,0 +1,50 @@
+#warp .allTrade {
+  line-height: 1.6666rem;
+  font-size: 0.7222rem;
+  color: #999;
+  padding-left: 0.6666rem;
+}
+#warp .allTrade span {
+  font-size: 0.7222rem;
+}
+#warp .trade-ul .tradeHistory-list {
+  margin-bottom: 0.6944rem;
+  border-top: 0.0555rem solid #D8D8D8;
+  border-bottom: 0.0555rem solid #D8D8D8;
+  position: relative;
+}
+#warp .trade-ul .tradeHistory-list .single-title {
+  position: relative;
+  background-color: #f5f5f5;
+  padding: 0.4166rem 0 0.4166rem 0.6666rem;
+}
+#warp .trade-ul .tradeHistory-list .single-title p {
+  line-height: 1.25rem;
+  font-size: 0.8333rem;
+  color: #4a4a4a;
+}
+#warp .trade-ul .tradeHistory-list .single-title img {
+  width: 0.7777rem;
+  position: absolute;
+  right: 0.6666rem;
+  top: 40%;
+}
+#warp .trade-ul .tradeHistory-list .detail-ul {
+  background-color: #fff;
+  padding: 0.8888rem 0 0.8888rem 0.6666rem;
+}
+#warp .trade-ul .tradeHistory-list .detail-ul li {
+  line-height: 1.1666rem;
+  font-size: 0.7777rem;
+  color: #4A4A4A;
+}
+#warp .trade-ul .tradeHistory-list .detail-ul li span {
+  font-size: 0.7777rem;
+  color: #999;
+}
+#warp .trade-ul .tradeHistory-list .status-img img {
+  width: 3.3888rem;
+  position: absolute;
+  right: 0;
+  top: 3.3rem;
+}

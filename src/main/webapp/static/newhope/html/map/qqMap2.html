@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>定位+坐标转换</title>
+<style type="text/css">
+*{
+    margin:0px;
+    padding:0px;
+}
+body, button, input, select, textarea {
+    font: 12px/16px Verdana, Helvetica, Arial, sans-serif;
+}
+#container{
+  min-width:600px;
+  min-height:767px;
+  }
+</style>
+<script charset="utf-8" src="http://map.qq.com/api/js?v=2.exp"></script>
+<script charset="utf-8" src="http://map.qq.com/api/js?v=2.exp&libraries=convertor"></script>
+<script type="text/javascript" charset="utf-8" src="../js/jquery-1.8.3.min.js"></script>
+<script>
+	//地图对象 
+	var map;
+	//GPS经纬度
+	var myLat,myLng;
+	//地址中文详情
+	var myAddressDetail;
+	//定位当前地址
+	function getLocation() {
+		//判断是否支持 获取本地位置
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(showPosition);
+		} else {
+			x.innerHTML = "浏览器不支持定位.";
+		}
+	}
+	//定位到当前地址后的回调
+	function showPosition(position) {
+		var lat = position.coords.latitude;
+		var lng = position.coords.longitude;
+		myLat = lat;
+		myLng = lng;
+		//调用地图命名空间中的转换接口   type的可选值为 1:gps经纬度，2:搜狗经纬度，3:百度经纬度，4:mapbar经纬度，5:google经纬度，6:搜狗墨卡托
+		qq.maps.convertor.translate(new qq.maps.LatLng(lat, lng), 1, function(res) {
+			//取出经纬度并且赋值
+			latlng = res[0];
+			//根据当前的定位初始化地图
+			map = new qq.maps.Map(document.getElementById("container"), {
+				center : latlng,
+				zoom : 15
+			});
+			//设置marker标记
+			var marker = new qq.maps.Marker({
+				map : map,
+				position : latlng
+			});
+			
+			//添加监听事件 当标记被点击了,获取中文详细地址
+            qq.maps.event.addListener(marker, 'click', function() {
+            	//alert(latlng);
+                getMyAddress(latlng);
+            });
+		});
+	}
+	
+	//获取中文详细地址
+	function getMyAddress(myLatlng){
+		//初始化一个弹出窗口
+		var info = new qq.maps.InfoWindow({map: map});
+		//初如化获取中文详细地址的对象
+	    var geocoder = new qq.maps.Geocoder({
+	        complete : function(result){
+	        	info.open();
+                info.setContent('<div style="width:200px;height:50px;">'+
+                    result.detail.address+'</div>');
+                //alert(JSON.stringify(result));
+                info.setPosition(result.detail.location);
+                //赋值
+                myAddressDetail = result.detail.address;
+	        }
+	    });
+	    //调用获取位置方法
+	    geocoder.getAddress(myLatlng);
+	}
+	
+	function  test(){
+      var url = "http://apis.map.qq.com/uri/v1/routeplan?type=drive&from="+ myAddressDetail +"&fromcoord="+ myLat +"," + myLng +"&to=中关村&tocoord=39.9836,116.3164&policy=1&referer=myapp";
+	  //alert(myAddressDetail + " "+myLat+" "+ myLng);
+	  alert(url);
+	  $("#daohang").attr("href", url);
+	  //导航需要的变量,起点 name:天安门|latlng:39.98871,116.43234 终点 name:天安门|latlng:39.98871,116.43234
+	  url = "http://api.map.baidu.com/direction?origin=name:"+ myAddressDetail +"|latlng:"+ myLat +"," + myLng +"&destination=name:"+ myAddressDetail +"|latlng:"+ myLat +"," + myLng&mode=driving&region=&output=html&src=appName";
+	  $("#baidudaohang").attr("href", url);
+	} 
+</script>
+
+</head>
+<body onload="getLocation()">
+<p><a id="daohang" href="">导航</a>
+<a id="baidudaohang" href="">导航</a>用html5定位后，使用腾讯地图坐标转换接口纠偏，请允许获取位置。
+<input type="button" value="定位" ONCLICK="return test();"></p>
+<div id="container"></div>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta charset="UTF-8">
+    <title>新加入的成员</title>
+    <!--字体大小换脚本-->
+    <script type="text/javascript" charset="utf-8" src="js/htmlsize.js"></script>
+    <!--bootstrap样式-->
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+    <!--自定义公共样式-->
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+    <!--weui样式-->
+    <link rel="stylesheet" type="text/css" href="css/weui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/jquery-weui.min.css"/>
+    <!--jquery脚本-->
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <!--bootstrap脚本-->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!--自身页面单独样式-->
+    <link rel="stylesheet" type="text/css" href="css/newMember.css"/>
+</head>
+<body>
+<div id="warp">
+    <!--拒绝模态框-->
+    <div class="modal fade" style="margin-top: 5.333rem" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"><img src="images/btn_input_delete_normal.png" style="width:1rem;height:1rem"/></span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">拒绝原因</h4>
+                </div>
+                <div class="modal-body">
+                    <textarea class="reason-content" maxlength="30" placeholder="没交保证金"></textarea>
+                    <span class="maxlength">30字内</span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="sendReason">发送</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="newmember-list">
+        <div class="headImg">
+            <img src="images/morentu.png"/>
+        </div>
+        <ul class="newmember-info">
+            <li class="trueName">朗润<img src="images/ic_lable_mz_blue.png"/></li>
+            <li class="member-info-tel">手机：183-1824-7852</li>
+            <li class="member-info-msg">"我想加入圈子买猪，请尽快联系我，谢谢谢谢谢谢"</li>
+        </ul>
+        <div class="isNot">
+            <button type="button" class="disagree" data-toggle="modal" data-target="#myModal">
+                拒绝
+            </button>
+            <button type="button" class="agree">
+                通过
+            </button>
+        </div>
+    </div>
+    <div class="newmember-list">
+        <div class="headImg">
+            <img src="images/morentu.png"/>
+        </div>
+        <ul class="newmember-info">
+            <li class="trueName">朗润<img src="images/ic_lable_mz_green.png"/></li>
+            <li class="member-info-tel">手机：183-1824-7852</li>
+            <li class="member-info-msg">"我想加入圈子买猪，请尽快联系我，谢谢"</li>
+        </ul>
+        <div class="isNot">
+            <button type="button" class="disagree" data-toggle="modal" data-target="#myModal">
+                拒绝
+            </button>
+            <button type="button" class="agree">
+                通过
+            </button>
+        </div>
+    </div>
+
+    <div class="newmember-list">
+        <div class="headImg">
+            <img src="images/morentu.png"/>
+        </div>
+        <ul class="newmember-info">
+            <li class="trueName">朗润<img src="images/ic_lable_mz_blue.png"/></li>
+            <li class="member-info-tel">手机：183-1824-7852</li>
+            <li class="member-info-msg">"我想加入圈子买猪，请尽快联系我，谢谢"</li>
+        </ul>
+        <div class="isNot">
+            <button type="button" class="disagree" data-toggle="modal" data-target="#myModal">
+                拒绝
+            </button>
+            <button type="button" class="agree">
+                通过
+            </button>
+        </div>
+    </div>
+</div>
+
+<!--jquery weui脚本-->
+<script type="text/javascript" src="js/jquery-weui.min.js"></script>
+<script>
+
+    $(".agree").click(function () {
+        $(this).parent().parent().remove();
+        $.toast("已通过对方的加入申请", "text");
+    });
+
+    var timeId=setInterval(function () {
+        $(".agreeModal").fadeOut();
+        //console.log(123);
+        clearInterval(timeId);
+    },3000);
+
+
+</script>
+</body>
+</html>

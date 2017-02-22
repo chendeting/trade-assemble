@@ -1,0 +1,119 @@
+@color9:#999;
+@colord8:#d8d8d8;
+@color1b:#1bbd3d;
+@colorfa:#fa4848;
+
+*{
+  font-size: 0.8333rem;
+}
+.weui_tab{
+  .weui_navbar{
+    background-color: #fff;
+    &:after{
+      border-style: none;
+    }
+    .weui_navbar_item{
+      padding-bottom: 0;
+      &:after{
+        border-style: none;
+      }
+      &.weui_bar_item_on {
+        color: #666;
+        background-color: transparent;
+      }
+      span{
+        display:inline-block;
+        width:6rem;
+        padding-bottom: 0.5833rem;
+        font-size: 0.8333rem;
+        &.active{
+          color:#1bbd3d;
+          border-bottom:0.1666rem solid @color1b;
+        }
+      }
+    }
+  }
+}
+.weui_tab_bd{
+  .line{
+    height:1.0555rem;
+    background-color: #e6e6e6;
+    border-bottom: 0.0277rem solid #999;
+  }
+  .mysell-title{
+    padding-left:0.8333rem;
+    font-size:0.7222rem;
+    color:@color9;
+    height:2rem;
+    line-height: 2rem;
+    background-color:#e6e6e6;
+    border-bottom:0.0833rem solid #eee;
+    border-top:0.0833rem solid #eee;
+  }
+  .mysell-ul{
+    .mysell-list{
+      .mysell-date{
+        position: relative;
+        height: 2.5rem;
+        line-height: 2.5rem;
+        background-color: #f5f5f5;
+        padding-left:0.8333rem;
+        color:#4a4a4a;
+        img{
+          width:0.7777rem;
+          height:0.7777rem;
+          position: absolute;
+          right:0.6944rem;
+          top:0.8rem;
+        }
+      }
+    }
+  }
+  .trade-status{
+    padding:0.8333rem 0 0.8333rem 0.8333rem;
+    position: relative;
+    .record-info{
+      li{
+        color:@color9;
+        margin-bottom: 0.2222rem;
+        span{
+          color:#333;
+          //font-size:1.2222rem;
+        }
+      }
+
+    }
+    .status-pic{
+      position: absolute;
+      right:0;
+      top:0.8rem;
+      img{
+        width:5.8333rem;
+        height:5.8333rem;
+      }
+    }
+  }
+}
+
+#buy{
+  .trade-status{
+    padding:0 0 0 0.6666rem;
+    .record-info{
+      margin-bottom:1.0555rem;
+    }
+    .status-pic{
+      top:-1.2rem;
+      img{
+        width:5.75rem;
+        height:3.3333rem;
+      }
+    }
+    .record-info{
+      margin-top:1.0555rem;
+      color:@color9;
+      span{
+        color:#333;
+      }
+    }
+  }
+}

@@ -1,0 +1,306 @@
+@color9:#999;
+@colord8:#d8d8d8;
+@color1b:#1bbd3d;
+@colorfa:#fa4848;
+
+#warp{
+  background-color: #e9e9e9;
+
+  .same-bg{
+    padding:0 0.6666rem;
+    height:3.3333rem;
+    background-color: #fff;
+    border-top: 0.0555rem solid #eee;
+    margin-bottom: 0.8333rem;
+    position: relative;
+    .tip-content{
+      font-size: 0.6666rem;
+      color:#999;
+    }
+    .auction-title{
+      margin-top: 1rem;
+    }
+    .tip-p{
+      margin-top: 0.8rem;
+    }
+    .slide-btn{
+      position: absolute;
+      right:0.6666rem;
+      top:0rem;
+      img{
+        width:5rem;
+        height:1.6666rem;
+        display: block;
+        margin-top:0.8333rem;
+      }
+    }
+  }
+  .rankBox{
+    display: none;
+    height:8.2222rem;
+    padding:0.6666rem;
+    .edit-btn{
+      text-align: right;
+      button{
+        width:6.9444rem;
+        height:1.9444rem;
+        font-size: 1rem;
+      }
+      .del-btn{
+        background-color: @colorfa;
+      }
+      .add-btn{
+        background-color: @color1b;
+      }
+    }
+
+  }
+  .on-off{
+    display: none;
+    background-color: #fff;
+    width:100%;
+    padding:0.2777rem 0 1.6666rem 0;
+    margin-bottom: 0.8333rem;
+    >div{
+      text-align: center;
+      &:after{
+        content: '';
+        display: block;
+        clear: both;
+      }
+    }
+    button{
+
+      width:3.6111rem;
+      height:1.6666rem;
+      border-radius: 0.1111rem;
+      //display: inline-block;
+      margin-bottom: 0.2777rem;
+
+    }
+    .off{
+      background-color: #999;
+      margin-left:0.6666rem;
+      float:left;
+    }
+    span{
+      font-size:0.7777rem;
+      color:@color9;
+      //float: left;
+    }
+    .on{
+      background-color: @colorfa;
+      float: right;
+      margin-right:0.6666rem;
+    }
+    p{
+      padding-top:1.6666rem;
+      border-top: 0.0555rem solid @color9;
+      text-align: center;
+      position: relative;
+      input{
+        height:2.2222rem;
+        width:13.2222rem;
+        padding-left:0.6666rem;
+        background: #F5F5F5;
+        border: 1px solid #D8D8D8;
+        border-radius: 4px;
+
+
+      }
+      .unit{
+        position:absolute;
+        right:1rem;
+        top:2.2rem;
+      }
+    }
+  }
+
+
+}
+
+
+//时间输入框样式
+.weui_cell {
+  padding:0 0 0.5555rem 0.6666rem;
+  .zhi{
+    color:@color9;
+  }
+  .weui_cell_bd{
+    position: relative;
+    .fa{
+      position: absolute;
+      color:#999;
+      right:22%;
+      top:0.8rem;
+    }
+  }
+
+}
+.weui_cells {
+  background-color: transparent;
+  display: none;
+}.weui_cells:before {
+  border-style:none;
+}
+
+.weui_input {
+  border: 0.0555rem solid #ddd;
+  background-color: #fff;
+  width:75%;
+  height:2.2222rem;
+  padding-left: 0.6666rem;
+}
+
+.toolbar .picker-button{
+  width:3.6111rem;
+  height:1.6666rem;
+  background-color: @color1b;
+  color:#fff;
+  border-radius: 0.1111rem;
+  text-align: center;
+  line-height: 1.6666rem;
+  top:0.3rem;
+  right:0.6666rem;
+}
+.toolbar .title{
+  font-size:0.7777rem;
+  color:@color9;
+}
+.weui-picker-modal .picker-item.picker-selected{
+  color:@color1b;
+  font-size: 1rem;
+}
+.weui-picker-modal .picker-items-col-wrapper{
+  width:10rem;
+  text-align: center;
+}
+
+.interval-box{
+  position: relative;
+  margin: 0 .5rem;
+  width: calc(100% - 1rem);
+  height: 6rem;
+}
+
+.interval-bar{
+  position: absolute;
+  top: 2.5rem;
+  width: 97%;
+  height: .4444rem;
+  background: #D8D8D8;
+  border-radius: 2.7777rem;
+}
+.interval-bar-button-box{
+  position: relative;
+  width:95%;
+}
+.interval-top-box{
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 5%;
+  height: 1rem;
+  visibility: visible;
+}
+.tag{
+  position:absolute;
+  padding: .1rem .2rem;
+  width:auto;
+  font-size: .5rem;
+  color: #333333;
+  background: #FFFFFF;
+  border: 1px solid #D8D8D8;
+  box-shadow: 0 2px .2777rem 0 rgba(0,0,0,0.10);
+  border-radius: 4px;
+  text-align: center;
+}
+.tag:before,.tag:after{
+  content:"";
+  display:block;
+  border-width:.5555rem .2222rem;
+  position:absolute;
+  bottom:-1.1666rem;
+  left: 50%;
+  margin-left: -.2222rem;
+  border-style:solid dashed dashed;
+  border-color:#D8D8D8 transparent transparent;
+  font-size:0;
+  line-height:0;
+}
+.tag:after{
+  bottom:-1.0833rem;
+  border-color:#FFF transparent transparent;
+}
+
+.interval-button{
+  position: absolute;
+  top: 1.8055rem;
+  left: 0;
+  margin-left: -.6944rem;
+  width: 1.3888rem;
+  height: 1.3888rem;
+}
+.interval-del-button{
+  display: none;
+  position: absolute;
+  top:-.5rem;
+  right:-.5rem;
+  width: 1rem;
+  height: 1rem;
+  font-size: .8rem;
+  color: #ffffff;
+  line-height: .9rem;
+  text-align: center;
+  background: #FA4848;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.interval-bar-button{
+  height: 1.3888rem;
+  font-size: .7777rem;
+  color: #ffffff;
+  line-height: 1.3888rem;
+  text-align: center;
+  background: #ffc310;
+  border-radius: 50%;
+}
+.interval-bar-button-text{
+  position: absolute;
+  bottom:-1.5rem;
+  left:-0.5rem;
+  min-width:1.3888rem;
+  font-size: .6666rem;
+  text-align: center;
+  color: #999999;
+}
+#warp .rankBox .edit-btn .del-cancel-btn{
+  display: none;
+  float: right;
+  width: auto;
+  padding: 0 .5rem;
+  background-color: #999999;
+}
+.del-state .interval-del-button{
+  display: block;
+}
+#warp .rankBox.del-state .edit-btn .del-cancel-btn{
+  display: block;
+}
+.del-state .del-btn{
+  display: none;
+}
+.del-state .add-btn{
+  display: none;
+}
+
+.weui_toast,.weui_toast_text,.weui_toast_visible{
+  width:13.3333rem;
+  height: 3.7222rem;
+  font-size: 0.8333rem;
+  line-height: 2.2222rem;
+  color:#fff;
+  opacity:0.75;
+  border-radius: 0.2222rem;
+  text-align: center;
+}
